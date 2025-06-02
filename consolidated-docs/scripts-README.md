@@ -1,4 +1,4 @@
-<!-- Source: /Users/mzahirudeen/playwright-framework/scripts/README.md -->
+<!-- Source: /Users/mzahirudeen/playwright-framework-dev/scripts/README.md -->
 
 # Essential Playwright Framework Scripts
 

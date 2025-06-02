@@ -1,0 +1,17 @@
+
+{
+  "name": "playwright-framework-sample",
+  "version": "1.0.0",
+  "description": "Sample project using Playwright Test Framework",
+  "scripts": {
+    "test": "playwright test",
+    "report": "playwright show-report"
+  },
+  "dependencies": {
+    "playwright-framework": "file:../framework"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "dotenv": "^16.3.1"
+  }
+}

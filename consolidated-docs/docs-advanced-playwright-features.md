@@ -1,4 +1,4 @@
-<!-- Source: /Users/mzahirudeen/playwright-framework/docs/advanced-playwright-features.md -->
+<!-- Source: /Users/mzahirudeen/playwright-framework-dev/docs/advanced-playwright-features.md -->
 
 # Advanced Playwright Features
 
@@ -239,7 +239,7 @@ async function generateResponsiveReport(url) {
     const screenshotPath = await PlaywrightUtils.screenshotWithDevice(
       url,
       device,
-      { path: `./screenshots/${device.replace(/\s+/g, '-').toLowerCase()}.png` }
+      { path: `./screenshots/${device.replace(/\\s+/g, '-').toLowerCase()}.png` }
     );
     
     screenshots.push({

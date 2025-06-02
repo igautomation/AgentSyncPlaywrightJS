@@ -1,4 +1,4 @@
-<!-- Source: /Users/mzahirudeen/playwright-framework/docs/HOW-TO-RUN-TESTS.md -->
+<!-- Source: /Users/mzahirudeen/playwright-framework-dev/docs/HOW-TO-RUN-TESTS.md -->
 
 # How to Run Tests in This Repository
 

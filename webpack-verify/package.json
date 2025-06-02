@@ -1,0 +1,12 @@
+{
+  "name": "webpack-verify",
+  "version": "1.0.0",
+  "description": "Verify webpack bundling",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}

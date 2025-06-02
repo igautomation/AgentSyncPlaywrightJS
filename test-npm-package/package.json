@@ -1,0 +1,15 @@
+{
+  "name": "test-npm-package",
+  "version": "1.0.0",
+  "description": "Test package for @your-org/playwright-framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test-framework.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}

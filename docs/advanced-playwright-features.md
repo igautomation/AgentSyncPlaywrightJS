@@ -237,7 +237,7 @@ async function generateResponsiveReport(url) {
     const screenshotPath = await PlaywrightUtils.screenshotWithDevice(
       url,
       device,
-      { path: `./screenshots/${device.replace(/\s+/g, '-').toLowerCase()}.png` }
+      { path: `./screenshots/${device.replace(/\\s+/g, '-').toLowerCase()}.png` }
     );
     
     screenshots.push({

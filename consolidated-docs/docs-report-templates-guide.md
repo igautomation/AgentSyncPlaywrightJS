@@ -1,4 +1,4 @@
-<!-- Source: /Users/mzahirudeen/playwright-framework/docs/report-templates-guide.md -->
+<!-- Source: /Users/mzahirudeen/playwright-framework-dev/docs/report-templates-guide.md -->
 
 # Report Templates Guide
 

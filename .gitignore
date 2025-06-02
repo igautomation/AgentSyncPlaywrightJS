@@ -72,3 +72,5 @@ Desktop.ini
 .vscode/
 *.swp
 *.swo
+# Test artifacts
+artifacts/

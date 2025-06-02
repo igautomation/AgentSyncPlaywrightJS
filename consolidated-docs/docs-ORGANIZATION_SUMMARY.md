@@ -1,4 +1,4 @@
-<!-- Source: /Users/mzahirudeen/playwright-framework/docs/ORGANIZATION_SUMMARY.md -->
+<!-- Source: /Users/mzahirudeen/playwright-framework-dev/docs/ORGANIZATION_SUMMARY.md -->
 
 # Project Organization Summary
 

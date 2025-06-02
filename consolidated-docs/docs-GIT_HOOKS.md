@@ -1,4 +1,4 @@
-<!-- Source: /Users/mzahirudeen/playwright-framework/docs/GIT_HOOKS.md -->
+<!-- Source: /Users/mzahirudeen/playwright-framework-dev/docs/GIT_HOOKS.md -->
 
 # Git Hooks
 

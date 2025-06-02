@@ -1,4 +1,4 @@
-<!-- Source: /Users/mzahirudeen/playwright-framework/docs/docusaurus/docs/getting-started/configuration.md -->
+<!-- Source: /Users/mzahirudeen/playwright-framework-dev/docs/docusaurus/docs/getting-started/configuration.md -->
 
 ---
 sidebar_position: 4

@@ -1,0 +1,18 @@
+{
+  "name": "playwright-framework-project",
+  "version": "1.0.0",
+  "description": "Project using @your-org/playwright-framework",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "report": "playwright show-report",
+    "codegen": "playwright codegen"
+  },
+  "dependencies": {
+    "@your-org/playwright-framework": "^1.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}

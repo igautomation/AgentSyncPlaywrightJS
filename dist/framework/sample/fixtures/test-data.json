@@ -1,0 +1,12 @@
+
+{
+  "users": [
+    {
+      "username": "testuser",
+      "password": "password123"
+    }
+  ],
+  "endpoints": {
+    "api": "https://api.example.com"
+  }
+}

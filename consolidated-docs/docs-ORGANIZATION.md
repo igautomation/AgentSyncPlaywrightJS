@@ -1,4 +1,4 @@
-<!-- Source: /Users/mzahirudeen/playwright-framework/docs/ORGANIZATION.md -->
+<!-- Source: /Users/mzahirudeen/playwright-framework-dev/docs/ORGANIZATION.md -->
 
 # Project Organization Guide
 

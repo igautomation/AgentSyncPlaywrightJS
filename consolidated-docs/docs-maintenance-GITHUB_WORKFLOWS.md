@@ -1,4 +1,4 @@
-<!-- Source: /Users/mzahirudeen/playwright-framework/docs/maintenance/GITHUB_WORKFLOWS.md -->
+<!-- Source: /Users/mzahirudeen/playwright-framework-dev/docs/maintenance/GITHUB_WORKFLOWS.md -->
 
 # GitHub Workflows
 

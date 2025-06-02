@@ -1,4 +1,4 @@
-<!-- Source: /Users/mzahirudeen/playwright-framework/docs-site/docs/tutorial-extras/translate-your-site.md -->
+<!-- Source: /Users/mzahirudeen/playwright-framework-dev/docs-site/docs/tutorial-extras/translate-your-site.md -->
 
 ---
 sidebar_position: 2

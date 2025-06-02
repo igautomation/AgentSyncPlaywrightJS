@@ -1,4 +1,4 @@
-<!-- Source: /Users/mzahirudeen/playwright-framework/docs-site/blog/2019-05-29-long-blog-post.md -->
+<!-- Source: /Users/mzahirudeen/playwright-framework-dev/docs-site/blog/2019-05-29-long-blog-post.md -->
 
 ---
 slug: long-blog-post

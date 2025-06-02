@@ -1,4 +1,4 @@
-<!-- Source: /Users/mzahirudeen/playwright-framework/docs-site/blog/2019-05-28-first-blog-post.md -->
+<!-- Source: /Users/mzahirudeen/playwright-framework-dev/docs-site/blog/2019-05-28-first-blog-post.md -->
 
 ---
 slug: first-blog-post
