@@ -1,6 +1,6 @@
 /**
  * Web Interactions Utility
- *
+ * 
  * Provides common web interaction methods with built-in waiting and error handling
  */
 const { expect } = require('@playwright/test');
@@ -25,9 +25,9 @@ class WebInteractions {
    */
   async waitForElement(selector, timeout = this.defaultTimeout) {
     try {
-      await this.page.waitForSelector(selector, {
-        state: 'visible',
-        timeout,
+      await this.page.waitForSelector(selector, { 
+        state: 'visible', 
+        timeout 
       });
       return this.page.locator(selector);
     } catch (error) {
@@ -148,7 +148,7 @@ class WebInteractions {
     try {
       await this.page.waitForNavigation({
         waitUntil: options.waitUntil || 'networkidle',
-        timeout: options.timeout || this.defaultTimeout,
+        timeout: options.timeout || this.defaultTimeout
       });
     } catch (error) {
       throw new Error(`Navigation timeout: ${error.message}`);
@@ -164,7 +164,7 @@ class WebInteractions {
   async waitForUrl(urlPattern, options = {}) {
     try {
       await this.page.waitForURL(urlPattern, {
-        timeout: options.timeout || this.defaultTimeout,
+        timeout: options.timeout || this.defaultTimeout
       });
     } catch (error) {
       throw new Error(`URL wait timeout: ${error.message}`);
@@ -186,14 +186,14 @@ class WebInteractions {
     try {
       // Wait for page to be ready
       await this.page.waitForLoadState('domcontentloaded');
-
+      
       // Fill username and password
       await this.fill(usernameSelector, username);
       await this.fill(passwordSelector, password);
-
+      
       // Click login button
       await this.click(loginButtonSelector);
-
+      
       // Wait for navigation to complete
       await this.page.waitForLoadState('networkidle');
     } catch (error) {
@@ -213,13 +213,13 @@ class WebInteractions {
       return await this.page.screenshot({
         path,
         fullPage: options.fullPage !== undefined ? options.fullPage : true,
-        ...options,
+        ...options
       });
     } catch (error) {
       throw new Error(`Failed to take screenshot: ${error.message}`);
     }
   }
-
+  
   /**
    * Wait for a condition to be true
    * @param {Function} conditionFn - Function that returns a boolean or Promise<boolean>
@@ -230,7 +230,7 @@ class WebInteractions {
     const timeout = options.timeout || this.defaultTimeout;
     const pollInterval = options.pollInterval || 100;
     const startTime = Date.now();
-
+    
     while (Date.now() - startTime < timeout) {
       try {
         const result = await conditionFn();
@@ -238,13 +238,13 @@ class WebInteractions {
       } catch (error) {
         // Ignore errors in condition function
       }
-
+      
       await new Promise(resolve => setTimeout(resolve, pollInterval));
     }
-
+    
     throw new Error(`Timed out waiting for condition after ${timeout}ms`);
   }
-
+  
   /**
    * Upload a file
    * @param {string} selector - File input selector
@@ -255,7 +255,7 @@ class WebInteractions {
     await this.waitForElement(selector, options.timeout);
     await this.page.setInputFiles(selector, filePaths, options);
   }
-
+  
   /**
    * Handle an alert dialog
    * @param {string} action - Action to take: 'accept', 'dismiss', or 'fill'
@@ -274,7 +274,7 @@ class WebInteractions {
       }
     });
   }
-
+  
   /**
    * Switch to an iframe
    * @param {string} selector - Iframe selector
@@ -287,7 +287,7 @@ class WebInteractions {
     const frame = await frameElement.contentFrame();
     return frame;
   }
-
+  
   /**
    * Verify text exists on the page
    * @param {string} text - Text to verify
@@ -298,7 +298,7 @@ class WebInteractions {
     const locator = this.page.getByText(text, options);
     return await locator.isVisible({ timeout: options.timeout || this.defaultTimeout });
   }
-
+  
   /**
    * Handle autocomplete by typing and selecting an option
    * @param {string} inputSelector - Input field selector
@@ -308,11 +308,11 @@ class WebInteractions {
    */
   async handleAutocomplete(inputSelector, text, optionSelector, options = {}) {
     await this.fill(inputSelector, text, options);
-
+    
     // Wait for autocomplete options to appear
     const delay = options.delay || 500;
     await this.page.waitForTimeout(delay);
-
+    
     // Click the option
     await this.click(optionSelector, options);
   }
@@ -325,7 +325,7 @@ class WebInteractions {
   async getElementCount(selector) {
     return await this.page.locator(selector).count();
   }
-
+  
   /**
    * Verify element count equals expected value
    * @param {string} selector - Element selector
@@ -336,7 +336,7 @@ class WebInteractions {
     const count = await this.getElementCount(selector);
     return count === expectedCount;
   }
-
+  
   /**
    * Get element by role with exact/inexact name matching
    * @param {string} role - ARIA role
@@ -345,12 +345,12 @@ class WebInteractions {
    * @returns {import('@playwright/test').Locator} Element locator
    */
   getElementByRole(role, name, options = {}) {
-    return this.page.getByRole(role, {
-      name,
-      exact: options.exact !== false,
+    return this.page.getByRole(role, { 
+      name, 
+      exact: options.exact !== false
     });
   }
-
+  
   /**
    * Click element by role
    * @param {string} role - ARIA role
@@ -362,7 +362,7 @@ class WebInteractions {
     await element.waitFor({ state: 'visible', timeout: options.timeout || this.defaultTimeout });
     await element.click(options);
   }
-
+  
   /**
    * Scroll to element with retries
    * @param {string} selector - Element selector
@@ -372,7 +372,7 @@ class WebInteractions {
   async scrollToElementWithRetries(selector, options = {}) {
     const maxRetries = options.maxRetries || 3;
     const retryInterval = options.retryInterval || 1000;
-
+    
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
         // Try different scroll methods
@@ -381,15 +381,15 @@ class WebInteractions {
           return true;
         } catch (e) {
           // Try alternative method
-          await this.page.evaluate(sel => {
+          await this.page.evaluate((sel) => {
             const element = document.querySelector(sel);
             if (element) {
-              element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+              element.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});
               return true;
             }
             return false;
           }, selector);
-
+          
           // Check if element is visible after scroll
           const isVisible = await this.isVisible(selector, { timeout: 1000 });
           if (isVisible) return true;
@@ -397,13 +397,13 @@ class WebInteractions {
       } catch (error) {
         if (attempt === maxRetries) throw error;
       }
-
+      
       await this.page.waitForTimeout(retryInterval);
     }
-
+    
     return false;
   }
-
+  
   /**
    * Wait for element to contain specific text
    * @param {string} selector - Element selector
@@ -414,7 +414,7 @@ class WebInteractions {
   async waitForElementToContainText(selector, text, options = {}) {
     const timeout = options.timeout || this.defaultTimeout;
     const startTime = Date.now();
-
+    
     while (Date.now() - startTime < timeout) {
       const content = await this.getText(selector, { timeout: 1000 }).catch(() => '');
       if (content && content.includes(text)) {
@@ -422,7 +422,7 @@ class WebInteractions {
       }
       await this.page.waitForTimeout(100);
     }
-
+    
     return false;
   }
 }

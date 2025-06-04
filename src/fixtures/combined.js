@@ -71,6 +71,33 @@ exports.test = base.test.extend({
       console.error(`Login failed during authenticatedPage fixture: ${error.message}`);
       throw error;
     }
+  },
+  
+  /**
+   * Fixture: orangeHrmPage
+   * Provides a page object with OrangeHRM specific configuration
+   * Sets language to English to avoid localization issues
+   */
+  orangeHrmPage: async ({ browser }, use) => {
+    // Create a new context with English language
+    const context = await browser.newContext({
+      locale: 'en-US',
+      extraHTTPHeaders: {
+        'Accept-Language': 'en-US,en;q=0.9'
+      }
+    });
+    
+    // Create a new page in this context
+    const page = await context.newPage();
+    
+    // Set default navigation timeout
+    page.setDefaultNavigationTimeout(30000);
+    
+    // Use the page in tests
+    await use(page);
+    
+    // Close the context after tests
+    await context.close();
   }
 });
 

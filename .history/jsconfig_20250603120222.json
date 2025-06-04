@@ -17,6 +17,6 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/**/*", "global-setup.js", "playwright.config.js", "scripts/runners/salesforce-scripts", "scripts/runners/run-salesforce-test.js", "scripts/runners/run-simple-salesforce-test.js"],
+  "include": ["src/**/*", "global-setup.js", "playwright.config.js", "scripts/runners/salesforce-scripts"],
   "exclude": ["node_modules", "reports", "allure-results", "playwright-report"]
 }
