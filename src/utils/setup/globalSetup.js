@@ -53,12 +53,18 @@ async function createDirectories() {
 async function setupAuthenticationStates(config) {
   // Set up Salesforce authentication if credentials are available
   if (process.env.SF_USERNAME && process.env.SF_PASSWORD) {
-    await setupSalesforceAuth();
+    await setupSalesforceAuth().catch(error => {
+      logger.error(`Salesforce auth failed: ${error.message}`);
+      logger.warn('Salesforce tests may be skipped due to auth failure');
+    });
   }
   
   // Set up OrangeHRM authentication if needed
   if (process.env.ORANGE_HRM_USERNAME && process.env.ORANGE_HRM_PASSWORD) {
-    await setupOrangeHRMAuth(config);
+    await setupOrangeHRMAuth(config).catch(error => {
+      logger.error(`OrangeHRM auth failed: ${error.message}`);
+      logger.warn('OrangeHRM tests may be skipped due to auth failure');
+    });
   }
 }
 
@@ -92,27 +98,42 @@ async function setupSalesforceAuth() {
     const context = await browser.newContext();
     const page = await context.newPage();
     
-    // Navigate to login page
-    await page.goto(process.env.SF_LOGIN_URL || 'https://login.salesforce.com');
+    // Implement retry mechanism
+    const maxRetries = 3;
+    let lastError;
     
-    // Fill login form
-    await page.fill('#username', process.env.SF_USERNAME);
-    await page.fill('#password', process.env.SF_PASSWORD);
-    await page.click('#Login');
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+      try {
+        // Navigate to login page
+        await page.goto(process.env.SF_LOGIN_URL || 'https://login.salesforce.com');
+        
+        // Fill login form
+        await page.fill('#username', process.env.SF_USERNAME);
+        await page.fill('#password', process.env.SF_PASSWORD);
+        await page.click('#Login');
+        
+        // Wait for login to complete
+        await page.waitForTimeout(10000);
+        
+        // Take screenshot for verification
+        await page.screenshot({ path: './auth/salesforce-auth-state.png' });
+        
+        // Save storage state
+        await context.storageState({ path: storageStatePath });
+        
+        logger.info('Salesforce authentication state saved successfully');
+        return;
+      } catch (error) {
+        lastError = error;
+        if (attempt < maxRetries) {
+          const delay = Math.pow(2, attempt) * 1000; // Exponential backoff
+          logger.warn(`Auth attempt ${attempt} failed. Retrying in ${delay}ms`);
+          await new Promise(resolve => setTimeout(resolve, delay));
+        }
+      }
+    }
     
-    // Wait for login to complete
-    await page.waitForTimeout(10000);
-    
-    // Take screenshot for verification
-    await page.screenshot({ path: './auth/salesforce-auth-state.png' });
-    
-    // Save storage state
-    await context.storageState({ path: storageStatePath });
-    
-    logger.info('Salesforce authentication state saved successfully');
-  } catch (error) {
-    logger.error('Failed to set up Salesforce authentication:', error);
-    throw error;
+    throw new Error(`Failed after ${maxRetries} attempts: ${lastError.message}`);
   } finally {
     await browser.close();
   }
@@ -127,6 +148,20 @@ async function setupOrangeHRMAuth(config) {
   const storageStatePath = path.resolve('./auth/orangehrm-storage-state.json');
   const baseURL = config.projects && config.projects[0] && config.projects[0].use ? config.projects[0].use.baseURL : null;
   
+  // Check if we already have a recent storage state file
+  try {
+    const stats = await fs.stat(storageStatePath);
+    const fileAgeHours = (Date.now() - stats.mtime) / (1000 * 60 * 60);
+    
+    // If file exists and is less than 2 hours old, skip authentication
+    if (fileAgeHours < 2) {
+      logger.info('Using existing OrangeHRM authentication state');
+      return;
+    }
+  } catch (error) {
+    // File doesn't exist, continue with authentication
+  }
+  
   // Launch browser
   const browser = await chromium.launch({ headless: true });
   
@@ -135,30 +170,45 @@ async function setupOrangeHRMAuth(config) {
     const context = await browser.newContext();
     const page = await context.newPage();
     
-    // Navigate to login page
-    await page.goto(baseURL || process.env.ORANGE_HRM_URL || 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+    // Implement retry mechanism
+    const maxRetries = 3;
+    let lastError;
     
-    // Wait for page to load
-    await page.waitForSelector('input[name="username"]');
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+      try {
+        // Navigate to login page
+        await page.goto(baseURL || process.env.ORANGE_HRM_URL || 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+        
+        // Wait for page to load
+        await page.waitForSelector('input[name="username"]');
+        
+        // Fill login form
+        await page.fill('input[name="username"]', process.env.ORANGE_HRM_USERNAME || 'Admin');
+        await page.fill('input[name="password"]', process.env.ORANGE_HRM_PASSWORD || 'admin123');
+        await page.click('button[type="submit"]');
+        
+        // Wait for login to complete
+        await page.waitForTimeout(5000);
+        
+        // Take screenshot for verification
+        await page.screenshot({ path: './auth/orangehrm-auth-state.png' });
+        
+        // Save storage state
+        await context.storageState({ path: storageStatePath });
+        
+        logger.info('OrangeHRM authentication state saved successfully');
+        return;
+      } catch (error) {
+        lastError = error;
+        if (attempt < maxRetries) {
+          const delay = Math.pow(2, attempt) * 1000; // Exponential backoff
+          logger.warn(`Auth attempt ${attempt} failed. Retrying in ${delay}ms`);
+          await new Promise(resolve => setTimeout(resolve, delay));
+        }
+      }
+    }
     
-    // Fill login form
-    await page.fill('input[name="username"]', process.env.ORANGE_HRM_USERNAME || 'Admin');
-    await page.fill('input[name="password"]', process.env.ORANGE_HRM_PASSWORD || 'admin123');
-    await page.click('button[type="submit"]');
-    
-    // Wait for login to complete
-    await page.waitForTimeout(5000);
-    
-    // Take screenshot for verification
-    await page.screenshot({ path: './auth/orangehrm-auth-state.png' });
-    
-    // Save storage state
-    await context.storageState({ path: storageStatePath });
-    
-    logger.info('OrangeHRM authentication state saved successfully');
-  } catch (error) {
-    logger.error('Failed to set up OrangeHRM authentication:', error);
-    // Don't throw error, just log it - this is not critical
+    throw new Error(`Failed after ${maxRetries} attempts: ${lastError.message}`);
   } finally {
     await browser.close();
   }

@@ -8,14 +8,43 @@ const { test, expect } = require('@playwright/test');
 const WebInteractions = require('../../utils/web/webInteractions');
 const config = require('../../config');
 
+// Environment detection to conditionally run tests
+const shouldRunOrangeHRMTests = () => {
+  // Check if FORCE_ORANGEHRM_TESTS is set to true
+  if (process.env.FORCE_ORANGEHRM_TESTS === 'true') {
+    return true;
+  }
+  
+  // Check if we have valid credentials
+  if (!process.env.ORANGE_HRM_USERNAME || !process.env.ORANGE_HRM_PASSWORD) {
+    return false;
+  }
+  
+  // Check if we have a valid auth state
+  try {
+    const fs = require('fs');
+    const authStatePath = './auth/orangehrm-storage-state.json';
+    if (!fs.existsSync(authStatePath)) {
+      return false;
+    }
+    
+    // Check if auth state is recent (less than 2 hours old)
+    const stats = fs.statSync(authStatePath);
+    const fileAgeHours = (Date.now() - stats.mtime) / (1000 * 60 * 60);
+    return fileAgeHours < 2;
+  } catch (error) {
+    return false;
+  }
+};
+
 // Define constants for the tests
 const baseUrl = 'https://opensource-demo.orangehrmlive.com';
 const loginPath = '/web/index.php/auth/login';
 const dashboardPath = '/web/index.php/dashboard/index';
 
 // Credentials
-const validUsername = 'Admin';
-const validPassword = 'admin123';
+const validUsername = process.env.ORANGE_HRM_USERNAME || 'Admin';
+const validPassword = process.env.ORANGE_HRM_PASSWORD || 'admin123';
 
 // Selectors
 const selectors = {
@@ -28,8 +57,8 @@ const selectors = {
 
 test.describe('OrangeHRM Authentication', () => {
   test.beforeEach(async ({ page }) => {
-    // Skip these tests by default as they depend on an external site
-    test.skip(true, 'OrangeHRM tests are skipped due to site availability issues');
+    // Skip these tests unless explicitly enabled
+    test.skip(!shouldRunOrangeHRMTests(), 'OrangeHRM tests are skipped due to site availability issues');
     
     // Navigate to the login page before each test
     await page.goto(`${baseUrl}${loginPath}`);
@@ -79,8 +108,8 @@ test.describe('OrangeHRM Authentication', () => {
 
 test.describe('OrangeHRM Navigation', () => {
   test.beforeEach(async ({ page }) => {
-    // Skip these tests by default as they depend on an external site
-    test.skip(true, 'OrangeHRM tests are skipped due to site availability issues');
+    // Skip these tests unless explicitly enabled
+    test.skip(!shouldRunOrangeHRMTests(), 'OrangeHRM tests are skipped due to site availability issues');
     
     // Navigate to the login page
     await page.goto(config.baseUrl);
@@ -128,8 +157,8 @@ test.describe('OrangeHRM Navigation', () => {
 
 test.describe('OrangeHRM Form Validation', () => {
   test.beforeEach(async ({ page }) => {
-    // Skip these tests by default as they depend on an external site
-    test.skip(true, 'OrangeHRM tests are skipped due to site availability issues');
+    // Skip these tests unless explicitly enabled
+    test.skip(!shouldRunOrangeHRMTests(), 'OrangeHRM tests are skipped due to site availability issues');
     
     // Navigate to the login page
     await page.goto(config.baseUrl);
@@ -166,6 +195,12 @@ test.describe('OrangeHRM Form Validation', () => {
     // Verify password strength validation message
     const passwordError = page.locator('.oxd-input-field-error-message').first();
     await expect(passwordError).toBeVisible();
+    
+    // Try to submit the form
+    await page.getByRole('button', { name: 'Save' }).click();
+    
+    // Verify form was not submitted (we're still on the same page)
+    await expect(page.locator('.oxd-form')).toBeVisible();
   });
 
   test('should validate password confirmation in Add User form', async ({ page }) => {
@@ -185,5 +220,11 @@ test.describe('OrangeHRM Form Validation', () => {
       .locator('.oxd-input-field-error-message')
       .filter({ hasText: /[Pp]asswords?/ });
     await expect(confirmPasswordError).toBeVisible();
+    
+    // Try to submit the form
+    await page.getByRole('button', { name: 'Save' }).click();
+    
+    // Verify form was not submitted (we're still on the same page)
+    await expect(page.locator('.oxd-form')).toBeVisible();
   });
 });
