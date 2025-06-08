@@ -2,11 +2,13 @@
  * Authentication Tests
  */
 const { test, expect } = require('@playwright/test');
+require('dotenv').config({ path: '.env.dev' });
 
 test.describe('Authentication', () => {
   test.beforeEach(async ({ page }) => {
     // Use a reliable test site
-    await page.goto('https://the-internet.herokuapp.com/login');
+    const baseUrl = process.env.HEROKUAPP_URL || 'https://the-internet.herokuapp.com';
+    await page.goto(`${baseUrl}/login`);
   });
 
   test('should login with valid credentials', async ({ page }) => {
@@ -20,8 +22,11 @@ test.describe('Authentication', () => {
   });
 
   test('should show error with invalid credentials', async ({ page }) => {
-    await page.fill('#username', 'invalid');
-    await page.fill('#password', 'invalid');
+    const invalidUsername = process.env.INVALID_USERNAME || 'invalid';
+    const invalidPassword = process.env.INVALID_PASSWORD || 'invalid';
+    
+    await page.fill('#username', invalidUsername);
+    await page.fill('#password', invalidPassword);
     await page.click('button[type="submit"]');
     
     // Verify error message

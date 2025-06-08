@@ -1,237 +1,250 @@
 /**
- * Web Interactions
- * 
- * Provides helper functions for web interactions
+ * Web Interactions Utility
+ *
+ * Provides common web interaction methods with built-in waiting and error handling
  */
-const config = require('../../config');
+const { expect } = require('@playwright/test');
 
-/**
- * Web Interactions class for common web actions
- */
 class WebInteractions {
   /**
+   * Constructor
    * @param {import('@playwright/test').Page} page - Playwright page object
    * @param {Object} options - Options for web interactions
+   * @param {number} options.defaultTimeout - Default timeout in milliseconds
    */
   constructor(page, options = {}) {
     this.page = page;
-    this.options = options;
-    this.defaultTimeout = options.timeout || parseInt(process.env.ACTION_TIMEOUT) || config.timeouts?.action || 15000;
+    this.defaultTimeout = options.defaultTimeout || 30000;
   }
-  
-  /**
-   * Navigate to a URL
-   * @param {string} url - URL to navigate to
-   * @param {Object} options - Navigation options
-   */
-  async goto(url, options = {}) {
-    await this.page.goto(url, {
-      waitUntil: options.waitUntil || 'networkidle',
-      timeout: options.timeout || this.defaultTimeout,
-      ...options
-    });
-  }
-  
+
   /**
    * Wait for element to be visible
    * @param {string} selector - Element selector
    * @param {number} timeout - Timeout in milliseconds
+   * @returns {Promise<import('@playwright/test').Locator>} - Element locator
    */
   async waitForElement(selector, timeout = this.defaultTimeout) {
-    await this.page.waitForSelector(selector, { 
-      state: 'visible', 
-      timeout 
-    });
+    try {
+      await this.page.waitForSelector(selector, {
+        state: 'visible',
+        timeout,
+      });
+      return this.page.locator(selector);
+    } catch (error) {
+      throw new Error(`Element not found: ${selector}. ${error.message}`);
+    }
   }
-  
+
   /**
-   * Click an element
+   * Click on element
    * @param {string} selector - Element selector
    * @param {Object} options - Click options
+   * @returns {Promise<void>}
    */
   async click(selector, options = {}) {
-    await this.waitForElement(selector, options.timeout);
-    await this.page.click(selector, {
-      delay: options.delay,
-      button: options.button || 'left',
-      clickCount: options.clickCount || 1,
-      ...options
-    });
+    try {
+      const element = await this.waitForElement(selector, options.timeout);
+      await element.click(options);
+    } catch (error) {
+      throw new Error(`Failed to click element: ${selector}. ${error.message}`);
+    }
   }
-  
+
   /**
-   * Fill an input field
-   * @param {string} selector - Input selector
+   * Fill input field
+   * @param {string} selector - Element selector
    * @param {string} value - Value to fill
    * @param {Object} options - Fill options
+   * @returns {Promise<void>}
    */
   async fill(selector, value, options = {}) {
-    await this.waitForElement(selector, options.timeout);
-    await this.page.fill(selector, value, options);
+    try {
+      const element = await this.waitForElement(selector, options.timeout);
+      await element.fill(value, options);
+    } catch (error) {
+      throw new Error(`Failed to fill element: ${selector}. ${error.message}`);
+    }
   }
-  
+
   /**
    * Fill multiple form fields
    * @param {Object} formData - Object with selectors as keys and values to fill
    * @param {Object} options - Fill options
+   * @returns {Promise<void>}
    */
   async fillForm(formData, options = {}) {
     for (const [selector, value] of Object.entries(formData)) {
       await this.fill(selector, value, options);
     }
   }
-  
+
+  /**
+   * Select option from dropdown
+   * @param {string} selector - Element selector
+   * @param {string|number} value - Value to select
+   * @param {Object} options - Select options
+   * @returns {Promise<void>}
+   */
+  async selectOption(selector, value, options = {}) {
+    try {
+      const element = await this.waitForElement(selector, options.timeout);
+      await element.selectOption(value, options);
+    } catch (error) {
+      throw new Error(`Failed to select option: ${selector}. ${error.message}`);
+    }
+  }
+
+  /**
+   * Check if element is visible
+   * @param {string} selector - Element selector
+   * @param {Object} options - Visibility check options
+   * @returns {Promise<boolean>} - Whether element is visible
+   */
+  async isVisible(selector, options = {}) {
+    try {
+      const element = this.page.locator(selector);
+      return await element.isVisible(options);
+    } catch (error) {
+      return false;
+    }
+  }
+
+  /**
+   * Get text from element
+   * @param {string} selector - Element selector
+   * @param {Object} options - Text options
+   * @returns {Promise<string>} - Element text
+   */
+  async getText(selector, options = {}) {
+    try {
+      const element = await this.waitForElement(selector, options.timeout);
+      return await element.textContent();
+    } catch (error) {
+      throw new Error(`Failed to get text from element: ${selector}. ${error.message}`);
+    }
+  }
+
+  /**
+   * Hover over element
+   * @param {string} selector - Element selector
+   * @param {Object} options - Hover options
+   * @returns {Promise<void>}
+   */
+  async hover(selector, options = {}) {
+    try {
+      const element = await this.waitForElement(selector, options.timeout);
+      await element.hover(options);
+    } catch (error) {
+      throw new Error(`Failed to hover over element: ${selector}. ${error.message}`);
+    }
+  }
+
+  /**
+   * Wait for navigation to complete
+   * @param {Object} options - Navigation options
+   * @returns {Promise<void>}
+   */
+  async waitForNavigation(options = {}) {
+    try {
+      await this.page.waitForNavigation({
+        waitUntil: options.waitUntil || 'networkidle',
+        timeout: options.timeout || this.defaultTimeout,
+      });
+    } catch (error) {
+      throw new Error(`Navigation timeout: ${error.message}`);
+    }
+  }
+
+  /**
+   * Wait for URL to match pattern
+   * @param {string|RegExp} urlPattern - URL pattern to match
+   * @param {Object} options - URL options
+   * @returns {Promise<void>}
+   */
+  async waitForUrl(urlPattern, options = {}) {
+    try {
+      await this.page.waitForURL(urlPattern, {
+        timeout: options.timeout || this.defaultTimeout,
+      });
+    } catch (error) {
+      throw new Error(`URL wait timeout: ${error.message}`);
+    }
+  }
+
   /**
    * Login with username and password
    * @param {string} username - Username
    * @param {string} password - Password
    * @param {Object} options - Login options
+   * @returns {Promise<void>}
    */
   async login(username, password, options = {}) {
-    const usernameSelector = process.env.USERNAME_INPUT || options.usernameSelector || 'input[name="username"]';
-    const passwordSelector = process.env.PASSWORD_INPUT || options.passwordSelector || 'input[name="password"]';
-    const loginButtonSelector = process.env.LOGIN_BUTTON || options.loginButtonSelector || 'button[type="submit"]';
-    
-    await this.fillForm({
-      [usernameSelector]: username,
-      [passwordSelector]: password
-    });
-    
-    await this.click(loginButtonSelector);
-  }
-  
-  /**
-   * Check a checkbox
-   * @param {string} selector - Checkbox selector
-   * @param {Object} options - Check options
-   */
-  async check(selector, options = {}) {
-    await this.waitForElement(selector, options.timeout);
-    await this.page.check(selector, options);
-  }
-  
-  /**
-   * Get text content of an element
-   * @param {string} selector - Element selector
-   * @param {Object} options - Options
-   * @returns {Promise<string>} Element text content
-   */
-  async getText(selector, options = {}) {
-    await this.waitForElement(selector, options.timeout);
-    return await this.page.textContent(selector, options);
-  }
-  
-  /**
-   * Check if element is visible
-   * @param {string} selector - Element selector
-   * @param {number} timeout - Timeout in milliseconds
-   * @returns {Promise<boolean>} True if element is visible
-   */
-  async isVisible(selector, timeout = 1000) {
+    const usernameSelector = options.usernameSelector || 'input[name="username"]';
+    const passwordSelector = options.passwordSelector || 'input[name="password"]';
+    const loginButtonSelector = options.loginButtonSelector || 'button[type="submit"]';
+
     try {
-      await this.page.waitForSelector(selector, { 
-        state: 'visible', 
-        timeout 
-      });
-      return true;
+      // Wait for page to be ready
+      await this.page.waitForLoadState('domcontentloaded');
+
+      // Fill username and password
+      await this.fill(usernameSelector, username);
+      await this.fill(passwordSelector, password);
+
+      // Click login button
+      await this.click(loginButtonSelector);
+
+      // Wait for navigation to complete
+      await this.page.waitForLoadState('networkidle');
     } catch (error) {
-      return false;
+      throw new Error(`Login failed: ${error.message}`);
     }
   }
-  
+
   /**
-   * Select option from dropdown
-   * @param {string} selector - Select element selector
-   * @param {string|Array<string>} value - Option value(s) to select
-   * @param {Object} options - Select options
-   */
-  async selectOption(selector, value, options = {}) {
-    await this.waitForElement(selector, options.timeout);
-    await this.page.selectOption(selector, value, options);
-  }
-  
-  /**
-   * Hover over an element
-   * @param {string} selector - Element selector
-   * @param {Object} options - Hover options
-   */
-  async hover(selector, options = {}) {
-    await this.waitForElement(selector, options.timeout);
-    await this.page.hover(selector, options);
-  }
-  
-  /**
-   * Press a key
-   * @param {string} selector - Element selector
-   * @param {string} key - Key to press
-   * @param {Object} options - Press options
-   */
-  async pressKey(selector, key, options = {}) {
-    await this.waitForElement(selector, options.timeout);
-    await this.page.press(selector, key, options);
-  }
-  
-  /**
-   * Take a screenshot
-   * @param {string} path - Screenshot path
+   * Take screenshot
+   * @param {string} name - Screenshot name
    * @param {Object} options - Screenshot options
+   * @returns {Promise<Buffer>} - Screenshot buffer
    */
-  async takeScreenshot(path, options = {}) {
-    await this.page.screenshot({ 
-      path,
-      fullPage: options.fullPage || false,
-      ...options
-    });
+  async takeScreenshot(name, options = {}) {
+    try {
+      const path = options.path || `./screenshots/${name}-${Date.now()}.png`;
+      return await this.page.screenshot({
+        path,
+        fullPage: options.fullPage !== undefined ? options.fullPage : true,
+        ...options,
+      });
+    } catch (error) {
+      throw new Error(`Failed to take screenshot: ${error.message}`);
+    }
   }
-  
+
   /**
-   * Wait for page to load
-   * @param {string} state - Load state to wait for
+   * Wait for a condition to be true
+   * @param {Function} conditionFn - Function that returns a boolean or Promise<boolean>
    * @param {Object} options - Options
-   */
-  async waitForLoadState(state = 'networkidle', options = {}) {
-    await this.page.waitForLoadState(state, {
-      timeout: options.timeout || this.defaultTimeout
-    });
-  }
-  
-  /**
-   * Execute JavaScript in the page context
-   * @param {string|Function} script - Script to execute
-   * @param {Array} args - Arguments to pass to the script
-   * @returns {Promise<any>} Result of the script execution
-   */
-  async evaluate(script, ...args) {
-    return await this.page.evaluate(script, ...args);
-  }
-  
-  /**
-   * Wait for a specific condition to be true
-   * @param {Function} conditionFn - Function that returns a boolean
-   * @param {Object} options - Options
-   * @returns {Promise<void>}
+   * @returns {Promise<boolean>} True if condition was met
    */
   async waitForCondition(conditionFn, options = {}) {
     const timeout = options.timeout || this.defaultTimeout;
     const pollInterval = options.pollInterval || 100;
     const startTime = Date.now();
-    
+
     while (Date.now() - startTime < timeout) {
       try {
-        const result = await this.evaluate(conditionFn);
-        if (result) {
-          return;
-        }
+        const result = await conditionFn();
+        if (result) return true;
       } catch (error) {
         // Ignore errors in condition function
       }
-      
+
       await new Promise(resolve => setTimeout(resolve, pollInterval));
     }
-    
+
     throw new Error(`Timed out waiting for condition after ${timeout}ms`);
   }
-  
+
   /**
    * Upload a file
    * @param {string} selector - File input selector
@@ -242,7 +255,7 @@ class WebInteractions {
     await this.waitForElement(selector, options.timeout);
     await this.page.setInputFiles(selector, filePaths, options);
   }
-  
+
   /**
    * Handle an alert dialog
    * @param {string} action - Action to take: 'accept', 'dismiss', or 'fill'
@@ -261,7 +274,7 @@ class WebInteractions {
       }
     });
   }
-  
+
   /**
    * Switch to an iframe
    * @param {string} selector - Iframe selector
@@ -274,7 +287,7 @@ class WebInteractions {
     const frame = await frameElement.contentFrame();
     return frame;
   }
-  
+
   /**
    * Verify text exists on the page
    * @param {string} text - Text to verify
@@ -285,7 +298,7 @@ class WebInteractions {
     const locator = this.page.getByText(text, options);
     return await locator.isVisible({ timeout: options.timeout || this.defaultTimeout });
   }
-  
+
   /**
    * Handle autocomplete by typing and selecting an option
    * @param {string} inputSelector - Input field selector
@@ -295,11 +308,11 @@ class WebInteractions {
    */
   async handleAutocomplete(inputSelector, text, optionSelector, options = {}) {
     await this.fill(inputSelector, text, options);
-    
+
     // Wait for autocomplete options to appear
     const delay = options.delay || 500;
     await this.page.waitForTimeout(delay);
-    
+
     // Click the option
     await this.click(optionSelector, options);
   }
@@ -312,7 +325,7 @@ class WebInteractions {
   async getElementCount(selector) {
     return await this.page.locator(selector).count();
   }
-  
+
   /**
    * Verify element count equals expected value
    * @param {string} selector - Element selector
@@ -323,7 +336,7 @@ class WebInteractions {
     const count = await this.getElementCount(selector);
     return count === expectedCount;
   }
-  
+
   /**
    * Get element by role with exact/inexact name matching
    * @param {string} role - ARIA role
@@ -332,12 +345,12 @@ class WebInteractions {
    * @returns {import('@playwright/test').Locator} Element locator
    */
   getElementByRole(role, name, options = {}) {
-    return this.page.getByRole(role, { 
-      name, 
-      exact: options.exact !== false
+    return this.page.getByRole(role, {
+      name,
+      exact: options.exact !== false,
     });
   }
-  
+
   /**
    * Click element by role
    * @param {string} role - ARIA role
@@ -349,7 +362,7 @@ class WebInteractions {
     await element.waitFor({ state: 'visible', timeout: options.timeout || this.defaultTimeout });
     await element.click(options);
   }
-  
+
   /**
    * Scroll to element with retries
    * @param {string} selector - Element selector
@@ -359,7 +372,7 @@ class WebInteractions {
   async scrollToElementWithRetries(selector, options = {}) {
     const maxRetries = options.maxRetries || 3;
     const retryInterval = options.retryInterval || 1000;
-    
+
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
         // Try different scroll methods
@@ -368,29 +381,29 @@ class WebInteractions {
           return true;
         } catch (e) {
           // Try alternative method
-          await this.evaluate((sel) => {
+          await this.page.evaluate(sel => {
             const element = document.querySelector(sel);
             if (element) {
-              element.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});
+              element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
               return true;
             }
             return false;
           }, selector);
-          
+
           // Check if element is visible after scroll
-          const isVisible = await this.isVisible(selector, 1000);
+          const isVisible = await this.isVisible(selector, { timeout: 1000 });
           if (isVisible) return true;
         }
       } catch (error) {
         if (attempt === maxRetries) throw error;
       }
-      
+
       await this.page.waitForTimeout(retryInterval);
     }
-    
+
     return false;
   }
-  
+
   /**
    * Wait for element to contain specific text
    * @param {string} selector - Element selector
@@ -401,7 +414,7 @@ class WebInteractions {
   async waitForElementToContainText(selector, text, options = {}) {
     const timeout = options.timeout || this.defaultTimeout;
     const startTime = Date.now();
-    
+
     while (Date.now() - startTime < timeout) {
       const content = await this.getText(selector, { timeout: 1000 }).catch(() => '');
       if (content && content.includes(text)) {
@@ -409,7 +422,7 @@ class WebInteractions {
       }
       await this.page.waitForTimeout(100);
     }
-    
+
     return false;
   }
 }

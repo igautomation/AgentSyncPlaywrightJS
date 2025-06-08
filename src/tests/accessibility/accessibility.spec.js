@@ -3,13 +3,15 @@
  */
 const { test, expect } = require('../../fixtures/combined');
 const { AccessibilityUtils } = require('../../utils/accessibility/accessibilityUtils');
+require('dotenv').config({ path: '.env.dev' });
 
 test.describe('Accessibility Tests', () => {
   // Skip these tests if the demo site is unavailable
   test.beforeEach(async ({ orangeHrmPage }, testInfo) => {
     // Check if the site is available
     try {
-      await orangeHrmPage.goto('https://opensource-demo.orangehrmlive.com', { 
+      const orangeHrmUrl = process.env.ORANGE_HRM_URL || 'https://opensource-demo.orangehrmlive.com';
+      await orangeHrmPage.goto(orangeHrmUrl, { 
         timeout: 10000,
         waitUntil: 'domcontentloaded' // Use a less strict wait condition
       });
@@ -44,8 +46,8 @@ test.describe('Accessibility Tests', () => {
     test.skip();
     
     // Define credentials
-    const username = 'Admin';
-    const password = 'admin123';
+    const username = process.env.ORANGE_HRM_USERNAME || 'Admin';
+    const password = process.env.ORANGE_HRM_PASSWORD || 'admin123';
     
     // Login with credentials
     await orangeHrmPage.getByPlaceholder('Username').fill(username);

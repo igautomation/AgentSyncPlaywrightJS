@@ -6,6 +6,10 @@
 const fetch = require('node-fetch');
 const fs = require('fs').promises;
 const path = require('path');
+const dotenv = require('dotenv');
+
+// Load environment variables from .env.salesforce
+dotenv.config({ path: '.env.salesforce' });
 
 class SalesforceApiUtils {
   /**
@@ -17,7 +21,8 @@ class SalesforceApiUtils {
   constructor(config = {}) {
     this.instanceUrl = config.instanceUrl || process.env.SF_INSTANCE_URL;
     this.accessToken = config.accessToken || process.env.SF_ACCESS_TOKEN;
-    this.apiVersion = config.apiVersion || 'v62.0';
+    this.apiVersion = config.apiVersion || process.env.SF_API_VERSION || 'v62.0';
+    this.loginUrl = process.env.SF_LOGIN_URL || 'https://login.salesforce.com';
     
     // Remove trailing slash from instance URL if present
     if (this.instanceUrl && this.instanceUrl.endsWith('/')) {
@@ -221,22 +226,25 @@ class SalesforceApiUtils {
   
   /**
    * Get a fresh access token using OAuth
-   * @param {Object} credentials - OAuth credentials
-   * @param {string} credentials.clientId - OAuth client ID
-   * @param {string} credentials.clientSecret - OAuth client secret
-   * @param {string} credentials.username - Salesforce username
-   * @param {string} credentials.password - Salesforce password
+   * @param {Object} [credentials] - OAuth credentials (optional, will use env vars if not provided)
    * @returns {Promise<string>} Access token
    */
-  async getAccessToken(credentials) {
-    const { clientId, clientSecret, username, password } = credentials;
+  async getAccessToken(credentials = {}) {
+    const clientId = credentials.clientId || process.env.SF_CLIENT_ID;
+    const clientSecret = credentials.clientSecret || process.env.SF_CLIENT_SECRET;
+    const username = credentials.username || process.env.SF_USERNAME;
+    const password = credentials.password || process.env.SF_PASSWORD;
+    const securityToken = credentials.securityToken || process.env.SF_SECURITY_TOKEN || '';
+    
+    // Combine password and security token if provided
+    const passwordWithToken = securityToken ? `${password}${securityToken}` : password;
     
     const params = new URLSearchParams();
     params.append('grant_type', 'password');
     params.append('client_id', clientId);
     params.append('client_secret', clientSecret);
     params.append('username', username);
-    params.append('password', password);
+    params.append('password', passwordWithToken);
     
     const response = await fetch(`${this.loginUrl}/services/oauth2/token`, {
       method: 'POST',
@@ -253,6 +261,7 @@ class SalesforceApiUtils {
     
     const data = await response.json();
     this.accessToken = data.access_token;
+    this.instanceUrl = data.instance_url;
     
     return this.accessToken;
   }

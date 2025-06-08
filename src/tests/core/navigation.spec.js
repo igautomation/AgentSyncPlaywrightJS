@@ -2,11 +2,13 @@
  * Navigation Tests
  */
 const { test, expect } = require('@playwright/test');
+require('dotenv').config({ path: '.env.dev' });
 
 test.describe('Navigation', () => {
   test.beforeEach(async ({ page }) => {
     // Use a reliable test site
-    await page.goto('https://the-internet.herokuapp.com/');
+    const baseUrl = process.env.HEROKUAPP_URL || 'https://the-internet.herokuapp.com';
+    await page.goto(baseUrl);
   });
 
   test('should navigate to Checkboxes page', async ({ page }) => {
@@ -45,7 +47,8 @@ test.describe('Navigation', () => {
     await page.goBack();
     
     // Verify we're back at the home page
-    await expect(page).toHaveURL('https://the-internet.herokuapp.com/');
+    const baseUrl = process.env.HEROKUAPP_URL || 'https://the-internet.herokuapp.com';
+    await expect(page).toHaveURL(baseUrl + '/');
     await expect(page.locator('h1')).toContainText('Welcome to the-internet');
   });
 });

@@ -8,19 +8,18 @@ const SalesforceApiUtils = require('../../utils/salesforce/salesforceApiUtils');
 const path = require('path');
 const fs = require('fs').promises;
 
-// Load environment variables
-require('dotenv').config();
+// Load environment variables from .env.salesforce
+require('dotenv').config({ path: '.env.salesforce' });
 
 test.describe('Salesforce API Tests', () => {
   let apiUtils;
   
   test.beforeAll(async () => {
-    // Create API utils instance with direct token
+    // Create API utils instance with credentials from .env.salesforce
     apiUtils = new SalesforceApiUtils({
       instanceUrl: process.env.SF_INSTANCE_URL,
-      // Use a direct token for testing
-      accessToken: '00DdL00000OHE3z!AQEAQNXgBqDk0fm7rgEiVxJ17tA7B.W7uGJ_7BPfoOdbeMXcewrXjjI3_CC51GM2mqxm4sLUFFN.Uzk8FVxBFF6lmI3kSlvi',
-      apiVersion: 'v62.0'
+      accessToken: process.env.SF_ACCESS_TOKEN,
+      apiVersion: process.env.SF_API_VERSION || 'v62.0'
     });
   });
   

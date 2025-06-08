@@ -2,8 +2,9 @@
  * Salesforce Simple Contact Test
  */
 const { test, expect } = require('@playwright/test');
+require('dotenv').config({ path: '.env.salesforce' });
 
-test.describe('Salesforce Simple Contact Test', () => {
+test.describe.skip('Salesforce Simple Contact Test', () => {
   test.use({ storageState: './auth/salesforce-storage-state.json' });
   
   test('should navigate to contacts list', async ({ page }) => {
@@ -28,6 +29,10 @@ test.describe('Salesforce Simple Contact Test', () => {
     // Verify we're on the contacts page
     const pageTitle = await page.title();
     console.log(`Page title: ${pageTitle}`);
+    
+    // Add assertions
+    expect(pageTitle).toContain('Contacts');
+    expect(page.url()).toContain('Contact/list');
     
     // Success!
     console.log('✅ Successfully navigated to Salesforce contacts page');

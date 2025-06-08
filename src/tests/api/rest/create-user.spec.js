@@ -6,7 +6,7 @@
 const { test, expect } = require('@playwright/test');
 const ApiClient = require('../../../utils/api/apiClient');
 const { SchemaValidator } = require('../../../utils/api/schemaValidator');
-require('dotenv').config();
+require('dotenv').config({ path: '.env.dev' });
 
 // Define schemas with relaxed validation
 const createUserSchema = {

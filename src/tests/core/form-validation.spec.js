@@ -2,11 +2,13 @@
  * Form Validation Tests
  */
 const { test, expect } = require('@playwright/test');
+require('dotenv').config({ path: '.env.dev' });
 
 test.describe('Form Validation', () => {
   test.beforeEach(async ({ page }) => {
     // Use a reliable test site
-    await page.goto('https://the-internet.herokuapp.com/login');
+    const baseUrl = process.env.HEROKUAPP_URL || 'https://the-internet.herokuapp.com';
+    await page.goto(`${baseUrl}/login`);
   });
 
   test('should validate required fields', async ({ page }) => {
@@ -22,8 +24,11 @@ test.describe('Form Validation', () => {
   test('should validate input format', async ({ page }) => {
     // For this test, we'll use a different approach since the login page doesn't validate email format
     // Instead, we'll check that an invalid username shows an error
-    await page.fill('#username', 'invalid');
-    await page.fill('#password', 'invalid');
+    const invalidUsername = process.env.INVALID_USERNAME || 'invalid';
+    const invalidPassword = process.env.INVALID_PASSWORD || 'invalid';
+    
+    await page.fill('#username', invalidUsername);
+    await page.fill('#password', invalidPassword);
     await page.click('button[type="submit"]');
     
     // Check for validation error

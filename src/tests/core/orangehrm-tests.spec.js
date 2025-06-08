@@ -7,6 +7,7 @@
 const { test, expect } = require('@playwright/test');
 const WebInteractions = require('../../utils/web/webInteractions');
 const config = require('../../config');
+require('dotenv').config({ path: '.env.dev' });
 
 // Environment detection to conditionally run tests
 const shouldRunOrangeHRMTests = () => {
@@ -38,7 +39,7 @@ const shouldRunOrangeHRMTests = () => {
 };
 
 // Define constants for the tests
-const baseUrl = 'https://opensource-demo.orangehrmlive.com';
+const baseUrl = process.env.ORANGE_HRM_URL || 'https://opensource-demo.orangehrmlive.com';
 const loginPath = '/web/index.php/auth/login';
 const dashboardPath = '/web/index.php/dashboard/index';
 
@@ -115,8 +116,11 @@ test.describe('OrangeHRM Navigation', () => {
     await page.goto(config.baseUrl);
 
     // Login with default credentials
-    await page.getByPlaceholder('Username').fill(config.credentials.username);
-    await page.getByPlaceholder('Password').fill(config.credentials.password);
+    const username = process.env.ORANGE_HRM_USERNAME || config.credentials.username;
+    const password = process.env.ORANGE_HRM_PASSWORD || config.credentials.password;
+    
+    await page.getByPlaceholder('Username').fill(username);
+    await page.getByPlaceholder('Password').fill(password);
     await page.getByRole('button', { name: 'Login' }).click();
 
     // Wait for dashboard to load
@@ -164,8 +168,11 @@ test.describe('OrangeHRM Form Validation', () => {
     await page.goto(config.baseUrl);
 
     // Login with default credentials
-    await page.getByPlaceholder('Username').fill(config.credentials.username);
-    await page.getByPlaceholder('Password').fill(config.credentials.password);
+    const username = process.env.ORANGE_HRM_USERNAME || config.credentials.username;
+    const password = process.env.ORANGE_HRM_PASSWORD || config.credentials.password;
+    
+    await page.getByPlaceholder('Username').fill(username);
+    await page.getByPlaceholder('Password').fill(password);
     await page.getByRole('button', { name: 'Login' }).click();
 
     // Wait for dashboard to load

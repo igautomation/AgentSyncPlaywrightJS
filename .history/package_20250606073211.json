@@ -1,0 +1,56 @@
+{
+  "name": "@your-org/playwright-framework",
+  "version": "1.0.0",
+  "description": "Playwright Test Framework",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:e2e": "playwright test src/tests/e2e",
+    "test:api": "playwright test src/tests/api",
+    "test:accessibility": "playwright test src/tests/accessibility",
+    "test:salesforce": "playwright test src/tests/salesforce",
+    "test:salesforce:headed": "playwright test src/tests/salesforce --headed",
+    "test:salesforce:debug": "playwright test src/tests/salesforce --debug",
+    "test:salesforce:ui": "playwright test src/tests/salesforce --ui",
+    "test:salesforce:config": "playwright test --config=playwright.config.salesforce.js",
+    "setup:credentials": "node setup-credentials.js",
+    "setup:salesforce": "node src/tests/salesforce/global-setup.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "report": "npx playwright show-report",
+    "create-bundle": "node scripts/create-bundle.js",
+    "docs:dev": "cd docs-site && npm run start",
+    "docs:build": "cd docs-site && npm run build",
+    "build": "webpack"
+  },
+  "keywords": [
+    "playwright",
+    "testing",
+    "automation",
+    "framework"
+  ],
+  "author": "Your Organization",
+  "license": "MIT",
+  "dependencies": {
+    "@playwright/test": "^1.40.0",
+    "axios": "^1.6.0",
+    "commander": "^11.1.0",
+    "csv-parse": "^5.5.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsforce": "^1.11.1",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "uuid": "^9.0.1",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.53.0",
+    "eslint-plugin-playwright": "^0.18.0",
+    "prettier": "^3.0.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

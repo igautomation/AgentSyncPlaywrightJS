@@ -1,6 +1,6 @@
 /**
  * Extended Web Interactions
- * 
+ *
  * Additional helper functions for web interactions
  */
 const WebInteractions = require('./webInteractions');
@@ -16,7 +16,7 @@ class WebInteractionsExtended extends WebInteractions {
   constructor(page, options = {}) {
     super(page, options);
   }
-  
+
   /**
    * Get element count
    * @param {string} selector - Element selector
@@ -25,7 +25,7 @@ class WebInteractionsExtended extends WebInteractions {
   async getElementCount(selector) {
     return await this.page.locator(selector).count();
   }
-  
+
   /**
    * Verify element count equals expected value
    * @param {string} selector - Element selector
@@ -36,7 +36,7 @@ class WebInteractionsExtended extends WebInteractions {
     const count = await this.getElementCount(selector);
     return count === expectedCount;
   }
-  
+
   /**
    * Get element by role with exact/inexact name matching
    * @param {string} role - ARIA role
@@ -45,12 +45,12 @@ class WebInteractionsExtended extends WebInteractions {
    * @returns {import('@playwright/test').Locator} Element locator
    */
   getElementByRole(role, name, options = {}) {
-    return this.page.getByRole(role, { 
-      name, 
-      exact: options.exact !== false
+    return this.page.getByRole(role, {
+      name,
+      exact: options.exact !== false,
     });
   }
-  
+
   /**
    * Click element by role
    * @param {string} role - ARIA role
@@ -62,7 +62,7 @@ class WebInteractionsExtended extends WebInteractions {
     await element.waitFor({ state: 'visible', timeout: options.timeout || this.defaultTimeout });
     await element.click(options);
   }
-  
+
   /**
    * Scroll to element with retries
    * @param {string} selector - Element selector
@@ -72,7 +72,7 @@ class WebInteractionsExtended extends WebInteractions {
   async scrollToElementWithRetries(selector, options = {}) {
     const maxRetries = options.maxRetries || 3;
     const retryInterval = options.retryInterval || 1000;
-    
+
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
         // Try different scroll methods
@@ -81,29 +81,29 @@ class WebInteractionsExtended extends WebInteractions {
           return true;
         } catch (e) {
           // Try alternative method
-          await this.evaluate((sel) => {
+          await this.page.evaluate(sel => {
             const element = document.querySelector(sel);
             if (element) {
-              element.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});
+              element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
               return true;
             }
             return false;
           }, selector);
-          
+
           // Check if element is visible after scroll
-          const isVisible = await this.isVisible(selector, 1000);
+          const isVisible = await this.isVisible(selector, { timeout: 1000 });
           if (isVisible) return true;
         }
       } catch (error) {
         if (attempt === maxRetries) throw error;
       }
-      
+
       await this.page.waitForTimeout(retryInterval);
     }
-    
+
     return false;
   }
-  
+
   /**
    * Wait for element to contain specific text
    * @param {string} selector - Element selector
@@ -114,7 +114,7 @@ class WebInteractionsExtended extends WebInteractions {
   async waitForElementToContainText(selector, text, options = {}) {
     const timeout = options.timeout || this.defaultTimeout;
     const startTime = Date.now();
-    
+
     while (Date.now() - startTime < timeout) {
       const content = await this.getText(selector, { timeout: 1000 }).catch(() => '');
       if (content && content.includes(text)) {
@@ -122,7 +122,69 @@ class WebInteractionsExtended extends WebInteractions {
       }
       await this.page.waitForTimeout(100);
     }
-    
+
+    return false;
+  }
+
+  /**
+   * Wait for network to be idle
+   * @param {Object} options - Options
+   * @returns {Promise<void>}
+   */
+  async waitForNetworkIdle(options = {}) {
+    await this.page.waitForLoadState('networkidle', {
+      timeout: options.timeout || this.defaultTimeout,
+    });
+  }
+
+  /**
+   * Check if element exists
+   * @param {string} selector - Element selector
+   * @param {Object} options - Options
+   * @returns {Promise<boolean>} True if element exists
+   */
+  async elementExists(selector, options = {}) {
+    const count = await this.page.locator(selector).count();
+    return count > 0;
+  }
+
+  /**
+   * Get attribute value from element
+   * @param {string} selector - Element selector
+   * @param {string} attributeName - Attribute name
+   * @param {Object} options - Options
+   * @returns {Promise<string|null>} Attribute value or null
+   */
+  async getAttribute(selector, attributeName, options = {}) {
+    try {
+      const element = await this.waitForElement(selector, options.timeout);
+      return await element.getAttribute(attributeName);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  /**
+   * Wait for element to be enabled
+   * @param {string} selector - Element selector
+   * @param {Object} options - Options
+   * @returns {Promise<boolean>} True if element is enabled
+   */
+  async waitForElementToBeEnabled(selector, options = {}) {
+    const timeout = options.timeout || this.defaultTimeout;
+    const startTime = Date.now();
+
+    while (Date.now() - startTime < timeout) {
+      try {
+        const element = this.page.locator(selector);
+        const isDisabled = await element.isDisabled();
+        if (!isDisabled) return true;
+      } catch (error) {
+        // Ignore errors and continue polling
+      }
+      await this.page.waitForTimeout(100);
+    }
+
     return false;
   }
 }
