@@ -25,19 +25,44 @@ npx playwright install
 # Set up environment variables
 cp .env.example .env
 # Edit .env with your credentials
-
-# Set up credentials
-npm run setup:credentials
-
-# For Salesforce testing, run the Salesforce setup
-npm run setup:salesforce
 ```
 
-### Verify Installation
+### Common Setup Issues & Solutions
+
+1. **Missing Playwright Browsers**
+   ```bash
+   # If browsers are missing, install them explicitly
+   npx playwright install chromium firefox webkit
+   ```
+
+2. **Environment Variables**
+   - Ensure your `.env` file has all required variables from `.env.example`
+   - For Salesforce testing, make sure to set all SF_* variables
+
+3. **Permission Issues**
+   ```bash
+   # If you encounter permission issues with scripts
+   chmod +x scripts/*.sh
+   chmod +x bin/*
+   ```
+
+4. **Node Version Issues**
+   ```bash
+   # Check your Node.js version
+   node -v
+   # Use nvm to install correct version if needed
+   nvm install 16
+   nvm use 16
+   ```
+
+### Salesforce Setup
 
 ```bash
-# Run a simple test to verify installation
-npm run test:smoke
+# Create auth directory if it doesn't exist
+mkdir -p auth
+
+# Set up Salesforce authentication state
+npm run setup:salesforce
 ```
 
 ## 🧪 Running Tests
@@ -47,16 +72,16 @@ npm run test:smoke
 npm test
 
 # Run tests with UI mode
-npm run test:ui
+npx playwright test --ui
 
 # Run specific test types
-npm run test:api        # API tests
-npm run test:e2e        # End-to-end tests
-npm run test:visual     # Visual tests
-npm run test:salesforce # Salesforce tests
+npm run test:api            # API tests
+npm run test:e2e            # End-to-end tests
+npm run test:accessibility  # Accessibility tests
+npm run test:salesforce     # Salesforce tests
 
 # Run tests in headed mode
-npm run test:headed
+npx playwright test --headed
 
 # View test reports
 npm run report
@@ -64,26 +89,32 @@ npm run report
 
 ## 🏗️ Framework Architecture
 
-The framework follows a modular architecture with clear separation of concerns:
+The framework follows a modular architecture:
 
 ```
 AgentSyncProfessionalServices/
 ├── src/                    # Source code
+│   ├── cli/                # Command-line interface tools
 │   ├── config/             # Configuration files
+│   ├── core/               # Core framework functionality
+│   ├── dashboard/          # Test dashboard components
+│   ├── data/               # Test data files
+│   ├── fixtures/           # Test fixtures
+│   ├── helpers/            # Helper utilities
 │   ├── pages/              # Page objects
 │   │   └── salesforce/     # Salesforce page objects
 │   ├── tests/              # Test files
+│   │   ├── accessibility/  # Accessibility tests
 │   │   ├── api/            # API tests
 │   │   ├── core/           # Core functionality tests
-│   │   ├── e2e/            # End-to-end tests
-│   │   └── salesforce/     # Salesforce tests
+│   │   ├── examples/       # Example tests
+│   │   ├── integration/    # Integration tests
+│   │   ├── salesforce/     # Salesforce tests
 │   └── utils/              # Utility modules
+│       ├── accessibility/  # Accessibility testing utilities
 │       ├── api/            # API testing utilities
-│       ├── common/         # Common utilities
-│       ├── data/           # Test data management
-│       ├── generators/     # Page object generators
 │       ├── salesforce/     # Salesforce utilities
-│       └── web/            # Web testing utilities
+│       └── many others...  # Various utility modules
 ├── auth/                   # Authentication state storage
 ├── docs/                   # Documentation
 ├── reports/                # Test reports
@@ -94,7 +125,6 @@ AgentSyncProfessionalServices/
 
 - **Cross-browser Testing**: Chrome, Firefox, Safari, and Edge support
 - **API Testing**: REST and GraphQL API testing capabilities
-- **Visual Testing**: Screenshot comparison and visual regression testing
 - **Accessibility Testing**: Automated accessibility audits
 - **Performance Testing**: Core Web Vitals and performance metrics
 - **Data-Driven Testing**: Support for multiple data formats
@@ -103,20 +133,25 @@ AgentSyncProfessionalServices/
 - **CI/CD Integration**: GitHub Actions workflows and Docker support
 - **Salesforce Integration**: Specialized utilities for Salesforce testing
 - **Mobile Testing**: Mobile browser emulation capabilities
+- **Visual Testing**: Screenshot comparison and visual regression testing
 
 ## 🔌 Salesforce Testing
 
 The framework includes specialized support for Salesforce testing:
 
 ```bash
-# Set up Salesforce credentials
+# Set up Salesforce credentials in .env file
+# Required variables:
+# SF_USERNAME, SF_PASSWORD, SF_LOGIN_URL, SF_SECURITY_TOKEN, SF_INSTANCE_URL
+
+# Set up Salesforce authentication state
 npm run setup:salesforce
 
 # Run Salesforce tests
 npm run test:salesforce
 
-# Generate Salesforce page objects
-npm run sf:generate-page
+# Run Salesforce tests with specific configuration
+npm run test:salesforce:config
 ```
 
 For detailed information, see the [Salesforce Testing Guide](docs/salesforce-testing-guide.md).
