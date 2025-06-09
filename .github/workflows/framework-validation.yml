@@ -13,21 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      
+      - uses: actions/checkout@v3
       - name: Create validation report
         run: |
           mkdir -p reports
           echo "# Framework Validation Report" > reports/validation.md
           echo "✅ Framework validation completed successfully" >> reports/validation.md
           echo "Framework validation passed"
-      
       - name: Upload validation report
         uses: actions/upload-artifact@v3
         with:

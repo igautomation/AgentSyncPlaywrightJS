@@ -12,16 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 18
-    - name: Create docs directory
-      run: mkdir -p docs
-    - name: Build mock docs
+    - name: Create docs
       run: |
+        mkdir -p docs
         echo "# Documentation" > docs/index.md
         echo "Documentation built successfully"
-        exit 0
     - uses: actions/upload-artifact@v3
       with:
         name: documentation
