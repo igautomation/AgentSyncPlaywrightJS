@@ -1,0 +1,56 @@
+<testsuites id="" name="" tests="11" failures="0" skipped="11" errors="0" time="0.04220100000000002">
+<testsuite name="salesforce-api-mock.spec.js" timestamp="2025-06-06T01:58:20.717Z" hostname="salesforce" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="Salesforce API Mock Tests › should get API limits" classname="salesforce-api-mock.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Salesforce API Mock Tests › should describe global objects" classname="salesforce-api-mock.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Salesforce API Mock Tests › should describe Contact object" classname="salesforce-api-mock.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Salesforce API Mock Tests › should extract Contact metadata to file" classname="salesforce-api-mock.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="salesforce-api.spec.js" timestamp="2025-06-06T01:58:20.717Z" hostname="salesforce" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="Salesforce API Tests › should get API limits" classname="salesforce-api.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Salesforce API Tests › should describe global objects" classname="salesforce-api.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Salesforce API Tests › should describe Contact object" classname="salesforce-api.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Salesforce API Tests › should extract Contact metadata to file" classname="salesforce-api.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="salesforce-login.spec.js" timestamp="2025-06-06T01:58:20.717Z" hostname="salesforce" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="Salesforce Login Test › should login to Salesforce successfully" classname="salesforce-login.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="salesforce-simple-contact.spec.js" timestamp="2025-06-06T01:58:20.717Z" hostname="salesforce" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="Salesforce Simple Contact Test › should navigate to contacts list" classname="salesforce-simple-contact.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="SalesforceNewContactDialog.spec.js" timestamp="2025-06-06T01:58:20.717Z" hostname="salesforce" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="SalesforceNewContactDialog Tests › should verify Salesforce environment is configured" classname="SalesforceNewContactDialog.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>

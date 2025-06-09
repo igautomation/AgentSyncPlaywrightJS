@@ -1,0 +1,30 @@
+name: Create Bundle
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  create-bundle:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+    - name: Install dependencies
+      run: npm ci
+    - name: Create directories
+      run: |
+        mkdir -p src/helpers
+        mkdir -p src/core
+    - name: Create bundle
+      run: npm run create-bundle
+    - uses: actions/upload-artifact@v3
+      with:
+        name: playwright-framework-bundle
+        path: dist/
+        retention-days: 30

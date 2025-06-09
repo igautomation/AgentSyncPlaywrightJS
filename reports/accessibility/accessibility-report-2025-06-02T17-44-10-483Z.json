@@ -1,0 +1,33 @@
+{
+  "violations": [
+    {
+      "id": "label",
+      "impact": "critical",
+      "description": "Form elements must have labels",
+      "nodes": [
+        {
+          "html": "<input data-v-1f99f73c=\"\" data-v-636d6b87=\"\" class=\"oxd-input oxd-input--active\" placeholder=\"Search\">",
+          "target": "input"
+        }
+      ]
+    },
+    {
+      "id": "button-name",
+      "impact": "critical",
+      "description": "Buttons must have discernible text",
+      "nodes": [
+        {
+          "html": "<button data-v-f5c763eb=\"\" data-v-636d6b87=\"\" class=\"oxd-icon-button oxd-main-menu-button\" type=\"button\" role=\"none\"><i data-v-bddebfba=\"\" data-v-f5c763eb=\"\" class=\"oxd-icon bi-chevron-left\"></i></button>",
+          "target": ".oxd-icon-button"
+        },
+        {
+          "html": "<button data-v-f5c763eb=\"\" class=\"oxd-icon-button\" type=\"button\" title=\"Help\"><i data-v-bddebfba=\"\" data-v-f5c763eb=\"\" class=\"oxd-icon bi-question-lg\"></i></button>",
+          "target": ".oxd-icon-button"
+        }
+      ]
+    }
+  ],
+  "passes": [],
+  "url": "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index",
+  "timestamp": "2025-06-02T17:44:10.481Z"
+}

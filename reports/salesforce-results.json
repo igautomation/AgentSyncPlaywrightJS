@@ -1,0 +1,411 @@
+{
+  "config": {
+    "configFile": "/Users/mzahirudeen/playwright-framework-dev/playwright.config.salesforce.js",
+    "rootDir": "/Users/mzahirudeen/playwright-framework-dev/src/tests/salesforce",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": "/Users/mzahirudeen/playwright-framework-dev/src/tests/salesforce/global-setup.js",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "list",
+        null
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "reports/salesforce-results.xml"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/salesforce-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/mzahirudeen/playwright-framework-dev/test-results/salesforce",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "setup",
+        "name": "setup",
+        "testDir": "/Users/mzahirudeen/playwright-framework-dev/src/tests/salesforce",
+        "testIgnore": [],
+        "testMatch": [
+          "**/salesforce/global-setup.js"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/mzahirudeen/playwright-framework-dev/test-results/salesforce",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "salesforce",
+        "name": "salesforce",
+        "testDir": "/Users/mzahirudeen/playwright-framework-dev/src/tests/salesforce",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.js"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/mzahirudeen/playwright-framework-dev/test-results/salesforce",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "salesforce-api",
+        "name": "salesforce-api",
+        "testDir": "/Users/mzahirudeen/playwright-framework-dev/src/tests/salesforce",
+        "testIgnore": [],
+        "testMatch": [
+          "**/salesforce/api/**/*.spec.js"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.52.0",
+    "workers": 5,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "salesforce-api-mock.spec.js",
+      "file": "salesforce-api-mock.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Salesforce API Mock Tests",
+          "file": "salesforce-api-mock.spec.js",
+          "line": 108,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should get API limits",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "salesforce",
+                  "projectName": "salesforce",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "c6d371bb92f9553af3ce-0d3cd320e1f60a19c395",
+              "file": "salesforce-api-mock.spec.js",
+              "line": 116,
+              "column": 3
+            },
+            {
+              "title": "should describe global objects",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "salesforce",
+                  "projectName": "salesforce",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "c6d371bb92f9553af3ce-59b55f16c25ade1d128d",
+              "file": "salesforce-api-mock.spec.js",
+              "line": 129,
+              "column": 3
+            },
+            {
+              "title": "should describe Contact object",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "salesforce",
+                  "projectName": "salesforce",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "c6d371bb92f9553af3ce-f9f96cf869ba6901fb51",
+              "file": "salesforce-api-mock.spec.js",
+              "line": 145,
+              "column": 3
+            },
+            {
+              "title": "should extract Contact metadata to file",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "salesforce",
+                  "projectName": "salesforce",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "c6d371bb92f9553af3ce-6e143d14e39b8c7459c2",
+              "file": "salesforce-api-mock.spec.js",
+              "line": 160,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "salesforce-api.spec.js",
+      "file": "salesforce-api.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Salesforce API Tests",
+          "file": "salesforce-api.spec.js",
+          "line": 14,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should get API limits",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "salesforce",
+                  "projectName": "salesforce",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b336bfe597c5cbc5d2df-583d0129fe40a3802cc7",
+              "file": "salesforce-api.spec.js",
+              "line": 27,
+              "column": 3
+            },
+            {
+              "title": "should describe global objects",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "salesforce",
+                  "projectName": "salesforce",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b336bfe597c5cbc5d2df-2fc4095904aea0edb2b9",
+              "file": "salesforce-api.spec.js",
+              "line": 48,
+              "column": 3
+            },
+            {
+              "title": "should describe Contact object",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "salesforce",
+                  "projectName": "salesforce",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b336bfe597c5cbc5d2df-28e6bbc3c28948c62b48",
+              "file": "salesforce-api.spec.js",
+              "line": 71,
+              "column": 3
+            },
+            {
+              "title": "should extract Contact metadata to file",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "salesforce",
+                  "projectName": "salesforce",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b336bfe597c5cbc5d2df-f4f4f02448f0fb2ff68c",
+              "file": "salesforce-api.spec.js",
+              "line": 95,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "salesforce-login.spec.js",
+      "file": "salesforce-login.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Salesforce Login Test",
+          "file": "salesforce-login.spec.js",
+          "line": 12,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should login to Salesforce successfully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "salesforce",
+                  "projectName": "salesforce",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "3cbb4b8c7221989b57e1-e545af50d38d6ebcc667",
+              "file": "salesforce-login.spec.js",
+              "line": 13,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "salesforce-simple-contact.spec.js",
+      "file": "salesforce-simple-contact.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Salesforce Simple Contact Test",
+          "file": "salesforce-simple-contact.spec.js",
+          "line": 7,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should navigate to contacts list",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "salesforce",
+                  "projectName": "salesforce",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "6c91875c9a8f6ce30a18-56894cc621214089cc05",
+              "file": "salesforce-simple-contact.spec.js",
+              "line": 10,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "SalesforceNewContactDialog.spec.js",
+      "file": "SalesforceNewContactDialog.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "SalesforceNewContactDialog Tests",
+          "file": "SalesforceNewContactDialog.spec.js",
+          "line": 7,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should verify Salesforce environment is configured",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "salesforce",
+                  "projectName": "salesforce",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "bc812876ad9d2050d73b-6c32a675e42b5f9b93ae",
+              "file": "SalesforceNewContactDialog.spec.js",
+              "line": 10,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-06-06T01:58:20.675Z",
+    "duration": 42.20100000000002,
+    "expected": 0,
+    "skipped": 11,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

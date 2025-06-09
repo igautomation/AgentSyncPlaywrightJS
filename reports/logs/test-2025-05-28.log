@@ -1,0 +1,117 @@
+[2025-05-28T06:16:55.155Z] [INFO] Extracting text from elements: p
+[2025-05-28T06:16:55.155Z] [INFO] Extracting data from table: table
+[2025-05-28T06:16:55.157Z] [ERROR] Failed to extract text from elements: p
+[2025-05-28T06:16:55.157Z] [ERROR] Failed to extract table data from: table
+[2025-05-28T06:16:55.167Z] [INFO] Extracting list data from: #simple-list
+[2025-05-28T06:16:55.168Z] [ERROR] Failed to extract list data from: #simple-list
+[2025-05-28T06:16:55.223Z] [INFO] Saving DOM snapshot: test-snapshot
+[2025-05-28T06:16:55.230Z] [INFO] DOM snapshot saved to: /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-test-1748413013489/snapshots/test-snapshot-2025-05-28T06-16-55-230Z.html
+[2025-05-28T06:16:55.593Z] [INFO] Extracting page metadata
+[2025-05-28T06:16:56.726Z] [INFO] Extracting text from elements: p
+[2025-05-28T06:16:56.729Z] [ERROR] Failed to extract text from elements: p
+[2025-05-28T06:16:56.743Z] [INFO] Extracting list data from: #simple-list
+[2025-05-28T06:16:56.745Z] [ERROR] Failed to extract list data from: #simple-list
+[2025-05-28T06:16:56.751Z] [INFO] Extracting data from table: table
+[2025-05-28T06:16:56.753Z] [ERROR] Failed to extract table data from: table
+[2025-05-28T06:16:56.909Z] [INFO] Extracting images with selector: img
+[2025-05-28T06:16:56.910Z] [ERROR] Failed to extract images with selector: img
+[2025-05-28T06:16:58.397Z] [INFO] Extracting data from table: table
+[2025-05-28T06:16:58.398Z] [ERROR] Failed to extract table data from: table
+[2025-05-28T06:16:58.412Z] [INFO] Extracting list data from: #simple-list
+[2025-05-28T06:16:58.412Z] [ERROR] Failed to extract list data from: #simple-list
+[2025-05-28T06:16:58.433Z] [INFO] Extracting text from elements: p
+[2025-05-28T06:16:58.434Z] [ERROR] Failed to extract text from elements: p
+[2025-05-28T06:16:59.918Z] [INFO] Extracting links with selector: a
+[2025-05-28T06:16:59.918Z] [ERROR] Failed to extract links with selector: a
+[2025-05-28T06:17:00.111Z] [INFO] Extracting structured data
+[2025-05-28T06:17:00.111Z] [ERROR] Failed to extract structured data
+[2025-05-28T06:17:00.632Z] [INFO] Extracting images with selector: img
+[2025-05-28T06:17:00.633Z] [ERROR] Failed to extract images with selector: img
+[2025-05-28T06:17:01.197Z] [INFO] Extracting links with selector: a
+[2025-05-28T06:17:01.198Z] [ERROR] Failed to extract links with selector: a
+[2025-05-28T06:17:01.348Z] [INFO] Extracting structured data
+[2025-05-28T06:17:01.349Z] [ERROR] Failed to extract structured data
+[2025-05-28T06:17:02.563Z] [INFO] Extracting links with selector: a
+[2025-05-28T06:17:02.565Z] [ERROR] Failed to extract links with selector: a
+[2025-05-28T06:17:02.878Z] [INFO] Extracting structured data
+[2025-05-28T06:17:02.879Z] [ERROR] Failed to extract structured data
+[2025-05-28T06:17:03.934Z] [INFO] Extracting images with selector: img
+[2025-05-28T06:17:03.935Z] [ERROR] Failed to extract images with selector: img
+[2025-05-28T06:17:05.067Z] [INFO] Extracting form data from: form
+[2025-05-28T06:17:05.068Z] [ERROR] Failed to extract form data from: form
+[2025-05-28T06:17:06.262Z] [INFO] Extracting form data from: form
+[2025-05-28T06:17:06.263Z] [ERROR] Failed to extract form data from: form
+[2025-05-28T06:17:07.642Z] [INFO] Extracting form data from: form
+[2025-05-28T06:17:07.643Z] [ERROR] Failed to extract form data from: form
+[2025-05-28T06:20:02.204Z] [INFO] Extracting data from table: table
+[2025-05-28T06:20:02.210Z] [ERROR] Failed to extract table data from: table
+[2025-05-28T06:20:02.216Z] [INFO] Extracting text from elements: p
+[2025-05-28T06:20:02.218Z] [ERROR] Failed to extract text from elements: p
+[2025-05-28T06:20:02.282Z] [INFO] Saving DOM snapshot: test-snapshot
+[2025-05-28T06:20:02.292Z] [INFO] Extracting list data from: #simple-list
+[2025-05-28T06:20:02.293Z] [ERROR] Failed to extract list data from: #simple-list
+[2025-05-28T06:20:02.294Z] [INFO] DOM snapshot saved to: /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-test-1748413200582/snapshots/test-snapshot-2025-05-28T06-20-02-293Z.html
+[2025-05-28T06:20:02.654Z] [INFO] Extracting page metadata
+[2025-05-28T06:20:03.833Z] [INFO] Extracting data from table: table
+[2025-05-28T06:20:03.834Z] [ERROR] Failed to extract table data from: table
+[2025-05-28T06:20:03.838Z] [INFO] Extracting list data from: #simple-list
+[2025-05-28T06:20:03.838Z] [ERROR] Failed to extract list data from: #simple-list
+[2025-05-28T06:20:03.912Z] [INFO] Extracting text from elements: p
+[2025-05-28T06:20:03.912Z] [ERROR] Failed to extract text from elements: p
+[2025-05-28T06:20:04.186Z] [INFO] Extracting images with selector: img
+[2025-05-28T06:20:04.186Z] [ERROR] Failed to extract images with selector: img
+[2025-05-28T06:20:05.585Z] [INFO] Extracting data from table: table
+[2025-05-28T06:20:05.586Z] [ERROR] Failed to extract table data from: table
+[2025-05-28T06:20:05.651Z] [INFO] Extracting list data from: #simple-list
+[2025-05-28T06:20:05.652Z] [ERROR] Failed to extract list data from: #simple-list
+[2025-05-28T06:20:05.682Z] [INFO] Extracting text from elements: p
+[2025-05-28T06:20:05.682Z] [ERROR] Failed to extract text from elements: p
+[2025-05-28T06:20:07.070Z] [INFO] Extracting links with selector: a
+[2025-05-28T06:20:07.071Z] [ERROR] Failed to extract links with selector: a
+[2025-05-28T06:20:07.091Z] [INFO] Extracting structured data
+[2025-05-28T06:20:07.092Z] [ERROR] Failed to extract structured data
+[2025-05-28T06:20:07.704Z] [INFO] Extracting images with selector: img
+[2025-05-28T06:20:07.705Z] [ERROR] Failed to extract images with selector: img
+[2025-05-28T06:20:08.475Z] [INFO] Extracting links with selector: a
+[2025-05-28T06:20:08.475Z] [ERROR] Failed to extract links with selector: a
+[2025-05-28T06:20:08.557Z] [INFO] Extracting structured data
+[2025-05-28T06:20:08.557Z] [ERROR] Failed to extract structured data
+[2025-05-28T06:20:09.952Z] [INFO] Extracting structured data
+[2025-05-28T06:20:09.953Z] [ERROR] Failed to extract structured data
+[2025-05-28T06:20:10.075Z] [INFO] Extracting links with selector: a
+[2025-05-28T06:20:10.076Z] [ERROR] Failed to extract links with selector: a
+[2025-05-28T06:20:11.936Z] [INFO] Extracting images with selector: img
+[2025-05-28T06:20:11.936Z] [ERROR] Failed to extract images with selector: img
+[2025-05-28T06:20:13.109Z] [INFO] Extracting form data from: form
+[2025-05-28T06:20:13.109Z] [ERROR] Failed to extract form data from: form
+[2025-05-28T06:20:14.383Z] [INFO] Extracting form data from: form
+[2025-05-28T06:20:14.384Z] [ERROR] Failed to extract form data from: form
+[2025-05-28T06:20:15.474Z] [INFO] Extracting form data from: form
+[2025-05-28T06:20:15.475Z] [ERROR] Failed to extract form data from: form
+[2025-05-28T06:35:33.811Z] [INFO] Saving DOM snapshot: test-snapshot
+[2025-05-28T06:35:33.818Z] [INFO] DOM snapshot saved to: /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-test-1748414132169/snapshots/test-snapshot-2025-05-28T06-35-33-817Z.html
+[2025-05-28T06:35:33.857Z] [INFO] Extracting text from elements: p
+[2025-05-28T06:35:33.858Z] [ERROR] Failed to extract text from elements: p
+[2025-05-28T06:35:33.875Z] [INFO] Extracting list data from: #simple-list
+[2025-05-28T06:35:33.876Z] [ERROR] Failed to extract list data from: #simple-list
+[2025-05-28T06:35:34.171Z] [INFO] Extracting page metadata
+[2025-05-28T06:35:34.174Z] [INFO] Extracting data from table: table
+[2025-05-28T06:35:34.175Z] [ERROR] Failed to extract table data from: table
+[2025-05-28T06:35:35.177Z] [INFO] Extracting text from elements: p
+[2025-05-28T06:35:35.178Z] [ERROR] Failed to extract text from elements: p
+[2025-05-28T06:35:35.309Z] [INFO] Extracting list data from: #simple-list
+[2025-05-28T06:35:35.309Z] [ERROR] Failed to extract list data from: #simple-list
+[2025-05-28T06:35:35.614Z] [INFO] Extracting images with selector: img
+[2025-05-28T06:35:35.615Z] [ERROR] Failed to extract images with selector: img
+[2025-05-28T06:35:35.920Z] [INFO] Extracting data from table: table
+[2025-05-28T06:35:35.921Z] [ERROR] Failed to extract table data from: table
+[2025-05-28T06:35:37.050Z] [INFO] Extracting text from elements: p
+[2025-05-28T06:35:37.051Z] [ERROR] Failed to extract text from elements: p
+[2025-05-28T06:35:37.124Z] [INFO] Extracting list data from: #simple-list
+[2025-05-28T06:35:37.127Z] [ERROR] Failed to extract list data from: #simple-list
+[2025-05-28T06:35:38.005Z] [INFO] Extracting data from table: table
+[2025-05-28T06:35:38.006Z] [ERROR] Failed to extract table data from: table
+[2025-05-28T06:35:38.739Z] [INFO] Extracting structured data
+[2025-05-28T06:35:38.740Z] [ERROR] Failed to extract structured data
+[2025-05-28T06:35:39.108Z] [INFO] Extracting images with selector: img
+[2025-05-28T06:35:39.109Z] [ERROR] Failed to extract images with selector: img

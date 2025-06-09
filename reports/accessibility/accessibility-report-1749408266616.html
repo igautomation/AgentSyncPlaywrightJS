@@ -1,0 +1,96 @@
+
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Accessibility Audit Report</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+          }
+          h1, h2, h3 {
+            color: #2c3e50;
+          }
+          h1 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+          }
+          .summary {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+          }
+          .passed {
+            color: #27ae60;
+            font-weight: bold;
+          }
+          .failed {
+            color: #e74c3c;
+            font-weight: bold;
+          }
+          .issue {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+          }
+          .critical {
+            border-left: 5px solid #e74c3c;
+          }
+          .serious {
+            border-left: 5px solid #f39c12;
+          }
+          .moderate {
+            border-left: 5px solid #3498db;
+          }
+          .minor {
+            border-left: 5px solid #2ecc71;
+          }
+          .element {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>Accessibility Audit Report</h1>
+        
+        <div class="summary">
+          <p><strong>URL:</strong> https://opensource-demo.orangehrmlive.com/web/index.php/auth/login</p>
+          <p><strong>Date:</strong> 6/9/2025, 12:14:26 AM</p>
+          <p><strong>Status:</strong> 
+            <span class="failed">FAILED</span>
+          </p>
+          <p><strong>Issues Found:</strong> 1</p>
+          <ul>
+            <li>Critical: 0</li>
+            <li>Serious: 1</li>
+            <li>Moderate: 0</li>
+            <li>Minor: 0</li>
+          </ul>
+        </div>
+        
+        <h2>Issues</h2>
+        
+        <div class="issue serious">
+          <h3>html-lang</h3>
+          <p><strong>Severity:</strong> serious</p>
+          <p><strong>Message:</strong> Document language not specified</p>
+          <div class="element">
+            <p><strong>Element:</strong> html</p>
+            <p><strong>Selector:</strong> html</p>
+            
+            
+          </div>
+        </div>
+      
+      </body>
+      </html>
+    

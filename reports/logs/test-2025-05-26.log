@@ -1,0 +1,197 @@
+[2025-05-26T05:38:08.195Z] [ERROR] Playwright selector error
+[2025-05-26T05:38:08.196Z] [ERROR] Playwright error
+[2025-05-26T05:38:08.197Z] [ERROR] Playwright timeout error
+[2025-05-26T05:38:08.204Z] [WARN] Playwright operation failed, using fallback
+[2025-05-26T05:38:08.214Z] [WARN] Playwright operation failed, retrying (1/3)
+[2025-05-26T05:38:08.226Z] [WARN] Playwright operation failed, retrying (2/3)
+[2025-05-26T05:38:08.249Z] [ERROR] Playwright timeout error
+[2025-05-26T05:38:08.262Z] [INFO] Performance: test-operation completed in 52ms
+[2025-05-26T05:45:47.486Z] [ERROR] Playwright timeout error
+[2025-05-26T05:45:47.492Z] [WARN] Playwright operation failed, retrying (1/3)
+[2025-05-26T05:45:47.492Z] [ERROR] Playwright selector error
+[2025-05-26T05:45:47.495Z] [ERROR] Playwright error
+[2025-05-26T05:45:47.499Z] [WARN] Playwright operation failed, using fallback
+[2025-05-26T05:45:47.503Z] [WARN] Playwright operation failed, retrying (2/3)
+[2025-05-26T05:45:47.550Z] [INFO] Performance: test-operation completed in 51ms
+[2025-05-26T05:45:47.551Z] [ERROR] Playwright timeout error
+[2025-05-26T06:08:12.515Z] [ERROR] Playwright timeout error
+[2025-05-26T06:08:12.522Z] [ERROR] Playwright error
+[2025-05-26T06:08:12.522Z] [ERROR] Playwright selector error
+[2025-05-26T06:08:12.528Z] [WARN] Playwright operation failed, using fallback
+[2025-05-26T06:08:12.529Z] [WARN] Playwright operation failed, retrying (1/3)
+[2025-05-26T06:08:12.541Z] [WARN] Playwright operation failed, retrying (2/3)
+[2025-05-26T06:08:12.565Z] [INFO] Generating Markdown report from /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748239692562/test-results to /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748239692562/markdown-report.md
+[2025-05-26T06:08:12.576Z] [INFO] Generating JUnit report from /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748239692573/junit-results to /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748239692573/junit-report.xml
+[2025-05-26T06:08:12.578Z] [ERROR] Playwright timeout error
+[2025-05-26T06:08:12.589Z] [INFO] Performance: test-operation completed in 51ms
+[2025-05-26T06:08:12.594Z] [INFO] Report generated: /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748239692562/html-report.html
+[2025-05-26T06:14:24.953Z] [ERROR] Playwright timeout error
+[2025-05-26T06:14:24.959Z] [WARN] Playwright operation failed, retrying (1/3)
+[2025-05-26T06:14:24.964Z] [ERROR] Playwright selector error
+[2025-05-26T06:14:24.970Z] [ERROR] Playwright error
+[2025-05-26T06:14:24.971Z] [WARN] Playwright operation failed, retrying (2/3)
+[2025-05-26T06:14:24.981Z] [WARN] Playwright operation failed, using fallback
+[2025-05-26T06:14:25.022Z] [ERROR] Playwright timeout error
+[2025-05-26T06:14:25.028Z] [INFO] Performance: test-operation completed in 51ms
+[2025-05-26T07:49:39.624Z] [ERROR] Playwright timeout error
+[2025-05-26T07:49:39.626Z] [ERROR] Playwright selector error
+[2025-05-26T07:49:39.627Z] [ERROR] Playwright error
+[2025-05-26T07:49:39.629Z] [WARN] Playwright operation failed, retrying (1/3)
+[2025-05-26T07:49:39.637Z] [WARN] Playwright operation failed, using fallback
+[2025-05-26T07:49:39.646Z] [WARN] Playwright operation failed, retrying (2/3)
+[2025-05-26T07:49:39.692Z] [INFO] Performance: test-operation completed in 52ms
+[2025-05-26T07:49:39.696Z] [ERROR] Playwright timeout error
+[2025-05-26T07:53:43.539Z] [INFO] Generating JUnit report from /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748246023526/junit-results to /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748246023526/junit-report.xml
+[2025-05-26T07:53:43.543Z] [INFO] Generating Markdown report from /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748246023527/test-results to /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748246023527/markdown-report.md
+[2025-05-26T07:53:43.562Z] [INFO] Report generated: /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748246023521/html-report.html
+[2025-05-26T07:59:30.910Z] [ERROR] Playwright selector error
+[2025-05-26T07:59:30.912Z] [ERROR] Playwright timeout error
+[2025-05-26T07:59:30.925Z] [WARN] Playwright operation failed, using fallback
+[2025-05-26T07:59:30.928Z] [WARN] Playwright operation failed, retrying (1/3)
+[2025-05-26T07:59:30.931Z] [ERROR] Playwright error
+[2025-05-26T07:59:30.944Z] [WARN] Playwright operation failed, retrying (2/3)
+[2025-05-26T07:59:30.962Z] [ERROR] Playwright timeout error
+[2025-05-26T07:59:30.981Z] [INFO] Performance: test-operation completed in 52ms
+[2025-05-26T08:00:25.825Z] [WARN] Playwright operation failed, retrying (1/3)
+[2025-05-26T08:00:25.834Z] [ERROR] Playwright timeout error
+[2025-05-26T08:00:25.836Z] [WARN] Playwright operation failed, retrying (2/3)
+[2025-05-26T08:00:25.838Z] [ERROR] Playwright selector error
+[2025-05-26T08:00:25.847Z] [WARN] Playwright operation failed, using fallback
+[2025-05-26T08:00:25.855Z] [ERROR] Playwright error
+[2025-05-26T08:00:25.894Z] [ERROR] Playwright timeout error
+[2025-05-26T08:00:25.901Z] [INFO] Performance: test-operation completed in 50ms
+[2025-05-26T08:25:27.096Z] [ERROR] Playwright navigation error
+[2025-05-26T08:25:27.102Z] [WARN] Playwright operation failed, retrying (1/3)
+[2025-05-26T08:25:27.110Z] [ERROR] Playwright error
+[2025-05-26T08:25:27.115Z] [ERROR] Playwright timeout error
+[2025-05-26T08:25:27.124Z] [ERROR] Assertion error
+[2025-05-26T08:25:27.126Z] [WARN] Playwright operation failed, retrying (1/3)
+[2025-05-26T08:25:27.130Z] [ERROR] API request error
+[2025-05-26T08:25:27.132Z] [ERROR] Playwright selector error
+[2025-05-26T08:25:27.135Z] [WARN] Playwright operation failed, retrying (1/4)
+[2025-05-26T08:25:27.137Z] [WARN] Playwright operation failed, retrying (2/3)
+[2025-05-26T08:25:27.142Z] [WARN] Playwright operation failed, retrying (2/4)
+[2025-05-26T08:25:27.142Z] [WARN] Playwright operation failed, using fallback
+[2025-05-26T08:25:27.148Z] [ERROR] Playwright error
+[2025-05-26T08:25:27.154Z] [WARN] Playwright operation failed, retrying (3/4)
+[2025-05-26T08:25:27.201Z] [INFO] Performance: test-operation completed in 51ms
+[2025-05-26T08:25:27.204Z] [ERROR] Playwright timeout error
+[2025-05-26T08:27:59.101Z] [ERROR] Playwright navigation error
+[2025-05-26T08:27:59.109Z] [ERROR] API request error
+[2025-05-26T08:27:59.111Z] [WARN] Playwright operation failed, retrying (1/3)
+[2025-05-26T08:27:59.112Z] [ERROR] Assertion error
+[2025-05-26T08:27:59.118Z] [WARN] Playwright operation failed, retrying (1/4)
+[2025-05-26T08:27:59.119Z] [ERROR] Playwright selector error
+[2025-05-26T08:27:59.121Z] [WARN] Playwright operation failed, retrying (1/3)
+[2025-05-26T08:27:59.122Z] [ERROR] Playwright timeout error
+[2025-05-26T08:27:59.122Z] [ERROR] Playwright error
+[2025-05-26T08:27:59.123Z] [WARN] Playwright operation failed, retrying (2/4)
+[2025-05-26T08:27:59.127Z] [ERROR] Playwright error
+[2025-05-26T08:27:59.128Z] [WARN] Playwright operation failed, using fallback
+[2025-05-26T08:27:59.133Z] [WARN] Playwright operation failed, retrying (2/3)
+[2025-05-26T08:27:59.134Z] [WARN] Playwright operation failed, retrying (3/4)
+[2025-05-26T08:27:59.175Z] [INFO] Generating Markdown report from /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748248079169/test-results to /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748248079169/markdown-report.md
+[2025-05-26T08:27:59.183Z] [INFO] Generating JUnit report from /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748248079177/junit-results to /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748248079177/junit-report.xml
+[2025-05-26T08:27:59.183Z] [ERROR] Playwright timeout error
+[2025-05-26T08:27:59.183Z] [INFO] Performance: test-operation completed in 51ms
+[2025-05-26T08:27:59.189Z] [INFO] Report generated: /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748248079170/html-report.html
+[2025-05-26T09:49:29.988Z] [INFO] Extracting text from elements: p
+[2025-05-26T09:49:29.988Z] [INFO] Saving DOM snapshot: test-snapshot
+[2025-05-26T09:49:29.988Z] [INFO] Extracting list data from: #simple-list
+[2025-05-26T09:49:29.989Z] [INFO] Extracting data from table: table
+[2025-05-26T09:49:29.989Z] [ERROR] Failed to extract text from elements: p
+[2025-05-26T09:49:29.989Z] [ERROR] Failed to extract list data from: #simple-list
+[2025-05-26T09:49:29.990Z] [ERROR] Failed to extract table data from: table
+[2025-05-26T09:49:30.007Z] [INFO] DOM snapshot saved to: /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-test-1748252969431/snapshots/test-snapshot-2025-05-26T09-49-30-005Z.html
+[2025-05-26T09:49:30.317Z] [INFO] Extracting page metadata
+[2025-05-26T09:49:30.724Z] [INFO] Extracting images with selector: img
+[2025-05-26T09:49:30.724Z] [ERROR] Failed to extract images with selector: img
+[2025-05-26T09:49:31.314Z] [INFO] Extracting list data from: #simple-list
+[2025-05-26T09:49:31.315Z] [ERROR] Failed to extract list data from: #simple-list
+[2025-05-26T09:49:31.327Z] [INFO] Extracting data from table: table
+[2025-05-26T09:49:31.327Z] [INFO] Extracting text from elements: p
+[2025-05-26T09:49:31.327Z] [ERROR] Failed to extract table data from: table
+[2025-05-26T09:49:31.328Z] [ERROR] Failed to extract text from elements: p
+[2025-05-26T09:49:32.850Z] [INFO] Extracting links with selector: a
+[2025-05-26T09:49:32.851Z] [ERROR] Failed to extract links with selector: a
+[2025-05-26T09:49:32.875Z] [INFO] Extracting structured data
+[2025-05-26T09:49:32.876Z] [ERROR] Failed to extract structured data
+[2025-05-26T09:49:33.006Z] [INFO] Extracting images with selector: img
+[2025-05-26T09:49:33.009Z] [ERROR] Failed to extract images with selector: img
+[2025-05-26T09:49:34.212Z] [INFO] Extracting structured data
+[2025-05-26T09:49:34.213Z] [INFO] Extracting links with selector: a
+[2025-05-26T09:49:34.214Z] [ERROR] Failed to extract structured data
+[2025-05-26T09:49:34.218Z] [ERROR] Failed to extract links with selector: a
+[2025-05-26T09:49:34.290Z] [INFO] Extracting form data from: form
+[2025-05-26T09:49:34.291Z] [ERROR] Failed to extract form data from: form
+[2025-05-26T09:49:35.454Z] [INFO] Extracting form data from: form
+[2025-05-26T09:49:35.455Z] [ERROR] Failed to extract form data from: form
+[2025-05-26T09:49:53.169Z] [ERROR] Playwright navigation error
+[2025-05-26T09:49:53.186Z] [ERROR] API request error
+[2025-05-26T09:49:53.201Z] [ERROR] Assertion error
+[2025-05-26T09:49:53.209Z] [WARN] Playwright operation failed, retrying (1/4)
+[2025-05-26T09:49:53.215Z] [WARN] Playwright operation failed, retrying (2/4)
+[2025-05-26T09:49:53.227Z] [WARN] Playwright operation failed, retrying (3/4)
+[2025-05-26T09:49:53.269Z] [WARN] Playwright operation failed, retrying (1/3)
+[2025-05-26T09:49:53.281Z] [ERROR] Playwright error
+[2025-05-26T09:49:53.292Z] [ERROR] Playwright timeout error
+[2025-05-26T09:49:53.300Z] [ERROR] Playwright selector error
+[2025-05-26T09:49:53.305Z] [WARN] Playwright operation failed, retrying (1/3)
+[2025-05-26T09:49:53.317Z] [WARN] Playwright operation failed, retrying (2/3)
+[2025-05-26T09:49:53.347Z] [ERROR] Playwright error
+[2025-05-26T09:49:53.408Z] [ERROR] Playwright timeout error
+[2025-05-26T09:49:53.426Z] [WARN] Playwright operation failed, using fallback
+[2025-05-26T09:49:53.560Z] [INFO] Performance: test-operation completed in 68ms
+[2025-05-26T09:50:18.016Z] [INFO] Report generated: /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748253017966/html-report.html
+[2025-05-26T09:50:18.667Z] [INFO] Generating Markdown report from /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748253018534/test-results to /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748253018534/markdown-report.md
+[2025-05-26T09:50:19.535Z] [INFO] Generating JUnit report from /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748253019505/junit-results to /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748253019505/junit-report.xml
+[2025-05-26T11:46:59.907Z] [INFO] Saving DOM snapshot: test-snapshot
+[2025-05-26T11:46:59.907Z] [INFO] Extracting text from elements: p
+[2025-05-26T11:46:59.907Z] [INFO] Extracting data from table: table
+[2025-05-26T11:46:59.907Z] [INFO] Extracting list data from: #simple-list
+[2025-05-26T11:46:59.908Z] [ERROR] Failed to extract table data from: table
+[2025-05-26T11:46:59.908Z] [ERROR] Failed to extract text from elements: p
+[2025-05-26T11:46:59.908Z] [ERROR] Failed to extract list data from: #simple-list
+[2025-05-26T11:46:59.917Z] [INFO] DOM snapshot saved to: /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-test-1748260019397/snapshots/test-snapshot-2025-05-26T11-46-59-917Z.html
+[2025-05-26T11:47:00.037Z] [INFO] Extracting page metadata
+[2025-05-26T11:47:00.692Z] [INFO] Extracting list data from: #simple-list
+[2025-05-26T11:47:00.692Z] [INFO] Extracting data from table: table
+[2025-05-26T11:47:00.693Z] [ERROR] Failed to extract table data from: table
+[2025-05-26T11:47:00.693Z] [ERROR] Failed to extract list data from: #simple-list
+[2025-05-26T11:47:00.694Z] [INFO] Extracting text from elements: p
+[2025-05-26T11:47:00.695Z] [ERROR] Failed to extract text from elements: p
+[2025-05-26T11:47:00.772Z] [INFO] Extracting images with selector: img
+[2025-05-26T11:47:00.773Z] [ERROR] Failed to extract images with selector: img
+[2025-05-26T11:47:01.657Z] [INFO] Extracting structured data
+[2025-05-26T11:47:01.658Z] [ERROR] Failed to extract structured data
+[2025-05-26T11:47:01.746Z] [INFO] Extracting links with selector: a
+[2025-05-26T11:47:01.747Z] [ERROR] Failed to extract links with selector: a
+[2025-05-26T11:47:02.431Z] [INFO] Extracting images with selector: img
+[2025-05-26T11:47:02.432Z] [ERROR] Failed to extract images with selector: img
+[2025-05-26T11:47:02.467Z] [INFO] Extracting structured data
+[2025-05-26T11:47:02.472Z] [ERROR] Failed to extract structured data
+[2025-05-26T11:47:02.565Z] [INFO] Extracting links with selector: a
+[2025-05-26T11:47:02.565Z] [ERROR] Failed to extract links with selector: a
+[2025-05-26T11:47:03.149Z] [INFO] Extracting form data from: form
+[2025-05-26T11:47:03.149Z] [ERROR] Failed to extract form data from: form
+[2025-05-26T11:47:04.118Z] [INFO] Extracting form data from: form
+[2025-05-26T11:47:04.119Z] [ERROR] Failed to extract form data from: form
+[2025-05-26T11:47:18.971Z] [ERROR] Playwright navigation error
+[2025-05-26T11:47:18.997Z] [ERROR] Assertion error
+[2025-05-26T11:47:19.011Z] [WARN] Playwright operation failed, retrying (1/4)
+[2025-05-26T11:47:19.017Z] [WARN] Playwright operation failed, retrying (2/4)
+[2025-05-26T11:47:19.033Z] [WARN] Playwright operation failed, retrying (3/4)
+[2025-05-26T11:47:19.067Z] [WARN] Playwright operation failed, retrying (1/3)
+[2025-05-26T11:47:19.078Z] [ERROR] Playwright error
+[2025-05-26T11:47:19.089Z] [ERROR] Playwright timeout error
+[2025-05-26T11:47:19.097Z] [ERROR] Playwright selector error
+[2025-05-26T11:47:19.102Z] [WARN] Playwright operation failed, retrying (1/3)
+[2025-05-26T11:47:19.114Z] [WARN] Playwright operation failed, retrying (2/3)
+[2025-05-26T11:47:19.138Z] [ERROR] Playwright error
+[2025-05-26T11:47:19.197Z] [ERROR] Playwright timeout error
+[2025-05-26T11:47:19.200Z] [WARN] Playwright operation failed, using fallback
+[2025-05-26T11:47:19.236Z] [ERROR] API request error
+[2025-05-26T11:47:19.258Z] [INFO] Performance: test-operation completed in 51ms
+[2025-05-26T11:47:35.842Z] [INFO] Report generated: /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748260055809/html-report.html
+[2025-05-26T11:47:35.855Z] [INFO] Generating Markdown report from /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748260055809/test-results to /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748260055809/markdown-report.md
+[2025-05-26T11:47:35.870Z] [INFO] Generating JUnit report from /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748260055809/junit-results to /var/folders/vr/pp5_l7xj5ylcztlrk6j012sng2trn_/T/playwright-reporting-tests-1748260055809/junit-report.xml

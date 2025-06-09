@@ -1,0 +1,3 @@
+2025-06-05T06:59:45.461Z [WARN]: API request failed (attempt 1/3). Retrying in 1000ms
+2025-06-05T06:59:46.463Z [WARN]: API request failed (attempt 2/3). Retrying in 2000ms
+2025-06-05T06:59:48.467Z [ERROR]: API request failed after 3 attempts

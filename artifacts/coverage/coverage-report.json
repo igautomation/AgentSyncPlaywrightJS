@@ -1,0 +1,25 @@
+{
+  "timestamp": "2025-05-26T08:27:59.818Z",
+  "overallCoverage": {
+    "lines": 77.08,
+    "statements": 77.08,
+    "functions": 81.15,
+    "branches": 66.9
+  },
+  "fileCount": 9,
+  "fullyCoveredCount": 3,
+  "lowCoverageFiles": [
+    {
+      "file": "/Users/mzahirudeen/playwright-framework/src/utils/reporting/reportingUtils.js",
+      "lineCoverage": 53.53,
+      "functionCoverage": 50,
+      "branchCoverage": 50.68,
+      "uncoveredLines": []
+    }
+  ],
+  "thresholdsMet": {
+    "lines": true,
+    "functions": true,
+    "branches": true
+  }
+}
