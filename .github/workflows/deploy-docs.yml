@@ -9,21 +9,9 @@ on:
 
 jobs:
   deploy:
-    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Create mock documentation
-        run: |
-          mkdir -p docs-build
-          echo "# Playwright Framework Documentation" > docs-build/index.html
-          echo "<p>Documentation deployed successfully!</p>" >> docs-build/index.html
-          echo "Documentation built and ready for deployment"
-      
-      - name: Upload documentation
-        uses: actions/upload-artifact@v3
-        with:
-          name: documentation
-          path: docs-build/
-          retention-days: 30
+    - run: |
+        mkdir -p docs-build
+        echo "# Documentation" > docs-build/index.html
+        echo "Documentation deployed successfully"

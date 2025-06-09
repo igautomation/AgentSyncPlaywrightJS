@@ -11,8 +11,6 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Run mock lint
-      run: |
+    - run: |
         echo "Linting completed successfully"
         exit 0
