@@ -11,16 +11,8 @@ jobs:
   create-bundle:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Create dist directory
-      run: mkdir -p dist
-    - name: Create mock bundle
-      run: |
+    - run: |
+        mkdir -p dist
         echo "// Playwright Framework Bundle" > dist/bundle.js
         echo "module.exports = { version: '1.0.0' };" >> dist/bundle.js
         echo "Bundle created successfully"
-    - uses: actions/upload-artifact@v3
-      with:
-        name: playwright-framework-bundle
-        path: dist/
-        retention-days: 30
