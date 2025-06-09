@@ -81,3 +81,4 @@ This framework includes GitHub Actions workflows for:
 ## License
 
 MIT# playwright-framework
+# Updated README
