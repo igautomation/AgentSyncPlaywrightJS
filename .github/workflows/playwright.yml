@@ -29,7 +29,9 @@ jobs:
           "origins": []
         }' > auth/salesforce-storage-state.json
     - name: Run Playwright tests
-      run: npx playwright test
+      env:
+        CI: true
+      run: npx playwright test --project=chromium
     - uses: actions/upload-artifact@v3
       if: always()
       with:
