@@ -1,0 +1,59 @@
+name: Test Validation
+
+on:
+  push:
+    branches: [ develop, feature/*, enhancement/* ]
+  pull_request:
+    branches: [ develop ]
+  workflow_dispatch:
+    inputs:
+      test_suite:
+        description: 'Test suite to run'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - unit
+          - integration
+          - e2e
+
+jobs:
+  test:
+    name: Run Test Suite
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run tests
+        run: |
+          if [[ "${{ github.event.inputs.test_suite }}" == "unit" ]]; then
+            npm run test:unit
+          elif [[ "${{ github.event.inputs.test_suite }}" == "integration" ]]; then
+            npm run test:integration
+          elif [[ "${{ github.event.inputs.test_suite }}" == "e2e" ]]; then
+            npm run test:e2e
+          else
+            npm test
+          fi
+      
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: |
+            reports/
+            test-results/
+          retention-days: 7
