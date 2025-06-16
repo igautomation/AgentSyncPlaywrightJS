@@ -10,9 +10,7 @@
     "grep": {},
     "grepInvert": null,
     "maxFailures": 0,
-    "metadata": {
-      "actualWorkers": 5
-    },
+    "metadata": {},
     "preserveOutput": "always",
     "reporter": [
       [
@@ -48,9 +46,7 @@
         "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 5
-        },
+        "metadata": {},
         "id": "setup",
         "name": "setup",
         "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
@@ -64,9 +60,7 @@
         "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 5
-        },
+        "metadata": {},
         "id": "chromium",
         "name": "chromium",
         "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
@@ -84,9 +78,7 @@
         "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 5
-        },
+        "metadata": {},
         "id": "firefox",
         "name": "firefox",
         "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
@@ -104,9 +96,7 @@
         "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 5
-        },
+        "metadata": {},
         "id": "webkit",
         "name": "webkit",
         "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
@@ -124,9 +114,7 @@
         "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 5
-        },
+        "metadata": {},
         "id": "mobile-chrome",
         "name": "mobile-chrome",
         "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
@@ -140,9 +128,7 @@
         "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 5
-        },
+        "metadata": {},
         "id": "mobile-safari",
         "name": "mobile-safari",
         "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
@@ -156,9 +142,7 @@
         "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 5
-        },
+        "metadata": {},
         "id": "salesforce",
         "name": "salesforce",
         "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
@@ -172,9 +156,7 @@
         "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 5
-        },
+        "metadata": {},
         "id": "api",
         "name": "api",
         "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
@@ -188,9 +170,7 @@
         "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 5
-        },
+        "metadata": {},
         "id": "visual",
         "name": "visual",
         "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
@@ -204,9 +184,7 @@
         "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 5
-        },
+        "metadata": {},
         "id": "accessibility",
         "name": "accessibility",
         "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
@@ -245,35 +223,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "skipped",
-                      "duration": 15593,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:01.207Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -289,35 +243,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "skipped",
-                      "duration": 15598,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:01.220Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -333,35 +263,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 15595,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:01.198Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -377,35 +283,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 3,
-                      "status": "skipped",
-                      "duration": 10672,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:36.044Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -421,35 +303,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 1,
-                      "status": "skipped",
-                      "duration": 10573,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:36.111Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -465,35 +323,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 0,
-                      "status": "skipped",
-                      "duration": 10647,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:36.316Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -509,35 +343,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 10604,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:04.848Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -553,35 +363,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 11,
-                      "parallelIndex": 1,
-                      "status": "skipped",
-                      "duration": 10597,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:04.848Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -597,35 +383,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 12,
-                      "parallelIndex": 3,
-                      "status": "skipped",
-                      "duration": 10598,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:04.898Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -641,35 +403,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "accessibility",
                   "projectName": "accessibility",
-                  "results": [
-                    {
-                      "workerIndex": 22,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 15106,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:31.543Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -685,35 +423,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "accessibility",
                   "projectName": "accessibility",
-                  "results": [
-                    {
-                      "workerIndex": 23,
-                      "parallelIndex": 1,
-                      "status": "skipped",
-                      "duration": 15091,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:31.655Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -729,35 +443,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "accessibility",
                   "projectName": "accessibility",
-                  "results": [
-                    {
-                      "workerIndex": 24,
-                      "parallelIndex": 0,
-                      "status": "skipped",
-                      "duration": 15100,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:31.894Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -790,35 +480,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "skipped",
-                      "duration": 15600,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:01.214Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -834,35 +500,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 4,
-                      "status": "skipped",
-                      "duration": 15593,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:01.210Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -878,35 +520,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 15287,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:18.271Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -922,35 +540,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 10657,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:36.650Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -966,35 +560,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 9,
-                      "parallelIndex": 4,
-                      "status": "skipped",
-                      "duration": 10681,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:36.764Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -1010,35 +580,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 3,
-                      "status": "skipped",
-                      "duration": 10182,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:47.394Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -1054,35 +600,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 13,
-                      "parallelIndex": 4,
-                      "status": "skipped",
-                      "duration": 10350,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:06.187Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -1098,35 +620,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 14,
-                      "parallelIndex": 0,
-                      "status": "skipped",
-                      "duration": 10349,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:06.202Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -1142,35 +640,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 11,
-                      "parallelIndex": 1,
-                      "status": "skipped",
-                      "duration": 10187,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:15.972Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -1186,35 +660,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "accessibility",
                   "projectName": "accessibility",
-                  "results": [
-                    {
-                      "workerIndex": 25,
-                      "parallelIndex": 4,
-                      "status": "skipped",
-                      "duration": 15090,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:32.193Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -1230,35 +680,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "accessibility",
                   "projectName": "accessibility",
-                  "results": [
-                    {
-                      "workerIndex": 22,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 15059,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:46.746Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -1274,35 +700,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "Demo site is unavailable"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "accessibility",
                   "projectName": "accessibility",
-                  "results": [
-                    {
-                      "workerIndex": 23,
-                      "parallelIndex": 1,
-                      "status": "skipped",
-                      "duration": 15066,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:46.836Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "Demo site is unavailable"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -1339,22 +741,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 8287,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:18.274Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "d98e8b186f38dfa3d015-cbbbfb3ff76efdc496ac",
@@ -1373,22 +761,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 12840,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:18.278Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "d98e8b186f38dfa3d015-f24717e0b0b2f39d9bfa",
@@ -1407,22 +781,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 12532,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:18.281Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "d98e8b186f38dfa3d015-d19fa9149de3202bd979",
@@ -1441,22 +801,8 @@
                   "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 7973,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:47.782Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "d98e8b186f38dfa3d015-5f3fe5b6e601d8bbc4d9",
@@ -1475,22 +821,8 @@
                   "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 9,
-                      "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 8214,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:48.174Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "d98e8b186f38dfa3d015-c28e7ffcb81704b2bf4b",
@@ -1509,22 +841,8 @@
                   "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 9941,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:48.549Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "d98e8b186f38dfa3d015-422edd238cfa1ead3162",
@@ -1543,22 +861,8 @@
                   "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 12,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 5502,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:15.972Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "d98e8b186f38dfa3d015-c5699e06c3fd44f0444b",
@@ -1577,22 +881,8 @@
                   "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 5272,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:15.977Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "d98e8b186f38dfa3d015-6e14d4097599a443a35f",
@@ -1611,22 +901,8 @@
                   "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 14,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 5227,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:16.701Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "d98e8b186f38dfa3d015-7e8b36e02379c9b91a16",
@@ -1662,22 +938,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 6978,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:18.289Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "db3ffc29bc7ca02daf5c-9a067bf451ab76020524",
@@ -1696,22 +958,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 4705,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:25.274Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "db3ffc29bc7ca02daf5c-0899430497a1c39c5c6c",
@@ -1730,22 +978,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 4546,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:26.570Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "db3ffc29bc7ca02daf5c-e97daf711d99f1836513",
@@ -1764,22 +998,8 @@
                   "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 13627,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:48.876Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "db3ffc29bc7ca02daf5c-034f31f33d2cec24a43d",
@@ -1798,22 +1018,8 @@
                   "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4683,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:55.766Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "db3ffc29bc7ca02daf5c-ec99845f9aebee30e170",
@@ -1832,22 +1038,8 @@
                   "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 9,
-                      "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 4690,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:56.393Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "db3ffc29bc7ca02daf5c-30f96ecc1828211cf0ab",
@@ -1866,22 +1058,8 @@
                   "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 13,
-                      "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 5233,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:16.704Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "db3ffc29bc7ca02daf5c-f16e5f914000d56ee853",
@@ -1900,22 +1078,8 @@
                   "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 5112,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:21.255Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "db3ffc29bc7ca02daf5c-c725fdd240da90a64660",
@@ -1934,22 +1098,8 @@
                   "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 12,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 5018,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:21.480Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "db3ffc29bc7ca02daf5c-d93b7e7d65fcc8eb90e4",
@@ -1985,22 +1135,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 1325,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:29.987Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "1c6e2aeb17c9ccecf0e9-5d953cc25fbd7bd3416a",
@@ -2019,22 +1155,8 @@
                   "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 1042,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:57.582Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "1c6e2aeb17c9ccecf0e9-47ba53113669e38bf3f6",
@@ -2053,22 +1175,8 @@
                   "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 14,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1040,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:21.937Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "1c6e2aeb17c9ccecf0e9-0aa1227294c37dd8ee8d",
@@ -2104,22 +1212,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4027,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:30.820Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "5f6a6fda948725e58e0b-acfcceff5a47eeb59fa1",
@@ -2138,22 +1232,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 4069,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:31.125Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "5f6a6fda948725e58e0b-6b9537e9b5f08ce576d2",
@@ -2172,22 +1252,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 4304,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:31.127Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "5f6a6fda948725e58e0b-3dd63cdfb177cff0b61d",
@@ -2206,22 +1272,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 4080,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:31.317Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "5f6a6fda948725e58e0b-58fb28096f99861085b1",
@@ -2240,22 +1292,8 @@
                   "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 4221,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:58.495Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "5f6a6fda948725e58e0b-bd5e46431170489fa7ab",
@@ -2274,22 +1312,8 @@
                   "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 4269,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:58.628Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "5f6a6fda948725e58e0b-8287bfc69e10cb76f3fd",
@@ -2308,22 +1332,8 @@
                   "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4801,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:00.454Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "5f6a6fda948725e58e0b-2a5abf50cf53b4f75125",
@@ -2342,22 +1352,8 @@
                   "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 9,
-                      "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 4159,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:01.088Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "5f6a6fda948725e58e0b-8d5007c46f46873dc2b0",
@@ -2376,22 +1372,8 @@
                   "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 13,
-                      "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 4125,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:21.945Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "5f6a6fda948725e58e0b-8113e62c58d0c8049e65",
@@ -2410,22 +1392,8 @@
                   "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 14,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4079,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:22.982Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "5f6a6fda948725e58e0b-f5052a8d8dedc48a6e62",
@@ -2444,22 +1412,8 @@
                   "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 13,
-                      "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 4873,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:26.074Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "5f6a6fda948725e58e0b-40b5018350a0e0144b86",
@@ -2478,22 +1432,8 @@
                   "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 11,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 4151,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:26.167Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "5f6a6fda948725e58e0b-31f77e2bdbac8821b0fa",
@@ -2525,35 +1465,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 206,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:33.575Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -2569,35 +1485,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 222,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:33.788Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -2613,35 +1505,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 1,
-                      "status": "skipped",
-                      "duration": 137,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:02.516Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -2657,35 +1525,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 1,
-                      "status": "skipped",
-                      "duration": 156,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:02.656Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -2701,35 +1545,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 135,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:26.378Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -2745,35 +1565,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 12,
-                      "parallelIndex": 3,
-                      "status": "skipped",
-                      "duration": 130,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:26.506Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -2797,35 +1593,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 196,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:34.013Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -2841,35 +1613,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 179,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:34.213Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -2885,35 +1633,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 161,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:34.396Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -2929,35 +1653,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 195,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:02.729Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -2973,35 +1673,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 1,
-                      "status": "skipped",
-                      "duration": 196,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:02.818Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -3017,35 +1693,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 3,
-                      "status": "skipped",
-                      "duration": 212,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:02.909Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -3061,35 +1713,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 124,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:26.516Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -3105,35 +1733,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 12,
-                      "parallelIndex": 3,
-                      "status": "skipped",
-                      "duration": 124,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:26.640Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -3149,35 +1753,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 117,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:26.643Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -3201,35 +1781,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 208,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:34.560Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -3245,35 +1801,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 189,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:34.773Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -3289,35 +1821,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 187,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:02.927Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -3333,35 +1841,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 1,
-                      "status": "skipped",
-                      "duration": 172,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:03.019Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -3377,35 +1861,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 127,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:26.763Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -3421,35 +1881,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "OrangeHRM tests are skipped due to site availability issues"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 12,
-                      "parallelIndex": 3,
-                      "status": "skipped",
-                      "duration": 127,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:26.767Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "OrangeHRM tests are skipped due to site availability issues"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -3491,27 +1927,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 884,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:34.859Z",
-                      "annotations": [
-                        {
-                          "type": "flaky",
-                          "description": "This test is known to be flaky"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "9615df678fe8c575b758-a19348adc1614a64e47f",
@@ -3530,22 +1947,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 1042,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:34.969Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "9615df678fe8c575b758-afd04b36b0f71fd04981",
@@ -3564,22 +1967,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 912,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:35.199Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "9615df678fe8c575b758-3286f1e9b30b5619e441",
@@ -3603,27 +1992,8 @@
                   "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 903,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:03.124Z",
-                      "annotations": [
-                        {
-                          "type": "flaky",
-                          "description": "This test is known to be flaky"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "9615df678fe8c575b758-535793b4490f7e532dd6",
@@ -3642,22 +2012,8 @@
                   "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 881,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:03.128Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "9615df678fe8c575b758-e9c1f87be20d89a9cc8f",
@@ -3676,22 +2032,8 @@
                   "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 893,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:03.200Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "9615df678fe8c575b758-2f20e4bb7ea3a478b29d",
@@ -3715,27 +2057,8 @@
                   "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 885,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:26.894Z",
-                      "annotations": [
-                        {
-                          "type": "flaky",
-                          "description": "This test is known to be flaky"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "9615df678fe8c575b758-3e052dbb2a96fb939e12",
@@ -3754,22 +2077,8 @@
                   "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 12,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 877,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:26.900Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "9615df678fe8c575b758-5dd0d40c5c2c4225d646",
@@ -3788,22 +2097,8 @@
                   "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 14,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 832,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:27.066Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "9615df678fe8c575b758-f4bdf435c894550dcb64",
@@ -3839,22 +2134,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 203,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:35.404Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4e1e32b0b7aaf51135c6-b9b60e491ab79b1f4864",
@@ -3873,22 +2154,8 @@
                   "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 175,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:04.015Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4e1e32b0b7aaf51135c6-b0f94353241e4e5bcfa3",
@@ -3907,22 +2174,8 @@
                   "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 12,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 135,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:27.784Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "4e1e32b0b7aaf51135c6-d3b7f5c395de737dca21",
@@ -3964,21 +2217,7 @@
                   "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:35.436Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -4004,21 +2243,7 @@
                   "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:35.436Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -4044,21 +2269,7 @@
                   "expectedStatus": "skipped",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:04.029Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -4084,21 +2295,7 @@
                   "expectedStatus": "skipped",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:04.030Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -4124,21 +2321,7 @@
                   "expectedStatus": "skipped",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:27.782Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -4164,21 +2347,7 @@
                   "expectedStatus": "skipped",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:27.782Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -4221,21 +2390,7 @@
                   "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:35.436Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -4261,21 +2416,7 @@
                   "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:35.439Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -4301,21 +2442,7 @@
                   "expectedStatus": "skipped",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:04.030Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -4341,21 +2468,7 @@
                   "expectedStatus": "skipped",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:04.030Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -4381,21 +2494,7 @@
                   "expectedStatus": "skipped",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:27.782Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -4421,21 +2520,7 @@
                   "expectedStatus": "skipped",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:27.782Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -4476,21 +2561,7 @@
                   "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:35.443Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -4514,21 +2585,7 @@
                   "expectedStatus": "skipped",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:04.032Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -4552,21 +2609,7 @@
                   "expectedStatus": "skipped",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:27.784Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -4603,22 +2646,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 2,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:35.468Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "04a95a9b0e2c2856f905-030c6729db5068a1ab73",
@@ -4637,22 +2666,8 @@
                   "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 2,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:04.050Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "04a95a9b0e2c2856f905-8b19d6913dd956d9a7e1",
@@ -4671,22 +2686,8 @@
                   "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 3,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:27.799Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "04a95a9b0e2c2856f905-08ef53b8f4887d963595",
@@ -4722,22 +2723,8 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 2,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:23:35.480Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "7a6de6e83844e6f8ca5f-0e48d7b57f59d68cfc54",
@@ -4756,22 +2743,8 @@
                   "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 8,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:04.059Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "7a6de6e83844e6f8ca5f-79823a369387008822d1",
@@ -4790,22 +2763,8 @@
                   "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:27.807Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "7a6de6e83844e6f8ca5f-db2245801bdc2a606b75",
@@ -4841,26 +2800,8 @@
                   "expectedStatus": "passed",
                   "projectId": "salesforce",
                   "projectName": "salesforce",
-                  "results": [
-                    {
-                      "workerIndex": 15,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 7,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "API Limits: {\n  \"DailyApiRequests\": {\n    \"Max\": 15000,\n    \"Remaining\": 14998\n  },\n  \"DailyBulkApiRequests\": {\n    \"Max\": 5000,\n    \"Remaining\": 5000\n  },\n  \"DailyGenericStreamingApiEvents\": {\n    \"Max\": 10000,\n    \"Remaining\": 10000\n  }\n}\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:28.375Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "dfc8226da50b5db5d5d1-5a87dc10ae3f636fb6fc",
@@ -4879,26 +2820,8 @@
                   "expectedStatus": "passed",
                   "projectId": "salesforce",
                   "projectName": "salesforce",
-                  "results": [
-                    {
-                      "workerIndex": 16,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 9,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Objects: [ \u001b[32m'Account'\u001b[39m, \u001b[32m'Contact'\u001b[39m ]\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:28.382Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "dfc8226da50b5db5d5d1-164d25e1b7e0515b2f0d",
@@ -4917,26 +2840,8 @@
                   "expectedStatus": "passed",
                   "projectId": "salesforce",
                   "projectName": "salesforce",
-                  "results": [
-                    {
-                      "workerIndex": 17,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 6,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Contact Fields: [ \u001b[32m'Id'\u001b[39m, \u001b[32m'FirstName'\u001b[39m, \u001b[32m'LastName'\u001b[39m, \u001b[32m'Email'\u001b[39m, \u001b[32m'Phone'\u001b[39m ]\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:28.383Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "dfc8226da50b5db5d5d1-64599295d7433dd7f051",
@@ -4955,26 +2860,8 @@
                   "expectedStatus": "passed",
                   "projectId": "salesforce",
                   "projectName": "salesforce",
-                  "results": [
-                    {
-                      "workerIndex": 15,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 3,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Contact metadata extracted to /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/temp/contact-metadata-mock.json\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:28.390Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "dfc8226da50b5db5d5d1-f8d113807ee55fe006a9",
@@ -5006,35 +2893,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "No access token available"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "salesforce",
                   "projectName": "salesforce",
-                  "results": [
-                    {
-                      "workerIndex": 17,
-                      "parallelIndex": 3,
-                      "status": "skipped",
-                      "duration": 1,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:28.401Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "No access token available"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -5050,35 +2913,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "No access token available"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "salesforce",
                   "projectName": "salesforce",
-                  "results": [
-                    {
-                      "workerIndex": 15,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 1,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:28.401Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "No access token available"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -5094,35 +2933,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "No access token available"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "salesforce",
                   "projectName": "salesforce",
-                  "results": [
-                    {
-                      "workerIndex": 16,
-                      "parallelIndex": 0,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:28.402Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "No access token available"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -5138,35 +2953,11 @@
               "tests": [
                 {
                   "timeout": 60000,
-                  "annotations": [
-                    {
-                      "type": "skip",
-                      "description": "No access token available"
-                    }
-                  ],
-                  "expectedStatus": "skipped",
+                  "annotations": [],
+                  "expectedStatus": "passed",
                   "projectId": "salesforce",
                   "projectName": "salesforce",
-                  "results": [
-                    {
-                      "workerIndex": 15,
-                      "parallelIndex": 2,
-                      "status": "skipped",
-                      "duration": 1,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:28.405Z",
-                      "annotations": [
-                        {
-                          "type": "skip",
-                          "description": "No access token available"
-                        }
-                      ],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -5203,32 +2994,8 @@
                   "expectedStatus": "passed",
                   "projectId": "salesforce",
                   "projectName": "salesforce",
-                  "results": [
-                    {
-                      "workerIndex": 17,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 25831,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Current page title: Verify Your Identity | Salesforce\n"
-                        },
-                        {
-                          "text": "Current URL: https://wise-koala-a44c19-dev-ed.trailblaze.my.salesforce.com/_ui/identity/verification/method/SmsVerificationFinishUi/e?vcsrf=ZFnBLbcplt-9gDwjEJVld0H9Rg6hGJ_bcO7rFEv07_SPynyK4O5LsJ3Bt8G_k7nWKXo_bDofeoY94MMd83Vk6CgajZDYmj5ClkPvy8zyVlF0podb9vUqayzVKs-EqnuzyhZjgVKMJG7W0p75a8wwuEJlnNUaEYktEcU7Mb0aptM96ZTV0F9B4nQB5WJEI8jOn2kfICAyGdgY1dabb_JLap-Hpces-Tqc8tx2CKJnd1LtOtWmQ0XgdO6MLIimYWRu39KByhyekDWCmXSc8aRWX_dSjBgAsVi5TcWRlN8fmZsEfOirKHkhNyxjO8DQBqGQkfSjM1Y5uMo_wI638dW1EQxaoIeZNIJe5EzSMcBBH4EGXILZyinRXdXRjvQdeThTZjXvaN0a_lC8yPOgKDJP4qnHYFvF3iQ_pLMiNyOy-Ss9J3VFP7b6kfyfYLdJXw5wZK4n8CXvu85GybKDUrsf6lSdbBKJvmK2J0SNnT_QEQP3jZcc3b4G3rxQM5jeqH_siqyJrGvl3W947XeY5ZSnAYBGhfW9IDUF6lvNZa0lhywmlHF9gwf0bxzAr4A0JmfkUSSexTYllvGr_OTDx_M_vWqep36urwiBu5n5rPC1RXrszx7QNVKtq_8LUI3lsEfFo18E0-n2wzqHp030nP_U6JMpDKFkfQhn8eMSAnNgUe8%3D&vpol=ic&vflid=0&vfgrp=1292664573&retURL=%2Fsecur%2Ffrontdoor.jsp%3Fallp%3D1%26cshc%3DL00000GHB89L00000OHE3z%26apv%3D1%26display%3Dpage%26ucs%3D1\n"
-                        },
-                        {
-                          "text": "✅ Successfully logged in to Salesforce and saved authentication state\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:28.408Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "1fb1f462758e2810acb2-2dc13c921714257b4ce9",
@@ -5268,21 +3035,7 @@
                   "expectedStatus": "skipped",
                   "projectId": "salesforce",
                   "projectName": "salesforce",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:28.408Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
@@ -5319,22 +3072,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 19,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 438,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:28.825Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "e715ce341dd0fafa7d6e-f2a7b271b65b4eab0f07",
@@ -5353,22 +3092,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 18,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 457,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:28.826Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "e715ce341dd0fafa7d6e-6af83cebffba6efe4be5",
@@ -5387,22 +3112,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 19,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 353,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:29.270Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "e715ce341dd0fafa7d6e-f6b661abf8e2cfee843e",
@@ -5421,22 +3132,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 18,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 388,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:29.289Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "e715ce341dd0fafa7d6e-67fe929ec45bb89109bc",
@@ -5455,22 +3152,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 19,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 320,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:29.627Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "e715ce341dd0fafa7d6e-894ba6909fe6ec838c33",
@@ -5506,22 +3189,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 18,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 350,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:29.682Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "a5fa3f9fb0b3fb968e42-b0a0f5e1414610702469",
@@ -5540,22 +3209,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 19,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 364,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:29.952Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "a5fa3f9fb0b3fb968e42-12f2dffb433eaccd7f33",
@@ -5574,22 +3229,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 18,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 352,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:30.035Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "a5fa3f9fb0b3fb968e42-f78faa3b8a58fc405536",
@@ -5608,22 +3249,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 19,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 380,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:30.318Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "a5fa3f9fb0b3fb968e42-4ac30284a025934ca7f3",
@@ -5642,22 +3269,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 20,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 92,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:30.726Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "a5fa3f9fb0b3fb968e42-56b1bd85edd1227dbdd4",
@@ -5676,22 +3289,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 18,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 27,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:30.389Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "a5fa3f9fb0b3fb968e42-1ee1f6802582d02b8de9",
@@ -5710,22 +3309,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 18,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 350,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:30.419Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "a5fa3f9fb0b3fb968e42-b881aaf9e9e8971e029b",
@@ -5744,22 +3329,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 19,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 27,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:30.700Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "a5fa3f9fb0b3fb968e42-9281318bd894013e16c0",
@@ -5778,22 +3349,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 19,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 24,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:30.728Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "a5fa3f9fb0b3fb968e42-5adce7f3cbb8b3c3f89c",
@@ -5812,22 +3369,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 19,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 324,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:30.754Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "a5fa3f9fb0b3fb968e42-328ab1325bfab8b0e32d",
@@ -5846,22 +3389,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 18,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 28,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:30.771Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "a5fa3f9fb0b3fb968e42-1c3dd700c9e69dc216c6",
@@ -5880,22 +3409,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 18,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 349,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:30.801Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "a5fa3f9fb0b3fb968e42-2c238b6b8ca1617d5642",
@@ -5931,22 +3446,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 20,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 37,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:30.856Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "c021a6518f92b48a12a6-0ccc2852a6aec0b05caf",
@@ -5965,22 +3466,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 20,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 25,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:30.897Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "c021a6518f92b48a12a6-1c86461401f50e5a698a",
@@ -5999,22 +3486,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 20,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 346,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:30.925Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "c021a6518f92b48a12a6-3df82531c419833d4d07",
@@ -6033,22 +3506,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 21,
-                      "parallelIndex": 4,
-                      "status": "passed",
-                      "duration": 432,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:31.326Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "c021a6518f92b48a12a6-b4fe58b94761253a9a85",
@@ -6084,22 +3543,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 19,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 29,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:31.081Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "a77268e5abc8a73f8907-f640953b19d17fc730e8",
@@ -6118,22 +3563,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 19,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 26,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:31.112Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "a77268e5abc8a73f8907-6e089ec33e8f2842824b",
@@ -6152,22 +3583,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 19,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 342,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:31.139Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "a77268e5abc8a73f8907-26a8ea1877896a744a8f",
@@ -6186,22 +3603,8 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 18,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 29,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-06-16T07:24:31.154Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
               "id": "a77268e5abc8a73f8907-1f7eae7a97bcac6b36ca",
@@ -6216,10 +3619,10 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-06-16T07:23:00.591Z",
-    "duration": 121364.792,
-    "expected": 81,
-    "skipped": 65,
+    "startTime": "2025-06-16T14:13:38.172Z",
+    "duration": 118.98100000000005,
+    "expected": 0,
+    "skipped": 146,
     "unexpected": 0,
     "flaky": 0
   }
