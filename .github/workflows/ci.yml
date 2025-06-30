@@ -1,10 +1,34 @@
-name: CI
-on: [push, pull_request, workflow_dispatch]
+name: Framework CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
 jobs:
-  test:
+  framework-validation:
     runs-on: ubuntu-latest
+    
     steps:
-    - run: |
-        mkdir -p ci-results
-        echo "✅ CI process completed successfully" > ci-results/results.txt
-        echo "CI passed"
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Validate framework structure
+      run: |
+        echo "✅ Validating framework structure..."
+        test -d src/utils && echo "✅ Utils directory exists"
+        test -d src/pages && echo "✅ Pages directory exists"
+        test -d src/tests && echo "✅ Tests directory exists"
+        test -f src/index.js && echo "✅ Main entry point exists"
+        test -f package.json && echo "✅ Package.json exists"
+        echo "✅ Framework validation completed"

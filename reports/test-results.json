@@ -3619,8 +3619,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-06-30T08:21:51.640Z",
-    "duration": 248.098,
+    "startTime": "2025-06-30T12:56:13.545Z",
+    "duration": 113.23400000000004,
     "expected": 0,
     "skipped": 146,
     "unexpected": 0,
