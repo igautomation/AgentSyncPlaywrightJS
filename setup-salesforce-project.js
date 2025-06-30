@@ -91,39 +91,92 @@ test.describe('Salesforce Login Tests', () => {
 });`,
 
   'tests/salesforce-contact.spec.js': `const { test, expect } = require('@playwright/test');
-const { utils } = require('@igautomation/playwright-framework');
+const ContactPage = require('../pages/ContactPage');
+require('dotenv').config();
 
 test.describe('Salesforce Contact Tests', () => {
-  test.beforeEach(async ({ page }) => {
-    const loginPage = new utils.salesforce.LoginPage(page);
-    await loginPage.navigate();
-    await loginPage.login(process.env.SF_USERNAME, process.env.SF_PASSWORD);
-  });
-
+  test.use({ storageState: './auth/salesforce-storage-state.json' });
+  
   test('should create a new contact', async ({ page }) => {
-    const contactPage = new utils.salesforce.ContactPage(page);
+    const contactPage = new ContactPage(page);
     const testData = require('../data/contact-data.json');
     
-    await contactPage.navigate();
-    await contactPage.clickNew();
-    await contactPage.fillContactForm(testData.validContact);
-    await contactPage.save();
+    await page.goto(process.env.SF_INSTANCE_URL);
+    await contactPage.createContact(testData.validContact);
     
-    await expect(page.locator('.toastMessage')).toContainText('Contact');
+    const isCreated = await contactPage.verifyContactCreated();
+    expect(isCreated).toBeTruthy();
+  });
+});`,
+
+  'tests/salesforce-api.spec.js': `const { test, expect } = require('@playwright/test');
+const axios = require('axios');
+require('dotenv').config();
+
+test.describe('Salesforce API Tests', () => {
+  let accessToken;
+  
+  test.beforeAll(async () => {
+    // Get OAuth token
+    const tokenResponse = await axios.post(
+      \`\${process.env.SF_LOGIN_URL}/services/oauth2/token\`,
+      new URLSearchParams({
+        grant_type: 'password',
+        client_id: process.env.SF_CLIENT_ID,
+        client_secret: process.env.SF_CLIENT_SECRET,
+        username: process.env.SF_USERNAME,
+        password: \`\${process.env.SF_PASSWORD}\${process.env.SF_SECURITY_TOKEN}\`
+      })
+    );
+    accessToken = tokenResponse.data.access_token;
+  });
+  
+  test('should get account list via API', async () => {
+    const response = await axios.get(
+      \`\${process.env.SF_INSTANCE_URL}/services/data/v\${process.env.SF_API_VERSION}/sobjects/Account\`,
+      { headers: { Authorization: \`Bearer \${accessToken}\` } }
+    );
+    
+    expect(response.status).toBe(200);
+    expect(response.data).toHaveProperty('objectDescribe');
   });
 });`,
 
   'data/contact-data.json': `{
   "validContact": {
+    "salutation": "Mr.",
     "firstName": "Test",
     "lastName": "Contact",
     "email": "test.contact@example.com",
-    "phone": "555-0123"
+    "phone": "555-0123",
+    "title": "Software Engineer",
+    "department": "Engineering",
+    "accountName": "Postman"
   },
   "invalidContact": {
     "firstName": "",
     "lastName": "",
     "email": "invalid-email"
+  }
+}`,
+
+  'data/salesforce-config.json': `{
+  "selectors": {
+    "login": {
+      "usernameInput": "#username",
+      "passwordInput": "#password",
+      "loginButton": "#Login"
+    },
+    "navigation": {
+      "appLauncher": ".slds-icon-waffle",
+      "accountsTab": "a[title='Accounts']",
+      "contactsTab": "a[title='Contacts']"
+    }
+  },
+  "timeouts": {
+    "login": 60000,
+    "navigation": 30000,
+    "form": 10000
   }
 }`,
 
@@ -149,34 +202,86 @@ test.describe('Salesforce Contact Tests', () => {
 
 module.exports = LoginPage;`,
 
-  'pages/ContactPage.js': `class ContactPage {
+  'pages/BaseSalesforcePage.js': `class BaseSalesforcePage {
   constructor(page) {
     this.page = page;
-    this.newButton = 'div[title="New"]';
-    this.firstNameInput = 'input[name="firstName"]';
-    this.lastNameInput = 'input[name="lastName"]';
-    this.emailInput = 'input[name="Email"]';
-    this.phoneInput = 'input[name="Phone"]';
-    this.saveButton = 'button[name="SaveEdit"]';
   }
 
-  async navigate() {
-    await this.page.goto(\`\${process.env.SF_INSTANCE_URL}/lightning/o/Contact/list\`);
+  async waitForPageLoad() {
+    await this.page.waitForLoadState('networkidle');
+    await this.page.waitForTimeout(2000);
   }
 
-  async clickNew() {
-    await this.page.click(this.newButton);
+  async waitForSpinner() {
+    const spinner = this.page.locator('.slds-spinner');
+    if (await spinner.isVisible()) {
+      await spinner.waitFor({ state: 'hidden', timeout: 30000 });
+    }
+  }
+}
+
+module.exports = BaseSalesforcePage;`,
+
+  'pages/ContactPage.js': `const BaseSalesforcePage = require('./BaseSalesforcePage');
+
+class ContactPage extends BaseSalesforcePage {
+  constructor(page) {
+    super(page);
+    this.accountsTab = page.getByRole('link', { name: /Accounts/i });
+    this.accountLink = page.getByRole('link', { name: /Postman|Account/i }).first();
+    this.contactsRelatedTab = page.getByRole('tab', { name: /Contacts|Related/i });
+    this.newContactButton = page.getByRole('button', { name: /New|New Contact/i });
+    this.salutationDropdown = page.getByLabel(/Salutation/i);
+    this.firstNameInput = page.getByLabel(/First Name/i);
+    this.lastNameInput = page.getByLabel(/Last Name/i);
+    this.phoneInput = page.getByLabel(/Phone/i, { exact: true });
+    this.emailInput = page.getByLabel(/Email/i);
+    this.titleInput = page.getByLabel(/Title/i);
+    this.departmentInput = page.getByLabel(/Department/i);
+    this.saveButton = page.getByRole('button', { name: /Save/i, exact: true });
   }
 
-  async fillContactForm(contactData) {
-    await this.page.fill(this.firstNameInput, contactData.firstName);
-    await this.page.fill(this.lastNameInput, contactData.lastName);
-    if (contactData.email) await this.page.fill(this.emailInput, contactData.email);
-    if (contactData.phone) await this.page.fill(this.phoneInput, contactData.phone);
+  async navigateToContactCreation(accountName = 'Postman') {
+    try {
+      await this.accountLink.click({ timeout: 5000 });
+      await this.waitForPageLoad();
+      await this.contactsRelatedTab.click({ timeout: 5000 });
+      await this.waitForPageLoad();
+      await this.newContactButton.click();
+      await this.waitForPageLoad();
+    } catch (error) {
+      console.error('Error navigating to contact creation:', error.message);
+      await this.page.screenshot({ path: \`./contact-navigation-error-\${Date.now()}.png\` });
+      throw error;
+    }
   }
 
-  async save() {
-    await this.page.click(this.saveButton);
+  async createContact(contactData) {
+    await this.navigateToContactCreation(contactData.accountName);
+    
+    if (contactData.salutation) {
+      try {
+        await this.salutationDropdown.selectOption({ label: contactData.salutation });
+      } catch (error) {
+        console.log('Salutation dropdown not found');
+      }
+    }
+    
+    await this.firstNameInput.fill(contactData.firstName);
+    await this.lastNameInput.fill(contactData.lastName);
+    await this.phoneInput.fill(contactData.phone);
+    await this.emailInput.fill(contactData.email);
+    
+    if (contactData.title) await this.titleInput.fill(contactData.title);
+    if (contactData.department) await this.departmentInput.fill(contactData.department);
+    
+    await this.saveButton.click();
+    await this.waitForPageLoad();
+  }
+
+  async verifyContactCreated() {
+    const toast = this.page.locator('.slds-notify__content');
+    return await toast.isVisible();
   }
 }
 
@@ -185,19 +290,24 @@ module.exports = ContactPage;`,
   'package.json': `{
   "name": "salesforce-tests",
   "version": "1.0.0",
-  "description": "Salesforce testing project using AgentSync framework",
+  "description": "Complete Salesforce testing project with AgentSync framework",
   "scripts": {
     "test:sf": "playwright test --config=playwright.config.salesforce.js",
     "test:sf:headed": "playwright test --config=playwright.config.salesforce.js --headed",
     "test:sf:debug": "playwright test --config=playwright.config.salesforce.js --debug",
     "test:sf:ui": "playwright test --config=playwright.config.salesforce.js --ui",
+    "test:login": "playwright test tests/salesforce-login.spec.js",
+    "test:contact": "playwright test tests/salesforce-contact.spec.js",
+    "test:api": "playwright test tests/salesforce-api.spec.js",
     "report": "playwright show-report",
-    "setup:auth": "mkdir -p auth"
+    "setup:auth": "mkdir -p auth test-results",
+    "lint": "eslint tests/ pages/",
+    "format": "prettier --write tests/ pages/"
   },
   "dependencies": {
-    "@igautomation/playwright-framework": "git+https://github.com/igautomation/AgentSyncDelivery.git",
     "@playwright/test": "^1.40.0",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "axios": "^1.6.0"
   },
   "devDependencies": {
     "eslint": "^8.53.0",
