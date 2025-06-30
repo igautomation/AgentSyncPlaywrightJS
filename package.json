@@ -65,7 +65,8 @@
     "health:check": "node scripts/utils/framework-health-check.js",
     "generate:docs": "node scripts/docs/consolidate-docs.js",
     "publish:setup": "node scripts/publishing/setup-publish-token.js",
-    "ci:setup": "node scripts/ci-cd/setup-branches.sh"
+    "ci:setup": "node scripts/ci-cd/setup-branches.sh",
+    "create:sf-project": "node setup-salesforce-project.js"
   },
   "keywords": [
     "e2e",
