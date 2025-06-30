@@ -1,11 +1,11 @@
 {
   "config": {
-    "configFile": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/playwright.config.js",
-    "rootDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
+    "configFile": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/playwright.config.js",
+    "rootDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
     "forbidOnly": false,
     "fullyParallel": true,
-    "globalSetup": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/utils/setup/globalSetup.js",
-    "globalTeardown": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/utils/setup/globalTeardown.js",
+    "globalSetup": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/setup/globalSetup.js",
+    "globalTeardown": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/setup/globalTeardown.js",
     "globalTimeout": 0,
     "grep": {},
     "grepInvert": null,
@@ -43,13 +43,13 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/test-results",
+        "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
         "id": "setup",
         "name": "setup",
-        "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
+        "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
         "testIgnore": [],
         "testMatch": [
           "/global\\.setup\\.js/"
@@ -57,13 +57,13 @@
         "timeout": 60000
       },
       {
-        "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/test-results",
+        "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
         "id": "chromium",
         "name": "chromium",
-        "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
+        "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
         "testIgnore": [
           "**/salesforce/**",
           "**/mobile/**",
@@ -75,13 +75,13 @@
         "timeout": 60000
       },
       {
-        "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/test-results",
+        "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
         "id": "firefox",
         "name": "firefox",
-        "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
+        "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
         "testIgnore": [
           "**/salesforce/**",
           "**/mobile/**",
@@ -93,13 +93,13 @@
         "timeout": 60000
       },
       {
-        "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/test-results",
+        "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
         "id": "webkit",
         "name": "webkit",
-        "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
+        "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
         "testIgnore": [
           "**/salesforce/**",
           "**/mobile/**",
@@ -111,13 +111,13 @@
         "timeout": 60000
       },
       {
-        "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/test-results",
+        "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
         "id": "mobile-chrome",
         "name": "mobile-chrome",
-        "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
+        "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
         "testIgnore": [],
         "testMatch": [
           "**/mobile/**/*.spec.js"
@@ -125,13 +125,13 @@
         "timeout": 60000
       },
       {
-        "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/test-results",
+        "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
         "id": "mobile-safari",
         "name": "mobile-safari",
-        "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
+        "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
         "testIgnore": [],
         "testMatch": [
           "**/mobile/**/*.spec.js"
@@ -139,13 +139,13 @@
         "timeout": 60000
       },
       {
-        "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/test-results",
+        "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
         "id": "salesforce",
         "name": "salesforce",
-        "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
+        "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
         "testIgnore": [],
         "testMatch": [
           "**/salesforce/**/*.spec.js"
@@ -153,13 +153,13 @@
         "timeout": 60000
       },
       {
-        "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/test-results",
+        "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
         "id": "api",
         "name": "api",
-        "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
+        "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
         "testIgnore": [],
         "testMatch": [
           "**/api/**/*.spec.js"
@@ -167,13 +167,13 @@
         "timeout": 60000
       },
       {
-        "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/test-results",
+        "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
         "id": "visual",
         "name": "visual",
-        "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
+        "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
         "testIgnore": [],
         "testMatch": [
           "**/visual/**/*.spec.js"
@@ -181,13 +181,13 @@
         "timeout": 60000
       },
       {
-        "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/test-results",
+        "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
         "id": "accessibility",
         "name": "accessibility",
-        "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServices/src/tests",
+        "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
         "testIgnore": [],
         "testMatch": [
           "**/accessibility/**/*.spec.js"
@@ -198,7 +198,7 @@
     "shard": null,
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
-    "version": "1.52.0",
+    "version": "1.53.1",
     "workers": 5,
     "webServer": null
   },
@@ -3619,8 +3619,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-06-16T14:13:38.172Z",
-    "duration": 118.98100000000005,
+    "startTime": "2025-06-30T08:21:51.640Z",
+    "duration": 248.098,
     "expected": 0,
     "skipped": 146,
     "unexpected": 0,
