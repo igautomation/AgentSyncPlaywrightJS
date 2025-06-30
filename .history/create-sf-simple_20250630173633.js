@@ -5,7 +5,7 @@ const fs = require('fs');
 console.log('🚀 Creating Salesforce testing project...');
 
 // Create directories
-['tests', 'pages', 'data', 'auth', 'screenshots'].forEach(dir => {
+['tests', 'pages', 'data', 'auth', 'screenshots', 'src/pages', 'src/data'].forEach(dir => {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
     console.log(`✅ Created ${dir}/ directory`);
@@ -106,117 +106,6 @@ test.describe('Salesforce Contact Test', () => {
   });
 });`,
 
-  'src/pages/BaseSalesforcePage.js': `class BaseSalesforcePage {
-  constructor(page) {
-    this.page = page;
-  }
-
-  async waitForPageLoad() {
-    await this.page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
-    await this.page.waitForLoadState('domcontentloaded', { timeout: 30000 });
-    
-    const spinner = this.page.locator('.slds-spinner_container, .slds-spinner');
-    if (await spinner.isVisible({ timeout: 1000 }).catch(() => false)) {
-      await spinner.waitFor({ state: 'hidden', timeout: 30000 }).catch(() => {});
-    }
-    
-    await this.page.waitForTimeout(1000);
-  }
-
-  async getToastMessage() {
-    const toast = this.page.locator('.slds-notify__content');
-    await toast.waitFor({ state: 'visible', timeout: 10000 }).catch(() => {});
-    return toast.textContent();
-  }
-}
-
-module.exports = BaseSalesforcePage;`,
-
-  'src/pages/LoginPage.js': `const BaseSalesforcePage = require('./BaseSalesforcePage');
-
-class LoginPage extends BaseSalesforcePage {
-  constructor(page) {
-    super(page);
-    this.usernameInput = '#username';
-    this.passwordInput = '#password';
-    this.loginButton = '#Login';
-  }
-
-  async navigate(loginUrl) {
-    await this.page.goto(loginUrl);
-    await this.waitForPageLoad();
-  }
-
-  async login(username, password) {
-    await this.page.fill(this.usernameInput, username);
-    await this.page.fill(this.passwordInput, password);
-    await this.page.click(this.loginButton);
-    await this.waitForPageLoad();
-  }
-}
-
-module.exports = LoginPage;`,
-
-  'src/pages/ContactPage.js': `const BaseSalesforcePage = require('./BaseSalesforcePage');
-
-class ContactPage extends BaseSalesforcePage {
-  constructor(page) {
-    super(page);
-    this.newContactButton = 'button[title="New"]';
-    this.firstNameInput = 'input[name="firstName"]';
-    this.lastNameInput = 'input[name="lastName"]';
-    this.emailInput = 'input[name="Email"]';
-    this.phoneInput = 'input[name="Phone"]';
-    this.saveButton = 'button[name="SaveEdit"]';
-  }
-
-  async createContact(contactData) {
-    await this.page.click(this.newContactButton);
-    await this.page.fill(this.firstNameInput, contactData.firstName);
-    await this.page.fill(this.lastNameInput, contactData.lastName);
-    await this.page.fill(this.emailInput, contactData.email);
-    await this.page.fill(this.phoneInput, contactData.phone);
-    await this.page.click(this.saveButton);
-    await this.waitForPageLoad();
-  }
-}
-
-module.exports = ContactPage;`,
-
-  'src/data/salesforce-contacts.json': `[
-  {
-    "firstName": "John",
-    "lastName": "Doe",
-    "email": "john.doe@example.com",
-    "phone": "555-123-4567",
-    "title": "Software Engineer",
-    "department": "Engineering"
-  },
-  {
-    "firstName": "Jane",
-    "lastName": "Smith",
-    "email": "jane.smith@example.com",
-    "phone": "555-987-6543",
-    "title": "Product Manager",
-    "department": "Product"
-  }
-]`,
-
-  'src/data/test-users.json': `[
-  {
-    "username": "test.user@example.com",
-    "password": "TestPassword123",
-    "role": "admin",
-    "active": true
-  },
-  {
-    "username": "demo.user@example.com",
-    "password": "DemoPassword123",
-    "role": "user",
-    "active": true
-  }
-]`,
-
   'package.json': `{
   "name": "salesforce-tests",
   "version": "1.0.0",
@@ -231,7 +120,7 @@ module.exports = ContactPage;`,
     "@playwright/test": "^1.40.0",
     "dotenv": "^16.3.1"
   }
-}`,
+}`
 };
 
 Object.entries(files).forEach(([filename, content]) => {
