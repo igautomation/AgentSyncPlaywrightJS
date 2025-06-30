@@ -106,7 +106,7 @@ test.describe('Salesforce Contact Test', () => {
   });
 });`,
 
-  'src/pages/BaseSalesforcePage.js': `class BaseSalesforcePage {
+  'pages/BaseSalesforcePage.js': `class BaseSalesforcePage {
   constructor(page) {
     this.page = page;
   }
@@ -132,7 +132,7 @@ test.describe('Salesforce Contact Test', () => {
 
 module.exports = BaseSalesforcePage;`,
 
-  'src/pages/LoginPage.js': `const BaseSalesforcePage = require('./BaseSalesforcePage');
+  'pages/LoginPage.js': `const BaseSalesforcePage = require('./BaseSalesforcePage');
 
 class LoginPage extends BaseSalesforcePage {
   constructor(page) {
@@ -157,7 +157,7 @@ class LoginPage extends BaseSalesforcePage {
 
 module.exports = LoginPage;`,
 
-  'src/pages/ContactPage.js': `const BaseSalesforcePage = require('./BaseSalesforcePage');
+  'pages/ContactPage.js': `const BaseSalesforcePage = require('./BaseSalesforcePage');
 
 class ContactPage extends BaseSalesforcePage {
   constructor(page) {
@@ -183,7 +183,7 @@ class ContactPage extends BaseSalesforcePage {
 
 module.exports = ContactPage;`,
 
-  'src/data/salesforce-contacts.json': `[
+  'data/salesforce-contacts.json': `[
   {
     "firstName": "John",
     "lastName": "Doe",
@@ -202,7 +202,7 @@ module.exports = ContactPage;`,
   }
 ]`,
 
-  'src/data/test-users.json': `[
+  'data/test-users.json': `[
   {
     "username": "test.user@example.com",
     "password": "TestPassword123",
