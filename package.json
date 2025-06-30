@@ -56,6 +56,7 @@
     "build": "webpack",
     "prepublishOnly": "npm run build",
     "test:salesforce:config": "playwright test --config=playwright.config.salesforce.js",
+    "test:salesforce": "playwright test src/tests/salesforce --config=playwright.config.salesforce.js",
     "docker:build": "docker build -t playwright-framework .",
     "docker:run": "docker-compose up",
     "docker:test": "docker-compose -f docker-compose.yml up --build",
