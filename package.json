@@ -9,6 +9,32 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "src/",
+    "bin/",
+    "scripts/",
+    "data/",
+    "config/",
+    "templates/",
+    "examples/",
+    "docs/",
+    ".github/",
+    ".husky/",
+    "Dockerfile",
+    "docker-compose.yml",
+    "playwright.config.js",
+    "playwright.config.salesforce.js",
+    "global-setup.js",
+    "jest.config.js",
+    "webpack.config.js",
+    "tailwind.config.js",
+    "postcss.config.js",
+    ".eslintrc.js",
+    ".prettierrc",
+    ".lintstagedrc",
+    "install.sh",
+    "setup-private-deps.sh"
+  ],
   "scripts": {
     "test": "playwright test",
     "test:e2e": "playwright test src/tests/e2e",
@@ -29,7 +55,17 @@
     "docs:build": "cd docs-site && npm run build",
     "build": "webpack",
     "prepublishOnly": "npm run build",
-    "test:salesforce:config": "playwright test --config=playwright.config.salesforce.js"
+    "test:salesforce:config": "playwright test --config=playwright.config.salesforce.js",
+    "docker:build": "docker build -t playwright-framework .",
+    "docker:run": "docker-compose up",
+    "docker:test": "docker-compose -f docker-compose.yml up --build",
+    "setup:husky": "husky install",
+    "setup:project": "node scripts/setup/setup.js",
+    "validate:framework": "node scripts/utils/validate-framework.js",
+    "health:check": "node scripts/utils/framework-health-check.js",
+    "generate:docs": "node scripts/docs/consolidate-docs.js",
+    "publish:setup": "node scripts/publishing/setup-publish-token.js",
+    "ci:setup": "node scripts/ci-cd/setup-branches.sh"
   },
   "keywords": [
     "e2e",

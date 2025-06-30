@@ -3,70 +3,61 @@
  * Exports all framework components
  */
 
-const path = require('path');
-const fs = require('fs');
-const pluginLoader = require('./utils/plugins/plugin-loader');
+// Helper function to safely require modules
+function safeRequire(modulePath) {
+  try {
+    return require(modulePath);
+  } catch (error) {
+    console.warn(`Warning: Could not load module ${modulePath}:`, error.message);
+    return {};
+  }
+}
 
 // Export framework components
 module.exports = {
   // Core utilities
   utils: {
-    api: require('./utils/api'),
-    web: require('./utils/web'),
-    common: require('./utils/common'),
-    reporting: require('./utils/reporting'),
-    database: require('./utils/database'),
-    visual: require('./utils/visual'),
-    accessibility: require('./utils/accessibility'),
-    performance: require('./utils/performance'),
-    mobile: require('./utils/mobile'),
-    localization: require('./utils/localization'),
-    security: require('./utils/security'),
-    testrail: require('./utils/testrail')
+    api: safeRequire('./utils/api'),
+    web: safeRequire('./utils/web'),
+    common: safeRequire('./utils/common'),
+    core: safeRequire('./utils/core'),
+    data: safeRequire('./utils/data'),
+    database: safeRequire('./utils/database'),
+    accessibility: safeRequire('./utils/accessibility'),
+    performance: safeRequire('./utils/performance'),
+    visual: safeRequire('./utils/visual'),
+    mobile: safeRequire('./utils/mobile'),
+    localization: safeRequire('./utils/localization'),
+    security: safeRequire('./utils/security'),
+    testrail: safeRequire('./utils/testrail'),
+    salesforce: safeRequire('./utils/salesforce'),
+    jira: safeRequire('./utils/jira'),
+    xray: safeRequire('./utils/xray'),
+    generators: safeRequire('./utils/generators'),
+    visualization: safeRequire('./utils/visualization'),
+    scheduler: safeRequire('./utils/scheduler'),
+    ci: safeRequire('./utils/ci'),
+    cli: safeRequire('./utils/cli'),
+    git: safeRequire('./utils/git'),
+    testing: safeRequire('./utils/testing')
   },
   
   // Fixtures
-  ...require('./fixtures/custom-fixtures'),
+  fixtures: safeRequire('./fixtures'),
   
   // Page objects
   pages: {
-    BasePage: require('./pages/BasePage')
+    BasePage: safeRequire('./pages/BasePage')
   },
   
-  /**
-   * Load framework configuration
-   * @returns {Object} Framework configuration
-   */
-  loadFrameworkConfig: () => {
-    return pluginLoader.loadConfig();
-  },
+  // Direct exports for common usage
+  apiClient: safeRequire('./utils/api').apiClient,
+  webInteractions: safeRequire('./utils/web').webInteractions,
+  salesforceUtils: safeRequire('./utils/salesforce').salesforceUtils,
   
-  /**
-   * Load plugins
-   * @returns {Object} Loaded plugins
-   */
-  loadPlugins: () => {
-    return pluginLoader.loadPlugins();
-  },
-  
-  /**
-   * Get plugin by name
-   * @param {string} name - Plugin name
-   * @returns {Object} Plugin instance
-   */
-  getPlugin: (name) => {
-    return pluginLoader.getPlugin(name);
-  },
-  
-  /**
-   * Create a custom reporter
-   * @param {Object} options - Reporter options
-   * @returns {Object} Reporter instance
-   */
-  createReporter: (options = {}) => {
-    const { CustomReporter } = require('./utils/reporting/customReporter');
-    return new CustomReporter(options);
-  },
+  // Framework assets access
+  FrameworkAssets: require('./framework-assets'),
+  assets: new (require('./framework-assets'))(),
   
   /**
    * Create a custom fixture
@@ -76,5 +67,14 @@ module.exports = {
   createFixtures: (fixtures = {}) => {
     const { test } = require('@playwright/test');
     return test.extend(fixtures);
+  },
+  
+  /**
+   * Get framework version
+   * @returns {string} Framework version
+   */
+  getVersion: () => {
+    const packageJson = require('../package.json');
+    return packageJson.version;
   }
 };
