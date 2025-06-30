@@ -104,7 +104,7 @@ async function globalSetup() {
 module.exports = globalSetup;`,
 
     // Environment Variables
-    '.env': \`# Salesforce Configuration
+    '.env': `# Salesforce Configuration
 SF_USERNAME=your-username@domain.com
 SF_PASSWORD=your-password
 SF_SECURITY_TOKEN=your-security-token
@@ -120,10 +120,10 @@ DEFAULT_TIMEOUT=60000
 ACTION_TIMEOUT=30000
 EXPECT_TIMEOUT=10000
 BROWSER_TIMEOUT=45000
-RETRY_COUNT=2\`,
+RETRY_COUNT=2`,
 
     // Login Test
-    'tests/salesforce-login.spec.js': \`const { test, expect } = require('@playwright/test');
+    'tests/salesforce-login.spec.js': `const { test, expect } = require('@playwright/test');
 const dotenv = require('dotenv');
 const fs = require('fs');
 const path = require('path');
@@ -164,7 +164,7 @@ test.describe('Salesforce Login Test', () => {
     expect(page.url()).not.toContain('login.salesforce.com');
     console.log('✅ Successfully logged in to Salesforce and saved authentication state');
   });
-});\`,
+});`,
 
     // Contact Test
     'tests/salesforce-contact.spec.js': \`const { test, expect } = require('@playwright/test');
