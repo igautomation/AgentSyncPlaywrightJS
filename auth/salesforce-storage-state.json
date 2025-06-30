@@ -1,31 +1,11 @@
 {
   "cookies": [
     {
-      "name": "t",
-      "value": "!0vaFlJER5UsrfIGrfKp9YI2pARkJi5YS8O/yCf8GE+6HiX+CvWWacnC3MzF+OXsuC3USJWIP3jamDQ==",
-      "domain": "wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com",
-      "path": "/cometd/",
-      "expires": -1,
-      "httpOnly": true,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "BAYEUX_BROWSER",
-      "value": "d6941hdor8nhf444ombkfyiia16dw",
-      "domain": "wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com",
-      "path": "/cometd/",
-      "expires": -1,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
       "name": "CookieConsentPolicy",
       "value": "0:0",
       "domain": "login.salesforce.com",
       "path": "/",
-      "expires": 1780728337.442783,
+      "expires": 1782834591.725899,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
@@ -35,40 +15,30 @@
       "value": "0:0",
       "domain": "login.salesforce.com",
       "path": "/",
-      "expires": 1780728337.442893,
+      "expires": 1782834591.726054,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
     },
     {
       "name": "BrowserId",
-      "value": "2qjRu0KhEfCobc8Gltr0Vg",
+      "value": "3A3hnVXJEfCU-tGmWTBF8A",
       "domain": ".salesforce.com",
       "path": "/",
-      "expires": 1780728337.442913,
+      "expires": 1782834591.726086,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
     },
     {
       "name": "session",
-      "value": "1749192338203",
+      "value": "1751298592410",
       "domain": "login.salesforce.com",
       "path": "/",
       "expires": -1,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
-    },
-    {
-      "name": "sfdcConsent",
-      "value": "1%2C3%2C4",
-      "domain": ".salesforce.com",
-      "path": "/",
-      "expires": 1781594670,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
     },
     {
       "name": "inst",
@@ -85,7 +55,7 @@
       "value": "false",
       "domain": ".salesforce.com",
       "path": "/",
-      "expires": 1755242670.864307,
+      "expires": 1756482593.212915,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
@@ -95,7 +65,7 @@
       "value": "in",
       "domain": ".salesforce.com",
       "path": "/",
-      "expires": 1755242670.864321,
+      "expires": 1756482593.212959,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
@@ -105,7 +75,7 @@
       "value": "c3RhdHVzPUZSRUUmdHlwZT0zJm9pZD0wMERkTDAwMDAwT0hFM3o=",
       "domain": ".salesforce.com",
       "path": "/",
-      "expires": 1755242670.86433,
+      "expires": 1756482593.212973,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
@@ -115,7 +85,7 @@
       "value": "0:1",
       "domain": "wise-koala-a44c19-dev-ed.trailblaze.my.salesforce.com",
       "path": "/",
-      "expires": 1780728339.725827,
+      "expires": 1782834594.784742,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
@@ -125,7 +95,7 @@
       "value": "0:1",
       "domain": "wise-koala-a44c19-dev-ed.trailblaze.my.salesforce.com",
       "path": "/",
-      "expires": 1780728339.725857,
+      "expires": 1782834594.78479,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
@@ -145,7 +115,17 @@
       "value": "1",
       "domain": ".salesforce.com",
       "path": "/",
-      "expires": 1755242671.644119,
+      "expires": 1756482594.784822,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "sid",
+      "value": "00DdL00000OHE3z!AQEAQEakb9BL8mRlIJW_ysLp6_19ojRa1rl_FkwW_fsHw2QTQeR8Mkqra1pWUfOHqN2mgfuQXcnk6HGLsdWYomD.FlXZLPFH",
+      "domain": "wise-koala-a44c19-dev-ed.trailblaze.my.salesforce.com",
+      "path": "/",
+      "expires": -1,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
@@ -153,6 +133,16 @@
     {
       "name": "sid_Client",
       "value": "L00000GHB89L00000OHE3z",
+      "domain": "wise-koala-a44c19-dev-ed.trailblaze.my.salesforce.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "clientSrc",
+      "value": "122.164.80.225",
       "domain": "wise-koala-a44c19-dev-ed.trailblaze.my.salesforce.com",
       "path": "/",
       "expires": -1,
@@ -165,57 +155,7 @@
       "value": "00DdL00000OHE3z",
       "domain": "wise-koala-a44c19-dev-ed.trailblaze.my.salesforce.com",
       "path": "/",
-      "expires": 1781594671.644223,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "CookieConsentPolicy",
-      "value": "0:1",
-      "domain": "wise-koala-a44c19-dev-ed.trailblaze.file.force.com",
-      "path": "/",
-      "expires": 1780728340.118614,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "LSKey-c$CookieConsentPolicy",
-      "value": "0:1",
-      "domain": "wise-koala-a44c19-dev-ed.trailblaze.file.force.com",
-      "path": "/",
-      "expires": 1780728340.118647,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "BrowserId",
-      "value": "3C451EKhEfCUbdG5gaqqng",
-      "domain": ".force.com",
-      "path": "/",
-      "expires": 1780728340.118655,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "sid_Client",
-      "value": "L00000GHB89L00000OHE3z",
-      "domain": "wise-koala-a44c19-dev-ed.trailblaze.file.force.com",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "inst",
-      "value": "APP_dL",
-      "domain": ".force.com",
-      "path": "/",
-      "expires": -1,
+      "expires": 1782834594.784895,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
@@ -231,242 +171,25 @@
       "sameSite": "None"
     },
     {
-      "name": "CookieConsentPolicy",
-      "value": "0:1",
-      "domain": "wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com",
-      "path": "/",
-      "expires": 1780728341.389322,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "LSKey-c$CookieConsentPolicy",
-      "value": "0:1",
-      "domain": "wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com",
-      "path": "/",
-      "expires": 1780728341.38937,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "sid_Client",
-      "value": "L00000GHB89L00000OHE3z",
-      "domain": "wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "SetupDomainProbePassed",
-      "value": "false",
-      "domain": "wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "CookieConsentPolicy",
-      "value": "0:0",
-      "domain": "ind134.sfdc-y37hzm.salesforce.com",
-      "path": "/",
-      "expires": 1780728353.520436,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "LSKey-c$CookieConsentPolicy",
-      "value": "0:0",
-      "domain": "ind134.sfdc-y37hzm.salesforce.com",
-      "path": "/",
-      "expires": 1780728353.52046,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "clientSrc",
-      "value": "122.164.85.101",
-      "domain": "wise-koala-a44c19-dev-ed.trailblaze.file.force.com",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "clientSrc",
-      "value": "122.164.85.101",
-      "domain": "wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "sfdc_lv2",
-      "value": "KxG83H/nDT2krwUWXe2klXiqukIvxFVfq1JPcMGDqExmld7Iu/zIz5gE5H3gLfVms=",
+      "name": "sfdcConsent",
+      "value": "1%2C3%2C4",
       "domain": ".salesforce.com",
       "path": "/",
-      "expires": 1781009651.501821,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "sid",
-      "value": "00DdL00000OHE3z!AQEAQBdfdvDC9W8kwMidLLD0gLB35JNlwKTv1m7PVXNiKHOGaJ0TzRH4_58jsMub8ayPRtG.FKjRv4EFZ9TeZ28tUuTOSK3H",
-      "domain": "wise-koala-a44c19-dev-ed.trailblaze.file.force.com",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "sid",
-      "value": "00DdL00000OHE3z!AQEAQEEOMjmr9MxZ655dGXhhqpU6EgUkW2W5gTm8lCWJt.OpZfTqL9QWahdcXJBlCvoOdHI84X1akcgizl266O.2eGxtbD3z",
-      "domain": "wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "_ga",
-      "value": "GA1.1.1241755048.1749770080",
-      "domain": ".salesforce.com",
-      "path": "/",
-      "expires": 1784618671.942044,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "_gcl_au",
-      "value": "1.1.1345494331.1749770080",
-      "domain": ".salesforce.com",
-      "path": "/",
-      "expires": 1757546080,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "clientSrc",
-      "value": "122.164.80.218",
-      "domain": "wise-koala-a44c19-dev-ed.trailblaze.my.salesforce.com",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "gtm_session_start",
-      "value": "1750058670436",
-      "domain": "c.salesforce.com",
-      "path": "/",
-      "expires": 1750060470,
+      "expires": 1782834595,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "OptanonConsent",
-      "value": "isGpcEnabled=0&datestamp=Mon+Jun+16+2025+12%3A54%3A30+GMT%2B0530+(India+Standard+Time)&version=202408.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=125c1d2d-05c1-4d44-b00b-d4d8560b2a4d&interactionCount=0&isAnonUser=1&landingPath=NotLandingPage&groups=1%3A1%2C3%3A1%2C4%3A1&AwaitingReconsent=false",
+      "value": "isGpcEnabled=0&datestamp=Mon+Jun+30+2025+21%3A19%3A55+GMT%2B0530+(India+Standard+Time)&version=202408.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=da94d703-ef1a-4324-ad4d-9de158f28dca&interactionCount=0&isAnonUser=1&landingPath=https%3A%2F%2Fc.salesforce.com%2Flogin-messages%2Fuk%2Fpromos.html&groups=1%3A1%2C3%3A1%2C4%3A1",
       "domain": ".salesforce.com",
       "path": "/",
-      "expires": 1781594670,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "sid",
-      "value": "00DdL00000OHE3z!AQEAQBV78VLjEMcuv.3QiYdmp.9KyZKDkWpE0lFz7DuC4gw0KujmjULoBt8qK.dJDw8KWq5.KajIUJdgpGka6ZgFwA3JJ.t_",
-      "domain": "wise-koala-a44c19-dev-ed.trailblaze.my.salesforce.com",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "_ga_S6WMKB0ZK3",
-      "value": "GS2.1.s1750058670$o2$g0$t1750058670$j60$l0$h0",
-      "domain": ".salesforce.com",
-      "path": "/",
-      "expires": 1784618671.95577,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "test_cookie",
-      "value": "CheckForPermission",
-      "domain": ".doubleclick.net",
-      "path": "/",
-      "expires": 1750059572.115697,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "_abck",
-      "value": "69C1D2B002A52B04B232B00523BBE4F1~-1~YAAQdrxWaPyyXzqXAQAAQT2gdw6YzAB2mbVCrIifLSXbby34GG1aDAVDbYpQPy3E1DGwElRcAEF2AIy86lVEz8vOo532Et4NwtyaeulV43/0vPeQc7SmL1HiAhOypu9pYrS+pHg0ymgV4WbXWEgQtxFSkpwpfdQs2v4EPVmb9CHwp34pdQAEYjcH9RmfmbyLh+B+0E3v7/7hefgD2ERydAuAf/U/diyfE0Jdw7FQ+Fp97WJuaS20wxJZHqN0fZHGTsUGRKlHTLXb6+NuI6RQqZkpWLbzyfwk7mso3EuodAKr9lc5jtDJbp4E391K7/VVE647u4E//Bk2Uc/Xd/H5VkeRkhgxrn2kShWqYTrPqh+1+M1JMqPmWPB7n4mmHdMnoUSLA7PdJ882nl2lXJqSBeY8ofRNpYUrQ4oj376wr+Q7QojqTYqznkQiR+OI1EITeKmhC0DnkISZsrv5MpreGXW58N+2Cg==~-1~-1~-1",
-      "domain": ".salesforce.com",
-      "path": "/",
-      "expires": 1781594679.574113,
-      "httpOnly": false,
-      "secure": true,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "bm_sz",
-      "value": "B63A0AAF0CE8CA3E93C0711D4C0ACD97~YAAQdrxWaP2yXzqXAQAAQT2gdxyQ68lVQYFyWsE4Pa4k7EnO4J+DKsWx2FUDi7FkWsv0WZhm6Q0r+dPu6KEwZ8P+QTRKEb/BKqNYMQ5KJcvwYtDpIgYHdt4nw2wOMlxJlQeyWrHP64Hb60KSdUbhzYf9+RbqemAOb8lCltOJxLyYOn2OkGaSr+sU7NBh24InMkHECe0dttc7LLdRCNXoJm79ZD+g4qbhskzVZPq5C4A5ft/uYa4PxyWW4e4EiDE6LA7YMvIW3zT0dQ8yVW8r1gZ4JYj0Jb1sR+SyZ86rXDaTaFjx9e8wduAaAxzw7/Z6Vjz5ioD74+OM27bURrVe1g/E5BcD9gSmpshK7HnFniUZ3Oxmqf8kePns+mQ=~4404035~3750195",
-      "domain": ".salesforce.com",
-      "path": "/",
-      "expires": 1750073079.574213,
+      "expires": 1782834595,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     }
   ],
-  "origins": [
-    {
-      "origin": "https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com",
-      "localStorage": [
-        {
-          "name": "$AuraClientService.token$one:one",
-          "value": "eyJub25jZSI6ImhpeEY5QkJST1N4WHdaRERIQUlsaVU3a3ZDR09ncVh5N3Jka0UtUFplYmtcdTAwM2QiLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImtpZCI6IntcInRcIjpcIjAwRGRMMDAwMDAwMDAwMVwiLFwidlwiOlwiMDJHZEwwMDAwMDAwMDAxXCIsXCJhXCI6XCJjYWltYW5zaWduZXJcIn0iLCJjcml0IjpbImlhdCJdLCJpYXQiOjE3NDk0NzM2NTI2MDUsImV4cCI6MH0=..UoKNbS_CFpgIuICMUXH-2Iw8R25KAPcl7BC8Yt0o47o="
-        },
-        {
-          "name": "GlobalValueProviders__MUTEX_X",
-          "value": "1050600000808c88a0a0c3a|1749473662791"
-        },
-        {
-          "name": "setupAppContextId",
-          "value": "all"
-        }
-      ]
-    },
-    {
-      "origin": "https://c.salesforce.com",
-      "localStorage": [
-        {
-          "name": "_gcl_ls",
-          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"creationTimeMs\":1749770080394},\"expires\":1757546080394}}"
-        }
-      ]
-    }
-  ]
+  "origins": []
 }

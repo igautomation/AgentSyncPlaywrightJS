@@ -1,212 +1,74 @@
-# TestRail Integration Guide
+# TestRail Integration for Salesforce Tests
 
-This guide explains how to use the TestRail integration with the Playwright framework.
+## Configuration
 
-## Overview
+### Environment Variables
+```bash
+TESTRAIL_URL=https://agentsync.testrail.io/index.php?
+TESTRAIL_USERNAME=cnmuhammad.ghouseimran@agentsync.io
+TESTRAIL_PASSWORD=MyPass@2025
+TESTRAIL_PROJECT_ID=1
+TESTRAIL_SUITE_ID=1
+```
 
-The TestRail integration allows you to:
+## Features
 
-1. Fetch test cases from TestRail
-2. Execute test steps defined in TestRail
-3. Update test results back to TestRail
-4. Attach artifacts (screenshots, reports, videos) to test results
+✅ **Automatic Test Run Creation** - Creates new test run for each execution  
+✅ **Real-time Result Updates** - Updates TestRail with pass/fail status  
+✅ **Detailed Comments** - Includes test execution details and error messages  
+✅ **Test Case Mapping** - Maps Playwright tests to TestRail cases  
+✅ **Error Handling** - Graceful fallback if TestRail is unavailable  
 
-## Setup
+## Test Cases Included
 
-### Prerequisites
-
-- TestRail account with API access
-- API key from TestRail
-
-### Configuration
-
-1. Copy the `.env.example` file to `.env`:
-   ```bash
-   cp .env.example .env
-   ```
-
-2. Update the `.env` file with your TestRail credentials:
-   ```
-   TESTRAIL_URL=https://yourcompany.testrail.io
-   TESTRAIL_USERNAME=your.email@example.com
-   TESTRAIL_API_KEY=your_api_key
-   TESTRAIL_PROJECT_ID=1
-   TESTRAIL_CASE_ID=1
-   TESTRAIL_SUITE_ID=2
-   TESTRAIL_RUN_PREFIX=Playwright Test Run
-   TESTRAIL_ARTIFACTS_DIR=./artifacts/testrail
-   TESTRAIL_REPORT_DIR=playwright-report
-   TESTRAIL_RESULTS_DIR=test-results
-   ```
+| Test Case | TestRail ID | Description |
+|-----------|-------------|-------------|
+| C1 | 1 | Salesforce Login Test |
+| C2 | 2 | Salesforce API Record Count Test |
+| C3 | 3 | Salesforce Contact Navigation Test |
 
 ## Usage
 
-### Basic Usage
-
-```javascript
-const { test } = require('@playwright/test');
-const { TestRailRunner } = require('../utils/testrail');
-
-test('Execute TestRail test case', async ({ page }) => {
-  // Create TestRail runner
-  const runner = new TestRailRunner({
-    baseUrl: process.env.TESTRAIL_URL,
-    username: process.env.TESTRAIL_USERNAME,
-    apiKey: process.env.TESTRAIL_API_KEY,
-    projectId: parseInt(process.env.TESTRAIL_PROJECT_ID, 10),
-    suiteId: parseInt(process.env.TESTRAIL_SUITE_ID, 10),
-    runNamePrefix: process.env.TESTRAIL_RUN_PREFIX,
-    artifactsDir: process.env.TESTRAIL_ARTIFACTS_DIR,
-    reportDir: process.env.TESTRAIL_REPORT_DIR,
-    resultsDir: process.env.TESTRAIL_RESULTS_DIR
-  });
-  
-  // TestRail case ID to execute
-  const testCaseId = parseInt(process.env.TESTRAIL_CASE_ID, 10);
-  
-  try {
-    // Start test and get test case details
-    const { testCase, steps } = await runner.startTest(testCaseId);
-    
-    // Execute test steps
-    for (const step of steps) {
-      // Implement step execution logic
-      // ...
-    }
-    
-    // End test with success
-    await runner.endTest(page, true, 'Test passed');
-  } catch (error) {
-    // End test with failure
-    await runner.endTest(page, false, `Test failed: ${error.message}`);
-    throw error;
-  }
-});
-```
-
-### Running Tests
-
-To run a test that integrates with TestRail:
-
+### Run Salesforce Tests with TestRail Integration
 ```bash
-npx playwright test src/tests/testrail-example.spec.js
+npm run test:salesforce:testrail
 ```
 
-## Components
-
-### TestRailClient
-
-Low-level client for interacting with the TestRail API.
-
-```javascript
-const { TestRailClient } = require('../utils/testrail');
-
-const client = new TestRailClient({
-  baseUrl: 'https://yourcompany.testrail.io',
-  username: 'your.email@example.com',
-  apiKey: 'your_api_key',
-  projectId: 1
-});
-
-// Get test case
-const testCase = await client.getCase(1);
-
-// Get test case steps
-const steps = await client.getCaseSteps(1);
-
-// Create test run
-const run = await client.addRun('Automated Run', [1, 2, 3], 2); // With suite ID
-
-// Add test result
-const result = await client.addResultForCase(run.id, 1, 1, 'Test passed');
-
-// Add attachment to result
-await client.addAttachmentToResult(result.id, 'screenshot.png');
+### Run All Salesforce Tests
+```bash
+npm run test:salesforce
 ```
 
-### TestRailIntegration
+## TestRail Status Mapping
 
-Mid-level integration for managing test runs and results.
+- **1** - Passed ✅
+- **2** - Blocked 🚫
+- **3** - Untested ⏸️
+- **4** - Retest 🔄
+- **5** - Failed ❌
 
-```javascript
-const { TestRailIntegration } = require('../utils/testrail');
+## Test Execution Flow
 
-const integration = new TestRailIntegration({
-  baseUrl: 'https://yourcompany.testrail.io',
-  username: 'your.email@example.com',
-  apiKey: 'your_api_key',
-  projectId: 1,
-  suiteId: 2,
-  artifactsDir: './artifacts/testrail'
-});
+1. **Before Tests** - Creates new test run in TestRail
+2. **During Tests** - Executes Salesforce test scenarios
+3. **After Each Test** - Updates TestRail with result and comments
+4. **Test Results** - Available in both Playwright reports and TestRail
 
-// Create test run
-const runId = await integration.createRun('Automated Run', [1, 2, 3]);
+## Example Output
 
-// Update test result
-await integration.updateResult(1, TestRailIntegration.STATUS.PASSED, 'Test passed');
-
-// Capture screenshot
-const screenshotPath = await integration.captureScreenshot(page, 'test-pass');
+```
+✅ Created TestRail run: 123
+✅ Salesforce login test passed
+📊 Updated TestRail case 1 with status 1
+✅ Salesforce API test passed
+📊 Updated TestRail case 2 with status 1
 ```
 
-### TestRailRunner
+## Setup Requirements
 
-High-level runner for executing tests based on TestRail test cases.
+1. **TestRail Account** - Access to AgentSync TestRail instance
+2. **Test Cases** - Create corresponding test cases in TestRail
+3. **Project/Suite IDs** - Update environment variables with correct IDs
+4. **Case IDs** - Map test case IDs in the test file
 
-```javascript
-const { TestRailRunner } = require('../utils/testrail');
-
-const runner = new TestRailRunner({
-  baseUrl: 'https://yourcompany.testrail.io',
-  username: 'your.email@example.com',
-  apiKey: 'your_api_key',
-  projectId: 1,
-  suiteId: 2,
-  runNamePrefix: 'Custom Run',
-  reportDir: 'custom-reports',
-  resultsDir: 'custom-results'
-});
-
-// Start test with custom run name
-const { testCase, steps } = await runner.startTest(1, 'My Custom Run Name');
-
-// End test with additional artifacts
-await runner.endTest(page, true, 'Test passed', ['path/to/custom/artifact.log']);
-```
-
-## Test Case Structure in TestRail
-
-For best results, structure your TestRail test cases with clear steps:
-
-1. Use the "Test Steps" field in TestRail
-2. Each step should have:
-   - **Step**: Clear action to perform (e.g., "Click on Login button")
-   - **Expected Result**: Expected outcome (e.g., "User is logged in")
-
-## Status Mapping
-
-TestRail statuses are mapped as follows:
-
-- **Passed (1)**: Test passed
-- **Failed (5)**: Test failed
-- **Blocked (2)**: Test was blocked
-- **Untested (3)**: Test was not executed
-- **Retest (4)**: Test needs to be retested
-
-## Artifacts
-
-The following artifacts can be attached to test results:
-
-- Screenshots
-- HTML reports
-- Trace files
-- Videos
-
-## Best Practices
-
-1. **Step Descriptions**: Write clear, actionable step descriptions in TestRail
-2. **Expected Results**: Include specific expected results for each step
-3. **Test Data**: Use environment variables or fixtures for test data
-4. **Error Handling**: Implement proper error handling to ensure results are reported correctly
-5. **Screenshots**: Take screenshots at key points during test execution
+The integration automatically handles test run creation, result reporting, and error handling for seamless TestRail integration.

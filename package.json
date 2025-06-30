@@ -57,6 +57,8 @@
     "prepublishOnly": "npm run build",
     "test:salesforce:config": "playwright test --config=playwright.config.salesforce.js",
     "test:salesforce": "playwright test src/tests/salesforce --config=playwright.config.salesforce.js",
+    "test:salesforce:testrail": "playwright test src/tests/salesforce/salesforce-testrail.spec.js --config=playwright.config.salesforce.js",
+    "sf:token": "node scripts/generate-sf-token.js",
     "docker:build": "docker build -t playwright-framework .",
     "docker:run": "docker-compose up",
     "docker:test": "docker-compose -f docker-compose.yml up --build",

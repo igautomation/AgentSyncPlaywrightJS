@@ -4,23 +4,33 @@
  * Tests for Salesforce Platform APIs
  */
 const { test, expect } = require('@playwright/test');
-const SalesforceApiUtils = require('../../utils/salesforce/salesforceApiUtils');
-const path = require('path');
-const fs = require('fs').promises;
 
 // Load environment variables from .env.salesforce
 require('dotenv').config({ path: '.env.salesforce' });
 
 test.describe('Salesforce API Tests', () => {
-  let apiUtils;
+  let accessToken;
+  let instanceUrl;
   
-  test.beforeAll(async () => {
-    // Create API utils instance with credentials from .env.salesforce
-    apiUtils = new SalesforceApiUtils({
-      instanceUrl: process.env.SF_INSTANCE_URL,
-      accessToken: process.env.SF_ACCESS_TOKEN,
-      apiVersion: process.env.SF_API_VERSION || 'v62.0'
-    });
+  test.beforeAll(async ({ request }) => {
+    // Try to get token from environment first
+    if (process.env.SF_ACCESS_TOKEN) {
+      accessToken = process.env.SF_ACCESS_TOKEN;
+      instanceUrl = process.env.SF_INSTANCE_URL;
+      console.log('✅ Using token from environment');
+      return;
+    }
+    
+    // Generate new token via OAuth
+    try {
+      const { generateSalesforceOAuthToken } = require('../../scripts/generate-sf-token');
+      const tokenData = await generateSalesforceOAuthToken();
+      accessToken = tokenData.accessToken;
+      instanceUrl = tokenData.instanceUrl;
+      console.log('✅ Generated new access token via OAuth');
+    } catch (error) {
+      console.log('❌ Token generation error:', error.message);
+    }
   });
   
   test('should get API limits', async () => {
@@ -91,29 +101,33 @@ test.describe('Salesforce API Tests', () => {
     }
   });
   
-  test('should extract Contact metadata to file', async () => {
-    // Skip if no access token
-    test.skip(!apiUtils.accessToken, 'No access token available');
+  test('should get record counts for Account, Contact, Lead', async ({ request }) => {
+    test.skip(!accessToken, 'No access token available');
     
-    try {
-      // Extract Contact metadata
-      const outputPath = path.join(process.cwd(), 'temp', 'contact-metadata.json');
-      const filePath = await apiUtils.extractObjectMetadata('Contact', outputPath);
-      
-      // Verify file was created
-      const fileExists = await fs.stat(filePath).then(() => true).catch(() => false);
-      expect(fileExists).toBe(true);
-      
-      // Read file content
-      const fileContent = JSON.parse(await fs.readFile(filePath, 'utf8'));
-      expect(fileContent.name).toBe('Contact');
-      
-      console.log(`Contact metadata extracted to ${filePath}`);
-    } catch (error) {
-      console.error('Error extracting Contact metadata:', error.message);
-      // Skip test if authentication fails
-      test.skip(error.message.includes('INVALID_SESSION_ID'), 'Invalid session ID');
-      throw error;
-    }
+    const response = await request.get(
+      `${instanceUrl}/services/data/v62.0/limits/recordCount?sObjects=Account,Contact,Lead`,
+      {
+        headers: {
+          'Authorization': `Bearer ${accessToken}`,
+          'Content-Type': 'application/json'
+        }
+      }
+    );
+    
+    expect(response.status()).toBe(200);
+    const data = await response.json();
+    expect(data.sObjects).toBeInstanceOf(Array);
+    expect(data.sObjects).toHaveLength(3);
+    
+    const objects = data.sObjects;
+    const accountCount = objects.find(obj => obj.name === 'Account')?.count;
+    const contactCount = objects.find(obj => obj.name === 'Contact')?.count;
+    const leadCount = objects.find(obj => obj.name === 'Lead')?.count;
+    
+    expect(accountCount).toBeGreaterThanOrEqual(0);
+    expect(contactCount).toBeGreaterThanOrEqual(0);
+    expect(leadCount).toBeGreaterThanOrEqual(0);
+    
+    console.log(`✅ Record counts - Accounts: ${accountCount}, Contacts: ${contactCount}, Leads: ${leadCount}`);
   });
 });
