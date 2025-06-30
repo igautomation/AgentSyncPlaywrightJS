@@ -76,5 +76,10 @@ module.exports = {
   getVersion: () => {
     const packageJson = require('../package.json');
     return packageJson.version;
-  }
+  },
+  
+  /**
+   * Create Salesforce project files
+   */
+  createSalesforceProject: require('../setup-salesforce-project').createProjectFiles
 };

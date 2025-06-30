@@ -84,6 +84,14 @@ program
     }
   });
 
+program
+  .command('create-sf-project')
+  .description('Create Salesforce testing project')
+  .action(() => {
+    const { createProjectFiles } = require('../setup-salesforce-project');
+    createProjectFiles();
+  });
+
 program.parse(process.argv);
 
 // If no arguments provided, show help
