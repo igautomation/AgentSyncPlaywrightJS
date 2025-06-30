@@ -61,7 +61,7 @@ test.describe('Salesforce Login Tests', () => {
     "test:sf:debug": "playwright test --config=playwright.config.salesforce.js --debug"
   },
   "dependencies": {
-    "@your-org/playwright-framework": "^1.0.0"
+    "@igautomation/playwright-framework": "git+https://github.com/igautomation/AgentSyncDelivery.git"
   }
 }`
 };

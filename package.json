@@ -1,5 +1,5 @@
 {
-  "name": "@your-org/playwright-framework",
+  "name": "@igautomation/playwright-framework",
   "version": "1.0.0",
   "description": "Playwright Test Framework",
   "main": "src/index.js",
