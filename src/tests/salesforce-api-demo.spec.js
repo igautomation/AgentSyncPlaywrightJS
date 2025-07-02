@@ -38,7 +38,7 @@ test.describe('Salesforce API Demo Tests', () => {
         ? [apiCases[0].id, apiCases[1].id] 
         : allCases.length >= 2 
           ? [allCases[0].id, allCases[1].id]
-          : [24150, 24151];
+          : [24148, 24150];
       
       testRailUploader = new TestRailUploader();
       testRunId = await testRailUploader.createTestRun(
@@ -48,18 +48,24 @@ test.describe('Salesforce API Demo Tests', () => {
       console.log(`📋 Created TestRail run: ${testRunId} with cases: ${testCaseIds}`);
     } catch (error) {
       console.log('⚠️ TestRail integration disabled:', error.message);
-      testCaseIds = [24150, 24151];
+      testCaseIds = [24148, 24150];
     }
   });
 
   test.afterAll(async () => {
-    if (testRailUploader && testRunId && testResults.length > 0) {
+    if (testResults.length > 0) {
       try {
-        await testRailUploader.addResults(testRunId, testResults);
-        await testRailUploader.closeRun(testRunId);
-        console.log('✅ Results uploaded to TestRail');
+        const AutomatedTestRunner = require('../utils/testrail/automated-test-runner');
+        const runner = new AutomatedTestRunner();
+        
+        const runId = await runner.executeTestRun(
+          testResults,
+          `Salesforce API Tests - ${new Date().toISOString()}`
+        );
+        
+        console.log(`✅ Test execution completed in TestRail run: ${runId}`);
       } catch (error) {
-        console.log('⚠️ Failed to upload results:', error.message);
+        console.log('⚠️ Failed to execute TestRail run:', error.message);
       }
     }
   });
@@ -102,7 +108,7 @@ test.describe('Salesforce API Demo Tests', () => {
       throw error;
     } finally {
       testResults.push({
-        case_id: testCaseIds ? testCaseIds[0] : 24150,
+        case_id: 24148,
         status_id: status,
         comment: comment
       });
@@ -157,7 +163,7 @@ test.describe('Salesforce API Demo Tests', () => {
       throw error;
     } finally {
       testResults.push({
-        case_id: testCaseIds ? testCaseIds[1] : 24151,
+        case_id: 24150,
         status_id: status,
         comment: comment
       });

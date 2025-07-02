@@ -45,10 +45,28 @@ class TestRailUploader {
         results: results
       });
       console.log(`✅ Uploaded ${results.length} results to TestRail run ${runId}`);
-      return response.data;
+      
+      // Return individual result IDs for attachment upload
+      if (response.data && Array.isArray(response.data)) {
+        return response.data;
+      }
+      
+      // If bulk response, get individual results
+      const tests = await this.getTestsInRun(runId);
+      return tests.slice(0, results.length);
     } catch (error) {
       console.error('Failed to upload results:', error.response?.data || error.message);
       throw error;
+    }
+  }
+
+  async getTestsInRun(runId) {
+    try {
+      const response = await this.client.get(`get_tests/${runId}`);
+      return response.data;
+    } catch (error) {
+      console.error('Failed to get tests in run:', error.message);
+      return [];
     }
   }
 

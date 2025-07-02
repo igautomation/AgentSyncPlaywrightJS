@@ -51,7 +51,7 @@ test.describe('Salesforce UI Demo Tests', () => {
       });
       
       testCaseIds = [loginCaseId, navCaseId].filter(id => id !== null);
-      if (testCaseIds.length === 0) testCaseIds = [24148, 24149];
+      if (testCaseIds.length === 0) testCaseIds = [24202, 24203];
       
       testRailUploader = new TestRailUploader();
       testRunId = await testRailUploader.createTestRun(
@@ -82,8 +82,14 @@ test.describe('Salesforce UI Demo Tests', () => {
           }
         }
         
+        // Upload Playwright report
+        const ReportUploader = require('../utils/testrail/report-uploader');
+        const reportUploader = new ReportUploader();
+        await reportUploader.uploadPlaywrightReport(testRunId);
+        await reportUploader.uploadTestArtifacts(testRunId);
+        
         await testRailUploader.closeRun(testRunId);
-        console.log('✅ Results and attachments uploaded to TestRail');
+        console.log('✅ Results, attachments and reports uploaded to TestRail');
       } catch (error) {
         console.log('⚠️ Failed to upload results:', error.message);
       }
@@ -144,7 +150,7 @@ test.describe('Salesforce UI Demo Tests', () => {
       }
       
       testResults.push({
-        case_id: testCaseIds ? testCaseIds[0] : 24148,
+        case_id: 24158,
         status_id: status,
         comment: comment,
         attachments: attachments
@@ -210,7 +216,7 @@ test.describe('Salesforce UI Demo Tests', () => {
       }
       
       testResults.push({
-        case_id: testCaseIds ? testCaseIds[1] : 24149,
+        case_id: 24164,
         status_id: status,
         comment: comment,
         attachments: attachments

@@ -32,8 +32,33 @@ class SimpleTestRailReporter {
     console.log(`📊 Test C${testCaseId}: ${result.status} (${Math.round(result.duration / 1000)}s)`);
   }
 
-  onEnd(result) {
+  async onEnd(result) {
     console.log(`✅ TestRail integration completed - ${this.results.length} results collected`);
+    
+    if (this.results.length > 0) {
+      try {
+        const ResultUploader = require('./result-uploader');
+        const uploader = new ResultUploader();
+        
+        // Format results for TestRail
+        const testResults = this.results.map(r => ({
+          case_id: r.case_id,
+          status_id: r.status_id,
+          comment: r.comment
+        }));
+        
+        // Create run name with timestamp
+        const runName = `Playwright Test Run - ${new Date().toISOString()}`;
+        const testCaseIds = this.results.map(r => r.case_id);
+        
+        // Upload results to TestRail
+        await uploader.createRunWithResults(runName, testCaseIds, testResults);
+        
+      } catch (error) {
+        console.log('⚠️ Failed to upload results to TestRail:', error.message);
+      }
+    }
+    
     console.log('Results:', this.results);
   }
 
