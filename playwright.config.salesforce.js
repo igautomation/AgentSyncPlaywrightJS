@@ -40,7 +40,8 @@ module.exports = defineConfig({
   // Reporter to use
   reporter: [
     ['html', { open: 'never' }],
-    ['list']
+    ['list'],
+    ['./src/utils/testrail/simple-testrail-reporter.js']
   ],
   
   // Global setup and teardown

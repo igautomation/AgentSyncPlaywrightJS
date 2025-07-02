@@ -4,7 +4,7 @@
 const { test, expect } = require('@playwright/test');
 require('dotenv').config({ path: '.env.salesforce' });
 
-test.describe.skip('Salesforce Simple Contact Test', () => {
+test.describe('Salesforce Simple Contact Test', () => {
   test.use({ storageState: './auth/salesforce-storage-state.json' });
   
   test('should navigate to contacts list', async ({ page }) => {

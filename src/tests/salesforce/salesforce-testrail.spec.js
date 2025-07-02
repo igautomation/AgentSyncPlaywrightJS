@@ -31,7 +31,7 @@ test.describe('Salesforce Tests with TestRail Integration', () => {
       const testRun = await testRailClient.addRun(
         `Salesforce Automated Tests - ${new Date().toISOString()}`,
         [1, 2, 3], // Test case IDs - replace with actual case IDs
-        process.env.TESTRAIL_SUITE_ID
+        parseInt(process.env.TESTRAIL_SUITE_ID)
       );
       testRunId = testRun.id;
       console.log(`✅ Created TestRail run: ${testRunId}`);

@@ -39,26 +39,26 @@ module.exports = {
     ci: safeRequire('./utils/ci'),
     cli: safeRequire('./utils/cli'),
     git: safeRequire('./utils/git'),
-    testing: safeRequire('./utils/testing'),
+    testing: safeRequire('./utils/testing')
   },
-
+  
   // Fixtures
   fixtures: safeRequire('./fixtures'),
-
+  
   // Page objects
   pages: {
-    BasePage: safeRequire('./pages/BasePage'),
+    BasePage: safeRequire('./pages/BasePage')
   },
-
+  
   // Direct exports for common usage
   apiClient: safeRequire('./utils/api').apiClient,
   webInteractions: safeRequire('./utils/web').webInteractions,
   salesforceUtils: safeRequire('./utils/salesforce').salesforceUtils,
-
+  
   // Framework assets access
   FrameworkAssets: require('./framework-assets'),
   assets: new (require('./framework-assets'))(),
-
+  
   /**
    * Create a custom fixture
    * @param {Object} fixtures - Fixture definitions
@@ -68,7 +68,7 @@ module.exports = {
     const { test } = require('@playwright/test');
     return test.extend(fixtures);
   },
-
+  
   /**
    * Get framework version
    * @returns {string} Framework version
@@ -77,9 +77,9 @@ module.exports = {
     const packageJson = require('../package.json');
     return packageJson.version;
   },
-
+  
   /**
    * Create Salesforce project files
    */
-  createSalesforceProject: require('../scripts/setup/setup-salesforce-project').createProjectFiles,
+  createSalesforceProject: require('../setup-salesforce-project').createProjectFiles
 };

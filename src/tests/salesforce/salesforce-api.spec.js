@@ -12,25 +12,15 @@ test.describe('Salesforce API Tests', () => {
   let accessToken;
   let instanceUrl;
   
-  test.beforeAll(async ({ request }) => {
-    // Try to get token from environment first
-    if (process.env.SF_ACCESS_TOKEN) {
-      accessToken = process.env.SF_ACCESS_TOKEN;
-      instanceUrl = process.env.SF_INSTANCE_URL;
-      console.log('✅ Using token from environment');
-      return;
+  test.beforeAll(async () => {
+    accessToken = process.env.SF_ACCESS_TOKEN;
+    instanceUrl = process.env.SF_INSTANCE_URL;
+    
+    if (!accessToken || !instanceUrl) {
+      throw new Error('SF_ACCESS_TOKEN and SF_INSTANCE_URL must be set in environment');
     }
     
-    // Generate new token via OAuth
-    try {
-      const { generateSalesforceOAuthToken } = require('../../scripts/generate-sf-token');
-      const tokenData = await generateSalesforceOAuthToken();
-      accessToken = tokenData.accessToken;
-      instanceUrl = tokenData.instanceUrl;
-      console.log('✅ Generated new access token via OAuth');
-    } catch (error) {
-      console.log('❌ Token generation error:', error.message);
-    }
+    console.log('✅ Using token from environment');
   });
   
   test('should get API limits', async () => {
