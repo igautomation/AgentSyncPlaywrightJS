@@ -1,34 +1,147 @@
-<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="6.83598">
-<testsuite name="api/testrail-demo.spec.js" timestamp="2025-07-07T17:43:50.831Z" hostname="api" tests="3" failures="0" skipped="0" time="1.922" errors="0">
-<testcase name="TestRail Integration Demo › C24148: Salesforce API Authentication Test" classname="api/testrail-demo.spec.js" time="0.986">
+<testsuites id="" name="" tests="9" failures="0" skipped="0" errors="0" time="59.49992700000001">
+<testsuite name="ui/ui-testrail-final.spec.js" timestamp="2025-07-07T17:49:51.524Z" hostname="chromium" tests="3" failures="0" skipped="0" time="51.043" errors="0">
+<testcase name="Final UI TestRail Integration › C24148: Salesforce Login UI Test" classname="ui/ui-testrail-final.spec.js" time="14.69">
 <system-out>
-<![CDATA[🚀 Starting TestRail Integration Demo
-⚠️ OAuth failed: invalid client credentials
-⚠️ OAuth failed, using fallback token - cached for reuse
+<![CDATA[🚀 Starting Final UI TestRail Integration
 🔐 TestRail auth: API Key
 ✅ TestRail client initialized
-📋 Created TestRail run: 525
-🔗 View run: https://agentsync.testrail.io/index.php?/runs/view/525
-🧪 Running API Authentication Test...
-✅ API authentication successful. Found 29 sobjects.
+📋 Created TestRail run: 527
+🔗 View run: https://agentsync.testrail.io/index.php?/runs/view/527
+🧪 Running C24148: Salesforce Login UI Test...
+✅ C24148 UI PASSED: UI Login successful. Page title: Home | Salesforce. URL: https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home
 ]]>
 </system-out>
 </testcase>
-<testcase name="TestRail Integration Demo › C24149: Salesforce API Limits Test" classname="api/testrail-demo.spec.js" time="0.657">
+<testcase name="Final UI TestRail Integration › C24149: Salesforce Navigation UI Test" classname="ui/ui-testrail-final.spec.js" time="18.276">
 <system-out>
-<![CDATA[🧪 Running API Limits Test...
-✅ API limits retrieved successfully. Daily API requests: 14999/15000 remaining.
+<![CDATA[🧪 Running C24149: Salesforce Navigation UI Test...
+✅ C24149 UI PASSED: UI Navigation successful. Page title: Recently Viewed | Contacts | Salesforce. Contact page loaded.
 ]]>
 </system-out>
 </testcase>
-<testcase name="TestRail Integration Demo › C24150: Salesforce API Query Test" classname="api/testrail-demo.spec.js" time="0.279">
+<testcase name="Final UI TestRail Integration › C24150: Salesforce Contact Page UI Test" classname="ui/ui-testrail-final.spec.js" time="18.077">
 <system-out>
-<![CDATA[🧪 Running API Query Test...
-✅ Query executed successfully. Retrieved 5 account records.
-📤 Uploading 3 results to TestRail...
-✅ Results uploaded successfully
-🔒 Test run 525 closed
-🔗 View results: https://agentsync.testrail.io/index.php?/runs/view/525
+<![CDATA[🧪 Running C24150: Salesforce Contact Page UI Test...
+✅ C24150 UI PASSED: UI Contact page loaded. Title: Recently Viewed | Contacts | Salesforce. New button: true. List view: false
+📤 Uploading 3 UI results to TestRail...
+Results to upload: [
+  {
+    "case_id": 24148,
+    "status_id": 1,
+    "comment": "UI Login successful. Page title: Home | Salesforce. URL: https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home"
+  },
+  {
+    "case_id": 24149,
+    "status_id": 1,
+    "comment": "UI Navigation successful. Page title: Recently Viewed | Contacts | Salesforce. Contact page loaded."
+  },
+  {
+    "case_id": 24150,
+    "status_id": 1,
+    "comment": "UI Contact page loaded. Title: Recently Viewed | Contacts | Salesforce. New button: true. List view: false"
+  }
+]
+✅ UI results uploaded successfully
+🔒 UI test run 527 closed
+🔗 View results: https://agentsync.testrail.io/index.php?/runs/view/527
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="ui/ui-testrail-final.spec.js" timestamp="2025-07-07T17:49:51.524Z" hostname="firefox" tests="3" failures="0" skipped="0" time="50.348" errors="0">
+<testcase name="Final UI TestRail Integration › C24148: Salesforce Login UI Test" classname="ui/ui-testrail-final.spec.js" time="14.238">
+<system-out>
+<![CDATA[🚀 Starting Final UI TestRail Integration
+🔐 TestRail auth: API Key
+✅ TestRail client initialized
+📋 Created TestRail run: 526
+🔗 View run: https://agentsync.testrail.io/index.php?/runs/view/526
+🧪 Running C24148: Salesforce Login UI Test...
+✅ C24148 UI PASSED: UI Login successful. Page title: Home | Salesforce. URL: https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home
+]]>
+</system-out>
+</testcase>
+<testcase name="Final UI TestRail Integration › C24149: Salesforce Navigation UI Test" classname="ui/ui-testrail-final.spec.js" time="17.928">
+<system-out>
+<![CDATA[🧪 Running C24149: Salesforce Navigation UI Test...
+✅ C24149 UI PASSED: UI Navigation successful. Page title: Recently Viewed | Contacts | Salesforce. Contact page loaded.
+]]>
+</system-out>
+</testcase>
+<testcase name="Final UI TestRail Integration › C24150: Salesforce Contact Page UI Test" classname="ui/ui-testrail-final.spec.js" time="18.182">
+<system-out>
+<![CDATA[🧪 Running C24150: Salesforce Contact Page UI Test...
+✅ C24150 UI PASSED: UI Contact page loaded. Title: Recently Viewed | Contacts | Salesforce. New button: true. List view: false
+📤 Uploading 3 UI results to TestRail...
+Results to upload: [
+  {
+    "case_id": 24148,
+    "status_id": 1,
+    "comment": "UI Login successful. Page title: Home | Salesforce. URL: https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home"
+  },
+  {
+    "case_id": 24149,
+    "status_id": 1,
+    "comment": "UI Navigation successful. Page title: Recently Viewed | Contacts | Salesforce. Contact page loaded."
+  },
+  {
+    "case_id": 24150,
+    "status_id": 1,
+    "comment": "UI Contact page loaded. Title: Recently Viewed | Contacts | Salesforce. New button: true. List view: false"
+  }
+]
+✅ UI results uploaded successfully
+🔒 UI test run 526 closed
+🔗 View results: https://agentsync.testrail.io/index.php?/runs/view/526
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="ui/ui-testrail-final.spec.js" timestamp="2025-07-07T17:49:51.524Z" hostname="webkit" tests="3" failures="0" skipped="0" time="51.231" errors="0">
+<testcase name="Final UI TestRail Integration › C24148: Salesforce Login UI Test" classname="ui/ui-testrail-final.spec.js" time="14.516">
+<system-out>
+<![CDATA[🚀 Starting Final UI TestRail Integration
+🔐 TestRail auth: API Key
+✅ TestRail client initialized
+📋 Created TestRail run: 528
+🔗 View run: https://agentsync.testrail.io/index.php?/runs/view/528
+🧪 Running C24148: Salesforce Login UI Test...
+✅ C24148 UI PASSED: UI Login successful. Page title: Home | Salesforce. URL: https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home
+]]>
+</system-out>
+</testcase>
+<testcase name="Final UI TestRail Integration › C24149: Salesforce Navigation UI Test" classname="ui/ui-testrail-final.spec.js" time="18.254">
+<system-out>
+<![CDATA[🧪 Running C24149: Salesforce Navigation UI Test...
+✅ C24149 UI PASSED: UI Navigation successful. Page title: Recently Viewed | Contacts | Salesforce. Contact page loaded.
+]]>
+</system-out>
+</testcase>
+<testcase name="Final UI TestRail Integration › C24150: Salesforce Contact Page UI Test" classname="ui/ui-testrail-final.spec.js" time="18.461">
+<system-out>
+<![CDATA[🧪 Running C24150: Salesforce Contact Page UI Test...
+✅ C24150 UI PASSED: UI Contact page loaded. Title: Recently Viewed | Contacts | Salesforce. New button: true. List view: false
+📤 Uploading 3 UI results to TestRail...
+Results to upload: [
+  {
+    "case_id": 24148,
+    "status_id": 1,
+    "comment": "UI Login successful. Page title: Home | Salesforce. URL: https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home"
+  },
+  {
+    "case_id": 24149,
+    "status_id": 1,
+    "comment": "UI Navigation successful. Page title: Recently Viewed | Contacts | Salesforce. Contact page loaded."
+  },
+  {
+    "case_id": 24150,
+    "status_id": 1,
+    "comment": "UI Contact page loaded. Title: Recently Viewed | Contacts | Salesforce. New button: true. List view: false"
+  }
+]
+✅ UI results uploaded successfully
+🔒 UI test run 528 closed
+🔗 View results: https://agentsync.testrail.io/index.php?/runs/view/528
 ]]>
 </system-out>
 </testcase>
