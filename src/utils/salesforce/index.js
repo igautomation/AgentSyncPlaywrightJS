@@ -4,13 +4,35 @@
  * This file exports all Salesforce utilities for easier imports
  */
 
-const SalesforceUtils = require('./salesforceUtils');
-const SalesforceSessionManager = require('./sessionManager');
-const SalesforceApiUtils = require('./salesforceApiUtils');
+// Core utilities (recommended)
+const SalesforceCore = require('./core/salesforceCore');
+const SalesforceAuthUtils = require('./core/salesforceAuthUtils');
+const SalesforceLocators = require('./core/salesforceLocators');
+const SalesforceApiUtils = require('./core/salesforceApiUtils');
+
+// Legacy utilities (for backward compatibility)
+const SalesforceUtils = require('./legacy/salesforceUtils');
+const SalesforceUtilsExtended = require('./legacy/salesforceUtilsExtended');
+const SalesforceSessionManager = require('./legacy/sessionManager');
+
+// Specialized utilities
+const SObjectManager = require('./specialized/objects/SObjectManager');
+const TestCaseObject = require('./specialized/objects/TestCaseObject');
 
 // Export all utilities
 module.exports = {
+  // Core (recommended)
+  SalesforceCore,
+  SalesforceAuthUtils,
+  SalesforceLocators,
+  SalesforceApiUtils,
+  
+  // Legacy (backward compatibility)
   SalesforceUtils,
+  SalesforceUtilsExtended,
   SalesforceSessionManager,
-  SalesforceApiUtils
+  
+  // Specialized
+  SObjectManager,
+  TestCaseObject
 };

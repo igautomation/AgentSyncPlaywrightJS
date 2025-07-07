@@ -7,10 +7,13 @@ const { chromium } = require('@playwright/test');
 const path = require('path');
 const fs = require('fs').promises;
 const dotenv = require('dotenv');
-const logger = require('../common/logger');
+const { Logger } = require('../common');
 
 // Load environment variables
 dotenv.config();
+
+// Use logger functions
+const logger = Logger;
 
 /**
  * Global setup function

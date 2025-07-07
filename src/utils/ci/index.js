@@ -1,19 +1,22 @@
-/**
- * CI Utilities Index
- * 
- * Exports all CI utilities for easy importing
- */
+// Core utilities (recommended)
+const CiUtils = require('./core/ciUtils');
+const TestQualityDashboard = require('./core/testQualityDashboard');
 
-const CIUtils = require('./ciUtils');
-const FlakyTestTracker = require('./flakyTestTracker');
-const TestCoverageAnalyzer = require('./testCoverageAnalyzer');
-const TestQualityDashboard = require('./testQualityDashboard');
-const TestSelector = require('./testSelector');
+// Specialized utilities
+const FlakyTestTracker = require('./specialized/flakyTestTracker');
+const FlakyTestTrackerUtils = require('./specialized/flakyTestTrackerUtils');
+const TestCoverageAnalyzer = require('./specialized/testCoverageAnalyzer');
+const TestSelector = require('./specialized/testSelector');
 
+// Export all utilities
 module.exports = {
-  CIUtils,
-  FlakyTestTracker,
-  TestCoverageAnalyzer,
+  // Core
+  CiUtils,
   TestQualityDashboard,
+  
+  // Specialized
+  FlakyTestTracker,
+  FlakyTestTrackerUtils,
+  TestCoverageAnalyzer,
   TestSelector
 };

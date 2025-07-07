@@ -64,6 +64,27 @@ class BaseSalesforcePage {
   }
   
   /**
+   * Click an element
+   * @param {string} selector - Element selector
+   */
+  async click(selector) {
+    await this.page.locator(selector).click({ timeout: 10000 }).catch(async () => {
+      await this.page.locator(selector).click({ force: true });
+    });
+  }
+
+  /**
+   * Fill an input field
+   * @param {string} selector - Input selector
+   * @param {string} value - Value to fill
+   */
+  async fill(selector, value) {
+    const element = this.page.locator(selector);
+    await element.waitFor({ state: 'visible', timeout: 10000 }).catch(() => {});
+    await element.fill(value, { timeout: 10000 });
+  }
+
+  /**
    * Take a screenshot with a descriptive name
    * @param {string} name - Name for the screenshot
    */

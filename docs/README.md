@@ -1,30 +1,53 @@
-# Playwright Framework Documentation
+# AgentSync Test Automation Framework
 
-This folder contains all the consolidated documentation for the Playwright Testing Framework.
+Essential documentation for the AgentSync Playwright test automation framework.
 
-## Documentation Structure
+## 📚 Documentation Structure
 
-- **Core Documentation**: Main framework documentation files
-- **User Guides**: Instructions for using the framework
-- **API References**: Technical documentation for framework APIs
-- **Examples**: Example code and usage patterns
-- **Maintenance**: Information for framework maintainers
+### Core Documentation
+- **[Installation Guide](core/INSTALLATION.md)** - Setup and installation instructions
+- **[User Guide](core/USER_GUIDE.md)** - How to use the framework
+- **[Framework Guide](core/FRAMEWORK_GUIDE.md)** - Framework architecture and features
 
-## Contents
+### Quick Links
+- **[Source Code](../src/)** - Framework source code
+- **[Configuration](../config/)** - All configuration files
+- **[Scripts](../scripts/)** - Build and utility scripts
+- **[Examples](../examples/)** - Usage examples
 
-1. [README.md](README.md) - This file
-2. [USER_GUIDE.md](USER_GUIDE.md) - Comprehensive user guide for the framework
-3. [FRAMEWORK_GUIDE.md](FRAMEWORK_GUIDE.md) - Detailed framework features and capabilities
-4. [CONTRIBUTING.md](CONTRIBUTING.md) - Guidelines for contributing to the project
-5. [LICENSE.md](LICENSE.md) - License information
+## 🚀 Quick Start
 
-## Additional Documentation
+1. **Install Dependencies**
+   ```bash
+   npm install
+   npx playwright install
+   ```
 
-Additional documentation can be found in the following locations:
-- `/docs` - Detailed documentation on specific framework components
-- `/examples` - Example code and usage patterns
-- `/docs-site` - Documentation website source
+2. **Configure Environment**
+   ```bash
+   cp config/environments/.env.template .env
+   # Edit .env with your settings
+   ```
 
-## Getting Started
+3. **Run Tests**
+   ```bash
+   npm test
+   npm run demo:all
+   ```
 
-To get started with the framework, refer to the [USER_GUIDE.md](USER_GUIDE.md) file.
+## 📖 Essential Reading
+
+1. **[Installation Guide](core/INSTALLATION.md)** - Start here for setup
+2. **[User Guide](core/USER_GUIDE.md)** - Learn how to use the framework
+3. **[Framework Guide](core/FRAMEWORK_GUIDE.md)** - Understand the architecture
+
+## 🔗 Additional Resources
+
+- **Configuration**: See [config/](../config/) directory
+- **Examples**: See [examples/](../examples/) directory  
+- **Source Code**: See [src/](../src/) directory
+- **Archived Documentation**: See [_archive/](../_archive/) directory
+
+## 📞 Support
+
+For questions and support, refer to the framework guides or check the archived documentation in the `_archive/` directory.
