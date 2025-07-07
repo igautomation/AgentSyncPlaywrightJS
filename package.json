@@ -46,6 +46,8 @@
     "test:ui-testrail-working": "playwright test src/tests/ui/ui-testrail-working.spec.js --config=playwright.config.js",
     "test:ui-testrail-simple": "playwright test src/tests/ui/ui-testrail-simple.spec.js --config=playwright.config.js",
     "test:ui-testrail-final": "playwright test src/tests/ui/ui-testrail-final.spec.js --config=playwright.config.js",
+    "test:ci-safe": "playwright test src/tests/api/ci-safe-api.spec.js --config=playwright.config.js",
+    "test:ui-ci-safe": "playwright test src/tests/ui/ci-safe-ui.spec.js --config=playwright.config.js",
     "test:api-mock": "playwright test src/tests/api/mock-api-clean.spec.js --config=playwright.config.js",
     "test:accessibility": "playwright test src/tests/accessibility",
     "test:salesforce": "playwright test src/tests/salesforce",

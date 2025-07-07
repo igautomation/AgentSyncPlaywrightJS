@@ -26,7 +26,7 @@ jobs:
     - name: Install Playwright browsers
       run: npx playwright install --with-deps
     
-    - name: Run UI tests
+    - name: Run UI TestRail integration
       run: npm run test:ui-testrail-final
       env:
         CI: true
