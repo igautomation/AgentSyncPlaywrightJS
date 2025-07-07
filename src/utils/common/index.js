@@ -1,24 +1,21 @@
-/**
- * Common Utilities Index
- * 
- * Exports all common utilities for easy importing
- */
-const logger = require('./logger');
-const PlaywrightService = require('./playwrightService');
-const PlaywrightUtils = require('./playwrightUtils');
-const PlaywrightErrorHandler = require('./errorHandler');
-const RetryWithBackoff = require('./retryWithBackoff');
-const dataUtils = require('./dataUtils');
-const dataOrchestrator = require('./dataOrchestrator');
-const TestDataFactory = require('./testDataFactory');
+// Core utilities (recommended)
+const DataOrchestrator = require('./core/dataOrchestrator');
+const DataUtils = require('./core/dataUtils');
+const ErrorHandler = require('./core/errorHandler');
+const Logger = require('./core/logger');
+const PlaywrightService = require('./core/playwrightService');
+const PlaywrightUtils = require('./core/playwrightUtils');
+const RetryWithBackoff = require('./core/retryWithBackoff');
+const TestDataFactory = require('./core/testDataFactory');
 
 module.exports = {
-  logger,
+  // Core
+  DataOrchestrator,
+  DataUtils,
+  ErrorHandler,
+  Logger,
   PlaywrightService,
   PlaywrightUtils,
-  PlaywrightErrorHandler,
   RetryWithBackoff,
-  dataUtils,
-  dataOrchestrator,
   TestDataFactory
 };

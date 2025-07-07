@@ -1,9 +1,187 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="16.349310999999997">
-<testsuite name="salesforce/salesforce-simple-contact.spec.js" timestamp="2025-07-01T08:18:31.972Z" hostname="salesforce" tests="1" failures="0" skipped="0" time="15.131" errors="0">
-<testcase name="Salesforce Simple Contact Test › should navigate to contacts list" classname="salesforce/salesforce-simple-contact.spec.js" time="15.131">
+<testsuites id="" name="" tests="9" failures="2" skipped="2" errors="0" time="87.08455099999999">
+<testsuite name="ui/ui-testrail-final.spec.js" timestamp="2025-07-07T14:53:19.717Z" hostname="chromium" tests="3" failures="0" skipped="0" time="78.376" errors="0">
+<testcase name="Final UI TestRail Integration › C24148: Salesforce Login UI Test" classname="ui/ui-testrail-final.spec.js" time="30.788">
 <system-out>
-<![CDATA[Page title: Recently Viewed | Contacts | Salesforce
-✅ Successfully navigated to Salesforce contacts page
+<![CDATA[🚀 Starting Final UI TestRail Integration
+🔐 TestRail auth: API Key
+✅ TestRail client initialized
+📋 Created TestRail run: 520
+🔗 View run: https://agentsync.testrail.io/index.php?/runs/view/520
+🧪 Running C24148: Salesforce Login UI Test...
+✅ C24148 UI PASSED: UI Login successful. Page title: Lightning Experience. URL: https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home
+]]>
+</system-out>
+</testcase>
+<testcase name="Final UI TestRail Integration › C24149: Salesforce Navigation UI Test" classname="ui/ui-testrail-final.spec.js" time="21.259">
+<system-out>
+<![CDATA[🧪 Running C24149: Salesforce Navigation UI Test...
+✅ C24149 UI PASSED: UI Navigation successful. Page title: Recently Viewed | Contacts | Salesforce. Contact page loaded.
+]]>
+</system-out>
+</testcase>
+<testcase name="Final UI TestRail Integration › C24150: Salesforce Contact Page UI Test" classname="ui/ui-testrail-final.spec.js" time="26.329">
+<system-out>
+<![CDATA[🧪 Running C24150: Salesforce Contact Page UI Test...
+✅ C24150 UI PASSED: UI Contact page loaded. Title: Recently Viewed | Contacts | Salesforce. New button: true. List view: false
+📤 Uploading 3 UI results to TestRail...
+Results to upload: [
+  {
+    "case_id": 24148,
+    "status_id": 1,
+    "comment": "UI Login successful. Page title: Lightning Experience. URL: https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home"
+  },
+  {
+    "case_id": 24149,
+    "status_id": 1,
+    "comment": "UI Navigation successful. Page title: Recently Viewed | Contacts | Salesforce. Contact page loaded."
+  },
+  {
+    "case_id": 24150,
+    "status_id": 1,
+    "comment": "UI Contact page loaded. Title: Recently Viewed | Contacts | Salesforce. New button: true. List view: false"
+  }
+]
+✅ UI results uploaded successfully
+🔒 UI test run 520 closed
+🔗 View results: https://agentsync.testrail.io/index.php?/runs/view/520
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="ui/ui-testrail-final.spec.js" timestamp="2025-07-07T14:53:19.717Z" hostname="firefox" tests="3" failures="1" skipped="2" time="30.989" errors="0">
+<testcase name="Final UI TestRail Integration › C24148: Salesforce Login UI Test" classname="ui/ui-testrail-final.spec.js" time="30.989">
+<failure message="ui-testrail-final.spec.js:71:3 C24148: Salesforce Login UI Test" type="FAILURE">
+<![CDATA[  [firefox] › ui/ui-testrail-final.spec.js:71:3 › Final UI TestRail Integration › C24148: Salesforce Login UI Test 
+
+    TimeoutError: page.goto: Timeout 30000ms exceeded.
+    Call log:
+      - navigating to "https://login.salesforce.com/", waiting until "load"
+
+
+      76 |       console.log('🧪 Running C24148: Salesforce Login UI Test...');
+      77 |       
+    > 78 |       await page.goto('https://login.salesforce.com');
+         |                  ^
+      79 |       await page.fill('#username', process.env.SF_USERNAME);
+      80 |       await page.fill('#password', process.env.SF_PASSWORD);
+      81 |       await page.click('#Login');
+        at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ui-testrail-final.spec.js:78:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/ui-ui-testrail-final-Final-5150a-48-Salesforce-Login-UI-Test-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/ui-ui-testrail-final-Final-5150a-48-Salesforce-Login-UI-Test-firefox/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[🚀 Starting Final UI TestRail Integration
+🔐 TestRail auth: API Key
+✅ TestRail client initialized
+📋 Created TestRail run: 521
+🔗 View run: https://agentsync.testrail.io/index.php?/runs/view/521
+🧪 Running C24148: Salesforce Login UI Test...
+❌ C24148 UI FAILED: UI Login failed: page.goto: Timeout 30000ms exceeded.
+Call log:
+[2m  - navigating to "https://login.salesforce.com/", waiting until "load"[22m
+
+📤 Uploading 1 UI results to TestRail...
+Results to upload: [
+  {
+    "case_id": 24148,
+    "status_id": 5,
+    "comment": "UI Login failed: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://login.salesforce.com/\", waiting until \"load\"\u001b[22m\n"
+  }
+]
+✅ UI results uploaded successfully
+🔒 UI test run 521 closed
+🔗 View results: https://agentsync.testrail.io/index.php?/runs/view/521
+
+[[ATTACHMENT|../test-results/ui-ui-testrail-final-Final-5150a-48-Salesforce-Login-UI-Test-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/ui-ui-testrail-final-Final-5150a-48-Salesforce-Login-UI-Test-firefox/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Final UI TestRail Integration › C24149: Salesforce Navigation UI Test" classname="ui/ui-testrail-final.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Final UI TestRail Integration › C24150: Salesforce Contact Page UI Test" classname="ui/ui-testrail-final.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui/ui-testrail-final.spec.js" timestamp="2025-07-07T14:53:19.717Z" hostname="webkit" tests="3" failures="1" skipped="0" time="74.844" errors="0">
+<testcase name="Final UI TestRail Integration › C24148: Salesforce Login UI Test" classname="ui/ui-testrail-final.spec.js" time="21.395">
+<system-out>
+<![CDATA[🚀 Starting Final UI TestRail Integration
+🔐 TestRail auth: API Key
+✅ TestRail client initialized
+📋 Created TestRail run: 522
+🔗 View run: https://agentsync.testrail.io/index.php?/runs/view/522
+🧪 Running C24148: Salesforce Login UI Test...
+✅ C24148 UI PASSED: UI Login successful. Page title: Lightning Experience. URL: https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home
+]]>
+</system-out>
+</testcase>
+<testcase name="Final UI TestRail Integration › C24149: Salesforce Navigation UI Test" classname="ui/ui-testrail-final.spec.js" time="25.145">
+<system-out>
+<![CDATA[🧪 Running C24149: Salesforce Navigation UI Test...
+✅ C24149 UI PASSED: UI Navigation successful. Page title: Recently Viewed | Contacts | Salesforce. Contact page loaded.
+]]>
+</system-out>
+</testcase>
+<testcase name="Final UI TestRail Integration › C24150: Salesforce Contact Page UI Test" classname="ui/ui-testrail-final.spec.js" time="28.304">
+<failure message="ui-testrail-final.spec.js:142:3 C24150: Salesforce Contact Page UI Test" type="FAILURE">
+<![CDATA[  [webkit] › ui/ui-testrail-final.spec.js:142:3 › Final UI TestRail Integration › C24150: Salesforce Contact Page UI Test 
+
+    Error: page.goto: Navigation to "https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/o/Contact/list" is interrupted by another navigation to "https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home?aura.lcdn=0"
+    Call log:
+      - navigating to "https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/o/Contact/list", waiting until "load"
+
+
+      153 |       await page.waitForTimeout(10000);
+      154 |       
+    > 155 |       await page.goto(`${process.env.SF_INSTANCE_URL}/lightning/o/Contact/list`);
+          |                  ^
+      156 |       await page.waitForTimeout(5000);
+      157 |       
+      158 |       const title = await page.title();
+        at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ui-testrail-final.spec.js:155:18
+
+    Error Context: ../../test-results/ui-ui-testrail-final-Final-586b7-sforce-Contact-Page-UI-Test-webkit/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[🧪 Running C24150: Salesforce Contact Page UI Test...
+❌ C24150 UI FAILED: UI Contact page test failed: page.goto: Navigation to "https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/o/Contact/list" is interrupted by another navigation to "https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home?aura.lcdn=0"
+Call log:
+[2m  - navigating to "https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/o/Contact/list", waiting until "load"[22m
+
+📤 Uploading 3 UI results to TestRail...
+Results to upload: [
+  {
+    "case_id": 24148,
+    "status_id": 1,
+    "comment": "UI Login successful. Page title: Lightning Experience. URL: https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home"
+  },
+  {
+    "case_id": 24149,
+    "status_id": 1,
+    "comment": "UI Navigation successful. Page title: Recently Viewed | Contacts | Salesforce. Contact page loaded."
+  },
+  {
+    "case_id": 24150,
+    "status_id": 5,
+    "comment": "UI Contact page test failed: page.goto: Navigation to \"https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/o/Contact/list\" is interrupted by another navigation to \"https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home?aura.lcdn=0\"\nCall log:\n\u001b[2m  - navigating to \"https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/o/Contact/list\", waiting until \"load\"\u001b[22m\n"
+  }
+]
+✅ UI results uploaded successfully
+🔒 UI test run 522 closed
+🔗 View results: https://agentsync.testrail.io/index.php?/runs/view/522
+
+[[ATTACHMENT|../test-results/ui-ui-testrail-final-Final-586b7-sforce-Contact-Page-UI-Test-webkit/error-context.md]]
 ]]>
 </system-out>
 </testcase>

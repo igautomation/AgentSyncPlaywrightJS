@@ -1,5 +1,11 @@
+// Core utilities (recommended)
+const CredentialManager = require('./core/credentialManager');
+const DataProtection = require('./core/dataProtection');
+const SetupCredentials = require('./core/setupCredentials');
+
 module.exports = {
-  credentialManager: require('./credentialManager'),
-  dataProtection: require('./dataProtection'),
-  setupCredentials: require('./setupCredentials')
+  // Core
+  CredentialManager,
+  DataProtection,
+  SetupCredentials
 };
