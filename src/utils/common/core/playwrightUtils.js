@@ -8,7 +8,14 @@ const fs = require('fs');
 const path = require('path');
 const logger = require('./logger');
 const PlaywrightErrorHandler = require('./errorHandler');
-const pixelmatch = require('pixelmatch');
+// Dynamic import for pixelmatch (ES module)
+let pixelmatch;
+try {
+  pixelmatch = require('pixelmatch');
+} catch (error) {
+  // Fallback for ES module compatibility
+  pixelmatch = null;
+}
 const { PNG } = require('pngjs');
 
 /**
@@ -214,6 +221,11 @@ class PlaywrightUtils {
    */
   static async compareScreenshots(screenshotPath1, screenshotPath2, options = {}) {
     try {
+      // Check if pixelmatch is available
+      if (!pixelmatch) {
+        throw new Error('pixelmatch module not available for screenshot comparison');
+      }
+      
       // Check if files exist
       if (!fs.existsSync(screenshotPath1)) {
         throw new Error(`Screenshot not found: ${screenshotPath1}`);

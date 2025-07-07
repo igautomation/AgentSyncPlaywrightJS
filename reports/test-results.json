@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 5
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "reporter": [
@@ -49,7 +49,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 5
+          "actualWorkers": 1
         },
         "id": "setup",
         "name": "setup",
@@ -65,7 +65,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 5
+          "actualWorkers": 1
         },
         "id": "chromium",
         "name": "chromium",
@@ -85,7 +85,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 5
+          "actualWorkers": 1
         },
         "id": "firefox",
         "name": "firefox",
@@ -105,7 +105,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 5
+          "actualWorkers": 1
         },
         "id": "webkit",
         "name": "webkit",
@@ -125,7 +125,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 5
+          "actualWorkers": 1
         },
         "id": "mobile-chrome",
         "name": "mobile-chrome",
@@ -141,7 +141,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 5
+          "actualWorkers": 1
         },
         "id": "mobile-safari",
         "name": "mobile-safari",
@@ -157,7 +157,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 5
+          "actualWorkers": 1
         },
         "id": "salesforce",
         "name": "salesforce",
@@ -173,7 +173,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 5
+          "actualWorkers": 1
         },
         "id": "api",
         "name": "api",
@@ -189,7 +189,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 5
+          "actualWorkers": 1
         },
         "id": "visual",
         "name": "visual",
@@ -205,7 +205,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 5
+          "actualWorkers": 1
         },
         "id": "accessibility",
         "name": "accessibility",
@@ -226,20 +226,20 @@
   },
   "suites": [
     {
-      "title": "ui/ci-safe-ui.spec.js",
-      "file": "ui/ci-safe-ui.spec.js",
+      "title": "api/testrail-demo.spec.js",
+      "file": "api/testrail-demo.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "CI Safe UI Tests",
-          "file": "ui/ci-safe-ui.spec.js",
-          "line": 6,
+          "title": "TestRail Integration Demo",
+          "file": "api/testrail-demo.spec.js",
+          "line": 81,
           "column": 6,
           "specs": [
             {
-              "title": "Basic Page Load Test",
+              "title": "C24148: Salesforce API Authentication Test",
               "ok": true,
               "tags": [],
               "tests": [
@@ -247,241 +247,61 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1251,
+                      "duration": 986,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "✅ Basic page load test passed\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-07-07T16:26:45.373Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "2aba579345e510cbcb0b-f0c4b15df7411bf28551",
-              "file": "ui/ci-safe-ui.spec.js",
-              "line": 8,
-              "column": 3
-            },
-            {
-              "title": "HTTPBin Status Test",
-              "ok": false,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "failed",
-                      "duration": 17111,
-                      "error": {
-                        "message": "TimeoutError: page.waitForResponse: Timeout 15000ms exceeded while waiting for event \"response\"\n=========================== logs ===========================\nwaiting for response \"https://httpbin.org/status/200\"\n============================================================",
-                        "stack": "TimeoutError: page.waitForResponse: Timeout 15000ms exceeded while waiting for event \"response\"\n=========================== logs ===========================\nwaiting for response \"https://httpbin.org/status/200\"\n============================================================\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ci-safe-ui.spec.js:24:33",
-                        "location": {
-                          "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ci-safe-ui.spec.js",
-                          "column": 33,
-                          "line": 24
+                          "text": "🚀 Starting TestRail Integration Demo\n"
                         },
-                        "snippet": "  22 |     \n  23 |     // Check that we get a 200 status page\n> 24 |     const response = await page.waitForResponse('https://httpbin.org/status/200');\n     |                                 ^\n  25 |     expect(response.status()).toBe(200);\n  26 |     \n  27 |     console.log('✅ HTTPBin status test passed');"
-                      },
-                      "errors": [
                         {
-                          "location": {
-                            "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ci-safe-ui.spec.js",
-                            "column": 33,
-                            "line": 24
-                          },
-                          "message": "TimeoutError: page.waitForResponse: Timeout 15000ms exceeded while waiting for event \"response\"\n=========================== logs ===========================\nwaiting for response \"https://httpbin.org/status/200\"\n============================================================\n\n  22 |     \n  23 |     // Check that we get a 200 status page\n> 24 |     const response = await page.waitForResponse('https://httpbin.org/status/200');\n     |                                 ^\n  25 |     expect(response.status()).toBe(200);\n  26 |     \n  27 |     console.log('✅ HTTPBin status test passed');\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ci-safe-ui.spec.js:24:33"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-07-07T16:26:45.393Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results/ui-ci-safe-ui-CI-Safe-UI-Tests-HTTPBin-Status-Test-chromium/test-failed-1.png"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ci-safe-ui.spec.js",
-                        "column": 33,
-                        "line": 24
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "2aba579345e510cbcb0b-76e14bf228d1fae206ad",
-              "file": "ui/ci-safe-ui.spec.js",
-              "line": 20,
-              "column": 3
-            },
-            {
-              "title": "Form Interaction Test",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 1975,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "✅ Form interaction test passed\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-07-07T16:26:45.379Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "2aba579345e510cbcb0b-d04e87882e15116d5c1e",
-              "file": "ui/ci-safe-ui.spec.js",
-              "line": 30,
-              "column": 3
-            },
-            {
-              "title": "Basic Page Load Test",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
-                      "status": "passed",
-                      "duration": 1380,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "✅ Basic page load test passed\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-07-07T16:26:45.382Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "2aba579345e510cbcb0b-5f07002a94ddb95d288d",
-              "file": "ui/ci-safe-ui.spec.js",
-              "line": 8,
-              "column": 3
-            },
-            {
-              "title": "HTTPBin Status Test",
-              "ok": false,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 4,
-                      "status": "failed",
-                      "duration": 18734,
-                      "error": {
-                        "message": "TimeoutError: page.waitForResponse: Timeout 15000ms exceeded while waiting for event \"response\"\n=========================== logs ===========================\nwaiting for response \"https://httpbin.org/status/200\"\n============================================================",
-                        "stack": "TimeoutError: page.waitForResponse: Timeout 15000ms exceeded while waiting for event \"response\"\n=========================== logs ===========================\nwaiting for response \"https://httpbin.org/status/200\"\n============================================================\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ci-safe-ui.spec.js:24:33",
-                        "location": {
-                          "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ci-safe-ui.spec.js",
-                          "column": 33,
-                          "line": 24
+                          "text": "⚠️ OAuth failed: invalid client credentials\n"
                         },
-                        "snippet": "  22 |     \n  23 |     // Check that we get a 200 status page\n> 24 |     const response = await page.waitForResponse('https://httpbin.org/status/200');\n     |                                 ^\n  25 |     expect(response.status()).toBe(200);\n  26 |     \n  27 |     console.log('✅ HTTPBin status test passed');"
-                      },
-                      "errors": [
                         {
-                          "location": {
-                            "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ci-safe-ui.spec.js",
-                            "column": 33,
-                            "line": 24
-                          },
-                          "message": "TimeoutError: page.waitForResponse: Timeout 15000ms exceeded while waiting for event \"response\"\n=========================== logs ===========================\nwaiting for response \"https://httpbin.org/status/200\"\n============================================================\n\n  22 |     \n  23 |     // Check that we get a 200 status page\n> 24 |     const response = await page.waitForResponse('https://httpbin.org/status/200');\n     |                                 ^\n  25 |     expect(response.status()).toBe(200);\n  26 |     \n  27 |     console.log('✅ HTTPBin status test passed');\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ci-safe-ui.spec.js:24:33"
+                          "text": "⚠️ OAuth failed, using fallback token - cached for reuse\n"
+                        },
+                        {
+                          "text": "🔐 TestRail auth: API Key\n"
+                        },
+                        {
+                          "text": "✅ TestRail client initialized\n"
+                        },
+                        {
+                          "text": "📋 Created TestRail run: 525\n"
+                        },
+                        {
+                          "text": "🔗 View run: https://agentsync.testrail.io/index.php?/runs/view/525\n"
+                        },
+                        {
+                          "text": "🧪 Running API Authentication Test...\n"
+                        },
+                        {
+                          "text": "✅ API authentication successful. Found 29 sobjects.\n"
                         }
                       ],
-                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-07-07T16:26:45.392Z",
+                      "startTime": "2025-07-07T17:43:51.252Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results/ui-ci-safe-ui-CI-Safe-UI-Tests-HTTPBin-Status-Test-firefox/test-failed-1.png"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ci-safe-ui.spec.js",
-                        "column": 33,
-                        "line": 24
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
-              "id": "2aba579345e510cbcb0b-1b21ec713bf0e5ebb519",
-              "file": "ui/ci-safe-ui.spec.js",
-              "line": 20,
+              "id": "cb7229385a707e95ec5c-2373288adfceefd795bc",
+              "file": "api/testrail-demo.spec.js",
+              "line": 83,
               "column": 3
             },
             {
-              "title": "Form Interaction Test",
+              "title": "C24149: Salesforce API Limits Test",
               "ok": true,
               "tags": [],
               "tests": [
@@ -489,163 +309,26 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
-                      "workerIndex": 5,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3393,
+                      "duration": 657,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "✅ Form interaction test passed\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-07-07T16:26:47.753Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "2aba579345e510cbcb0b-d0c689317d1af6af7d48",
-              "file": "ui/ci-safe-ui.spec.js",
-              "line": 30,
-              "column": 3
-            },
-            {
-              "title": "Basic Page Load Test",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "webkit",
-                  "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 1408,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "✅ Basic page load test passed\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-07-07T16:26:48.313Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "2aba579345e510cbcb0b-ff3b23ad21dae9704a1e",
-              "file": "ui/ci-safe-ui.spec.js",
-              "line": 8,
-              "column": 3
-            },
-            {
-              "title": "HTTPBin Status Test",
-              "ok": false,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "webkit",
-                  "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 7,
-                      "parallelIndex": 3,
-                      "status": "failed",
-                      "duration": 18026,
-                      "error": {
-                        "message": "TimeoutError: page.waitForResponse: Timeout 15000ms exceeded while waiting for event \"response\"\n=========================== logs ===========================\nwaiting for response \"https://httpbin.org/status/200\"\n============================================================",
-                        "stack": "TimeoutError: page.waitForResponse: Timeout 15000ms exceeded while waiting for event \"response\"\n=========================== logs ===========================\nwaiting for response \"https://httpbin.org/status/200\"\n============================================================\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ci-safe-ui.spec.js:24:33",
-                        "location": {
-                          "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ci-safe-ui.spec.js",
-                          "column": 33,
-                          "line": 24
+                          "text": "🧪 Running API Limits Test...\n"
                         },
-                        "snippet": "  22 |     \n  23 |     // Check that we get a 200 status page\n> 24 |     const response = await page.waitForResponse('https://httpbin.org/status/200');\n     |                                 ^\n  25 |     expect(response.status()).toBe(200);\n  26 |     \n  27 |     console.log('✅ HTTPBin status test passed');"
-                      },
-                      "errors": [
                         {
-                          "location": {
-                            "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ci-safe-ui.spec.js",
-                            "column": 33,
-                            "line": 24
-                          },
-                          "message": "TimeoutError: page.waitForResponse: Timeout 15000ms exceeded while waiting for event \"response\"\n=========================== logs ===========================\nwaiting for response \"https://httpbin.org/status/200\"\n============================================================\n\n  22 |     \n  23 |     // Check that we get a 200 status page\n> 24 |     const response = await page.waitForResponse('https://httpbin.org/status/200');\n     |                                 ^\n  25 |     expect(response.status()).toBe(200);\n  26 |     \n  27 |     console.log('✅ HTTPBin status test passed');\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ci-safe-ui.spec.js:24:33"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-07-07T16:26:49.256Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results/ui-ci-safe-ui-CI-Safe-UI-Tests-HTTPBin-Status-Test-webkit/test-failed-1.png"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ci-safe-ui.spec.js",
-                        "column": 33,
-                        "line": 24
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "2aba579345e510cbcb0b-de9025df3476425d2f24",
-              "file": "ui/ci-safe-ui.spec.js",
-              "line": 20,
-              "column": 3
-            },
-            {
-              "title": "Form Interaction Test",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "webkit",
-                  "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 6,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 1469,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "✅ Form interaction test passed\n"
+                          "text": "✅ API limits retrieved successfully. Daily API requests: 14999/15000 remaining.\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-07-07T16:26:49.921Z",
+                      "startTime": "2025-07-07T17:43:54.238Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -653,9 +336,62 @@
                   "status": "expected"
                 }
               ],
-              "id": "2aba579345e510cbcb0b-96a839a2a13053bcd615",
-              "file": "ui/ci-safe-ui.spec.js",
-              "line": 30,
+              "id": "cb7229385a707e95ec5c-34475da3d6f3e1c0bbff",
+              "file": "api/testrail-demo.spec.js",
+              "line": 120,
+              "column": 3
+            },
+            {
+              "title": "C24150: Salesforce API Query Test",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 279,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "🧪 Running API Query Test...\n"
+                        },
+                        {
+                          "text": "✅ Query executed successfully. Retrieved 5 account records.\n"
+                        },
+                        {
+                          "text": "📤 Uploading 3 results to TestRail...\n"
+                        },
+                        {
+                          "text": "✅ Results uploaded successfully\n"
+                        },
+                        {
+                          "text": "🔒 Test run 525 closed\n"
+                        },
+                        {
+                          "text": "🔗 View results: https://agentsync.testrail.io/index.php?/runs/view/525\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-07-07T17:43:54.899Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cb7229385a707e95ec5c-151062feb033f76d85c0",
+              "file": "api/testrail-demo.spec.js",
+              "line": 160,
               "column": 3
             }
           ]
@@ -665,11 +401,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-07-07T16:26:44.608Z",
-    "duration": 22832.270999999997,
-    "expected": 6,
+    "startTime": "2025-07-07T17:43:50.617Z",
+    "duration": 6835.9800000000005,
+    "expected": 3,
     "skipped": 0,
-    "unexpected": 3,
+    "unexpected": 0,
     "flaky": 0
   }
 }
