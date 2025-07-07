@@ -1,4 +1,12 @@
-const axios = require('axios').default || require('axios');
+// Dynamic import for axios (ES module compatibility)
+let axios;
+try {
+  axios = require('axios').default || require('axios');
+} catch (error) {
+  // Fallback for ES module compatibility
+  console.warn('Axios import issue:', error.message);
+  axios = require('axios');
+}
 
 class TestRailAPI {
   constructor() {
