@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 3
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "reporter": [
@@ -49,7 +49,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 1
         },
         "id": "setup",
         "name": "setup",
@@ -65,7 +65,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 1
         },
         "id": "chromium",
         "name": "chromium",
@@ -85,7 +85,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 1
         },
         "id": "firefox",
         "name": "firefox",
@@ -105,7 +105,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 1
         },
         "id": "webkit",
         "name": "webkit",
@@ -125,7 +125,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 1
         },
         "id": "mobile-chrome",
         "name": "mobile-chrome",
@@ -141,7 +141,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 1
         },
         "id": "mobile-safari",
         "name": "mobile-safari",
@@ -157,7 +157,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 1
         },
         "id": "salesforce",
         "name": "salesforce",
@@ -173,7 +173,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 1
         },
         "id": "api",
         "name": "api",
@@ -189,7 +189,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 1
         },
         "id": "visual",
         "name": "visual",
@@ -205,7 +205,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 1
         },
         "id": "accessibility",
         "name": "accessibility",
@@ -226,20 +226,20 @@
   },
   "suites": [
     {
-      "title": "ui/ui-testrail-final.spec.js",
-      "file": "ui/ui-testrail-final.spec.js",
+      "title": "api/testrail-demo.spec.js",
+      "file": "api/testrail-demo.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Final UI TestRail Integration",
-          "file": "ui/ui-testrail-final.spec.js",
-          "line": 21,
+          "title": "TestRail Integration Demo",
+          "file": "api/testrail-demo.spec.js",
+          "line": 81,
           "column": 6,
           "specs": [
             {
-              "title": "C24148: Salesforce Login UI Test",
+              "title": "C24148: Salesforce API Authentication Test",
               "ok": true,
               "tags": [],
               "tests": [
@@ -247,18 +247,24 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 30788,
+                      "duration": 640,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "🚀 Starting Final UI TestRail Integration\n"
+                          "text": "🚀 Starting TestRail Integration Demo\n"
+                        },
+                        {
+                          "text": "⚠️ OAuth failed: invalid client credentials\n"
+                        },
+                        {
+                          "text": "⚠️ OAuth failed, using fallback token - cached for reuse\n"
                         },
                         {
                           "text": "🔐 TestRail auth: API Key\n"
@@ -267,21 +273,21 @@
                           "text": "✅ TestRail client initialized\n"
                         },
                         {
-                          "text": "📋 Created TestRail run: 520\n"
+                          "text": "📋 Created TestRail run: 523\n"
                         },
                         {
-                          "text": "🔗 View run: https://agentsync.testrail.io/index.php?/runs/view/520\n"
+                          "text": "🔗 View run: https://agentsync.testrail.io/index.php?/runs/view/523\n"
                         },
                         {
-                          "text": "🧪 Running C24148: Salesforce Login UI Test...\n"
+                          "text": "🧪 Running API Authentication Test...\n"
                         },
                         {
-                          "text": "✅ C24148 UI PASSED: UI Login successful. Page title: Lightning Experience. URL: https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home\n"
+                          "text": "✅ API authentication successful. Found 29 sobjects.\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-07-07T14:53:20.134Z",
+                      "startTime": "2025-07-07T15:08:48.180Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -289,13 +295,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "3f0695949bbfe432e415-e23896324b1ee1916195",
-              "file": "ui/ui-testrail-final.spec.js",
-              "line": 71,
+              "id": "cb7229385a707e95ec5c-2373288adfceefd795bc",
+              "file": "api/testrail-demo.spec.js",
+              "line": 83,
               "column": 3
             },
             {
-              "title": "C24149: Salesforce Navigation UI Test",
+              "title": "C24149: Salesforce API Limits Test",
               "ok": true,
               "tags": [],
               "tests": [
@@ -303,26 +309,26 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 21259,
+                      "duration": 655,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "🧪 Running C24149: Salesforce Navigation UI Test...\n"
+                          "text": "🧪 Running API Limits Test...\n"
                         },
                         {
-                          "text": "✅ C24149 UI PASSED: UI Navigation successful. Page title: Recently Viewed | Contacts | Salesforce. Contact page loaded.\n"
+                          "text": "✅ API limits retrieved successfully. Daily API requests: 14977/15000 remaining.\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-07-07T14:53:52.805Z",
+                      "startTime": "2025-07-07T15:08:51.594Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -330,13 +336,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "3f0695949bbfe432e415-8b2f02d3fdfb24fbf8a4",
-              "file": "ui/ui-testrail-final.spec.js",
-              "line": 105,
+              "id": "cb7229385a707e95ec5c-34475da3d6f3e1c0bbff",
+              "file": "api/testrail-demo.spec.js",
+              "line": 120,
               "column": 3
             },
             {
-              "title": "C24150: Salesforce Contact Page UI Test",
+              "title": "C24150: Salesforce API Query Test",
               "ok": true,
               "tags": [],
               "tests": [
@@ -344,41 +350,38 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "api",
+                  "projectName": "api",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 26329,
+                      "duration": 213,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "🧪 Running C24150: Salesforce Contact Page UI Test...\n"
+                          "text": "🧪 Running API Query Test...\n"
                         },
                         {
-                          "text": "✅ C24150 UI PASSED: UI Contact page loaded. Title: Recently Viewed | Contacts | Salesforce. New button: true. List view: false\n"
+                          "text": "✅ Query executed successfully. Retrieved 5 account records.\n"
                         },
                         {
-                          "text": "📤 Uploading 3 UI results to TestRail...\n"
+                          "text": "📤 Uploading 3 results to TestRail...\n"
                         },
                         {
-                          "text": "Results to upload: [\n  {\n    \"case_id\": 24148,\n    \"status_id\": 1,\n    \"comment\": \"UI Login successful. Page title: Lightning Experience. URL: https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home\"\n  },\n  {\n    \"case_id\": 24149,\n    \"status_id\": 1,\n    \"comment\": \"UI Navigation successful. Page title: Recently Viewed | Contacts | Salesforce. Contact page loaded.\"\n  },\n  {\n    \"case_id\": 24150,\n    \"status_id\": 1,\n    \"comment\": \"UI Contact page loaded. Title: Recently Viewed | Contacts | Salesforce. New button: true. List view: false\"\n  }\n]\n"
+                          "text": "✅ Results uploaded successfully\n"
                         },
                         {
-                          "text": "✅ UI results uploaded successfully\n"
+                          "text": "🔒 Test run 523 closed\n"
                         },
                         {
-                          "text": "🔒 UI test run 520 closed\n"
-                        },
-                        {
-                          "text": "🔗 View results: https://agentsync.testrail.io/index.php?/runs/view/520\n"
+                          "text": "🔗 View results: https://agentsync.testrail.io/index.php?/runs/view/523\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-07-07T14:54:14.068Z",
+                      "startTime": "2025-07-07T15:08:52.252Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -386,366 +389,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "3f0695949bbfe432e415-9f4bfd86e1470f8e0a20",
-              "file": "ui/ui-testrail-final.spec.js",
-              "line": 142,
-              "column": 3
-            },
-            {
-              "title": "C24148: Salesforce Login UI Test",
-              "ok": false,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "failed",
-                      "duration": 30989,
-                      "error": {
-                        "message": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://login.salesforce.com/\", waiting until \"load\"\u001b[22m\n",
-                        "stack": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://login.salesforce.com/\", waiting until \"load\"\u001b[22m\n\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ui-testrail-final.spec.js:78:18",
-                        "location": {
-                          "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ui-testrail-final.spec.js",
-                          "column": 18,
-                          "line": 78
-                        },
-                        "snippet": "  76 |       console.log('🧪 Running C24148: Salesforce Login UI Test...');\n  77 |       \n> 78 |       await page.goto('https://login.salesforce.com');\n     |                  ^\n  79 |       await page.fill('#username', process.env.SF_USERNAME);\n  80 |       await page.fill('#password', process.env.SF_PASSWORD);\n  81 |       await page.click('#Login');"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ui-testrail-final.spec.js",
-                            "column": 18,
-                            "line": 78
-                          },
-                          "message": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://login.salesforce.com/\", waiting until \"load\"\u001b[22m\n\n\n  76 |       console.log('🧪 Running C24148: Salesforce Login UI Test...');\n  77 |       \n> 78 |       await page.goto('https://login.salesforce.com');\n     |                  ^\n  79 |       await page.fill('#username', process.env.SF_USERNAME);\n  80 |       await page.fill('#password', process.env.SF_PASSWORD);\n  81 |       await page.click('#Login');\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ui-testrail-final.spec.js:78:18"
-                        }
-                      ],
-                      "stdout": [
-                        {
-                          "text": "🚀 Starting Final UI TestRail Integration\n"
-                        },
-                        {
-                          "text": "🔐 TestRail auth: API Key\n"
-                        },
-                        {
-                          "text": "✅ TestRail client initialized\n"
-                        },
-                        {
-                          "text": "📋 Created TestRail run: 521\n"
-                        },
-                        {
-                          "text": "🔗 View run: https://agentsync.testrail.io/index.php?/runs/view/521\n"
-                        },
-                        {
-                          "text": "🧪 Running C24148: Salesforce Login UI Test...\n"
-                        },
-                        {
-                          "text": "❌ C24148 UI FAILED: UI Login failed: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://login.salesforce.com/\", waiting until \"load\"\u001b[22m\n\n"
-                        },
-                        {
-                          "text": "📤 Uploading 1 UI results to TestRail...\n"
-                        },
-                        {
-                          "text": "Results to upload: [\n  {\n    \"case_id\": 24148,\n    \"status_id\": 5,\n    \"comment\": \"UI Login failed: page.goto: Timeout 30000ms exceeded.\\nCall log:\\n\\u001b[2m  - navigating to \\\"https://login.salesforce.com/\\\", waiting until \\\"load\\\"\\u001b[22m\\n\"\n  }\n]\n"
-                        },
-                        {
-                          "text": "✅ UI results uploaded successfully\n"
-                        },
-                        {
-                          "text": "🔒 UI test run 521 closed\n"
-                        },
-                        {
-                          "text": "🔗 View results: https://agentsync.testrail.io/index.php?/runs/view/521\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-07-07T14:53:20.131Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results/ui-ui-testrail-final-Final-5150a-48-Salesforce-Login-UI-Test-firefox/test-failed-1.png"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results/ui-ui-testrail-final-Final-5150a-48-Salesforce-Login-UI-Test-firefox/error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ui-testrail-final.spec.js",
-                        "column": 18,
-                        "line": 78
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "3f0695949bbfe432e415-65409237224162b75d49",
-              "file": "ui/ui-testrail-final.spec.js",
-              "line": 71,
-              "column": 3
-            },
-            {
-              "title": "C24149: Salesforce Navigation UI Test",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-07-07T14:53:56.530Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "3f0695949bbfe432e415-de49d1affcc60b5d8487",
-              "file": "ui/ui-testrail-final.spec.js",
-              "line": 105,
-              "column": 3
-            },
-            {
-              "title": "C24150: Salesforce Contact Page UI Test",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-07-07T14:53:56.530Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "skipped"
-                }
-              ],
-              "id": "3f0695949bbfe432e415-ee862e2cdf7893d7fd31",
-              "file": "ui/ui-testrail-final.spec.js",
-              "line": 142,
-              "column": 3
-            },
-            {
-              "title": "C24148: Salesforce Login UI Test",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "webkit",
-                  "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 21395,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🚀 Starting Final UI TestRail Integration\n"
-                        },
-                        {
-                          "text": "🔐 TestRail auth: API Key\n"
-                        },
-                        {
-                          "text": "✅ TestRail client initialized\n"
-                        },
-                        {
-                          "text": "📋 Created TestRail run: 522\n"
-                        },
-                        {
-                          "text": "🔗 View run: https://agentsync.testrail.io/index.php?/runs/view/522\n"
-                        },
-                        {
-                          "text": "🧪 Running C24148: Salesforce Login UI Test...\n"
-                        },
-                        {
-                          "text": "✅ C24148 UI PASSED: UI Login successful. Page title: Lightning Experience. URL: https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-07-07T14:53:20.131Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "3f0695949bbfe432e415-5f0c69f906a0fb5040f7",
-              "file": "ui/ui-testrail-final.spec.js",
-              "line": 71,
-              "column": 3
-            },
-            {
-              "title": "C24149: Salesforce Navigation UI Test",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "webkit",
-                  "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 25145,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "🧪 Running C24149: Salesforce Navigation UI Test...\n"
-                        },
-                        {
-                          "text": "✅ C24149 UI PASSED: UI Navigation successful. Page title: Recently Viewed | Contacts | Salesforce. Contact page loaded.\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-07-07T14:53:47.164Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "3f0695949bbfe432e415-c4047b052973982d95da",
-              "file": "ui/ui-testrail-final.spec.js",
-              "line": 105,
-              "column": 3
-            },
-            {
-              "title": "C24150: Salesforce Contact Page UI Test",
-              "ok": false,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "webkit",
-                  "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "failed",
-                      "duration": 28304,
-                      "error": {
-                        "message": "Error: page.goto: Navigation to \"https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/o/Contact/list\" is interrupted by another navigation to \"https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home?aura.lcdn=0\"\nCall log:\n\u001b[2m  - navigating to \"https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/o/Contact/list\", waiting until \"load\"\u001b[22m\n",
-                        "stack": "Error: page.goto: Navigation to \"https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/o/Contact/list\" is interrupted by another navigation to \"https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home?aura.lcdn=0\"\nCall log:\n\u001b[2m  - navigating to \"https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/o/Contact/list\", waiting until \"load\"\u001b[22m\n\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ui-testrail-final.spec.js:155:18",
-                        "location": {
-                          "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ui-testrail-final.spec.js",
-                          "column": 18,
-                          "line": 155
-                        },
-                        "snippet": "  153 |       await page.waitForTimeout(10000);\n  154 |       \n> 155 |       await page.goto(`${process.env.SF_INSTANCE_URL}/lightning/o/Contact/list`);\n      |                  ^\n  156 |       await page.waitForTimeout(5000);\n  157 |       \n  158 |       const title = await page.title();"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ui-testrail-final.spec.js",
-                            "column": 18,
-                            "line": 155
-                          },
-                          "message": "Error: page.goto: Navigation to \"https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/o/Contact/list\" is interrupted by another navigation to \"https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home?aura.lcdn=0\"\nCall log:\n\u001b[2m  - navigating to \"https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/o/Contact/list\", waiting until \"load\"\u001b[22m\n\n\n  153 |       await page.waitForTimeout(10000);\n  154 |       \n> 155 |       await page.goto(`${process.env.SF_INSTANCE_URL}/lightning/o/Contact/list`);\n      |                  ^\n  156 |       await page.waitForTimeout(5000);\n  157 |       \n  158 |       const title = await page.title();\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ui-testrail-final.spec.js:155:18"
-                        }
-                      ],
-                      "stdout": [
-                        {
-                          "text": "🧪 Running C24150: Salesforce Contact Page UI Test...\n"
-                        },
-                        {
-                          "text": "❌ C24150 UI FAILED: UI Contact page test failed: page.goto: Navigation to \"https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/o/Contact/list\" is interrupted by another navigation to \"https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home?aura.lcdn=0\"\nCall log:\n\u001b[2m  - navigating to \"https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/o/Contact/list\", waiting until \"load\"\u001b[22m\n\n"
-                        },
-                        {
-                          "text": "📤 Uploading 3 UI results to TestRail...\n"
-                        },
-                        {
-                          "text": "Results to upload: [\n  {\n    \"case_id\": 24148,\n    \"status_id\": 1,\n    \"comment\": \"UI Login successful. Page title: Lightning Experience. URL: https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home\"\n  },\n  {\n    \"case_id\": 24149,\n    \"status_id\": 1,\n    \"comment\": \"UI Navigation successful. Page title: Recently Viewed | Contacts | Salesforce. Contact page loaded.\"\n  },\n  {\n    \"case_id\": 24150,\n    \"status_id\": 5,\n    \"comment\": \"UI Contact page test failed: page.goto: Navigation to \\\"https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/o/Contact/list\\\" is interrupted by another navigation to \\\"https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/setup/SetupOneHome/home?aura.lcdn=0\\\"\\nCall log:\\n\\u001b[2m  - navigating to \\\"https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/o/Contact/list\\\", waiting until \\\"load\\\"\\u001b[22m\\n\"\n  }\n]\n"
-                        },
-                        {
-                          "text": "✅ UI results uploaded successfully\n"
-                        },
-                        {
-                          "text": "🔒 UI test run 522 closed\n"
-                        },
-                        {
-                          "text": "🔗 View results: https://agentsync.testrail.io/index.php?/runs/view/522\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-07-07T14:54:12.313Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results/ui-ui-testrail-final-Final-586b7-sforce-Contact-Page-UI-Test-webkit/error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/ui-testrail-final.spec.js",
-                        "column": 18,
-                        "line": 155
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "3f0695949bbfe432e415-8f2bd98c96782f458ec0",
-              "file": "ui/ui-testrail-final.spec.js",
-              "line": 142,
+              "id": "cb7229385a707e95ec5c-151062feb033f76d85c0",
+              "file": "api/testrail-demo.spec.js",
+              "line": 160,
               "column": 3
             }
           ]
@@ -755,11 +401,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-07-07T14:53:19.393Z",
-    "duration": 87084.55099999999,
-    "expected": 5,
-    "skipped": 2,
-    "unexpected": 2,
+    "startTime": "2025-07-07T15:08:47.549Z",
+    "duration": 7059.454000000001,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
     "flaky": 0
   }
 }
