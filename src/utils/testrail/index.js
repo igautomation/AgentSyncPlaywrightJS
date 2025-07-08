@@ -1,6 +1,6 @@
 // Core utilities (recommended)
 const TestRailCore = require('./core/testrailCore');
-const TestRailAPI = require('./core/testrail-api');
+const TestRailAPI = require('./core/testrail-api-simple');
 
 // Specialized utilities
 const AutomatedTestRunner = require('./specialized/automated-test-runner');
