@@ -34,8 +34,8 @@ jobs:
           npx playwright install
         }
     
-    - name: Run UI tests
-      run: npm run test:ui-ci-safe
+    - name: Run UI TestRail integration
+      run: npm run test:ui-testrail-final
       env:
         CI: true
         SF_USERNAME: ${{ secrets.SF_USERNAME }}
