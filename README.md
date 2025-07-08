@@ -1,5 +1,8 @@
 # AgentSync Playwright Test Framework
 
+![TestRail Integration](https://github.com/yourusername/AgentSyncProfessionalServicesDelivery/actions/workflows/testrail-integration.yml/badge.svg)
+![CI](https://github.com/yourusername/AgentSyncProfessionalServicesDelivery/actions/workflows/ci.yml/badge.svg)
+
 A comprehensive test automation framework built with Playwright for end-to-end testing of web applications, APIs, and Salesforce.
 
 ## 🚀 Quick Start
@@ -182,6 +185,36 @@ docker-compose up
 # Run specific tests
 docker-compose run playwright npm run test:api
 ```
+
+## 🔄 CI/CD with GitHub Actions
+
+This framework includes GitHub Actions workflows for continuous integration:
+
+### Available Workflows
+
+- **CI**: Main CI pipeline that runs validation and API tests
+- **UI Tests**: Runs UI tests with TestRail integration
+- **TestRail Integration**: Dedicated workflow for TestRail integration tests
+
+### Running GitHub Actions
+
+```bash
+# Workflows run automatically on push to main/develop branches and on pull requests
+# You can also trigger workflows manually from the GitHub Actions tab
+```
+
+### Required Secrets
+
+Set these secrets in your GitHub repository settings:
+
+- `SF_USERNAME`: Salesforce username
+- `SF_PASSWORD`: Salesforce password
+- `SF_INSTANCE_URL`: Salesforce instance URL
+- `TESTRAIL_URL`: TestRail URL
+- `TESTRAIL_USERNAME`: TestRail username
+- `TESTRAIL_API_KEY`: TestRail API key
+- `TESTRAIL_PROJECT_ID`: TestRail project ID
+- `TESTRAIL_SUITE_ID`: TestRail suite ID
 
 ## 📚 Documentation
 
