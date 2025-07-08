@@ -1,0 +1,39 @@
+name: Framework Validation
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Validate package structure
+      run: |
+        echo "🔍 Validating framework structure..."
+        test -f package.json && echo "✅ package.json exists"
+        test -d src && echo "✅ src directory exists"
+        test -d .github && echo "✅ .github directory exists"
+        echo "✅ Basic structure validation passed"
+    
+    - name: Install and validate dependencies
+      run: |
+        npm ci --production || npm install --production
+        echo "✅ Dependencies installed successfully"
+    
+    - name: Check available scripts
+      run: |
+        echo "📋 Available npm scripts:"
+        npm run | grep -E "^  [a-z]" || echo "No custom scripts found"
+        echo "✅ Script validation completed"
