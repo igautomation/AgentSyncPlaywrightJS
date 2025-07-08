@@ -40,8 +40,8 @@ jobs:
         test -d src && echo "✅ Source directory exists"
         npm run validate:framework || echo "⚠️ Framework validation skipped"
     
-    - name: Run CI-safe tests
-      run: npm run test:ci-safe
+    - name: Run API TestRail integration
+      run: npm run test:testrail-demo
       env:
         CI: true
         SF_USERNAME: ${{ secrets.SF_USERNAME }}
