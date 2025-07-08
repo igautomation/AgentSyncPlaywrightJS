@@ -1,8 +1,13 @@
 {
   "recommendations": [
-    "ms-playwright.playwright",
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
-    "streetsidesoftware.code-spell-checker"
+    "salesforce.salesforcedx-vscode",
+    "salesforce.salesforcedx-vscode-apex",
+    "salesforce.salesforcedx-vscode-core",
+    "salesforce.salesforcedx-vscode-apex-debugger",
+    "salesforce.salesforcedx-vscode-apex-replay-debugger",
+    "salesforce.salesforcedx-vscode-lightning",
+    "salesforce.salesforcedx-vscode-lwc",
+    "salesforce.salesforcedx-vscode-soql",
+    "salesforce.salesforcedx-vscode-visualforce"
   ]
 }
