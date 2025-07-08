@@ -2,7 +2,7 @@
  * TestRail Core Utilities
  * Consolidated and cleaned TestRail utilities
  */
-const TestRailAPI = require('./testrail-api');
+const TestRailAPI = require('./testrail-api-simple');
 const fs = require('fs');
 const path = require('path');
 

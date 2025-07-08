@@ -50,6 +50,48 @@ module.exports = {
     BasePage: safeRequire('./pages/BasePage'),
   },
 
+  // Test templates (as strings to avoid Playwright config issues)
+  tests: {
+    templates: {
+      apiTemplate: `const { test, expect } = require('@playwright/test');
+const { TestRailAPI } = require('@igautomation/playwright-framework').utils.testrail;
+
+test.describe('API Tests', () => {
+  test('Sample API Test', async ({ request }) => {
+    const response = await request.get('https://api.example.com/data');
+    expect(response.status()).toBe(200);
+  });
+});`,
+      uiTemplate: `const { test, expect } = require('@playwright/test');
+const { TestRailAPI } = require('@igautomation/playwright-framework').utils.testrail;
+
+test.describe('UI Tests', () => {
+  test('Sample UI Test', async ({ page }) => {
+    await page.goto('https://example.com');
+    expect(await page.title()).toContain('Example');
+  });
+});`,
+      salesforceApiTemplate: `const { test, expect } = require('@playwright/test');
+const { TestRailAPI } = require('@igautomation/playwright-framework').utils.testrail;
+const authManager = require('@igautomation/playwright-framework').utils.salesforce.authManager;
+
+test.describe('Salesforce API Tests', () => {
+  test('Salesforce API Test', async ({ request }) => {
+    const auth = await authManager.authenticate();
+    const response = await request.get(auth.instanceUrl + '/services/data/v62.0/');
+    expect(response.status()).toBe(200);
+  });
+});`
+    },
+    examples: {
+      workingTests: [
+        'src/tests/api/testrail-demo.spec.js',
+        'src/tests/api/salesforce-api-clean.spec.js', 
+        'src/tests/ui/ui-testrail-final.spec.js'
+      ]
+    }
+  },
+
   // Direct exports for common usage
   apiClient: safeRequire('./utils/api').apiClient,
   webInteractions: safeRequire('./utils/web').webInteractions,
