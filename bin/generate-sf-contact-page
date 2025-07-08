@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Generate Salesforce New Contact Dialog Page Object
+node src/utils/generators/generate-page.js \
+  --url "https://wise-koala-a44c19-dev-ed.trailblaze.lightning.force.com/lightning/o/Contact/new?count=3&nooverride=1&useRecordTypeCheck=1&navigationLocation=LIST_VIEW&uid=174811342884842430&backgroundContext=%2Flightning%2Fo%2FContact%2Flist%3FfilterName%3D__Recent" \
+  --name SalesforceNewContactDialog \
+  --visible \
+  --salesforce \
+  --username "altimetrikuser001@wise-koala-a44c19.com" \
+  --password "Dubai@2025" \
+  --generate-tests
