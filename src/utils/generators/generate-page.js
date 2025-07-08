@@ -89,8 +89,14 @@ async function handleSalesforceAuth(page, username, password) {
     await page.fill('#password', password);
     await page.click('#Login');
     
-    // Wait for login to complete
-    await page.waitForNavigation({ waitUntil: 'networkidle' });
+    // Wait for login to complete with increased timeout
+    try {
+      await page.waitForNavigation({ waitUntil: 'networkidle', timeout: 60000 });
+    } catch (error) {
+      console.log('Navigation timeout after login - continuing anyway');
+      // Wait a bit more for the page to stabilize
+      await page.waitForTimeout(5000);
+    }
     
     // Check for verification code page and skip if possible
     const rememberMeSelector = 'input#rememberUn';
@@ -99,7 +105,13 @@ async function handleSalesforceAuth(page, username, password) {
     if (hasRememberMe) {
       await page.check(rememberMeSelector);
       await page.click('#Login');
-      await page.waitForNavigation({ waitUntil: 'networkidle' });
+      try {
+        await page.waitForNavigation({ waitUntil: 'networkidle', timeout: 60000 });
+      } catch (error) {
+        console.log('Navigation timeout after remember me - continuing anyway');
+        // Wait a bit more for the page to stabilize
+        await page.waitForTimeout(5000);
+      }
     }
   }
   
@@ -472,9 +484,17 @@ test.describe('${className} Tests', () => {
     }
     
     // Navigate to the target URL
-    await page.goto(options.url);
-    await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(2000); // Wait for any dynamic content
+    await page.goto(options.url, { timeout: 60000 }).catch(error => {
+      console.log(`Navigation to ${options.url} timed out - continuing anyway`);
+    });
+    
+    try {
+      await page.waitForLoadState('networkidle', { timeout: 60000 });
+    } catch (error) {
+      console.log('Network idle timeout - continuing anyway');
+    }
+    
+    await page.waitForTimeout(5000); // Increased wait for dynamic content
     
     // Extract elements based on page type
     let elements;
