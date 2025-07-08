@@ -101,6 +101,7 @@
     "generate:docs": "node scripts/docs/consolidate-docs.js",
     "publish:setup": "node scripts/publishing/setup-publish-token.js",
     "ci:setup": "node scripts/ci-cd/setup-branches.sh",
+    "ci:verify-secrets": "node scripts/ci-cd/verify-secrets.js",
     "create:sf-project": "node setup-salesforce-project.js"
   },
   "keywords": [
