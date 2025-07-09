@@ -6,7 +6,7 @@
  * with TestRail integration
  */
 const { test, expect } = require('@playwright/test');
-const { TestRailAPI } = require('../../../utils/testrail');
+const { TestRailAPI } = require('../../utils/testrail');
 const fs = require('fs');
 const path = require('path');
 require('dotenv').config({ path: '.env.unified' });
@@ -29,7 +29,7 @@ test.beforeAll(async () => {
       parseInt(process.env.TESTRAIL_PROJECT_ID),
       {
         name: `UI Login Tests - ${new Date().toISOString()}`,
-        case_ids: [24155], // Update with your actual TestRail case ID
+        case_ids: [27698], // UI Login Test
         suite_id: parseInt(process.env.TESTRAIL_SUITE_ID)
       }
     );
@@ -55,7 +55,7 @@ test.afterAll(async () => {
 });
 
 test.describe('Salesforce Login', () => {
-  test('C24155: Salesforce Login Test', async ({ page }) => {
+  test('C27698: Salesforce Login Test', async ({ page }) => {
     const startTime = Date.now();
     let status = 1; // Passed
     let comment = '';
@@ -107,7 +107,7 @@ test.describe('Salesforce Login', () => {
     } finally {
       if (testRailClient) {
         testResults.push({
-          case_id: 24155,
+          case_id: 27698,
           status_id: status,
           comment: comment,
           elapsed: `${Math.round((Date.now() - startTime) / 1000)}s`

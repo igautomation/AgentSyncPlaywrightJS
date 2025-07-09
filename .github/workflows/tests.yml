@@ -1,4 +1,4 @@
-name: CI
+name: Test Suite
 
 on:
   push:
@@ -8,8 +8,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  ci:
+  test-matrix:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        test-type: [api, ui, salesforce]
     
     steps:
     - uses: actions/checkout@v4
@@ -23,16 +27,22 @@ jobs:
     - name: Install dependencies
       run: npm ci || npm install
     
-    - name: Validate framework
-      run: |
-        test -f package.json && echo "✅ Package.json exists"
-        test -d src && echo "✅ Source directory exists"
-    
     - name: Install Playwright browsers
       run: npx playwright install --with-deps chromium
     
-    - name: Run API tests
-      run: npx playwright test src/tests/api
+    - name: Run ${{ matrix.test-type }} tests
+      run: |
+        case "${{ matrix.test-type }}" in
+          "api")
+            npx playwright test src/tests/api
+            ;;
+          "ui")
+            npx playwright test src/tests/ui --project=chromium
+            ;;
+          "salesforce")
+            npx playwright test src/tests/salesforce
+            ;;
+        esac
       env:
         CI: true
         SF_USERNAME: ${{ secrets.SF_USERNAME }}
@@ -50,8 +60,9 @@ jobs:
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: ci-test-results
+        name: test-results-${{ matrix.test-type }}
         path: |
           test-results/
           playwright-report/
+          auth/
         retention-days: 7

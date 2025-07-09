@@ -1,18 +1,17 @@
 {
-  "name": "playwright-framework-project",
+  "name": "agentsync-playwright-project",
   "version": "1.0.0",
-  "description": "Project using @your-org/playwright-framework",
+  "description": "AgentSync Playwright Test Project",
   "scripts": {
     "test": "playwright test",
     "test:ui": "playwright test --ui",
     "test:headed": "playwright test --headed",
-    "report": "playwright show-report",
-    "codegen": "playwright codegen"
+    "report": "playwright show-report"
   },
   "dependencies": {
-    "@your-org/playwright-framework": "^1.0.0"
+    "@agentsync/playwright-framework": "^1.0.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.40.0"
+    "@playwright/test": "^1.53.2"
   }
 }

@@ -1,211 +1,116 @@
 # AgentSync Playwright Test Framework
 
-![TestRail Integration](https://github.com/yourusername/AgentSyncProfessionalServicesDelivery/actions/workflows/testrail-integration.yml/badge.svg)
-![CI](https://github.com/yourusername/AgentSyncProfessionalServicesDelivery/actions/workflows/ci.yml/badge.svg)
-
 A comprehensive test automation framework built with Playwright for end-to-end testing of web applications, APIs, and Salesforce.
 
-## 🚀 Quick Start
+## 🚀 Framework Overview
 
-### Prerequisites
-- Node.js 16 or higher
-- npm or yarn
-- Git
+This enterprise-grade Playwright test framework provides:
 
-### Installation
+- **Cross-browser testing** across Chrome, Firefox, Safari, and Edge
+- **API testing** for REST and GraphQL endpoints
+- **Salesforce-specific testing** capabilities with specialized utilities
+- **TestRail integration** for test case management and reporting
+- **Page Object Model** implementation for maintainable tests
+- **Utility libraries** for common testing tasks
+- **CI/CD integration** with GitHub Actions
 
-```bash
-# Clone the repository
-git clone <repository-url>
-cd AgentSyncProfessionalServices
-
-# Install dependencies
-npm install
-
-# Install Playwright browsers
-npx playwright install
-
-# Set up environment variables
-cp .env.example .env
-# Edit .env with your credentials
-```
-
-### Common Setup Issues & Solutions
-
-1. **Missing Playwright Browsers**
-   ```bash
-   # If browsers are missing, install them explicitly
-   npx playwright install chromium firefox webkit
-   ```
-
-2. **Environment Variables**
-   - Ensure your `.env` file has all required variables from `.env.example`
-   - For Salesforce testing, make sure to set all SF_* variables
-
-3. **Permission Issues**
-   ```bash
-   # If you encounter permission issues with scripts
-   chmod +x scripts/*.sh
-   chmod +x bin/*
-   ```
-
-4. **Node Version Issues**
-   ```bash
-   # Check your Node.js version
-   node -v
-   # Use nvm to install correct version if needed
-   nvm install 16
-   nvm use 16
-   ```
-
-### Salesforce Setup
-
-```bash
-# Create auth directory if it doesn't exist
-mkdir -p auth
-
-# Set up Salesforce authentication state
-npm run setup:salesforce
-```
-
-## 🧪 Running Tests
-
-```bash
-# Run all tests
-npm test
-
-# Run tests with UI mode
-npx playwright test --ui
-
-# Run specific test types
-npm run test:api            # API tests
-npm run test:e2e            # End-to-end tests
-npm run test:accessibility  # Accessibility tests
-npm run test:salesforce     # Salesforce tests
-
-# Run tests in headed mode
-npx playwright test --headed
-
-# View test reports
-npm run report
-```
-
-## 🏗️ Framework Architecture
-
-The framework follows a modular architecture:
+## 📂 Project Structure
 
 ```
-AgentSyncProfessionalServices/
+AgentSyncProfessionalServicesDelivery/
 ├── src/                    # Source code
-│   ├── cli/                # Command-line interface tools
 │   ├── config/             # Configuration files
-│   ├── core/               # Core framework functionality
-│   ├── dashboard/          # Test dashboard components
-│   ├── data/               # Test data files
-│   ├── fixtures/           # Test fixtures
-│   ├── helpers/            # Helper utilities
 │   ├── pages/              # Page objects
 │   │   └── salesforce/     # Salesforce page objects
 │   ├── tests/              # Test files
-│   │   ├── accessibility/  # Accessibility tests
 │   │   ├── api/            # API tests
-│   │   ├── core/           # Core functionality tests
-│   │   ├── examples/       # Example tests
-│   │   ├── integration/    # Integration tests
-│   │   ├── salesforce/     # Salesforce tests
+│   │   ├── ui/             # UI tests
+│   │   └── salesforce/     # Salesforce tests
 │   └── utils/              # Utility modules
-│       ├── accessibility/  # Accessibility testing utilities
-│       ├── api/            # API testing utilities
 │       ├── salesforce/     # Salesforce utilities
+│       ├── testrail/       # TestRail integration
 │       └── many others...  # Various utility modules
+├── .github/                # GitHub Actions workflows
 ├── auth/                   # Authentication state storage
-├── docs/                   # Documentation
-├── reports/                # Test reports
+├── config/                 # Framework configuration
 └── scripts/                # Helper scripts
 ```
 
 ## 🛠️ Key Features
 
-- **Cross-browser Testing**: Chrome, Firefox, Safari, and Edge support
-- **API Testing**: REST and GraphQL API testing capabilities
-- **Accessibility Testing**: Automated accessibility audits
-- **Performance Testing**: Core Web Vitals and performance metrics
-- **Data-Driven Testing**: Support for multiple data formats
-- **Self-Healing Locators**: Automatic recovery from broken selectors
-- **Reporting**: Customizable HTML reports and dashboards
-- **CI/CD Integration**: GitHub Actions workflows and Docker support
-- **Salesforce Integration**: Specialized utilities for Salesforce testing
-- **Mobile Testing**: Mobile browser emulation capabilities
-- **Visual Testing**: Screenshot comparison and visual regression testing
-
-## 🔌 Salesforce Testing
+### Salesforce Testing
 
 The framework includes specialized support for Salesforce testing:
 
-```bash
-# Set up Salesforce credentials in .env file
-# Required variables:
-# SF_USERNAME, SF_PASSWORD, SF_LOGIN_URL, SF_SECURITY_TOKEN, SF_INSTANCE_URL
+- **Authentication**: OAuth and token-based authentication
+- **API Testing**: REST API testing for Salesforce objects
+- **UI Testing**: Page objects for Salesforce Lightning UI
+- **Apex Code Execution**: Run and test Apex code
+- **Database Operations**: CRUD operations on Salesforce objects
+- **SOQL Queries**: Builder pattern for SOQL queries
 
-# Set up Salesforce authentication state
-npm run setup:salesforce
+### API Testing
 
-# Run Salesforce tests
-npm run test:salesforce
+Robust API testing capabilities:
 
-# Run Salesforce tests with specific configuration
-npm run test:salesforce:config
+- REST API testing with request/response validation
+- JSON Schema validation
+- Data-driven API tests
+- Authentication handling
+- Error scenario testing
 
-# Run Apex code tests
-npm run test:salesforce:apex
-```
+### UI Testing
 
-### Apex Code Testing
+Comprehensive UI testing features:
 
-The framework now supports Apex code execution and testing:
+- Page Object Model for maintainable tests
+- Cross-browser testing
+- Visual testing
+- Accessibility testing
+- Performance metrics
 
-```javascript
-const { SalesforceApexUtils } = require('../utils/salesforce');
+### TestRail Integration
 
-// Initialize Apex utilities
-const apexUtils = new SalesforceApexUtils({ accessToken });
+Complete TestRail integration:
 
-// Execute anonymous Apex
-const result = await apexUtils.executeAnonymous('System.debug("Hello World");');
+- Automatic test run creation
+- Test result reporting
+- Test case mapping
+- Detailed test reporting
 
-// Run Apex tests
-const jobId = await apexUtils.runApexTests(['MyTestClass']);
+## 🧩 Design Patterns
 
-// Get test results
-const testResults = await apexUtils.getApexTestResults(jobId);
+### Page Object Model (POM)
 
-// Get code coverage
-const coverage = await apexUtils.getCodeCoverage('MyClass');
-```
-
-### Enhanced Database Operations
-
-```javascript
-const { SalesforceDbUtils } = require('../utils/salesforce');
-
-// Initialize DB utilities
-const dbUtils = new SalesforceDbUtils({ accessToken });
-
-// Query with pagination
-const allRecords = await dbUtils.queryAll('SELECT Id, Name FROM Account');
-
-// Bulk operations
-const createResults = await dbUtils.bulkCreate('Contact', contacts);
-const updateResults = await dbUtils.bulkUpdate('Account', accounts);
-const deleteResults = await dbUtils.bulkDelete('Lead', leadIds);
-```
-
-### SOQL Query Builder
+The framework implements the Page Object Model pattern:
 
 ```javascript
-const { SoqlBuilder } = require('../utils/salesforce');
+// Example page object
+class LoginPage {
+  constructor(page) {
+    this.page = page;
+    this.usernameInput = page.locator('#username');
+    this.passwordInput = page.locator('#password');
+    this.loginButton = page.locator('#Login');
+  }
 
-// Build a SOQL query
+  async navigate() {
+    await this.page.goto('/login');
+  }
+
+  async login(username, password) {
+    await this.usernameInput.fill(username);
+    await this.passwordInput.fill(password);
+    await this.loginButton.click();
+  }
+}
+```
+
+### Builder Pattern
+
+Used for constructing complex objects like SOQL queries:
+
+```javascript
 const query = new SoqlBuilder()
   .select('Id', 'Name', 'Phone')
   .from('Account')
@@ -213,85 +118,129 @@ const query = new SoqlBuilder()
   .orderBy('Name')
   .limit(5)
   .build();
-
-// Execute the query
-const result = await dbUtils.query(query);
 ```
 
-For detailed information, see the [Salesforce Testing Guide](docs/salesforce-testing-guide.md).
+### Facade Pattern
 
-## 📊 Reporting
+Simplifies complex subsystems:
 
-Test reports are generated automatically and can be viewed with:
+```javascript
+// SalesforceApexUtils provides a simple facade for Apex operations
+const result = await apexUtils.executeAnonymous(apexCode);
+```
+
+## 🔧 Utilities
+
+### Salesforce Utilities
+
+- **SalesforceApexUtils**: Execute Apex code, run tests
+- **SalesforceDbUtils**: Database operations (CRUD)
+- **SoqlBuilder**: Build SOQL queries
+
+### TestRail Utilities
+
+- **TestRailAPI**: TestRail API client
+- **TestCaseIdManager**: Map test cases to TestRail IDs
+- **ReportUploader**: Upload test results to TestRail
+
+### Core Utilities
+
+- **WebInteractions**: Common web interactions
+- **ApiClient**: API testing client
+- **DataGenerator**: Generate test data
+
+## 🔄 CI/CD Integration
+
+The framework includes GitHub Actions workflows:
+
+- **framework-validation.yml**: Validates framework structure
+- **tests.yml**: Runs all tests with TestRail integration
+- **ci.yml**: Continuous integration workflow
+
+## 📊 Test Reporting
+
+Test results are reported to:
+
+- TestRail for test case management
+- HTML reports for local viewing
+- CI/CD pipeline for build status
+
+## 📝 Coding Standards
+
+### JavaScript/TypeScript
+
+- Use modern ES6+ syntax
+- Prefer async/await over promises
+- Use meaningful variable and function names
+- Add JSDoc comments for functions
+
+### Test Structure
+
+- One assertion per test when possible
+- Use descriptive test names
+- Group related tests in describe blocks
+- Use beforeAll/beforeEach for setup
+
+### Page Objects
+
+- One page object per page/component
+- Keep methods focused on single actions
+- Use chainable methods when appropriate
+- Expose high-level actions, not low-level details
+
+## 🚀 Getting Started
+
+### Installation
 
 ```bash
-npm run report
+# Clone the repository
+git clone <repository-url>
+cd AgentSyncProfessionalServicesDelivery
+
+# Install dependencies
+npm install
+
+# Install Playwright browsers
+npx playwright install
 ```
 
-Reports include:
-- Test results with pass/fail status
-- Screenshots of failures
-- Performance metrics
-- Accessibility violations
-- Visual comparison results
-
-## 🐳 Docker Support
-
-Run tests in Docker for consistent execution environments:
+### Configuration
 
 ```bash
-# Build and run with Docker
-docker-compose up
-
-# Run specific tests
-docker-compose run playwright npm run test:api
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your credentials
 ```
 
-## 🔄 CI/CD with GitHub Actions
-
-This framework includes GitHub Actions workflows for continuous integration:
-
-### Available Workflows
-
-- **CI**: Main CI pipeline that runs validation and API tests
-- **UI Tests**: Runs UI tests with TestRail integration
-- **TestRail Integration**: Dedicated workflow for TestRail integration tests
-
-### Running GitHub Actions
+### Running Tests
 
 ```bash
-# Workflows run automatically on push to main/develop branches and on pull requests
-# You can also trigger workflows manually from the GitHub Actions tab
+# Run all tests
+npx playwright test
+
+# Run specific test categories
+npx playwright test src/tests/api
+npx playwright test src/tests/ui
+npx playwright test src/tests/salesforce
+
+# Run a specific test file
+npx playwright test src/tests/api/salesforce-api-limits.spec.js
 ```
 
-### Required Secrets
+## 🔑 Best Practices
 
-Set these secrets in your GitHub repository settings:
-
-- `SF_USERNAME`: Salesforce username
-- `SF_PASSWORD`: Salesforce password
-- `SF_INSTANCE_URL`: Salesforce instance URL
-- `TESTRAIL_URL`: TestRail URL
-- `TESTRAIL_USERNAME`: TestRail username
-- `TESTRAIL_API_KEY`: TestRail API key
-- `TESTRAIL_PROJECT_ID`: TestRail project ID
-- `TESTRAIL_SUITE_ID`: TestRail suite ID
-
-## 📚 Documentation
-
-Comprehensive documentation is available in the `docs/` directory:
-
-- [Installation Guide](docs/INSTALLATION.md)
-- [Running Tests](docs/RUNNING_TESTS.md)
-- [Framework Guide](docs/FRAMEWORK_GUIDE.md)
-- [User Guide](docs/USER_GUIDE.md)
-- [Architecture](docs/ARCHITECTURE.md)
-- [Salesforce Testing Guide](docs/salesforce-testing-guide.md)
+1. **Test Independence**: Each test should be independent and not rely on other tests
+2. **Data Management**: Create and clean up test data within tests
+3. **Error Handling**: Add proper error handling and reporting
+4. **Logging**: Include meaningful logs for debugging
+5. **Maintainability**: Follow design patterns and coding standards
+6. **Performance**: Optimize tests for speed and reliability
+7. **Security**: Never hardcode credentials
+8. **Documentation**: Document complex test scenarios
 
 ## 🤝 Contributing
 
-Please see [CONTRIBUTING.md](docs/CONTRIBUTING.md) for details on contributing to this project.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+1. Follow the coding standards
+2. Write tests for new features
+3. Update documentation
+4. Create pull requests with clear descriptions

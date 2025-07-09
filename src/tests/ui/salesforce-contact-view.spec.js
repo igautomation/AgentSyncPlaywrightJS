@@ -5,7 +5,7 @@
  * with TestRail integration
  */
 const { test, expect } = require('@playwright/test');
-const { TestRailAPI } = require('../../../utils/testrail');
+const { TestRailAPI } = require('../../utils/testrail');
 const path = require('path');
 require('dotenv').config({ path: '.env.unified' });
 
@@ -26,7 +26,7 @@ test.beforeAll(async () => {
       parseInt(process.env.TESTRAIL_PROJECT_ID),
       {
         name: `UI Contact Tests - ${new Date().toISOString()}`,
-        case_ids: [24156, 24157], // Update with your actual TestRail case IDs
+        case_ids: [27699], // UI Contact View Test
         suite_id: parseInt(process.env.TESTRAIL_SUITE_ID)
       }
     );
@@ -52,7 +52,7 @@ test.afterAll(async () => {
 });
 
 test.describe('Salesforce Contact View', () => {
-  test('C24156: Contact List View Test', async ({ page }) => {
+  test('C27699: Contact List View Test', async ({ page }) => {
     const startTime = Date.now();
     let status = 1; // Passed
     let comment = '';
@@ -86,7 +86,7 @@ test.describe('Salesforce Contact View', () => {
     } finally {
       if (testRailClient) {
         testResults.push({
-          case_id: 24156,
+          case_id: 27699,
           status_id: status,
           comment: comment,
           elapsed: `${Math.round((Date.now() - startTime) / 1000)}s`
@@ -95,7 +95,7 @@ test.describe('Salesforce Contact View', () => {
     }
   });
 
-  test('C24157: Contact Search Test', async ({ page }) => {
+  test('C27699: Contact Search Test', async ({ page }) => {
     const startTime = Date.now();
     let status = 1; // Passed
     let comment = '';
@@ -133,7 +133,7 @@ test.describe('Salesforce Contact View', () => {
     } finally {
       if (testRailClient) {
         testResults.push({
-          case_id: 24157,
+          case_id: 27699,
           status_id: status,
           comment: comment,
           elapsed: `${Math.round((Date.now() - startTime) / 1000)}s`

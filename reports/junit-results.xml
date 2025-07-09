@@ -1,57 +1,86 @@
-<testsuites id="" name="" tests="4" failures="1" skipped="3" errors="0" time="3.383458">
-<testsuite name="api/testrail-demo.spec.js" timestamp="2025-07-09T16:52:31.253Z" hostname="api" tests="4" failures="1" skipped="3" time="0.4" errors="0">
-<testcase name="TestRail Integration Demo › C24148: Salesforce API Authentication Test" classname="api/testrail-demo.spec.js" time="0.4">
-<failure message="testrail-demo.spec.js:84:3 C24148: Salesforce API Authentication Test" type="FAILURE">
-<![CDATA[  [api] › api/testrail-demo.spec.js:84:3 › TestRail Integration Demo › C24148: Salesforce API Authentication Test 
-
-    Error: expect(received).toBe(expected) // Object.is equality
-
-    Expected: 200
-    Received: 401
-
-       98 |       });
-       99 |       
-    > 100 |       expect(response.status()).toBe(200);
-          |                                 ^
-      101 |       const data = await response.json();
-      102 |       expect(data).toBeInstanceOf(Array);
-      103 |       
-        at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/api/testrail-demo.spec.js:100:33
-
-    Error Context: ../../test-results/api-testrail-demo-TestRail-3157b-rce-API-Authentication-Test-api/error-context.md
-]]>
-</failure>
-<system-out>
-<![CDATA[🚀 Starting TestRail Integration Demo
-⚠️ OAuth failed: authentication failure
-⚠️ OAuth failed, using fallback token - cached for reuse
-🔐 TestRail auth: API Key
-✅ TestRail client initialized
-❌ TestRail setup failed: HTTP 400: {"error":"Field :case_ids contains unrecognized case IDs."}
-Error details: Error: HTTP 400: {"error":"Field :case_ids contains unrecognized case IDs."}
-    at IncomingMessage.<anonymous> [90m(/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/[39msrc/utils/testrail/core/testrail-api-simple.js:59:22[90m)[39m
-[90m    at IncomingMessage.emit (node:events:519:35)[39m
-[90m    at endReadableNT (node:internal/streams/readable:1696:12)[39m
-[90m    at processTicksAndRejections (node:internal/process/task_queues:90:21)[39m
-🧪 Running API Authentication Test...
-❌ Authentication test failed: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
-
-Expected: [32m200[39m
-Received: [31m401[39m
-
-[[ATTACHMENT|../test-results/api-testrail-demo-TestRail-3157b-rce-API-Authentication-Test-api/error-context.md]]
-]]>
-</system-out>
-</testcase>
-<testcase name="TestRail Integration Demo › C24149: Salesforce API Limits Test" classname="api/testrail-demo.spec.js" time="0">
+<testsuites id="" name="" tests="16" failures="0" skipped="16" errors="0" time="0.177658">
+<testsuite name="ui/salesforce-contact-view.spec.js" timestamp="2025-07-09T19:33:54.405Z" hostname="chromium" tests="2" failures="0" skipped="2" time="0" errors="0">
+<testcase name="Salesforce Contact View › C27699: Contact List View Test" classname="ui/salesforce-contact-view.spec.js" time="0">
 <skipped>
 </skipped>
 </testcase>
-<testcase name="TestRail Integration Demo › C24150: Salesforce API Query Test" classname="api/testrail-demo.spec.js" time="0">
+<testcase name="Salesforce Contact View › C27699: Contact Search Test" classname="ui/salesforce-contact-view.spec.js" time="0">
 <skipped>
 </skipped>
 </testcase>
-<testcase name="TestRail Integration Demo › C24151: Salesforce UI Login Test" classname="api/testrail-demo.spec.js" time="0">
+</testsuite>
+<testsuite name="ui/salesforce-login.spec.js" timestamp="2025-07-09T19:33:54.405Z" hostname="chromium" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="Salesforce Login › C27698: Salesforce Login Test" classname="ui/salesforce-login.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui/salesforce-contact-view.spec.js" timestamp="2025-07-09T19:33:54.405Z" hostname="firefox" tests="2" failures="0" skipped="2" time="0" errors="0">
+<testcase name="Salesforce Contact View › C27699: Contact List View Test" classname="ui/salesforce-contact-view.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Salesforce Contact View › C27699: Contact Search Test" classname="ui/salesforce-contact-view.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui/salesforce-login.spec.js" timestamp="2025-07-09T19:33:54.405Z" hostname="firefox" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="Salesforce Login › C27698: Salesforce Login Test" classname="ui/salesforce-login.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui/salesforce-contact-view.spec.js" timestamp="2025-07-09T19:33:54.405Z" hostname="webkit" tests="2" failures="0" skipped="2" time="0" errors="0">
+<testcase name="Salesforce Contact View › C27699: Contact List View Test" classname="ui/salesforce-contact-view.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Salesforce Contact View › C27699: Contact Search Test" classname="ui/salesforce-contact-view.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui/salesforce-login.spec.js" timestamp="2025-07-09T19:33:54.405Z" hostname="webkit" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="Salesforce Login › C27698: Salesforce Login Test" classname="ui/salesforce-login.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="salesforce/salesforce-apex.spec.js" timestamp="2025-07-09T19:33:54.405Z" hostname="salesforce" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="Salesforce Apex Operations › C27702: Execute Anonymous Apex Test" classname="salesforce/salesforce-apex.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="salesforce/salesforce-db.spec.js" timestamp="2025-07-09T19:33:54.405Z" hostname="salesforce" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="Salesforce Database Operations › C27703: CRUD Operations Test" classname="salesforce/salesforce-db.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="salesforce/salesforce-soql.spec.js" timestamp="2025-07-09T19:33:54.405Z" hostname="salesforce" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="Salesforce SOQL Operations › C27704: SOQL Builder Test" classname="salesforce/salesforce-soql.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="api/salesforce-api-limits.spec.js" timestamp="2025-07-09T19:33:54.405Z" hostname="api" tests="2" failures="0" skipped="2" time="0" errors="0">
+<testcase name="Salesforce API Limits › C27700: API Limits Test" classname="api/salesforce-api-limits.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Salesforce API Limits › C27700: Record Count Test" classname="api/salesforce-api-limits.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="api/salesforce-api-objects.spec.js" timestamp="2025-07-09T19:33:54.405Z" hostname="api" tests="2" failures="0" skipped="2" time="0" errors="0">
+<testcase name="Salesforce API Objects › C27701: Global Objects List Test" classname="api/salesforce-api-objects.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Salesforce API Objects › C27701: Contact Object Metadata Test" classname="api/salesforce-api-objects.spec.js" time="0">
 <skipped>
 </skipped>
 </testcase>
