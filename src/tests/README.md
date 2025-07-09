@@ -1,98 +1,65 @@
-# Tests Directory
+# AgentSync Salesforce Test Suite
 
-Organized test files for the automation framework.
-
-## Structure
-
-```
-src/tests/
-├── core/                # Core framework tests
-│   └── framework-validation.spec.js
-├── api/                 # API tests
-│   ├── salesforce-api-advanced.spec.js
-│   ├── salesforce-api-extended.spec.js
-│   ├── salesforce-api-mock.spec.js
-│   └── salesforce-api-testrail.spec.js
-├── ui/                  # UI tests
-│   ├── salesforce-login.spec.js
-│   ├── salesforce-simple-contact.spec.js
-│   └── SalesforceNewContactDialog.spec.js
-├── integration/         # Integration tests
-│   ├── salesforce-testrail.spec.js
-│   └── salesforce-ui-testrail.spec.js
-├── demo/                # Demo tests
-│   ├── salesforce-auth-demo.spec.js
-│   ├── salesforce-core-demo.spec.js
-│   ├── salesforce-locators-demo.spec.js
-│   ├── salesforce-ui-demo.spec.js
-│   ├── testrail-core-demo.spec.js
-│   └── testrail-demo.js
-├── archive/             # Archived tests
-│   ├── accessibility/
-│   ├── api/
-│   ├── core/
-│   ├── examples/
-│   ├── integration/
-│   ├── jest/
-│   └── reporting/
-└── README.md            # This file
-```
+This directory contains a streamlined set of tests for the AgentSync Playwright Test Framework, focusing on real-time Salesforce sandbox testing without mocks. All tests are integrated with TestRail for reporting.
 
 ## Test Categories
 
-### **Core Tests**
-Framework validation and core functionality tests.
+### API Tests
+- `api/salesforce-api-limits.spec.js` - Tests Salesforce API limits and record counts (TestRail cases C24151, C24152)
+- `api/salesforce-api-objects.spec.js` - Tests Salesforce object metadata access (TestRail cases C24153, C24154)
 
-### **API Tests**
-REST API testing for Salesforce and other services.
-```bash
-npm run test:api
-```
+### UI Tests
+- `ui/salesforce-login.spec.js` - Tests Salesforce login and saves authentication state (TestRail case C24155)
+- `ui/salesforce-contact-view.spec.js` - Tests viewing and searching contacts in Salesforce UI (TestRail cases C24156, C24157)
 
-### **UI Tests**
-User interface automation tests.
-```bash
-npm run test:ui
-```
-
-### **Integration Tests**
-Tests that integrate with external services (TestRail, JIRA).
-```bash
-npm run test:integration
-```
-
-### **Demo Tests**
-Demonstration tests showing framework capabilities.
-```bash
-npm run demo:all
-npm run demo:api
-npm run demo:ui
-```
+### Salesforce Tests
+- `salesforce/salesforce-apex.spec.js` - Tests Apex code execution (TestRail case C24158)
+- `salesforce/salesforce-db.spec.js` - Tests database CRUD operations (TestRail case C24159)
+- `salesforce/salesforce-soql.spec.js` - Tests SOQL query building and execution (TestRail case C24160)
 
 ## Running Tests
 
 ```bash
 # Run all tests
-npm test
+npx playwright test
 
-# Run specific categories
-npm run test:api
-npm run test:ui
-npm run test:integration
+# Run specific test categories
+npx playwright test src/tests/api
+npx playwright test src/tests/ui
+npx playwright test src/tests/salesforce
 
-# Run demo tests
-npm run demo:all
-npm run demo:api
-npm run demo:ui
-npm run demo:auth
-npm run demo:core
-npm run demo:testrail
+# Run a specific test file
+npx playwright test src/tests/api/salesforce-api-limits.spec.js
 ```
 
-## Test Guidelines
+## Environment Configuration
 
-1. **Organization**: Place tests in appropriate category directories
-2. **Naming**: Use descriptive test names with .spec.js extension
-3. **Structure**: Follow AAA pattern (Arrange, Act, Assert)
-4. **Data**: Use test data factories for consistent data
-5. **Cleanup**: Clean up test data after tests complete
+These tests use the `.env.unified` and `.env.salesforce` configuration files for credentials and settings. Make sure these files are properly configured before running the tests.
+
+### TestRail Configuration
+
+The following environment variables are required for TestRail integration:
+
+```
+TESTRAIL_URL=https://agentsync.testrail.io
+TESTRAIL_USERNAME=your_username
+TESTRAIL_API_KEY=your_api_key
+TESTRAIL_PROJECT_ID=18
+TESTRAIL_SUITE_ID=412
+```
+
+These are already configured in the `.env.unified` file.
+
+## Authentication
+
+UI tests require authentication state to be saved. Run the login test first:
+
+```bash
+npx playwright test src/tests/ui/salesforce-login.spec.js
+```
+
+This will create the necessary authentication state file in the `auth` directory.
+
+## Test Results
+
+All test results are automatically uploaded to TestRail at the end of each test run. You can view the results in the TestRail dashboard.
