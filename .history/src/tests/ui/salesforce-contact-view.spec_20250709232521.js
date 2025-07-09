@@ -1,34 +1,32 @@
 /**
- * Salesforce API Limits Test
+ * Salesforce Contact View Test
  * 
- * Tests the Salesforce API limits endpoint to verify API access and quota information
+ * Tests viewing contacts in Salesforce UI using stored authentication
  * with TestRail integration
  */
 const { test, expect } = require('@playwright/test');
 const { TestRailAPI } = require('../../utils/testrail');
-const authManager = require('../../utils/salesforce/auth-manager');
+const path = require('path');
 require('dotenv').config({ path: '.env.unified' });
 
 // Global variables
-let accessToken, instanceUrl;
 let testRailClient, testRunId;
 const testResults = [];
 
-// Authenticate once before all tests
+// Use stored auth state
+test.use({
+  storageState: path.join(process.cwd(), 'auth/salesforce-storage-state.json')
+});
+
+// Setup TestRail before all tests
 test.beforeAll(async () => {
-  // Single authentication call
-  const auth = await authManager.authenticate();
-  accessToken = auth.accessToken;
-  instanceUrl = auth.instanceUrl;
-  
-  // Setup TestRail once
   try {
     testRailClient = new TestRailAPI();
     const testRun = await testRailClient.addRun(
       parseInt(process.env.TESTRAIL_PROJECT_ID),
       {
-        name: `API Limits Tests - ${new Date().toISOString()}`,
-        case_ids: [27700], // API Limits Test
+        name: `UI Contact Tests - ${new Date().toISOString()}`,
+        case_ids: [24156, 24157], // Update with your actual TestRail case IDs
         suite_id: parseInt(process.env.TESTRAIL_SUITE_ID)
       }
     );
@@ -53,29 +51,31 @@ test.afterAll(async () => {
   }
 });
 
-test.describe('Salesforce API Limits', () => {
-  
-  test('C27700: API Limits Test', async ({ request }) => {
+test.describe('Salesforce Contact View', () => {
+  test('C24156: Contact List View Test', async ({ page }) => {
     const startTime = Date.now();
     let status = 1; // Passed
     let comment = '';
     
     try {
-      const response = await request.get(
-        `${instanceUrl}/services/data/v${process.env.SF_API_VERSION}/limits`,
-        {
-          headers: {
-            'Authorization': `Bearer ${accessToken}`,
-            'Content-Type': 'application/json'
-          }
-        }
-      );
+      // Navigate directly to Contacts tab
+      await page.goto(`${process.env.SF_INSTANCE_URL}/lightning/o/Contact/list`);
       
-      expect(response.status()).toBe(200);
-      const limits = await response.json();
-      expect(limits.DailyApiRequests).toBeDefined();
+      // Wait for the list view to load
+      await page.waitForSelector('table', { timeout: 30000 });
       
-      comment = `API limits retrieved - Daily API Requests: ${limits.DailyApiRequests.Max} max, ${limits.DailyApiRequests.Remaining} remaining`;
+      // Verify we're on the contacts page
+      const pageTitle = await page.title();
+      expect(pageTitle).toContain('Contacts');
+      
+      // Take a screenshot
+      await page.screenshot({ path: './auth/salesforce-contacts-list.png' });
+      
+      // Verify the contacts table is present
+      const tableExists = await page.isVisible('table');
+      expect(tableExists).toBeTruthy();
+      
+      comment = `Successfully navigated to Contacts list view. Page title: ${pageTitle}`;
       console.log(`✅ ${comment}`);
       
     } catch (error) {
@@ -86,7 +86,7 @@ test.describe('Salesforce API Limits', () => {
     } finally {
       if (testRailClient) {
         testResults.push({
-          case_id: 27700,
+          case_id: C27697,
           status_id: status,
           comment: comment,
           elapsed: `${Math.round((Date.now() - startTime) / 1000)}s`
@@ -95,29 +95,34 @@ test.describe('Salesforce API Limits', () => {
     }
   });
 
-  test('C27700: Record Count Test', async ({ request }) => {
+  test('C24157: Contact Search Test', async ({ page }) => {
     const startTime = Date.now();
     let status = 1; // Passed
     let comment = '';
     
     try {
-      const response = await request.get(
-        `${instanceUrl}/services/data/v${process.env.SF_API_VERSION}/limits/recordCount?sObjects=Account,Contact,Lead`,
-        {
-          headers: {
-            'Authorization': `Bearer ${accessToken}`,
-            'Content-Type': 'application/json'
-          }
-        }
-      );
+      // Navigate to Contacts tab
+      await page.goto(`${process.env.SF_INSTANCE_URL}/lightning/o/Contact/list`);
       
-      expect(response.status()).toBe(200);
-      const data = await response.json();
-      expect(data.sObjects).toBeInstanceOf(Array);
+      // Wait for the list view to load
+      await page.waitForSelector('table', { timeout: 30000 });
       
-      // Build comment with record counts
-      const counts = data.sObjects.map(obj => `${obj.name}: ${obj.count}`).join(', ');
-      comment = `Record counts retrieved - ${counts}`;
+      // Click on the search box
+      await page.click('input[name="Contact-search-input"]');
+      
+      // Type a search term
+      await page.fill('input[name="Contact-search-input"]', 'Test');
+      
+      // Press Enter to search
+      await page.keyboard.press('Enter');
+      
+      // Wait for search results
+      await page.waitForTimeout(5000);
+      
+      // Take a screenshot of search results
+      await page.screenshot({ path: './auth/salesforce-contacts-search.png' });
+      
+      comment = 'Successfully performed contact search with term "Test"';
       console.log(`✅ ${comment}`);
       
     } catch (error) {
@@ -128,7 +133,7 @@ test.describe('Salesforce API Limits', () => {
     } finally {
       if (testRailClient) {
         testResults.push({
-          case_id: 27700,
+          case_id: 24157,
           status_id: status,
           comment: comment,
           elapsed: `${Math.round((Date.now() - startTime) / 1000)}s`

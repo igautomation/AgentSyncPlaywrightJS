@@ -5,8 +5,8 @@
  * with TestRail integration
  */
 const { test, expect } = require('@playwright/test');
-const { TestRailAPI } = require('../../../utils/testrail');
-const authManager = require('../../../utils/salesforce/auth-manager');
+const { TestRailAPI } = require('../../utils/testrail');
+const authManager = require('../../utils/salesforce/auth-manager');
 require('dotenv').config({ path: '.env.unified' });
 
 // Global variables
@@ -28,7 +28,7 @@ test.beforeAll(async () => {
       parseInt(process.env.TESTRAIL_PROJECT_ID),
       {
         name: `API Objects Tests - ${new Date().toISOString()}`,
-        case_ids: [24153, 24154], // Update with your actual TestRail case IDs
+        case_ids: [27701], // API Objects Test
         suite_id: parseInt(process.env.TESTRAIL_SUITE_ID)
       }
     );
@@ -55,7 +55,7 @@ test.afterAll(async () => {
 
 test.describe('Salesforce API Objects', () => {
   
-  test('C24153: Global Objects List Test', async ({ request }) => {
+  test('C27701: Global Objects List Test', async ({ request }) => {
     const startTime = Date.now();
     let status = 1; // Passed
     let comment = '';
@@ -88,7 +88,7 @@ test.describe('Salesforce API Objects', () => {
     } finally {
       if (testRailClient) {
         testResults.push({
-          case_id: 24153,
+          case_id: 27701,
           status_id: status,
           comment: comment,
           elapsed: `${Math.round((Date.now() - startTime) / 1000)}s`
@@ -97,7 +97,7 @@ test.describe('Salesforce API Objects', () => {
     }
   });
 
-  test('C24154: Contact Object Metadata Test', async ({ request }) => {
+  test('C27701: Contact Object Metadata Test', async ({ request }) => {
     const startTime = Date.now();
     let status = 1; // Passed
     let comment = '';
@@ -138,7 +138,7 @@ test.describe('Salesforce API Objects', () => {
     } finally {
       if (testRailClient) {
         testResults.push({
-          case_id: 24154,
+          case_id: 27701,
           status_id: status,
           comment: comment,
           elapsed: `${Math.round((Date.now() - startTime) / 1000)}s`

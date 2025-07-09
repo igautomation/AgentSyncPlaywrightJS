@@ -10,9 +10,7 @@
     "grep": {},
     "grepInvert": null,
     "maxFailures": 0,
-    "metadata": {
-      "actualWorkers": 1
-    },
+    "metadata": {},
     "preserveOutput": "always",
     "reporter": [
       [
@@ -48,9 +46,7 @@
         "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 1
-        },
+        "metadata": {},
         "id": "setup",
         "name": "setup",
         "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
@@ -64,9 +60,7 @@
         "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 1
-        },
+        "metadata": {},
         "id": "chromium",
         "name": "chromium",
         "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
@@ -84,9 +78,7 @@
         "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 1
-        },
+        "metadata": {},
         "id": "firefox",
         "name": "firefox",
         "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
@@ -104,9 +96,7 @@
         "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 1
-        },
+        "metadata": {},
         "id": "webkit",
         "name": "webkit",
         "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
@@ -124,9 +114,7 @@
         "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 1
-        },
+        "metadata": {},
         "id": "mobile-chrome",
         "name": "mobile-chrome",
         "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
@@ -140,9 +128,7 @@
         "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 1
-        },
+        "metadata": {},
         "id": "mobile-safari",
         "name": "mobile-safari",
         "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
@@ -156,9 +142,7 @@
         "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 1
-        },
+        "metadata": {},
         "id": "salesforce",
         "name": "salesforce",
         "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
@@ -172,9 +156,7 @@
         "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 1
-        },
+        "metadata": {},
         "id": "api",
         "name": "api",
         "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
@@ -188,9 +170,7 @@
         "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 1
-        },
+        "metadata": {},
         "id": "visual",
         "name": "visual",
         "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
@@ -204,9 +184,7 @@
         "outputDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 1
-        },
+        "metadata": {},
         "id": "accessibility",
         "name": "accessibility",
         "testDir": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests",
@@ -226,112 +204,345 @@
   },
   "suites": [
     {
-      "title": "api/testrail-demo.spec.js",
-      "file": "api/testrail-demo.spec.js",
+      "title": "ui/salesforce-contact-view.spec.js",
+      "file": "ui/salesforce-contact-view.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "TestRail Integration Demo",
-          "file": "api/testrail-demo.spec.js",
-          "line": 82,
+          "title": "Salesforce Contact View",
+          "file": "ui/salesforce-contact-view.spec.js",
+          "line": 54,
           "column": 6,
           "specs": [
             {
-              "title": "C24148: Salesforce API Authentication Test",
-              "ok": false,
+              "title": "C27699: Contact List View Test",
+              "ok": true,
               "tags": [],
               "tests": [
                 {
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 400,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/api/testrail-demo.spec.js:100:33",
-                        "location": {
-                          "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/api/testrail-demo.spec.js",
-                          "column": 33,
-                          "line": 100
-                        },
-                        "snippet": "   98 |       });\n   99 |       \n> 100 |       expect(response.status()).toBe(200);\n      |                                 ^\n  101 |       const data = await response.json();\n  102 |       expect(data).toBeInstanceOf(Array);\n  103 |       "
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/api/testrail-demo.spec.js",
-                            "column": 33,
-                            "line": 100
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n\n   98 |       });\n   99 |       \n> 100 |       expect(response.status()).toBe(200);\n      |                                 ^\n  101 |       const data = await response.json();\n  102 |       expect(data).toBeInstanceOf(Array);\n  103 |       \n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/api/testrail-demo.spec.js:100:33"
-                        }
-                      ],
-                      "stdout": [
-                        {
-                          "text": "🚀 Starting TestRail Integration Demo\n"
-                        },
-                        {
-                          "text": "⚠️ OAuth failed: authentication failure\n"
-                        },
-                        {
-                          "text": "⚠️ OAuth failed, using fallback token - cached for reuse\n"
-                        },
-                        {
-                          "text": "🔐 TestRail auth: API Key\n"
-                        },
-                        {
-                          "text": "✅ TestRail client initialized\n"
-                        },
-                        {
-                          "text": "❌ TestRail setup failed: HTTP 400: {\"error\":\"Field :case_ids contains unrecognized case IDs.\"}\n"
-                        },
-                        {
-                          "text": "Error details: Error: HTTP 400: {\"error\":\"Field :case_ids contains unrecognized case IDs.\"}\n    at IncomingMessage.<anonymous> \u001b[90m(/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/\u001b[39msrc/utils/testrail/core/testrail-api-simple.js:59:22\u001b[90m)\u001b[39m\n\u001b[90m    at IncomingMessage.emit (node:events:519:35)\u001b[39m\n\u001b[90m    at endReadableNT (node:internal/streams/readable:1696:12)\u001b[39m\n\u001b[90m    at processTicksAndRejections (node:internal/process/task_queues:90:21)\u001b[39m\n"
-                        },
-                        {
-                          "text": "🧪 Running API Authentication Test...\n"
-                        },
-                        {
-                          "text": "❌ Authentication test failed: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-07-09T16:52:31.587Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "_error-context-0",
-                          "contentType": "text/markdown",
-                          "path": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/test-results/api-testrail-demo-TestRail-3157b-rce-API-Authentication-Test-api/error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/api/testrail-demo.spec.js",
-                        "column": 33,
-                        "line": 100
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
                 }
               ],
-              "id": "cb7229385a707e95ec5c-2373288adfceefd795bc",
-              "file": "api/testrail-demo.spec.js",
-              "line": 84,
+              "id": "71abef56edc037d1b1b3-c34d064b67739cf074e1",
+              "file": "ui/salesforce-contact-view.spec.js",
+              "line": 55,
               "column": 3
             },
             {
-              "title": "C24149: Salesforce API Limits Test",
+              "title": "C27699: Contact Search Test",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "71abef56edc037d1b1b3-1012810caeeba4310517",
+              "file": "ui/salesforce-contact-view.spec.js",
+              "line": 98,
+              "column": 3
+            },
+            {
+              "title": "C27699: Contact List View Test",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "71abef56edc037d1b1b3-4d82236fdc180be0ef0f",
+              "file": "ui/salesforce-contact-view.spec.js",
+              "line": 55,
+              "column": 3
+            },
+            {
+              "title": "C27699: Contact Search Test",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "71abef56edc037d1b1b3-a241ab687a4c3ac5543f",
+              "file": "ui/salesforce-contact-view.spec.js",
+              "line": 98,
+              "column": 3
+            },
+            {
+              "title": "C27699: Contact List View Test",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "71abef56edc037d1b1b3-13bfb65f3c062f462adb",
+              "file": "ui/salesforce-contact-view.spec.js",
+              "line": 55,
+              "column": 3
+            },
+            {
+              "title": "C27699: Contact Search Test",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "71abef56edc037d1b1b3-9e0f119e70b98d887f33",
+              "file": "ui/salesforce-contact-view.spec.js",
+              "line": 98,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui/salesforce-login.spec.js",
+      "file": "ui/salesforce-login.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Salesforce Login",
+          "file": "ui/salesforce-login.spec.js",
+          "line": 57,
+          "column": 6,
+          "specs": [
+            {
+              "title": "C27698: Salesforce Login Test",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0f1262764f133e6bc611-be20f363946f4723530d",
+              "file": "ui/salesforce-login.spec.js",
+              "line": 58,
+              "column": 3
+            },
+            {
+              "title": "C27698: Salesforce Login Test",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0f1262764f133e6bc611-86e709de477f4ab9ecf9",
+              "file": "ui/salesforce-login.spec.js",
+              "line": 58,
+              "column": 3
+            },
+            {
+              "title": "C27698: Salesforce Login Test",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0f1262764f133e6bc611-ac89c35bc95fd14dbd53",
+              "file": "ui/salesforce-login.spec.js",
+              "line": 58,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "salesforce/salesforce-apex.spec.js",
+      "file": "salesforce/salesforce-apex.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Salesforce Apex Operations",
+          "file": "salesforce/salesforce-apex.spec.js",
+          "line": 61,
+          "column": 6,
+          "specs": [
+            {
+              "title": "C27702: Execute Anonymous Apex Test",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "salesforce",
+                  "projectName": "salesforce",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a2319f52d277efa2d286-ecb8a9671482debc27bd",
+              "file": "salesforce/salesforce-apex.spec.js",
+              "line": 63,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "salesforce/salesforce-db.spec.js",
+      "file": "salesforce/salesforce-db.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Salesforce Database Operations",
+          "file": "salesforce/salesforce-db.spec.js",
+          "line": 61,
+          "column": 6,
+          "specs": [
+            {
+              "title": "C27703: CRUD Operations Test",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "salesforce",
+                  "projectName": "salesforce",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0f2dce7b88ad45bf06d9-b0c430f6c570728745cf",
+              "file": "salesforce/salesforce-db.spec.js",
+              "line": 63,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "salesforce/salesforce-soql.spec.js",
+      "file": "salesforce/salesforce-soql.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Salesforce SOQL Operations",
+          "file": "salesforce/salesforce-soql.spec.js",
+          "line": 62,
+          "column": 6,
+          "specs": [
+            {
+              "title": "C27704: SOQL Builder Test",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "salesforce",
+                  "projectName": "salesforce",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "57a15a61e7b3d5861757-b4b871363842c717dafb",
+              "file": "salesforce/salesforce-soql.spec.js",
+              "line": 64,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "api/salesforce-api-limits.spec.js",
+      "file": "api/salesforce-api-limits.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Salesforce API Limits",
+          "file": "api/salesforce-api-limits.spec.js",
+          "line": 56,
+          "column": 6,
+          "specs": [
+            {
+              "title": "C27700: API Limits Test",
               "ok": true,
               "tags": [],
               "tests": [
@@ -341,31 +552,17 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-07-09T16:52:34.299Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
-              "id": "cb7229385a707e95ec5c-34475da3d6f3e1c0bbff",
-              "file": "api/testrail-demo.spec.js",
-              "line": 123,
+              "id": "0521d015d95842ee54bf-af59a6dbde50f541161c",
+              "file": "api/salesforce-api-limits.spec.js",
+              "line": 58,
               "column": 3
             },
             {
-              "title": "C24150: Salesforce API Query Test",
+              "title": "C27700: Record Count Test",
               "ok": true,
               "tags": [],
               "tests": [
@@ -375,31 +572,34 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-07-09T16:52:34.300Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
-              "id": "cb7229385a707e95ec5c-151062feb033f76d85c0",
-              "file": "api/testrail-demo.spec.js",
-              "line": 165,
+              "id": "0521d015d95842ee54bf-41568106675d63b1633a",
+              "file": "api/salesforce-api-limits.spec.js",
+              "line": 98,
               "column": 3
-            },
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "api/salesforce-api-objects.spec.js",
+      "file": "api/salesforce-api-objects.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Salesforce API Objects",
+          "file": "api/salesforce-api-objects.spec.js",
+          "line": 56,
+          "column": 6,
+          "specs": [
             {
-              "title": "C24151: Salesforce UI Login Test",
+              "title": "C27701: Global Objects List Test",
               "ok": true,
               "tags": [],
               "tests": [
@@ -409,27 +609,33 @@
                   "expectedStatus": "passed",
                   "projectId": "api",
                   "projectName": "api",
-                  "results": [
-                    {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-07-09T16:52:34.300Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
+                  "results": [],
                   "status": "skipped"
                 }
               ],
-              "id": "cb7229385a707e95ec5c-43f5d22fa8bec6d2729f",
-              "file": "api/testrail-demo.spec.js",
-              "line": 207,
+              "id": "261da009a6b396d9e0e2-7d8168a7aa8e0af824bc",
+              "file": "api/salesforce-api-objects.spec.js",
+              "line": 58,
+              "column": 3
+            },
+            {
+              "title": "C27701: Contact Object Metadata Test",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "261da009a6b396d9e0e2-a06c83418b4102210244",
+              "file": "api/salesforce-api-objects.spec.js",
+              "line": 100,
               "column": 3
             }
           ]
@@ -439,11 +645,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-07-09T16:52:30.930Z",
-    "duration": 3383.458,
+    "startTime": "2025-07-09T18:12:58.079Z",
+    "duration": 183.48500000000007,
     "expected": 0,
-    "skipped": 3,
-    "unexpected": 1,
+    "skipped": 16,
+    "unexpected": 0,
     "flaky": 0
   }
 }

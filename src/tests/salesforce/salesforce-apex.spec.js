@@ -5,9 +5,9 @@
  * with TestRail integration
  */
 const { test, expect } = require('@playwright/test');
-const { TestRailAPI } = require('../../../utils/testrail');
-const SalesforceApexUtils = require('../../../utils/salesforce/core/salesforceApexUtils');
-const authManager = require('../../../utils/salesforce/auth-manager');
+const { TestRailAPI } = require('../../utils/testrail');
+const SalesforceApexUtils = require('../../utils/salesforce/core/salesforceApexUtils');
+const authManager = require('../../utils/salesforce/auth-manager');
 require('dotenv').config({ path: '.env.unified' });
 
 // Global variables
@@ -33,7 +33,7 @@ test.beforeAll(async () => {
       parseInt(process.env.TESTRAIL_PROJECT_ID),
       {
         name: `Apex Tests - ${new Date().toISOString()}`,
-        case_ids: [24158], // Update with your actual TestRail case ID
+        case_ids: [27702], // APEX Test
         suite_id: parseInt(process.env.TESTRAIL_SUITE_ID)
       }
     );
@@ -60,7 +60,7 @@ test.afterAll(async () => {
 
 test.describe('Salesforce Apex Operations', () => {
   
-  test('C24158: Execute Anonymous Apex Test', async () => {
+  test('C27702: Execute Anonymous Apex Test', async () => {
     const startTime = Date.now();
     let status = 1; // Passed
     let comment = '';
@@ -104,7 +104,7 @@ test.describe('Salesforce Apex Operations', () => {
     } finally {
       if (testRailClient) {
         testResults.push({
-          case_id: 24158,
+          case_id: 27702,
           status_id: status,
           comment: comment,
           elapsed: `${Math.round((Date.now() - startTime) / 1000)}s`

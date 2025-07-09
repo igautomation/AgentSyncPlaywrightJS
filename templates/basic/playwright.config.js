@@ -1,15 +1,16 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
-const { loadFrameworkConfig } = require('@your-org/playwright-framework');
-
-// Load framework configuration
-const frameworkConfig = loadFrameworkConfig();
+require('dotenv').config();
 
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
-  testDir: './tests',
+  testDir: './src/tests',
+  timeout: 30000,
+  expect: {
+    timeout: 5000
+  },
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
@@ -18,13 +19,11 @@ module.exports = defineConfig({
     ['html', { open: 'never' }],
     ['list']
   ],
-  
   use: {
     baseURL: process.env.BASE_URL || 'http://localhost:3000',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
-
   projects: [
     {
       name: 'chromium',
@@ -37,14 +36,6 @@ module.exports = defineConfig({
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
-    },
-    {
-      name: 'mobile-chrome',
-      use: { ...devices['Pixel 5'] },
-    },
-    {
-      name: 'mobile-safari',
-      use: { ...devices['iPhone 12'] },
     },
   ],
 });

@@ -1,0 +1,20 @@
+{
+  "standardObjects": [
+    "Account",
+    "Contact",
+    "Lead",
+    "Opportunity",
+    "Case",
+    "Task",
+    "Event",
+    "User",
+    "Product2",
+    "Pricebook2"
+  ],
+  "commonFields": {
+    "Account": ["Id", "Name", "Phone", "Website", "BillingAddress", "Industry"],
+    "Contact": ["Id", "FirstName", "LastName", "Email", "Phone", "AccountId"],
+    "Lead": ["Id", "FirstName", "LastName", "Email", "Phone", "Company", "Status"],
+    "Opportunity": ["Id", "Name", "AccountId", "CloseDate", "StageName", "Amount"]
+  }
+}

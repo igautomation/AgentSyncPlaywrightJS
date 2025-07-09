@@ -5,10 +5,10 @@
  * with TestRail integration
  */
 const { test, expect } = require('@playwright/test');
-const { TestRailAPI } = require('../../../utils/testrail');
-const SalesforceDbUtils = require('../../../utils/salesforce/core/salesforceDbUtils');
-const SoqlBuilder = require('../../../utils/salesforce/core/soqlBuilder');
-const authManager = require('../../../utils/salesforce/auth-manager');
+const { TestRailAPI } = require('../../utils/testrail');
+const SalesforceDbUtils = require('../../utils/salesforce/core/salesforceDbUtils');
+const SoqlBuilder = require('../../utils/salesforce/core/soqlBuilder');
+const authManager = require('../../utils/salesforce/auth-manager');
 require('dotenv').config({ path: '.env.unified' });
 
 // Global variables
@@ -34,7 +34,7 @@ test.beforeAll(async () => {
       parseInt(process.env.TESTRAIL_PROJECT_ID),
       {
         name: `SOQL Tests - ${new Date().toISOString()}`,
-        case_ids: [24160], // Update with your actual TestRail case ID
+        case_ids: [27704], // SOQL Test
         suite_id: parseInt(process.env.TESTRAIL_SUITE_ID)
       }
     );
@@ -61,7 +61,7 @@ test.afterAll(async () => {
 
 test.describe('Salesforce SOQL Operations', () => {
   
-  test('C24160: SOQL Builder Test', async () => {
+  test('C27704: SOQL Builder Test', async () => {
     const startTime = Date.now();
     let status = 1; // Passed
     let comment = '';
@@ -139,7 +139,7 @@ test.describe('Salesforce SOQL Operations', () => {
     } finally {
       if (testRailClient) {
         testResults.push({
-          case_id: 24160,
+          case_id: 27704,
           status_id: status,
           comment: comment,
           elapsed: `${Math.round((Date.now() - startTime) / 1000)}s`

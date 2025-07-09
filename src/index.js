@@ -54,7 +54,7 @@ module.exports = {
   tests: {
     templates: {
       apiTemplate: `const { test, expect } = require('@playwright/test');
-const { TestRailAPI } = require('@igautomation/playwright-framework').utils.testrail;
+const { TestRailAPI } = require('@agentsync/playwright-framework').utils.testrail;
 
 test.describe('API Tests', () => {
   test('Sample API Test', async ({ request }) => {
@@ -63,7 +63,7 @@ test.describe('API Tests', () => {
   });
 });`,
       uiTemplate: `const { test, expect } = require('@playwright/test');
-const { TestRailAPI } = require('@igautomation/playwright-framework').utils.testrail;
+const { TestRailAPI } = require('@agentsync/playwright-framework').utils.testrail;
 
 test.describe('UI Tests', () => {
   test('Sample UI Test', async ({ page }) => {
@@ -72,8 +72,8 @@ test.describe('UI Tests', () => {
   });
 });`,
       salesforceApiTemplate: `const { test, expect } = require('@playwright/test');
-const { TestRailAPI } = require('@igautomation/playwright-framework').utils.testrail;
-const authManager = require('@igautomation/playwright-framework').utils.salesforce.authManager;
+const { TestRailAPI } = require('@agentsync/playwright-framework').utils.testrail;
+const authManager = require('@agentsync/playwright-framework').utils.salesforce.authManager;
 
 test.describe('Salesforce API Tests', () => {
   test('Salesforce API Test', async ({ request }) => {
