@@ -1,234 +1,57 @@
-<testsuites id="" name="" tests="12" failures="9" skipped="3" errors="0" time="5.286437">
-<testsuite name="demo/salesforce-apex-demo.spec.js" timestamp="2025-07-09T03:21:50.740Z" hostname="chromium" tests="4" failures="3" skipped="1" time="1.533" errors="0">
-<testcase name="Salesforce Apex and DB Operations › Execute anonymous Apex code" classname="demo/salesforce-apex-demo.spec.js" time="0.268">
-<failure message="salesforce-apex-demo.spec.js:30:3 Execute anonymous Apex code" type="FAILURE">
-<![CDATA[  [chromium] › demo/salesforce-apex-demo.spec.js:30:3 › Salesforce Apex and DB Operations › Execute anonymous Apex code 
+<testsuites id="" name="" tests="4" failures="1" skipped="3" errors="0" time="3.383458">
+<testsuite name="api/testrail-demo.spec.js" timestamp="2025-07-09T16:52:31.253Z" hostname="api" tests="4" failures="1" skipped="3" time="0.4" errors="0">
+<testcase name="TestRail Integration Demo › C24148: Salesforce API Authentication Test" classname="api/testrail-demo.spec.js" time="0.4">
+<failure message="testrail-demo.spec.js:84:3 C24148: Salesforce API Authentication Test" type="FAILURE">
+<![CDATA[  [api] › api/testrail-demo.spec.js:84:3 › TestRail Integration Demo › C24148: Salesforce API Authentication Test 
 
-    Error: Apex execution error: 404 - [{"errorCode":"NOT_FOUND","message":"The requested resource does not exist"}]
+    Error: expect(received).toBe(expected) // Object.is equality
 
-       at ../utils/salesforce/core/salesforceApexUtils.js:33
+    Expected: 200
+    Received: 401
 
-      31 |     if (!response.ok) {
-      32 |       const errorText = await response.text();
-    > 33 |       throw new Error(`Apex execution error: ${response.status} - ${errorText}`);
-         |             ^
-      34 |     }
-      35 |     
-      36 |     return await response.json();
-        at SalesforceApexUtils.executeAnonymous (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceApexUtils.js:33:13)
-        at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/demo/salesforce-apex-demo.spec.js:39:20
+       98 |       });
+       99 |       
+    > 100 |       expect(response.status()).toBe(200);
+          |                                 ^
+      101 |       const data = await response.json();
+      102 |       expect(data).toBeInstanceOf(Array);
+      103 |       
+        at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/api/testrail-demo.spec.js:100:33
+
+    Error Context: ../../test-results/api-testrail-demo-TestRail-3157b-rce-API-Authentication-Test-api/error-context.md
 ]]>
 </failure>
 <system-out>
-<![CDATA[⚠️ OAuth failed: authentication failure
+<![CDATA[🚀 Starting TestRail Integration Demo
+⚠️ OAuth failed: authentication failure
 ⚠️ OAuth failed, using fallback token - cached for reuse
+🔐 TestRail auth: API Key
+✅ TestRail client initialized
+❌ TestRail setup failed: HTTP 400: {"error":"Field :case_ids contains unrecognized case IDs."}
+Error details: Error: HTTP 400: {"error":"Field :case_ids contains unrecognized case IDs."}
+    at IncomingMessage.<anonymous> [90m(/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/[39msrc/utils/testrail/core/testrail-api-simple.js:59:22[90m)[39m
+[90m    at IncomingMessage.emit (node:events:519:35)[39m
+[90m    at endReadableNT (node:internal/streams/readable:1696:12)[39m
+[90m    at processTicksAndRejections (node:internal/process/task_queues:90:21)[39m
+🧪 Running API Authentication Test...
+❌ Authentication test failed: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m200[39m
+Received: [31m401[39m
+
+[[ATTACHMENT|../test-results/api-testrail-demo-TestRail-3157b-rce-API-Authentication-Test-api/error-context.md]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="Salesforce Apex and DB Operations › Execute SOQL query using builder" classname="demo/salesforce-apex-demo.spec.js" time="0.273">
-<failure message="salesforce-apex-demo.spec.js:46:3 Execute SOQL query using builder" type="FAILURE">
-<![CDATA[  [chromium] › demo/salesforce-apex-demo.spec.js:46:3 › Salesforce Apex and DB Operations › Execute SOQL query using builder 
-
-    Error: DB query error: Session expired or invalid
-
-       at ../utils/salesforce/core/salesforceDbUtils.js:59
-
-      57 |       return await this.conn.query(soql);
-      58 |     } catch (error) {
-    > 59 |       throw new Error(`DB query error: ${error.message}`);
-         |             ^
-      60 |     }
-      61 |   }
-      62 |
-        at SalesforceDbUtils.query (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceDbUtils.js:59:13)
-        at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/demo/salesforce-apex-demo.spec.js:59:20
-]]>
-</failure>
-<system-out>
-<![CDATA[⚠️ OAuth failed: authentication failure
-⚠️ OAuth failed, using fallback token - cached for reuse
-Generated SOQL: SELECT Id, Name, Phone FROM Account WHERE CreatedDate = LAST_N_DAYS:30 ORDER BY Name ASC LIMIT 5
-]]>
-</system-out>
-</testcase>
-<testcase name="Salesforce Apex and DB Operations › Perform bulk database operations" classname="demo/salesforce-apex-demo.spec.js" time="0.72">
-<failure message="salesforce-apex-demo.spec.js:66:3 Perform bulk database operations" type="FAILURE">
-<![CDATA[  [chromium] › demo/salesforce-apex-demo.spec.js:66:3 › Salesforce Apex and DB Operations › Perform bulk database operations 
-
-    InvalidSessionId: Invalid session id
-        at BulkApi.getError (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/http-api.js:292:56)
-        at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/http-api.js:127:33
-        at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/api/bulk.js:95:33
-        at PassThrough.<anonymous> (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/api/bulk.js:302:17)
-]]>
-</failure>
-<system-out>
-<![CDATA[⚠️ OAuth failed: authentication failure
-⚠️ OAuth failed, using fallback token - cached for reuse
-]]>
-</system-out>
-</testcase>
-<testcase name="Salesforce Apex and DB Operations › Run Apex tests (if available)" classname="demo/salesforce-apex-demo.spec.js" time="0.272">
-<properties>
-<property name="skip" value="">
-</property>
-</properties>
+<testcase name="TestRail Integration Demo › C24149: Salesforce API Limits Test" classname="api/testrail-demo.spec.js" time="0">
 <skipped>
 </skipped>
 </testcase>
-</testsuite>
-<testsuite name="demo/salesforce-apex-demo.spec.js" timestamp="2025-07-09T03:21:50.740Z" hostname="firefox" tests="4" failures="3" skipped="1" time="2.408" errors="0">
-<testcase name="Salesforce Apex and DB Operations › Execute anonymous Apex code" classname="demo/salesforce-apex-demo.spec.js" time="0.684">
-<failure message="salesforce-apex-demo.spec.js:30:3 Execute anonymous Apex code" type="FAILURE">
-<![CDATA[  [firefox] › demo/salesforce-apex-demo.spec.js:30:3 › Salesforce Apex and DB Operations › Execute anonymous Apex code 
-
-    Error: Apex execution error: 404 - [{"errorCode":"NOT_FOUND","message":"The requested resource does not exist"}]
-
-       at ../utils/salesforce/core/salesforceApexUtils.js:33
-
-      31 |     if (!response.ok) {
-      32 |       const errorText = await response.text();
-    > 33 |       throw new Error(`Apex execution error: ${response.status} - ${errorText}`);
-         |             ^
-      34 |     }
-      35 |     
-      36 |     return await response.json();
-        at SalesforceApexUtils.executeAnonymous (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceApexUtils.js:33:13)
-        at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/demo/salesforce-apex-demo.spec.js:39:20
-]]>
-</failure>
-<system-out>
-<![CDATA[⚠️ OAuth failed: authentication failure
-⚠️ OAuth failed, using fallback token - cached for reuse
-]]>
-</system-out>
-</testcase>
-<testcase name="Salesforce Apex and DB Operations › Execute SOQL query using builder" classname="demo/salesforce-apex-demo.spec.js" time="0.687">
-<failure message="salesforce-apex-demo.spec.js:46:3 Execute SOQL query using builder" type="FAILURE">
-<![CDATA[  [firefox] › demo/salesforce-apex-demo.spec.js:46:3 › Salesforce Apex and DB Operations › Execute SOQL query using builder 
-
-    Error: DB query error: Session expired or invalid
-
-       at ../utils/salesforce/core/salesforceDbUtils.js:59
-
-      57 |       return await this.conn.query(soql);
-      58 |     } catch (error) {
-    > 59 |       throw new Error(`DB query error: ${error.message}`);
-         |             ^
-      60 |     }
-      61 |   }
-      62 |
-        at SalesforceDbUtils.query (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceDbUtils.js:59:13)
-        at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/demo/salesforce-apex-demo.spec.js:59:20
-]]>
-</failure>
-<system-out>
-<![CDATA[⚠️ OAuth failed: authentication failure
-⚠️ OAuth failed, using fallback token - cached for reuse
-Generated SOQL: SELECT Id, Name, Phone FROM Account WHERE CreatedDate = LAST_N_DAYS:30 ORDER BY Name ASC LIMIT 5
-]]>
-</system-out>
-</testcase>
-<testcase name="Salesforce Apex and DB Operations › Perform bulk database operations" classname="demo/salesforce-apex-demo.spec.js" time="0.777">
-<failure message="salesforce-apex-demo.spec.js:66:3 Perform bulk database operations" type="FAILURE">
-<![CDATA[  [firefox] › demo/salesforce-apex-demo.spec.js:66:3 › Salesforce Apex and DB Operations › Perform bulk database operations 
-
-    InvalidSessionId: Invalid session id
-        at BulkApi.getError (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/http-api.js:292:56)
-        at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/http-api.js:127:33
-        at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/api/bulk.js:95:33
-        at PassThrough.<anonymous> (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/api/bulk.js:302:17)
-]]>
-</failure>
-<system-out>
-<![CDATA[⚠️ OAuth failed: authentication failure
-⚠️ OAuth failed, using fallback token - cached for reuse
-]]>
-</system-out>
-</testcase>
-<testcase name="Salesforce Apex and DB Operations › Run Apex tests (if available)" classname="demo/salesforce-apex-demo.spec.js" time="0.26">
-<properties>
-<property name="skip" value="">
-</property>
-</properties>
+<testcase name="TestRail Integration Demo › C24150: Salesforce API Query Test" classname="api/testrail-demo.spec.js" time="0">
 <skipped>
 </skipped>
 </testcase>
-</testsuite>
-<testsuite name="demo/salesforce-apex-demo.spec.js" timestamp="2025-07-09T03:21:50.740Z" hostname="webkit" tests="4" failures="3" skipped="1" time="1.57" errors="0">
-<testcase name="Salesforce Apex and DB Operations › Execute anonymous Apex code" classname="demo/salesforce-apex-demo.spec.js" time="0.327">
-<failure message="salesforce-apex-demo.spec.js:30:3 Execute anonymous Apex code" type="FAILURE">
-<![CDATA[  [webkit] › demo/salesforce-apex-demo.spec.js:30:3 › Salesforce Apex and DB Operations › Execute anonymous Apex code 
-
-    Error: Apex execution error: 404 - [{"errorCode":"NOT_FOUND","message":"The requested resource does not exist"}]
-
-       at ../utils/salesforce/core/salesforceApexUtils.js:33
-
-      31 |     if (!response.ok) {
-      32 |       const errorText = await response.text();
-    > 33 |       throw new Error(`Apex execution error: ${response.status} - ${errorText}`);
-         |             ^
-      34 |     }
-      35 |     
-      36 |     return await response.json();
-        at SalesforceApexUtils.executeAnonymous (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceApexUtils.js:33:13)
-        at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/demo/salesforce-apex-demo.spec.js:39:20
-]]>
-</failure>
-<system-out>
-<![CDATA[⚠️ OAuth failed: authentication failure
-⚠️ OAuth failed, using fallback token - cached for reuse
-]]>
-</system-out>
-</testcase>
-<testcase name="Salesforce Apex and DB Operations › Execute SOQL query using builder" classname="demo/salesforce-apex-demo.spec.js" time="0.268">
-<failure message="salesforce-apex-demo.spec.js:46:3 Execute SOQL query using builder" type="FAILURE">
-<![CDATA[  [webkit] › demo/salesforce-apex-demo.spec.js:46:3 › Salesforce Apex and DB Operations › Execute SOQL query using builder 
-
-    Error: DB query error: Session expired or invalid
-
-       at ../utils/salesforce/core/salesforceDbUtils.js:59
-
-      57 |       return await this.conn.query(soql);
-      58 |     } catch (error) {
-    > 59 |       throw new Error(`DB query error: ${error.message}`);
-         |             ^
-      60 |     }
-      61 |   }
-      62 |
-        at SalesforceDbUtils.query (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceDbUtils.js:59:13)
-        at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/demo/salesforce-apex-demo.spec.js:59:20
-]]>
-</failure>
-<system-out>
-<![CDATA[⚠️ OAuth failed: authentication failure
-⚠️ OAuth failed, using fallback token - cached for reuse
-Generated SOQL: SELECT Id, Name, Phone FROM Account WHERE CreatedDate = LAST_N_DAYS:30 ORDER BY Name ASC LIMIT 5
-]]>
-</system-out>
-</testcase>
-<testcase name="Salesforce Apex and DB Operations › Perform bulk database operations" classname="demo/salesforce-apex-demo.spec.js" time="0.706">
-<failure message="salesforce-apex-demo.spec.js:66:3 Perform bulk database operations" type="FAILURE">
-<![CDATA[  [webkit] › demo/salesforce-apex-demo.spec.js:66:3 › Salesforce Apex and DB Operations › Perform bulk database operations 
-
-    InvalidSessionId: Invalid session id
-        at BulkApi.getError (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/http-api.js:292:56)
-        at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/http-api.js:127:33
-        at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/api/bulk.js:95:33
-        at PassThrough.<anonymous> (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/api/bulk.js:302:17)
-]]>
-</failure>
-<system-out>
-<![CDATA[⚠️ OAuth failed: authentication failure
-⚠️ OAuth failed, using fallback token - cached for reuse
-]]>
-</system-out>
-</testcase>
-<testcase name="Salesforce Apex and DB Operations › Run Apex tests (if available)" classname="demo/salesforce-apex-demo.spec.js" time="0.269">
-<properties>
-<property name="skip" value="">
-</property>
-</properties>
+<testcase name="TestRail Integration Demo › C24151: Salesforce UI Login Test" classname="api/testrail-demo.spec.js" time="0">
 <skipped>
 </skipped>
 </testcase>
