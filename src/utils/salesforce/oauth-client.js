@@ -1,7 +1,7 @@
 /**
  * Salesforce OAuth Client
  */
-const axios = require('axios').default || require('axios');
+const fetch = require('node-fetch');
 
 class SalesforceOAuthClient {
   constructor() {
@@ -15,31 +15,41 @@ class SalesforceOAuthClient {
 
   async getAccessToken() {
     try {
-      const response = await axios.post(`${this.loginUrl}/services/oauth2/token`, null, {
-        params: {
-          grant_type: 'password',
-          client_id: this.clientId,
-          client_secret: this.clientSecret,
-          username: this.username,
-          password: this.password + this.securityToken
-        },
+      // Create URL search params for the request body
+      const params = new URLSearchParams();
+      params.append('grant_type', 'password');
+      params.append('client_id', this.clientId);
+      params.append('client_secret', this.clientSecret);
+      params.append('username', this.username);
+      params.append('password', this.password + this.securityToken);
+      
+      const response = await fetch(`${this.loginUrl}/services/oauth2/token`, {
+        method: 'POST',
+        body: params,
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
       });
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error_description || `HTTP error ${response.status}`);
+      }
+      
+      const data = await response.json();
 
       return {
-        access_token: response.data.access_token,
-        instance_url: response.data.instance_url,
+        access_token: data.access_token,
+        instance_url: data.instance_url,
         success: true
       };
     } catch (error) {
-      console.log('⚠️ OAuth failed:', error.response?.data?.error_description || error.message);
+      console.log('⚠️ OAuth failed:', error.message);
       return {
         access_token: null,
         instance_url: null,
         success: false,
-        error: error.response?.data?.error_description || error.message
+        error: error.message
       };
     }
   }
