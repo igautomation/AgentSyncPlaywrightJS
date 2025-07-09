@@ -155,6 +155,67 @@ npm run test:salesforce
 
 # Run Salesforce tests with specific configuration
 npm run test:salesforce:config
+
+# Run Apex code tests
+npm run test:salesforce:apex
+```
+
+### Apex Code Testing
+
+The framework now supports Apex code execution and testing:
+
+```javascript
+const { SalesforceApexUtils } = require('../utils/salesforce');
+
+// Initialize Apex utilities
+const apexUtils = new SalesforceApexUtils({ accessToken });
+
+// Execute anonymous Apex
+const result = await apexUtils.executeAnonymous('System.debug("Hello World");');
+
+// Run Apex tests
+const jobId = await apexUtils.runApexTests(['MyTestClass']);
+
+// Get test results
+const testResults = await apexUtils.getApexTestResults(jobId);
+
+// Get code coverage
+const coverage = await apexUtils.getCodeCoverage('MyClass');
+```
+
+### Enhanced Database Operations
+
+```javascript
+const { SalesforceDbUtils } = require('../utils/salesforce');
+
+// Initialize DB utilities
+const dbUtils = new SalesforceDbUtils({ accessToken });
+
+// Query with pagination
+const allRecords = await dbUtils.queryAll('SELECT Id, Name FROM Account');
+
+// Bulk operations
+const createResults = await dbUtils.bulkCreate('Contact', contacts);
+const updateResults = await dbUtils.bulkUpdate('Account', accounts);
+const deleteResults = await dbUtils.bulkDelete('Lead', leadIds);
+```
+
+### SOQL Query Builder
+
+```javascript
+const { SoqlBuilder } = require('../utils/salesforce');
+
+// Build a SOQL query
+const query = new SoqlBuilder()
+  .select('Id', 'Name', 'Phone')
+  .from('Account')
+  .where('CreatedDate = LAST_N_DAYS:30')
+  .orderBy('Name')
+  .limit(5)
+  .build();
+
+// Execute the query
+const result = await dbUtils.query(query);
 ```
 
 For detailed information, see the [Salesforce Testing Guide](docs/salesforce-testing-guide.md).

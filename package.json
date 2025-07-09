@@ -54,6 +54,8 @@
     "test:salesforce:headed": "playwright test src/tests/salesforce --headed",
     "test:salesforce:debug": "playwright test src/tests/salesforce --debug",
     "test:salesforce:ui": "playwright test src/tests/salesforce --ui",
+    "test:salesforce:apex": "node scripts/run-apex-tests.js",
+    "test:apex-demo": "playwright test src/tests/demo/salesforce-apex-demo.spec.js --config=playwright.config.js",
     "setup:credentials": "node setup-credentials.js",
     "setup:salesforce": "node src/tests/salesforce/global-setup.js",
     "lint": "eslint .",
