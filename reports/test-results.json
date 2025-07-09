@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 5
     },
     "preserveOutput": "always",
     "reporter": [
@@ -49,7 +49,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 5
         },
         "id": "setup",
         "name": "setup",
@@ -65,7 +65,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 5
         },
         "id": "chromium",
         "name": "chromium",
@@ -85,7 +85,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 5
         },
         "id": "firefox",
         "name": "firefox",
@@ -105,7 +105,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 5
         },
         "id": "webkit",
         "name": "webkit",
@@ -125,7 +125,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 5
         },
         "id": "mobile-chrome",
         "name": "mobile-chrome",
@@ -141,7 +141,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 5
         },
         "id": "mobile-safari",
         "name": "mobile-safari",
@@ -157,7 +157,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 5
         },
         "id": "salesforce",
         "name": "salesforce",
@@ -173,7 +173,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 5
         },
         "id": "api",
         "name": "api",
@@ -189,7 +189,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 5
         },
         "id": "visual",
         "name": "visual",
@@ -205,7 +205,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 5
         },
         "id": "accessibility",
         "name": "accessibility",
@@ -220,26 +220,26 @@
     "shard": null,
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
-    "version": "1.53.1",
+    "version": "1.52.0",
     "workers": 5,
     "webServer": null
   },
   "suites": [
     {
-      "title": "api/testrail-demo.spec.js",
-      "file": "api/testrail-demo.spec.js",
+      "title": "demo/salesforce-apex-demo.spec.js",
+      "file": "demo/salesforce-apex-demo.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "TestRail Integration Demo",
-          "file": "api/testrail-demo.spec.js",
-          "line": 81,
+          "title": "Salesforce Apex and DB Operations",
+          "file": "demo/salesforce-apex-demo.spec.js",
+          "line": 28,
           "column": 6,
           "specs": [
             {
-              "title": "C24148: Salesforce API Authentication Test",
+              "title": "Execute anonymous Apex code",
               "ok": false,
               "tags": [],
               "tests": [
@@ -247,161 +247,697 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 401,
+                      "duration": 268,
                       "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/api/testrail-demo.spec.js:98:33",
+                        "message": "Error: Apex execution error: 404 - [{\"errorCode\":\"NOT_FOUND\",\"message\":\"The requested resource does not exist\"}]",
+                        "stack": "Error: Apex execution error: 404 - [{\"errorCode\":\"NOT_FOUND\",\"message\":\"The requested resource does not exist\"}]\n    at SalesforceApexUtils.executeAnonymous (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceApexUtils.js:33:13)\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/demo/salesforce-apex-demo.spec.js:39:20",
                         "location": {
-                          "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/api/testrail-demo.spec.js",
-                          "column": 33,
-                          "line": 98
+                          "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceApexUtils.js",
+                          "column": 13,
+                          "line": 33
                         },
-                        "snippet": "\u001b[0m \u001b[90m  96 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m  97 |\u001b[39m       \n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  98 |\u001b[39m       expect(response\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  99 |\u001b[39m       \u001b[36mconst\u001b[39m data \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n \u001b[90m 100 |\u001b[39m       expect(data)\u001b[33m.\u001b[39mtoHaveProperty(\u001b[32m'sobjects'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 101 |\u001b[39m       \u001b[0m"
+                        "snippet": "   at ../utils/salesforce/core/salesforceApexUtils.js:33\n\n  31 |     if (!response.ok) {\n  32 |       const errorText = await response.text();\n> 33 |       throw new Error(`Apex execution error: ${response.status} - ${errorText}`);\n     |             ^\n  34 |     }\n  35 |     \n  36 |     return await response.json();"
                       },
                       "errors": [
                         {
                           "location": {
-                            "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/api/testrail-demo.spec.js",
-                            "column": 33,
-                            "line": 98
+                            "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceApexUtils.js",
+                            "column": 13,
+                            "line": 33
                           },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n\n\u001b[0m \u001b[90m  96 |\u001b[39m       })\u001b[33m;\u001b[39m\n \u001b[90m  97 |\u001b[39m       \n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  98 |\u001b[39m       expect(response\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  99 |\u001b[39m       \u001b[36mconst\u001b[39m data \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n \u001b[90m 100 |\u001b[39m       expect(data)\u001b[33m.\u001b[39mtoHaveProperty(\u001b[32m'sobjects'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 101 |\u001b[39m       \u001b[0m\n\u001b[2m    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/api/testrail-demo.spec.js:98:33\u001b[22m"
+                          "message": "Error: Apex execution error: 404 - [{\"errorCode\":\"NOT_FOUND\",\"message\":\"The requested resource does not exist\"}]\n\n   at ../utils/salesforce/core/salesforceApexUtils.js:33\n\n  31 |     if (!response.ok) {\n  32 |       const errorText = await response.text();\n> 33 |       throw new Error(`Apex execution error: ${response.status} - ${errorText}`);\n     |             ^\n  34 |     }\n  35 |     \n  36 |     return await response.json();\n    at SalesforceApexUtils.executeAnonymous (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceApexUtils.js:33:13)\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/demo/salesforce-apex-demo.spec.js:39:20"
                         }
                       ],
                       "stdout": [
                         {
-                          "text": "🚀 Starting TestRail Integration Demo\n"
-                        },
-                        {
-                          "text": "⚠️ OAuth failed: invalid client credentials\n"
+                          "text": "⚠️ OAuth failed: authentication failure\n"
                         },
                         {
                           "text": "⚠️ OAuth failed, using fallback token - cached for reuse\n"
-                        },
-                        {
-                          "text": "🔐 TestRail auth: API Key\n"
-                        },
-                        {
-                          "text": "✅ TestRail client initialized\n"
-                        },
-                        {
-                          "text": "📋 Created TestRail run: 550\n"
-                        },
-                        {
-                          "text": "🔗 View run: https://agentsync.testrail.io/index.php?/runs/view/550\n"
-                        },
-                        {
-                          "text": "🧪 Running API Authentication Test...\n"
-                        },
-                        {
-                          "text": "❌ Authentication test failed: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n"
-                        },
-                        {
-                          "text": "📤 Uploading 1 results to TestRail...\n"
-                        },
-                        {
-                          "text": "✅ Results uploaded successfully\n"
-                        },
-                        {
-                          "text": "🔒 Test run 550 closed\n"
-                        },
-                        {
-                          "text": "🔗 View results: https://agentsync.testrail.io/index.php?/runs/view/550\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-07-08T16:57:10.588Z",
+                      "startTime": "2025-07-09T03:21:51.435Z",
                       "annotations": [],
                       "attachments": [],
                       "errorLocation": {
-                        "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/api/testrail-demo.spec.js",
-                        "column": 33,
-                        "line": 98
+                        "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceApexUtils.js",
+                        "column": 13,
+                        "line": 33
                       }
                     }
                   ],
                   "status": "unexpected"
                 }
               ],
-              "id": "cb7229385a707e95ec5c-2373288adfceefd795bc",
-              "file": "api/testrail-demo.spec.js",
-              "line": 83,
+              "id": "3930151fbcddba1b8733-bbc341b93dcbf5cd6377",
+              "file": "demo/salesforce-apex-demo.spec.js",
+              "line": 30,
               "column": 3
             },
             {
-              "title": "C24149: Salesforce API Limits Test",
-              "ok": true,
+              "title": "Execute SOQL query using builder",
+              "ok": false,
               "tags": [],
               "tests": [
                 {
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 273,
+                      "error": {
+                        "message": "Error: DB query error: Session expired or invalid",
+                        "stack": "Error: DB query error: Session expired or invalid\n    at SalesforceDbUtils.query (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceDbUtils.js:59:13)\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/demo/salesforce-apex-demo.spec.js:59:20",
+                        "location": {
+                          "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceDbUtils.js",
+                          "column": 13,
+                          "line": 59
+                        },
+                        "snippet": "   at ../utils/salesforce/core/salesforceDbUtils.js:59\n\n  57 |       return await this.conn.query(soql);\n  58 |     } catch (error) {\n> 59 |       throw new Error(`DB query error: ${error.message}`);\n     |             ^\n  60 |     }\n  61 |   }\n  62 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceDbUtils.js",
+                            "column": 13,
+                            "line": 59
+                          },
+                          "message": "Error: DB query error: Session expired or invalid\n\n   at ../utils/salesforce/core/salesforceDbUtils.js:59\n\n  57 |       return await this.conn.query(soql);\n  58 |     } catch (error) {\n> 59 |       throw new Error(`DB query error: ${error.message}`);\n     |             ^\n  60 |     }\n  61 |   }\n  62 |\n    at SalesforceDbUtils.query (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceDbUtils.js:59:13)\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/demo/salesforce-apex-demo.spec.js:59:20"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "⚠️ OAuth failed: authentication failure\n"
+                        },
+                        {
+                          "text": "⚠️ OAuth failed, using fallback token - cached for reuse\n"
+                        },
+                        {
+                          "text": "Generated SOQL: SELECT Id, Name, Phone FROM Account WHERE CreatedDate = LAST_N_DAYS:30 ORDER BY Name ASC LIMIT 5\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-07-08T16:57:14.804Z",
+                      "startTime": "2025-07-09T03:21:51.456Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceDbUtils.js",
+                        "column": 13,
+                        "line": 59
+                      }
                     }
                   ],
-                  "status": "skipped"
+                  "status": "unexpected"
                 }
               ],
-              "id": "cb7229385a707e95ec5c-34475da3d6f3e1c0bbff",
-              "file": "api/testrail-demo.spec.js",
-              "line": 120,
+              "id": "3930151fbcddba1b8733-bba33ab418dcaed56b3d",
+              "file": "demo/salesforce-apex-demo.spec.js",
+              "line": 46,
               "column": 3
             },
             {
-              "title": "C24150: Salesforce API Query Test",
-              "ok": true,
+              "title": "Perform bulk database operations",
+              "ok": false,
               "tags": [],
               "tests": [
                 {
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "api",
-                  "projectName": "api",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": -1,
-                      "parallelIndex": -1,
-                      "status": "skipped",
-                      "duration": 0,
-                      "errors": [],
-                      "stdout": [],
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 720,
+                      "error": {
+                        "message": "InvalidSessionId: Invalid session id",
+                        "stack": "InvalidSessionId: Invalid session id\n    at BulkApi.getError (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/http-api.js:292:56)\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/http-api.js:127:33\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/api/bulk.js:95:33\n    at PassThrough.<anonymous> (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/api/bulk.js:302:17)"
+                      },
+                      "errors": [
+                        {
+                          "message": "InvalidSessionId: Invalid session id\n    at BulkApi.getError (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/http-api.js:292:56)\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/http-api.js:127:33\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/api/bulk.js:95:33\n    at PassThrough.<anonymous> (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/api/bulk.js:302:17)"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "⚠️ OAuth failed: authentication failure\n"
+                        },
+                        {
+                          "text": "⚠️ OAuth failed, using fallback token - cached for reuse\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-07-08T16:57:14.805Z",
+                      "startTime": "2025-07-09T03:21:51.446Z",
                       "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "3930151fbcddba1b8733-8490c0fbdc2363571e42",
+              "file": "demo/salesforce-apex-demo.spec.js",
+              "line": 66,
+              "column": 3
+            },
+            {
+              "title": "Run Apex tests (if available)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip"
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "skipped",
+                      "duration": 272,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "⚠️ OAuth failed: authentication failure\n"
+                        },
+                        {
+                          "text": "⚠️ OAuth failed, using fallback token - cached for reuse\n"
+                        },
+                        {
+                          "text": "Skipping Apex test execution: DB query error: Session expired or invalid\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-07-09T03:21:51.434Z",
+                      "annotations": [
+                        {
+                          "type": "skip"
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
                   "status": "skipped"
                 }
               ],
-              "id": "cb7229385a707e95ec5c-151062feb033f76d85c0",
-              "file": "api/testrail-demo.spec.js",
-              "line": 160,
+              "id": "3930151fbcddba1b8733-30ce77fd307448dce1d1",
+              "file": "demo/salesforce-apex-demo.spec.js",
+              "line": 106,
+              "column": 3
+            },
+            {
+              "title": "Execute anonymous Apex code",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 4,
+                      "status": "failed",
+                      "duration": 684,
+                      "error": {
+                        "message": "Error: Apex execution error: 404 - [{\"errorCode\":\"NOT_FOUND\",\"message\":\"The requested resource does not exist\"}]",
+                        "stack": "Error: Apex execution error: 404 - [{\"errorCode\":\"NOT_FOUND\",\"message\":\"The requested resource does not exist\"}]\n    at SalesforceApexUtils.executeAnonymous (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceApexUtils.js:33:13)\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/demo/salesforce-apex-demo.spec.js:39:20",
+                        "location": {
+                          "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceApexUtils.js",
+                          "column": 13,
+                          "line": 33
+                        },
+                        "snippet": "   at ../utils/salesforce/core/salesforceApexUtils.js:33\n\n  31 |     if (!response.ok) {\n  32 |       const errorText = await response.text();\n> 33 |       throw new Error(`Apex execution error: ${response.status} - ${errorText}`);\n     |             ^\n  34 |     }\n  35 |     \n  36 |     return await response.json();"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceApexUtils.js",
+                            "column": 13,
+                            "line": 33
+                          },
+                          "message": "Error: Apex execution error: 404 - [{\"errorCode\":\"NOT_FOUND\",\"message\":\"The requested resource does not exist\"}]\n\n   at ../utils/salesforce/core/salesforceApexUtils.js:33\n\n  31 |     if (!response.ok) {\n  32 |       const errorText = await response.text();\n> 33 |       throw new Error(`Apex execution error: ${response.status} - ${errorText}`);\n     |             ^\n  34 |     }\n  35 |     \n  36 |     return await response.json();\n    at SalesforceApexUtils.executeAnonymous (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceApexUtils.js:33:13)\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/demo/salesforce-apex-demo.spec.js:39:20"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "⚠️ OAuth failed: authentication failure\n"
+                        },
+                        {
+                          "text": "⚠️ OAuth failed, using fallback token - cached for reuse\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-07-09T03:21:51.431Z",
+                      "annotations": [],
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceApexUtils.js",
+                        "column": 13,
+                        "line": 33
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "3930151fbcddba1b8733-f020f42a3fa3ae03036a",
+              "file": "demo/salesforce-apex-demo.spec.js",
+              "line": 30,
+              "column": 3
+            },
+            {
+              "title": "Execute SOQL query using builder",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 687,
+                      "error": {
+                        "message": "Error: DB query error: Session expired or invalid",
+                        "stack": "Error: DB query error: Session expired or invalid\n    at SalesforceDbUtils.query (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceDbUtils.js:59:13)\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/demo/salesforce-apex-demo.spec.js:59:20",
+                        "location": {
+                          "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceDbUtils.js",
+                          "column": 13,
+                          "line": 59
+                        },
+                        "snippet": "   at ../utils/salesforce/core/salesforceDbUtils.js:59\n\n  57 |       return await this.conn.query(soql);\n  58 |     } catch (error) {\n> 59 |       throw new Error(`DB query error: ${error.message}`);\n     |             ^\n  60 |     }\n  61 |   }\n  62 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceDbUtils.js",
+                            "column": 13,
+                            "line": 59
+                          },
+                          "message": "Error: DB query error: Session expired or invalid\n\n   at ../utils/salesforce/core/salesforceDbUtils.js:59\n\n  57 |       return await this.conn.query(soql);\n  58 |     } catch (error) {\n> 59 |       throw new Error(`DB query error: ${error.message}`);\n     |             ^\n  60 |     }\n  61 |   }\n  62 |\n    at SalesforceDbUtils.query (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceDbUtils.js:59:13)\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/demo/salesforce-apex-demo.spec.js:59:20"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "⚠️ OAuth failed: authentication failure\n"
+                        },
+                        {
+                          "text": "⚠️ OAuth failed, using fallback token - cached for reuse\n"
+                        },
+                        {
+                          "text": "Generated SOQL: SELECT Id, Name, Phone FROM Account WHERE CreatedDate = LAST_N_DAYS:30 ORDER BY Name ASC LIMIT 5\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-07-09T03:21:52.762Z",
+                      "annotations": [],
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceDbUtils.js",
+                        "column": 13,
+                        "line": 59
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "3930151fbcddba1b8733-b175079553d947500394",
+              "file": "demo/salesforce-apex-demo.spec.js",
+              "line": 46,
+              "column": 3
+            },
+            {
+              "title": "Perform bulk database operations",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 777,
+                      "error": {
+                        "message": "InvalidSessionId: Invalid session id",
+                        "stack": "InvalidSessionId: Invalid session id\n    at BulkApi.getError (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/http-api.js:292:56)\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/http-api.js:127:33\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/api/bulk.js:95:33\n    at PassThrough.<anonymous> (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/api/bulk.js:302:17)"
+                      },
+                      "errors": [
+                        {
+                          "message": "InvalidSessionId: Invalid session id\n    at BulkApi.getError (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/http-api.js:292:56)\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/http-api.js:127:33\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/api/bulk.js:95:33\n    at PassThrough.<anonymous> (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/api/bulk.js:302:17)"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "⚠️ OAuth failed: authentication failure\n"
+                        },
+                        {
+                          "text": "⚠️ OAuth failed, using fallback token - cached for reuse\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-07-09T03:21:53.092Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "3930151fbcddba1b8733-f50a09d6e68284b053bf",
+              "file": "demo/salesforce-apex-demo.spec.js",
+              "line": 66,
+              "column": 3
+            },
+            {
+              "title": "Run Apex tests (if available)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip"
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 260,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "⚠️ OAuth failed: authentication failure\n"
+                        },
+                        {
+                          "text": "⚠️ OAuth failed, using fallback token - cached for reuse\n"
+                        },
+                        {
+                          "text": "Skipping Apex test execution: DB query error: Session expired or invalid\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-07-09T03:21:53.249Z",
+                      "annotations": [
+                        {
+                          "type": "skip"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "3930151fbcddba1b8733-4ea6e071306fa55728f7",
+              "file": "demo/salesforce-apex-demo.spec.js",
+              "line": 106,
+              "column": 3
+            },
+            {
+              "title": "Execute anonymous Apex code",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 4,
+                      "status": "failed",
+                      "duration": 327,
+                      "error": {
+                        "message": "Error: Apex execution error: 404 - [{\"errorCode\":\"NOT_FOUND\",\"message\":\"The requested resource does not exist\"}]",
+                        "stack": "Error: Apex execution error: 404 - [{\"errorCode\":\"NOT_FOUND\",\"message\":\"The requested resource does not exist\"}]\n    at SalesforceApexUtils.executeAnonymous (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceApexUtils.js:33:13)\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/demo/salesforce-apex-demo.spec.js:39:20",
+                        "location": {
+                          "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceApexUtils.js",
+                          "column": 13,
+                          "line": 33
+                        },
+                        "snippet": "   at ../utils/salesforce/core/salesforceApexUtils.js:33\n\n  31 |     if (!response.ok) {\n  32 |       const errorText = await response.text();\n> 33 |       throw new Error(`Apex execution error: ${response.status} - ${errorText}`);\n     |             ^\n  34 |     }\n  35 |     \n  36 |     return await response.json();"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceApexUtils.js",
+                            "column": 13,
+                            "line": 33
+                          },
+                          "message": "Error: Apex execution error: 404 - [{\"errorCode\":\"NOT_FOUND\",\"message\":\"The requested resource does not exist\"}]\n\n   at ../utils/salesforce/core/salesforceApexUtils.js:33\n\n  31 |     if (!response.ok) {\n  32 |       const errorText = await response.text();\n> 33 |       throw new Error(`Apex execution error: ${response.status} - ${errorText}`);\n     |             ^\n  34 |     }\n  35 |     \n  36 |     return await response.json();\n    at SalesforceApexUtils.executeAnonymous (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceApexUtils.js:33:13)\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/demo/salesforce-apex-demo.spec.js:39:20"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "⚠️ OAuth failed: authentication failure\n"
+                        },
+                        {
+                          "text": "⚠️ OAuth failed, using fallback token - cached for reuse\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-07-09T03:21:53.497Z",
+                      "annotations": [],
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceApexUtils.js",
+                        "column": 13,
+                        "line": 33
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "3930151fbcddba1b8733-3a7c4b7ed554695dfe02",
+              "file": "demo/salesforce-apex-demo.spec.js",
+              "line": 30,
+              "column": 3
+            },
+            {
+              "title": "Execute SOQL query using builder",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 268,
+                      "error": {
+                        "message": "Error: DB query error: Session expired or invalid",
+                        "stack": "Error: DB query error: Session expired or invalid\n    at SalesforceDbUtils.query (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceDbUtils.js:59:13)\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/demo/salesforce-apex-demo.spec.js:59:20",
+                        "location": {
+                          "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceDbUtils.js",
+                          "column": 13,
+                          "line": 59
+                        },
+                        "snippet": "   at ../utils/salesforce/core/salesforceDbUtils.js:59\n\n  57 |       return await this.conn.query(soql);\n  58 |     } catch (error) {\n> 59 |       throw new Error(`DB query error: ${error.message}`);\n     |             ^\n  60 |     }\n  61 |   }\n  62 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceDbUtils.js",
+                            "column": 13,
+                            "line": 59
+                          },
+                          "message": "Error: DB query error: Session expired or invalid\n\n   at ../utils/salesforce/core/salesforceDbUtils.js:59\n\n  57 |       return await this.conn.query(soql);\n  58 |     } catch (error) {\n> 59 |       throw new Error(`DB query error: ${error.message}`);\n     |             ^\n  60 |     }\n  61 |   }\n  62 |\n    at SalesforceDbUtils.query (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceDbUtils.js:59:13)\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/demo/salesforce-apex-demo.spec.js:59:20"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "⚠️ OAuth failed: authentication failure\n"
+                        },
+                        {
+                          "text": "⚠️ OAuth failed, using fallback token - cached for reuse\n"
+                        },
+                        {
+                          "text": "Generated SOQL: SELECT Id, Name, Phone FROM Account WHERE CreatedDate = LAST_N_DAYS:30 ORDER BY Name ASC LIMIT 5\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-07-09T03:21:53.502Z",
+                      "annotations": [],
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/core/salesforceDbUtils.js",
+                        "column": 13,
+                        "line": 59
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "3930151fbcddba1b8733-f29599d9f08ca69803b5",
+              "file": "demo/salesforce-apex-demo.spec.js",
+              "line": 46,
+              "column": 3
+            },
+            {
+              "title": "Perform bulk database operations",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 706,
+                      "error": {
+                        "message": "InvalidSessionId: Invalid session id",
+                        "stack": "InvalidSessionId: Invalid session id\n    at BulkApi.getError (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/http-api.js:292:56)\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/http-api.js:127:33\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/api/bulk.js:95:33\n    at PassThrough.<anonymous> (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/api/bulk.js:302:17)"
+                      },
+                      "errors": [
+                        {
+                          "message": "InvalidSessionId: Invalid session id\n    at BulkApi.getError (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/http-api.js:292:56)\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/http-api.js:127:33\n    at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/api/bulk.js:95:33\n    at PassThrough.<anonymous> (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/node_modules/jsforce/lib/api/bulk.js:302:17)"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "⚠️ OAuth failed: authentication failure\n"
+                        },
+                        {
+                          "text": "⚠️ OAuth failed, using fallback token - cached for reuse\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-07-09T03:21:54.339Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "3930151fbcddba1b8733-41f5ff39d1dea138ee44",
+              "file": "demo/salesforce-apex-demo.spec.js",
+              "line": 66,
+              "column": 3
+            },
+            {
+              "title": "Run Apex tests (if available)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip"
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 2,
+                      "status": "skipped",
+                      "duration": 269,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "⚠️ OAuth failed: authentication failure\n"
+                        },
+                        {
+                          "text": "⚠️ OAuth failed, using fallback token - cached for reuse\n"
+                        },
+                        {
+                          "text": "Skipping Apex test execution: DB query error: Session expired or invalid\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-07-09T03:21:54.585Z",
+                      "annotations": [
+                        {
+                          "type": "skip"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "3930151fbcddba1b8733-7a4ff0453be7db7804fb",
+              "file": "demo/salesforce-apex-demo.spec.js",
+              "line": 106,
               "column": 3
             }
           ]
@@ -411,11 +947,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-07-08T16:57:10.060Z",
-    "duration": 4762.9890000000005,
+    "startTime": "2025-07-09T03:21:50.142Z",
+    "duration": 5286.437,
     "expected": 0,
-    "skipped": 2,
-    "unexpected": 1,
+    "skipped": 3,
+    "unexpected": 9,
     "flaky": 0
   }
 }

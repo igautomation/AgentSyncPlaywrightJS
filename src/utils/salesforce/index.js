@@ -9,6 +9,9 @@ const SalesforceCore = require('./core/salesforceCore');
 const SalesforceAuthUtils = require('./core/salesforceAuthUtils');
 const SalesforceLocators = require('./core/salesforceLocators');
 const SalesforceApiUtils = require('./core/salesforceApiUtils');
+const SalesforceApexUtils = require('./core/salesforceApexUtils');
+const SalesforceDbUtils = require('./core/salesforceDbUtils');
+const SoqlBuilder = require('./core/soqlBuilder');
 
 // Legacy utilities (for backward compatibility)
 const SalesforceUtils = require('./legacy/salesforceUtils');
@@ -26,6 +29,9 @@ module.exports = {
   SalesforceAuthUtils,
   SalesforceLocators,
   SalesforceApiUtils,
+  SalesforceApexUtils,
+  SalesforceDbUtils,
+  SoqlBuilder,
   
   // Legacy (backward compatibility)
   SalesforceUtils,
