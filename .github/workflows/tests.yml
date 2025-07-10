@@ -30,6 +30,9 @@ jobs:
     - name: Install Playwright browsers
       run: npx playwright install --with-deps chromium
     
+    - name: Create auth directory
+      run: mkdir -p auth
+    
     - name: Run ${{ matrix.test-type }} tests
       run: |
         case "${{ matrix.test-type }}" in
@@ -37,7 +40,10 @@ jobs:
             npx playwright test src/tests/api
             ;;
           "ui")
-            npx playwright test src/tests/ui --project=chromium
+            # Run login test first to create storage state
+            npx playwright test src/tests/ui/salesforce-login.spec.js --project=chromium
+            # Then run other UI tests
+            npx playwright test src/tests/ui --ignore=src/tests/ui/salesforce-login.spec.js --project=chromium
             ;;
           "salesforce")
             npx playwright test src/tests/salesforce
