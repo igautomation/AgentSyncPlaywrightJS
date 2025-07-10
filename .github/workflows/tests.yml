@@ -37,6 +37,10 @@ jobs:
       run: |
         case "${{ matrix.test-type }}" in
           "api")
+            if [ -z "$SF_USERNAME" ] || [ -z "$SF_PASSWORD" ] || [ -z "$SF_INSTANCE_URL" ]; then
+              echo "⚠️ Skipping API tests - Salesforce credentials not configured"
+              exit 0
+            fi
             npx playwright test src/tests/api
             ;;
           "ui")
