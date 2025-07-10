@@ -40,12 +40,20 @@ jobs:
             npx playwright test src/tests/api
             ;;
           "ui")
+            if [ -z "$SF_USERNAME" ] || [ -z "$SF_PASSWORD" ] || [ -z "$SF_INSTANCE_URL" ]; then
+              echo "⚠️ Skipping UI tests - Salesforce credentials not configured"
+              exit 0
+            fi
             # Run login test first to create storage state
             npx playwright test src/tests/ui/salesforce-login.spec.js --project=chromium
             # Then run other UI tests
             npx playwright test src/tests/ui --ignore=src/tests/ui/salesforce-login.spec.js --project=chromium
             ;;
           "salesforce")
+            if [ -z "$SF_USERNAME" ] || [ -z "$SF_PASSWORD" ] || [ -z "$SF_INSTANCE_URL" ]; then
+              echo "⚠️ Skipping Salesforce tests - credentials not configured"
+              exit 0
+            fi
             npx playwright test src/tests/salesforce
             ;;
         esac
