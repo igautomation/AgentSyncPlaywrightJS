@@ -2,6 +2,7 @@ const { test } = require('@playwright/test');
 const { DataGenerator } = require('../../utils/data');
 const logger = require('../../utils/common/core/logger');
 const TestRailAPI = require('../../utils/testrail/core/testrail-api-simple');
+const SalesforceLoginHelper = require('../../utils/salesforce/login-helper');
 const TEST_CASE_ID = 'C24169';
 let testRail, testRunId;
 
@@ -20,7 +21,8 @@ test.beforeAll(async () => {
 
 test.beforeEach(async ({ page }) => {
   test.setTimeout(60_000);
-  await page.goto(process.env.SF_LOGIN_URL);
+  const loginHelper = new SalesforceLoginHelper();
+  await loginHelper.ensureAuthenticated(page);
 });
 
 test(`${TEST_CASE_ID} - Verify Onboarding Status bar component on Contact record page`, async ({ page }, testInfo) => {
