@@ -113,19 +113,16 @@ class SalesforceLoginHelper {
     const currentUrl = page.url();
     console.log(`🌐 After login URL: ${currentUrl}`);
     
-    // Standard Salesforce login success verification
-    // After successful login, Salesforce can redirect to various pages including root domain
-    const loginSuccess = currentUrl.includes('salesforce.com') && 
-                        !currentUrl.includes('login') &&
-                        (currentUrl.includes('lightning') || 
-                         currentUrl.includes('setup') || 
-                         currentUrl.includes('home') ||
-                         currentUrl.endsWith('salesforce.com/') || // Root domain after login
-                         currentUrl.includes('ec=302')); // Salesforce redirect parameter
+    // Verify login success by checking for Salesforce App Launcher
+    console.log('🔍 Verifying login success by checking for App Launcher...');
     
-    if (!loginSuccess) {
+    try {
+      // Wait for App Launcher to be visible (indicates successful login)
+      await page.waitForSelector('button[title="App Launcher"], .slds-icon-waffle, [data-aura-class="forceAppLauncher"]', { timeout: 10000 });
+      console.log('✅ App Launcher found - login successful');
+    } catch (error) {
       await page.screenshot({ path: './auth/login-verification-failed.png' });
-      throw new Error(`Login verification failed - unexpected URL: ${currentUrl}`);
+      throw new Error(`Login verification failed - App Launcher not found: ${error.message}`);
     }
     
     // Take screenshot after successful login

@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="23.258188">
-<testsuite name="ui/CSE_10762.spec.js" timestamp="2025-07-11T17:10:50.234Z" hostname="chromium" tests="1" failures="1" skipped="0" time="13.939" errors="0">
-<testcase name="C24169 - Verify Onboarding Status bar component on Contact record page" classname="ui/CSE_10762.spec.js" time="13.939">
+<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="25.015233">
+<testsuite name="ui/CSE_10762.spec.js" timestamp="2025-07-11T17:43:04.062Z" hostname="chromium" tests="1" failures="1" skipped="0" time="13.079" errors="0">
+<testcase name="C24169 - Verify Onboarding Status bar component on Contact record page" classname="ui/CSE_10762.spec.js" time="13.079">
 <failure message="CSE_10762.spec.js:29:1 C24169 - Verify Onboarding Status bar component on Contact record page" type="FAILURE">
 <![CDATA[  [chromium] › ui/CSE_10762.spec.js:29:1 › C24169 - Verify Onboarding Status bar component on Contact record page 
 
