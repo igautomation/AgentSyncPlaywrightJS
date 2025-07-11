@@ -27,7 +27,8 @@ test(`${TEST_CASE_ID} - Verify Onboarding Status bar component on Contact record
   let testPassed = false;
   
   try {
-    const contact = DataGenerator.generateSalesforceContact();
+    const dataGenerator = new DataGenerator();
+    const contact = dataGenerator.generateSalesforceContact();
     
     await page.goto('/lightning/o/Contact/list');
     await page.waitForLoadState('networkidle');

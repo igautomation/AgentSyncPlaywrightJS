@@ -63,7 +63,8 @@ test(`${TEST_CASE_ID}: Salesforce Create Account and Create Contact`, async ({ }
   
   try {
     // Step 1: Create Account using framework data generator
-    const accountData = DataGenerator.generateSalesforceAccount();
+    const dataGenerator = new DataGenerator();
+    const accountData = dataGenerator.generateSalesforceAccount();
     
     const accountResult = await sfApi.createRecord('Account', accountData);
     expect(accountResult).toHaveProperty('id');
@@ -73,7 +74,7 @@ test(`${TEST_CASE_ID}: Salesforce Create Account and Create Contact`, async ({ }
     createdRecords.push({ type: 'Account', id: accountId });
     
     // Step 2: Create Contact using framework data generator
-    const contactData = DataGenerator.generateSalesforceContact(accountId);
+    const contactData = dataGenerator.generateSalesforceContact(accountId);
     
     const contactResult = await sfApi.createRecord('Contact', contactData);
     expect(contactResult).toHaveProperty('id');
