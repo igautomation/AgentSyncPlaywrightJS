@@ -1,7 +1,10 @@
 const { test, expect } = require('@playwright/test');
-const Framework = require('agentsync-playwright-framework');
-
-const { authManager, SalesforceApiUtils, SoqlBuilder, TestRailAPI, DataGenerator, Logger } = Framework;
+const authManager = require('../../utils/salesforce/auth-manager');
+const SalesforceApiUtils = require('../../utils/salesforce/core/salesforceApiUtils');
+const SoqlBuilder = require('../../utils/salesforce/core/soqlBuilder');
+const TestRailAPI = require('../../utils/testrail/core/testrail-api-simple');
+const { DataGenerator } = require('../../utils/data');
+const logger = require('../../utils/common/core/logger');
 
 const API_VERSION = '62.0';
 const TEST_CASE_ID = 'C24001';
@@ -10,7 +13,6 @@ let sfApi;
 let createdRecords = [];
 let testRail;
 let testRunId;
-let logger = new Logger('SFAPI-Test');
 
 test.beforeAll(async () => {
   const auth = await authManager.authenticate();
