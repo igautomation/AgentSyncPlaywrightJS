@@ -1,22 +1,22 @@
-<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="25.015233">
-<testsuite name="ui/CSE_10762.spec.js" timestamp="2025-07-11T17:43:04.062Z" hostname="chromium" tests="1" failures="1" skipped="0" time="13.079" errors="0">
-<testcase name="C24169 - Verify Onboarding Status bar component on Contact record page" classname="ui/CSE_10762.spec.js" time="13.079">
+<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="25.755839">
+<testsuite name="ui/CSE_10762.spec.js" timestamp="2025-07-11T18:04:20.188Z" hostname="chromium" tests="1" failures="1" skipped="0" time="14.969" errors="0">
+<testcase name="C24169 - Verify Onboarding Status bar component on Contact record page" classname="ui/CSE_10762.spec.js" time="14.969">
 <failure message="CSE_10762.spec.js:29:1 C24169 - Verify Onboarding Status bar component on Contact record page" type="FAILURE">
 <![CDATA[  [chromium] › ui/CSE_10762.spec.js:29:1 › C24169 - Verify Onboarding Status bar component on Contact record page 
 
     Error: Login failed with error: Error: Please check your username and password. If you still can't log in, contact your Salesforce administrator.
 
-       at ../utils/salesforce/login-helper.js:99
+       at ../utils/salesforce/login-helper.js:125
 
-       97 |         console.log(`⚠️ Found error with selector ${selector}: ${errorText}`);
-       98 |         await page.screenshot({ path: './auth/login-error.png' });
-    >  99 |         throw new Error(`Login failed with error: ${errorText}`);
+      123 |         console.log(`⚠️ Found error with selector ${selector}: ${errorText}`);
+      124 |         await page.screenshot({ path: './auth/login-error.png' });
+    > 125 |         throw new Error(`Login failed with error: ${errorText}`);
           |               ^
-      100 |       }
-      101 |     }
-      102 |     
-        at SalesforceLoginHelper.performLogin (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/login-helper.js:99:15)
-        at SalesforceLoginHelper.ensureAuthenticated (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/login-helper.js:30:5)
+      126 |       }
+      127 |     }
+      128 |     
+        at SalesforceLoginHelper.performLogin (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/login-helper.js:125:15)
+        at SalesforceLoginHelper.ensureAuthenticated (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/login-helper.js:55:7)
         at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/CSE_10762.spec.js:26:3
 
     attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
@@ -27,17 +27,17 @@
 
     Error: Login failed with error: Error: Please check your username and password. If you still can't log in, contact your Salesforce administrator.
 
-       at ../utils/salesforce/login-helper.js:99
+       at ../utils/salesforce/login-helper.js:125
 
-       97 |         console.log(`⚠️ Found error with selector ${selector}: ${errorText}`);
-       98 |         await page.screenshot({ path: './auth/login-error.png' });
-    >  99 |         throw new Error(`Login failed with error: ${errorText}`);
+      123 |         console.log(`⚠️ Found error with selector ${selector}: ${errorText}`);
+      124 |         await page.screenshot({ path: './auth/login-error.png' });
+    > 125 |         throw new Error(`Login failed with error: ${errorText}`);
           |               ^
-      100 |       }
-      101 |     }
-      102 |     
-        at SalesforceLoginHelper.performLogin (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/login-helper.js:99:15)
-        at SalesforceLoginHelper.ensureAuthenticated (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/login-helper.js:30:5)
+      126 |       }
+      127 |     }
+      128 |     
+        at SalesforceLoginHelper.performLogin (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/login-helper.js:125:15)
+        at SalesforceLoginHelper.ensureAuthenticated (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/login-helper.js:55:7)
         at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/CSE_10762.spec.js:26:3
 
     attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
@@ -47,7 +47,9 @@
 </failure>
 <system-out>
 <![CDATA[🔐 TestRail auth: API Key
-🔐 Forcing fresh login to verify actual credentials entry
+🔍 Checking auth state at: /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/auth/salesforce-storage-state.json
+🔍 Auth state exists: false
+🔐 No stored auth found, performing fresh login
 🔐 Starting fresh login to: https://rli-agentsync--asfull.sandbox.my.salesforce.com
 👤 Username: einstien.jackson685@agentforce.com
 📝 Filling login credentials
@@ -61,7 +63,9 @@
 
 [[ATTACHMENT|../test-results/ui-CSE_10762-C24169---Veri-f2b91-nent-on-Contact-record-page-chromium/video.webm]]
 🔐 TestRail auth: API Key
-🔐 Forcing fresh login to verify actual credentials entry
+🔍 Checking auth state at: /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/auth/salesforce-storage-state.json
+🔍 Auth state exists: false
+🔐 No stored auth found, performing fresh login
 🔐 Starting fresh login to: https://rli-agentsync--asfull.sandbox.my.salesforce.com
 👤 Username: einstien.jackson685@agentforce.com
 📝 Filling login credentials

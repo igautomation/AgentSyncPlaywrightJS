@@ -25,9 +25,35 @@ class SalesforceLoginHelper {
     // Load Salesforce environment variables
     require('dotenv').config({ path: '.env.salesforce' });
     
-    console.log('🔐 Forcing fresh login to verify actual credentials entry');
-    // Always perform fresh login to ensure we're actually testing login functionality
-    await this.performLogin(page);
+    console.log(`🔍 Checking auth state at: ${this.authStatePath}`);
+    console.log(`🔍 Auth state exists: ${fs.existsSync(this.authStatePath)}`);
+    
+    if (fs.existsSync(this.authStatePath)) {
+      console.log('📁 Using stored authentication state');
+      // Load stored auth state
+      const authState = JSON.parse(fs.readFileSync(this.authStatePath, 'utf8'));
+      await page.context().addCookies(authState.cookies);
+      
+      // Navigate to Salesforce to test if auth is still valid
+      await page.goto(process.env.SF_INSTANCE_URL || process.env.SF_LOGIN_URL);
+      await page.waitForTimeout(3000);
+      
+      console.log(`🌐 Navigated to: ${page.url()}`);
+      
+      // Check if auth is still valid by looking for App Launcher
+      const appLauncherVisible = await page.locator('button[title="App Launcher"], .slds-icon-waffle, [data-aura-class="forceAppLauncher"]').isVisible().catch(() => false);
+      
+      if (appLauncherVisible) {
+        console.log('✅ Stored authentication is still valid');
+        return;
+      } else {
+        console.log('⚠️ Stored auth expired, performing fresh login');
+        await this.performLogin(page);
+      }
+    } else {
+      console.log('🔐 No stored auth found, performing fresh login');
+      await this.performLogin(page);
+    }
   }
 
   /**
