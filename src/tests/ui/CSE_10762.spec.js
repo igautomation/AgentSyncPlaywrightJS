@@ -1,7 +1,7 @@
 const { test } = require('@playwright/test');
 const { DataGenerator } = require('../../utils/data');
 const logger = require('../../utils/common/core/logger');
-const { TestRailAPI } = require('../../utils/testrail/core/testrail-api-simple');
+const TestRailAPI = require('../../utils/testrail/core/testrail-api-simple');
 const TEST_CASE_ID = 'C24169';
 let testRail, testRunId;
 
