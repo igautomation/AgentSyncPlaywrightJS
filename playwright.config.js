@@ -25,7 +25,7 @@ module.exports = defineConfig({
   },
 
   // Run tests in files in parallel
-  fullyParallel: false,
+  fullyParallel: true,
 
   // Fail the build on CI if you accidentally left test.only in the source code
   forbidOnly: !!process.env.CI,
@@ -34,7 +34,7 @@ module.exports = defineConfig({
   retries: parseInt(process.env.RETRY_COUNT) || 1,
 
   // Limit parallel workers
-  workers: process.env.CI ? 2 : undefined,
+  workers: process.env.CI ? 2 : 1,
 
   // Reporter to use
   reporter: [
@@ -55,8 +55,8 @@ module.exports = defineConfig({
     // Collect trace when retrying the failed test
     trace: 'on-first-retry',
 
-    // Record video only when retrying a test for the first time
-    video: process.env.VIDEO_ON_FAILURE === 'true' ? 'on-first-retry' : 'off',
+    // Record video for all tests
+    video: 'on',
 
     // Take screenshot on failure
     screenshot: process.env.SCREENSHOT_ON_FAILURE === 'true' ? 'only-on-failure' : 'off',
@@ -70,7 +70,12 @@ module.exports = defineConfig({
     // Browser launch options
     launchOptions: {
       slowMo: parseInt(process.env.BROWSER_SLOW_MO || '0'),
-      args: ['--disable-dev-shm-usage'],
+      args: ['--disable-dev-shm-usage', '--no-sandbox'],
+    },
+    
+    // Context options for proper cleanup
+    contextOptions: {
+      ignoreHTTPSErrors: true,
     },
   },
 
@@ -120,4 +125,13 @@ module.exports = defineConfig({
 
   // Folder for test artifacts such as screenshots, videos, traces, etc.
   outputDir: 'test-results/',
+  
+  // Video recording settings
+  use: {
+    ...module.exports.use,
+    video: {
+      mode: 'on',
+      size: { width: 1280, height: 720 }
+    }
+  },
 });

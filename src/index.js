@@ -93,9 +93,14 @@ test.describe('Salesforce API Tests', () => {
   },
 
   // Direct exports for common usage
-  apiClient: safeRequire('./utils/api').apiClient,
-  webInteractions: safeRequire('./utils/web').webInteractions,
-  salesforceUtils: safeRequire('./utils/salesforce').salesforceUtils,
+  authManager: safeRequire('./utils/salesforce/auth-manager'),
+  SalesforceApiUtils: safeRequire('./utils/salesforce/core/salesforceApiUtils'),
+  SoqlBuilder: safeRequire('./utils/salesforce/core/soqlBuilder'),
+  TestRailAPI: safeRequire('./utils/testrail/core/testrail-api-simple'),
+  DataGenerator: safeRequire('./utils/data/dataGenerator'),
+  Logger: safeRequire('./utils/common/core/logger'),
+  ApiUtils: safeRequire('./utils/api/core/apiUtils'),
+  WebInteractions: safeRequire('./utils/web/core/webInteractions'),
 
   // Framework assets access
   FrameworkAssets: require('./framework-assets'),
