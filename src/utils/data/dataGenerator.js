@@ -147,6 +147,42 @@ class DataGenerator {
   dateString(start = new Date(2000, 0, 1), end = new Date()) {
     return this.date(start, end).toISOString();
   }
+  
+  /**
+   * Generate Salesforce Account data
+   * @returns {Object} Account data
+   */
+  generateSalesforceAccount() {
+    return {
+      Name: `${this.randomElement(['Tech Corp', 'Global Solutions', 'Innovation Inc', 'Digital Systems'])} ${this.randomInt(100, 999)}`,
+      Phone: `555-${this.randomInt(100, 999)}-${this.randomInt(1000, 9999)}`,
+      Website: `www.${this.randomString(8).toLowerCase()}.com`,
+      Industry: this.randomElement(['Technology', 'Healthcare', 'Finance', 'Manufacturing', 'Retail'])
+    };
+  }
+  
+  /**
+   * Generate Salesforce Contact data
+   * @param {string} accountId - Optional Account ID to associate with
+   * @returns {Object} Contact data
+   */
+  generateSalesforceContact(accountId = null) {
+    const firstName = this.firstName();
+    const lastName = this.lastName();
+    const contact = {
+      FirstName: firstName,
+      LastName: lastName,
+      Email: `${firstName.toLowerCase()}.${lastName.toLowerCase()}@example.com`,
+      Phone: `555-${this.randomInt(100, 999)}-${this.randomInt(1000, 9999)}`,
+      Title: this.jobTitle()
+    };
+    
+    if (accountId) {
+      contact.AccountId = accountId;
+    }
+    
+    return contact;
+  }
 }
 
 module.exports = {
