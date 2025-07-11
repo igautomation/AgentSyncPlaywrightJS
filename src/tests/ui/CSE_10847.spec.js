@@ -2,6 +2,7 @@ const { test, expect } = require('@playwright/test');
 const { DataGenerator } = require('../../utils/data');
 const logger = require('../../utils/common/core/logger');
 const TestRailAPI = require('../../utils/testrail/core/testrail-api-simple');
+const SalesforceLoginHelper = require('../../utils/salesforce/login-helper');
 const TEST_CASE_IDS = ['C24205', 'C24206', 'C24207'];
 let testRail, testRunId;
 
@@ -20,14 +21,16 @@ test.beforeAll(async () => {
 
 test.beforeEach(async ({ page }) => {
   test.setTimeout(60_000);
-  await page.goto(process.env.SF_LOGIN_URL);
+  const loginHelper = new SalesforceLoginHelper();
+  await loginHelper.ensureAuthenticated(page);
 });
 
 test(`${TEST_CASE_IDS[0]} - Validate that when a Contact record is created the Onboarding Status Bar is set to Not Started`, async ({ page }, testInfo) => {
   let testPassed = false;
   
   try {
-    const contact = DataGenerator.generateSalesforceContact();
+    const dataGenerator = new DataGenerator();
+    const contact = dataGenerator.generateSalesforceContact();
     
     await page.goto('/lightning/o/Contact/list');
     await page.waitForLoadState('networkidle');
