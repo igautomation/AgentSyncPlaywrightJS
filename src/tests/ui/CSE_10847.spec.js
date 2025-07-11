@@ -32,7 +32,7 @@ test(`${TEST_CASE_IDS[0]} - Validate that when a Contact record is created the O
     const dataGenerator = new DataGenerator();
     const contact = dataGenerator.generateSalesforceContact();
     
-    await page.goto('/lightning/o/Contact/list');
+    await page.goto(`${process.env.SF_INSTANCE_URL}/lightning/o/Contact/list`);
     await page.waitForLoadState('networkidle');
     
     logger.info(`Contact status test executed`);

@@ -6,17 +6,12 @@
  */
 const { test, expect } = require('@playwright/test');
 const { TestRailAPI } = require('../../utils/testrail');
-const path = require('path');
-require('dotenv').config({ path: '.env.unified' });
+const SalesforceLoginHelper = require('../../utils/salesforce/login-helper');
+require('dotenv').config({ path: '.env.salesforce' });
 
 // Global variables
 let testRailClient, testRunId;
 const testResults = [];
-
-// Use stored auth state
-test.use({
-  storageState: path.join(process.cwd(), 'auth/salesforce-storage-state.json')
-});
 
 // Setup TestRail before all tests
 test.beforeAll(async () => {
@@ -58,7 +53,11 @@ test.describe('Salesforce Contact View', () => {
     let comment = '';
     
     try {
-      // Navigate directly to Contacts tab
+      // Ensure authenticated to Salesforce
+      const loginHelper = new SalesforceLoginHelper();
+      await loginHelper.ensureAuthenticated(page);
+      
+      // Navigate to Contacts tab
       await page.goto(`${process.env.SF_INSTANCE_URL}/lightning/o/Contact/list`);
       
       // Wait for the list view to load
@@ -101,6 +100,10 @@ test.describe('Salesforce Contact View', () => {
     let comment = '';
     
     try {
+      // Ensure authenticated to Salesforce
+      const loginHelper = new SalesforceLoginHelper();
+      await loginHelper.ensureAuthenticated(page);
+      
       // Navigate to Contacts tab
       await page.goto(`${process.env.SF_INSTANCE_URL}/lightning/o/Contact/list`);
       

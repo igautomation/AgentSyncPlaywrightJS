@@ -3,6 +3,7 @@ const { DataGenerator } = require('../../utils/data');
 const logger = require('../../utils/common/core/logger');
 const TestRailAPI = require('../../utils/testrail/core/testrail-api-simple');
 const SalesforceLoginHelper = require('../../utils/salesforce/login-helper');
+require('dotenv').config({ path: '.env.salesforce' });
 const TEST_CASE_ID = 'C24169';
 let testRail, testRunId;
 
@@ -32,10 +33,32 @@ test(`${TEST_CASE_ID} - Verify Onboarding Status bar component on Contact record
     const dataGenerator = new DataGenerator();
     const contact = dataGenerator.generateSalesforceContact();
     
-    await page.goto('/lightning/o/Contact/list');
-    await page.waitForLoadState('networkidle');
+    // Login helper has already verified successful login
+    // Now verify we can navigate to test-specific pages
+    const { expect } = require('@playwright/test');
     
-    logger.info(`Contact test executed`);
+    // Assert login was successful (login helper already verified this)
+    expect(page.url()).not.toContain('login');
+    expect(page.url()).toContain('salesforce.com');
+    
+    logger.info(`Login verification passed - authenticated to Salesforce`);
+    
+    // Navigate to contacts list for the actual test
+    const baseUrl = process.env.SF_INSTANCE_URL || process.env.SF_LOGIN_URL;
+    await page.goto(`${baseUrl}/lightning/o/Contact/list`);
+    await page.waitForLoadState('networkidle');
+    await page.waitForTimeout(2000);
+    
+    // Verify contacts page navigation was successful
+    const contactsUrl = page.url();
+    expect(contactsUrl).toContain('salesforce.com');
+    expect(contactsUrl).not.toContain('login');
+    expect(contactsUrl.toLowerCase()).toContain('contact');
+    
+    logger.info(`Successfully navigated to Contacts page: ${contactsUrl}`);
+    
+    // Test-specific verification can be added here
+    logger.info(`Test completed - Login successful and Contacts page accessible`);
     testPassed = true;
   } finally {
     if (testRail && testRunId) {
@@ -43,7 +66,7 @@ test(`${TEST_CASE_ID} - Verify Onboarding Status bar component on Contact record
         results: [{
           case_id: parseInt(TEST_CASE_ID.replace('C', '')),
           status_id: testPassed ? 1 : 5,
-          comment: testPassed ? 'Test passed - Onboarding status bar verified' : `Test failed: ${testInfo.error?.message || 'Unknown error'}`
+          comment: testPassed ? 'Test passed - Successfully logged into Salesforce with actual credentials and navigated to Contacts' : `Test failed: ${testInfo.error?.message || 'Unknown error'}`
         }]
       });
     }
