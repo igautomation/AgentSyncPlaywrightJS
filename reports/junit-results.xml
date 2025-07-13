@@ -1,85 +1,232 @@
-<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="25.755839">
-<testsuite name="ui/CSE_10762.spec.js" timestamp="2025-07-11T18:04:20.188Z" hostname="chromium" tests="1" failures="1" skipped="0" time="14.969" errors="0">
-<testcase name="C24169 - Verify Onboarding Status bar component on Contact record page" classname="ui/CSE_10762.spec.js" time="14.969">
-<failure message="CSE_10762.spec.js:29:1 C24169 - Verify Onboarding Status bar component on Contact record page" type="FAILURE">
-<![CDATA[  [chromium] › ui/CSE_10762.spec.js:29:1 › C24169 - Verify Onboarding Status bar component on Contact record page 
-
-    Error: Login failed with error: Error: Please check your username and password. If you still can't log in, contact your Salesforce administrator.
-
-       at ../utils/salesforce/login-helper.js:125
-
-      123 |         console.log(`⚠️ Found error with selector ${selector}: ${errorText}`);
-      124 |         await page.screenshot({ path: './auth/login-error.png' });
-    > 125 |         throw new Error(`Login failed with error: ${errorText}`);
-          |               ^
-      126 |       }
-      127 |     }
-      128 |     
-        at SalesforceLoginHelper.performLogin (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/login-helper.js:125:15)
-        at SalesforceLoginHelper.ensureAuthenticated (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/login-helper.js:55:7)
-        at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/CSE_10762.spec.js:26:3
-
-    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
-    test-results/ui-CSE_10762-C24169---Veri-f2b91-nent-on-Contact-record-page-chromium/video.webm
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
-
-    Error: Login failed with error: Error: Please check your username and password. If you still can't log in, contact your Salesforce administrator.
-
-       at ../utils/salesforce/login-helper.js:125
-
-      123 |         console.log(`⚠️ Found error with selector ${selector}: ${errorText}`);
-      124 |         await page.screenshot({ path: './auth/login-error.png' });
-    > 125 |         throw new Error(`Login failed with error: ${errorText}`);
-          |               ^
-      126 |       }
-      127 |     }
-      128 |     
-        at SalesforceLoginHelper.performLogin (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/login-helper.js:125:15)
-        at SalesforceLoginHelper.ensureAuthenticated (/Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/utils/salesforce/login-helper.js:55:7)
-        at /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/src/tests/ui/CSE_10762.spec.js:26:3
-
-    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
-    test-results/ui-CSE_10762-C24169---Veri-f2b91-nent-on-Contact-record-page-chromium-retry1/video.webm
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-]]>
-</failure>
-<system-out>
-<![CDATA[🔐 TestRail auth: API Key
-🔍 Checking auth state at: /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/auth/salesforce-storage-state.json
-🔍 Auth state exists: false
-🔐 No stored auth found, performing fresh login
-🔐 Starting fresh login to: https://rli-agentsync--asfull.sandbox.my.salesforce.com
-👤 Username: einstien.jackson685@agentforce.com
-📝 Filling login credentials
-🔍 Filled username: einstien.jackson685@agentforce.com
-🔍 Filled password: [HIDDEN]
-🔑 Clicking login button
-⏳ Waiting for login response...
-🔍 Current URL after login click: https://rli-agentsync--asfull.sandbox.my.salesforce.com/
-🔍 Page title: Login | Salesforce
-⚠️ Found error with selector #error: Error: Please check your username and password. If you still can't log in, contact your Salesforce administrator.
-
-[[ATTACHMENT|../test-results/ui-CSE_10762-C24169---Veri-f2b91-nent-on-Contact-record-page-chromium/video.webm]]
-🔐 TestRail auth: API Key
-🔍 Checking auth state at: /Users/mzahirudeen/Desktop/AgentSync/Client Deliverable/AgentSyncProfessionalServicesDelivery/auth/salesforce-storage-state.json
-🔍 Auth state exists: false
-🔐 No stored auth found, performing fresh login
-🔐 Starting fresh login to: https://rli-agentsync--asfull.sandbox.my.salesforce.com
-👤 Username: einstien.jackson685@agentforce.com
-📝 Filling login credentials
-🔍 Filled username: einstien.jackson685@agentforce.com
-🔍 Filled password: [HIDDEN]
-🔑 Clicking login button
-⏳ Waiting for login response...
-🔍 Current URL after login click: https://rli-agentsync--asfull.sandbox.my.salesforce.com/
-🔍 Page title: Login | Salesforce
-⚠️ Found error with selector #error: Error: Please check your username and password. If you still can't log in, contact your Salesforce administrator.
-
-[[ATTACHMENT|../test-results/ui-CSE_10762-C24169---Veri-f2b91-nent-on-Contact-record-page-chromium-retry1/video.webm]]
-]]>
-</system-out>
+<testsuites id="" name="" tests="41" failures="0" skipped="41" errors="0" time="0.33038799999999996">
+<testsuite name="ui/CSE_107060.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="chromium" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="C24152 - Validate the list of fields in onboarding portal" classname="ui/CSE_107060.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="C24153 - Validate SSN field accepts only valid format of SSN in onboarding portal" classname="ui/CSE_107060.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="C24154 - Validate Gender dropdown values in onboarding portal" classname="ui/CSE_107060.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="C24156 - Validate Agent Type dropdown values in onboarding portal" classname="ui/CSE_107060.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui/CSE_10762.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="chromium" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="C24169 - Verify Onboarding Status bar component on Contact record page" classname="ui/CSE_10762.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui/CSE_10847.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="chromium" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="C24205 - Validate that when a Contact record is created the Onboarding Status Bar is set to Not Started" classname="ui/CSE_10847.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="C24206 - Validate that Onboarding Status Bar is updated to &apos;Portal Invite Sent&apos; when a Contact is Enabled as Portal User" classname="ui/CSE_10847.spec.js" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="C24207 - Validate that Onboarding Status bar is set to &apos;Portal Started&apos; when a User logs into the Portal for the first time" classname="ui/CSE_10847.spec.js" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui/salesforce-contact-view.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="chromium" tests="2" failures="0" skipped="2" time="0" errors="0">
+<testcase name="Salesforce Contact View › C27699: Contact List View Test" classname="ui/salesforce-contact-view.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Salesforce Contact View › C27699: Contact Search Test" classname="ui/salesforce-contact-view.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui/salesforce-login.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="chromium" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="Salesforce Login › C27698: Salesforce Login Test" classname="ui/salesforce-login.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui/CSE_107060.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="firefox" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="C24152 - Validate the list of fields in onboarding portal" classname="ui/CSE_107060.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="C24153 - Validate SSN field accepts only valid format of SSN in onboarding portal" classname="ui/CSE_107060.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="C24154 - Validate Gender dropdown values in onboarding portal" classname="ui/CSE_107060.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="C24156 - Validate Agent Type dropdown values in onboarding portal" classname="ui/CSE_107060.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui/CSE_10762.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="firefox" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="C24169 - Verify Onboarding Status bar component on Contact record page" classname="ui/CSE_10762.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui/CSE_10847.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="firefox" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="C24205 - Validate that when a Contact record is created the Onboarding Status Bar is set to Not Started" classname="ui/CSE_10847.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="C24206 - Validate that Onboarding Status Bar is updated to &apos;Portal Invite Sent&apos; when a Contact is Enabled as Portal User" classname="ui/CSE_10847.spec.js" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="C24207 - Validate that Onboarding Status bar is set to &apos;Portal Started&apos; when a User logs into the Portal for the first time" classname="ui/CSE_10847.spec.js" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui/salesforce-contact-view.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="firefox" tests="2" failures="0" skipped="2" time="0" errors="0">
+<testcase name="Salesforce Contact View › C27699: Contact List View Test" classname="ui/salesforce-contact-view.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Salesforce Contact View › C27699: Contact Search Test" classname="ui/salesforce-contact-view.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui/salesforce-login.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="firefox" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="Salesforce Login › C27698: Salesforce Login Test" classname="ui/salesforce-login.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui/CSE_107060.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="webkit" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="C24152 - Validate the list of fields in onboarding portal" classname="ui/CSE_107060.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="C24153 - Validate SSN field accepts only valid format of SSN in onboarding portal" classname="ui/CSE_107060.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="C24154 - Validate Gender dropdown values in onboarding portal" classname="ui/CSE_107060.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="C24156 - Validate Agent Type dropdown values in onboarding portal" classname="ui/CSE_107060.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui/CSE_10762.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="webkit" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="C24169 - Verify Onboarding Status bar component on Contact record page" classname="ui/CSE_10762.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui/CSE_10847.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="webkit" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="C24205 - Validate that when a Contact record is created the Onboarding Status Bar is set to Not Started" classname="ui/CSE_10847.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="C24206 - Validate that Onboarding Status Bar is updated to &apos;Portal Invite Sent&apos; when a Contact is Enabled as Portal User" classname="ui/CSE_10847.spec.js" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="C24207 - Validate that Onboarding Status bar is set to &apos;Portal Started&apos; when a User logs into the Portal for the first time" classname="ui/CSE_10847.spec.js" time="0">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui/salesforce-contact-view.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="webkit" tests="2" failures="0" skipped="2" time="0" errors="0">
+<testcase name="Salesforce Contact View › C27699: Contact List View Test" classname="ui/salesforce-contact-view.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Salesforce Contact View › C27699: Contact Search Test" classname="ui/salesforce-contact-view.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ui/salesforce-login.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="webkit" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="Salesforce Login › C27698: Salesforce Login Test" classname="ui/salesforce-login.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="salesforce/salesforce-apex.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="salesforce" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="Salesforce Apex Operations › C27702: Execute Anonymous Apex Test" classname="salesforce/salesforce-apex.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="salesforce/salesforce-db.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="salesforce" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="Salesforce Database Operations › C27703: CRUD Operations Test" classname="salesforce/salesforce-db.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="salesforce/salesforce-soql.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="salesforce" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="Salesforce SOQL Operations › C27704: SOQL Builder Test" classname="salesforce/salesforce-soql.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="api/salesforce-api-limits.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="api" tests="2" failures="0" skipped="2" time="0" errors="0">
+<testcase name="Salesforce API Limits › C27700: API Limits Test" classname="api/salesforce-api-limits.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Salesforce API Limits › C27700: Record Count Test" classname="api/salesforce-api-limits.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="api/salesforce-api-objects.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="api" tests="2" failures="0" skipped="2" time="0" errors="0">
+<testcase name="Salesforce API Objects › C27701: Global Objects List Test" classname="api/salesforce-api-objects.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Salesforce API Objects › C27701: Contact Object Metadata Test" classname="api/salesforce-api-objects.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="api/SFAPI.spec.js" timestamp="2025-07-13T08:30:34.148Z" hostname="api" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="C24001: Salesforce Create Account and Create Contact" classname="api/SFAPI.spec.js" time="0">
+<skipped>
+</skipped>
 </testcase>
 </testsuite>
 </testsuites>
