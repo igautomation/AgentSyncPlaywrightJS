@@ -95,8 +95,82 @@ class SalesforceLocators {
         metadataImportExportPage: '/lightning/n/agentsync__Metadata_Import_Export',
         csvImport: '/lightning/n/agentsync__Agent_CSV_Import',
         gwbrCombobox: '//agentsync-metadata-import-export//lightning-combobox//button[@name="metadata"]',
-        gwbrComboboxDataValue: '//agentsync-metadata-import-export//lightning-base-combobox-item[@data-value="{dataValue}"]'
+        gwbrComboboxDataValue: '//agentsync-metadata-import-export//lightning-base-combobox-item[@data-value="{dataValue}"]
       },
+
+      // Lightning Components
+      lightning: {
+        recordForm: 'lightning-record-form',
+        recordEditForm: 'lightning-record-edit-form',
+        inputField: 'lightning-input-field',
+        combobox: 'lightning-combobox',
+        datatable: 'lightning-datatable',
+        card: 'lightning-card',
+        tab: 'lightning-tab',
+        tabset: 'lightning-tabset',
+        progressIndicator: 'lightning-progress-indicator',
+        breadcrumb: 'lightning-breadcrumb',
+        button: 'lightning-button',
+        buttonIcon: 'lightning-button-icon'
+      },
+
+      // Record Pages
+      record: {
+        pageHeader: '.slds-page-header',
+        recordTitle: '.slds-page-header__title',
+        recordType: '.slds-page-header__meta-text',
+        detailsTab: 'a[data-tab-value="details"]',
+        relatedTab: 'a[data-tab-value="related"]',
+        activityTab: 'a[data-tab-value="activity"]',
+        editButton: 'button[name="Edit"]',
+        deleteButton: 'button[name="Delete"]',
+        followButton: 'button[name="Follow"]',
+        shareButton: 'button[name="Share"]'
+      },
+
+      // List Views
+      listView: {
+        table: 'table[role="grid"]',
+        tableRow: 'tr[data-row-key-value]',
+        tableCell: 'td[data-label]',
+        newButton: 'a[title="New"]',
+        importButton: 'button[title="Import"]',
+        listViewSelector: 'button[title="Select List View"]',
+        refreshButton: 'button[title="Refresh"]',
+        displayAsSelector: 'button[title="Display as"]',
+        searchBox: 'input[name="search"]',
+        filterButton: 'button[title="Filters"]'
+      },
+
+      // Setup and Admin
+      setup: {
+        setupHome: '/lightning/setup/SetupOneHome/home',
+        objectManager: '/lightning/setup/ObjectManager/home',
+        userManagement: '/lightning/setup/ManageUsers/home',
+        profileManagement: '/lightning/setup/Profiles/home',
+        permissionSets: '/lightning/setup/PermSets/home',
+        customSettings: '/lightning/setup/CustomSettings/home',
+        apexClasses: '/lightning/setup/ApexClasses/home',
+        flows: '/lightning/setup/Flows/home'
+      },
+
+      // Forms and Fields
+      forms: {
+        requiredField: '.slds-required',
+        fieldError: '.slds-has-error',
+        fieldHelp: '.slds-form-element__help',
+        fieldLabel: '.slds-form-element__label',
+        checkbox: 'input[type="checkbox"]',
+        radio: 'input[type="radio"]',
+        picklist: 'lightning-combobox',
+        lookupField: 'input[role="combobox"]',
+        dateField: 'input[type="date"]',
+        datetimeField: 'input[type="datetime-local"]',
+        numberField: 'input[type="number"]',
+        emailField: 'input[type="email"]',
+        phoneField: 'input[type="tel"]',
+        urlField: 'input[type="url"]'
+      }
 
       // Advanced Selectors
       advanced: {
@@ -252,6 +326,119 @@ class SalesforceLocators {
   // Advanced locator methods
   async getDynamicLocator(category, element, replacements = {}) {
     let locatorString = this.locators[category]?.[element];
+    if (!locatorString) {
+      throw new Error(`Locator not found: ${category}.${element}`);
+    }
+
+    // Replace placeholders with actual values
+    for (const [key, value] of Object.entries(replacements)) {
+      locatorString = locatorString.replace(new RegExp(`{${key}}`, 'g'), value);
+    }
+
+    return this.page.locator(locatorString);
+  }
+
+  // Enhanced Salesforce-specific methods
+  async navigateToObject(objectName) {
+    const url = `/lightning/o/${objectName}/list`;
+    await this.page.goto(url);
+    await this.waitForSpinnerToDisappear();
+  }
+
+  async openAppLauncher() {
+    await this.clickElement('navigation', 'appLauncher');
+    await this.page.waitForTimeout(1000);
+  }
+
+  async searchAndOpenApp(appName) {
+    await this.openAppLauncher();
+    await this.fillElement('navigation', 'searchApps', appName);
+    const appLocator = await this.getDynamicLocator('navigation', 'appOption', { appName });
+    await appLocator.click();
+  }
+
+  // Lightning-specific helpers
+  async waitForLightningPageLoad() {
+    await this.page.waitForLoadState('networkidle');
+    await this.waitForSpinnerToDisappear();
+    await this.page.waitForTimeout(2000);
+  }
+
+  async handleLightningModal(action = 'close') {
+    const modal = await this.getLocator('common', 'modal');
+    if (await modal.isVisible()) {
+      if (action === 'close') {
+        await this.page.keyboard.press('Escape');
+      }
+    }
+  }
+
+  // Record-specific methods
+  async createNewRecord(objectName, fieldData = {}) {
+    await this.navigateToObject(objectName);
+    await this.clickElement('listView', 'newButton');
+    await this.waitForLightningPageLoad();
+    
+    for (const [fieldName, value] of Object.entries(fieldData)) {
+      await this.fillField(fieldName, value);
+    }
+  }
+
+  async fillField(fieldName, value) {
+    const selectors = this.generateFieldLocator(fieldName);
+    const field = await this.findElementByMultipleSelectors(selectors);
+    await field.fill(value);
+  }
+
+  async selectPicklistValue(fieldName, value) {
+    const combobox = this.page.locator(`lightning-combobox[data-field="${fieldName}"] button`);
+    await combobox.click();
+    const option = this.page.locator(`lightning-base-combobox-item[data-value="${value}"]`);
+    await option.click();
+  }
+
+  async searchLookupField(fieldName, searchText, selectText) {
+    const lookupInput = this.page.locator(`input[data-field="${fieldName}"]`);
+    await lookupInput.fill(searchText);
+    await this.page.waitForTimeout(2000);
+    const option = this.page.locator(`text="${selectText}"`);
+    await option.click();
+  }
+
+  // List view methods
+  async selectListView(viewName) {
+    await this.clickElement('listView', 'listViewSelector');
+    const view = this.page.locator(`text="${viewName}"`);
+    await view.click();
+    await this.waitForLightningPageLoad();
+  }
+
+  async searchInListView(searchText) {
+    await this.fillElement('listView', 'searchBox', searchText);
+    await this.page.keyboard.press('Enter');
+    await this.waitForLightningPageLoad();
+  }
+
+  async clickRecordInList(recordName) {
+    const recordLink = this.page.locator(`a[title="${recordName}"]`);
+    await recordLink.click();
+    await this.waitForLightningPageLoad();
+  }
+
+  // Utility methods for common Salesforce patterns
+  async waitForRecordSave() {
+    await this.waitForSpinnerToDisappear();
+    const toast = await this.getToastMessage();
+    return toast && (toast.includes('saved') || toast.includes('created') || toast.includes('updated'));
+  }
+
+  async verifyRecordCreated(recordName) {
+    const toast = await this.getToastMessage();
+    return toast && toast.includes(recordName) && toast.includes('created');
+  }
+}
+
+module.exports = SalesforceLocators;ors[category]?.[element];
     if (!locatorString) {
       throw new Error(`Locator not found: ${category}.${element}`);
     }
