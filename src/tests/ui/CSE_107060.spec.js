@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 const logger = require('../../utils/common/core/logger');
-const TestRailAPI = require('../../utils/testrail/core/testrail-api-simple');
+const { TestRailAPI } = require('../../utils/testrail');
 const TEST_CASE_IDS = ['C24152', 'C24153', 'C24154', 'C24156'];
 let testRail, testRunId;
 

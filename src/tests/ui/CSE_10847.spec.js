@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const { DataGenerator } = require('../../utils/data');
 const logger = require('../../utils/common/core/logger');
-const TestRailAPI = require('../../utils/testrail/core/testrail-api-simple');
+const { TestRailAPI } = require('../../utils/testrail');
 const SalesforceLoginHelper = require('../../utils/salesforce/login-helper');
 const TEST_CASE_IDS = ['C24205', 'C24206', 'C24207'];
 let testRail, testRunId;

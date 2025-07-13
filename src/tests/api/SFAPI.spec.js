@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 const authManager = require('../../utils/salesforce/auth-manager');
 const SalesforceApiUtils = require('../../utils/salesforce/core/salesforceApiUtils');
 const SoqlBuilder = require('../../utils/salesforce/core/soqlBuilder');
-const TestRailAPI = require('../../utils/testrail/core/testrail-api-simple');
+const { TestRailAPI } = require('../../utils/testrail');
 const { DataGenerator } = require('../../utils/data');
 const logger = require('../../utils/common/core/logger');
 
