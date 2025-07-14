@@ -1,8 +1,8 @@
 const { test, expect } = require('@playwright/test');
-const { DataGenerator } = require('@agentsync/playwright-framework/utils/data');
-const logger = require('@agentsync/playwright-framework/utils/common/core/logger');
-const { TestRailAPI } = require('@agentsync/playwright-framework/utils/testrail');
-const SalesforceLoginHelper = require('@agentsync/playwright-framework/utils/salesforce/login-helper');
+const { DataGenerator } = require('../../utils/data');
+const logger = require('../../utils/common/core/logger');
+const { TestRailAPI } = require('../../utils/testrail');
+const SalesforceLoginHelper = require('../../utils/salesforce/login-helper');
 
 const TEST_CASE_ID = 'C24169';
 let testRail, testRunId;
