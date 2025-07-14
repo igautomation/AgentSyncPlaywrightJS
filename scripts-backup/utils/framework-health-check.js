@@ -7,7 +7,7 @@ const { execSync } = require('child_process');
 // Try to load logger, but provide fallback if it doesn't exist
 let logger;
 try {
-  logger = require('../../src/utils/common/logger');
+  logger = require('../../src/utils/common/core/logger');
 } catch (error) {
   logger = {
     info: console.log,
