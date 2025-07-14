@@ -2,6 +2,14 @@
   "name": "@agentsync/playwright-framework",
   "version": "1.0.0",
   "description": "AgentSync Playwright Test Framework for Salesforce Testing",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/igautomation/ASPlaywrightJavaScriptMain.git"
+  },
+  "homepage": "https://github.com/igautomation/ASPlaywrightJavaScriptMain",
+  "bugs": {
+    "url": "https://github.com/igautomation/ASPlaywrightJavaScriptMain/issues"
+  },
   "main": "src/index.js",
   "bin": {
     "playwright-framework": "./bin/cli.js"
