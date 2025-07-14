@@ -6,7 +6,8 @@ const path = require('path');
 const crypto = require('crypto');
 const https = require('https');
 const http = require('http');
-const logger = require('../../common/core/logger');
+const logger = require('../common/core/logger');
+
 /**
  * Web Scraping Utilities for Playwright
  */
