@@ -15,7 +15,7 @@ function safeRequire(modulePath) {
 
 // Export framework components
 module.exports = {
-  // Core utilities
+  // Core utilities - organized by category
   utils: {
     api: safeRequire('./utils/api'),
     web: safeRequire('./utils/web'),
@@ -40,15 +40,26 @@ module.exports = {
     cli: safeRequire('./utils/cli'),
     git: safeRequire('./utils/git'),
     testing: safeRequire('./utils/testing'),
+    helpers: safeRequire('./helpers'),
+    setup: safeRequire('./utils/setup'),
+    plugins: safeRequire('./utils/plugins'),
+    reporting: safeRequire('./utils/reporting'),
   },
+
+  // Configuration
+  config: safeRequire('./config'),
 
   // Fixtures
   fixtures: safeRequire('./fixtures'),
 
   // Page objects
-  pages: {
-    BasePage: safeRequire('./pages/BasePage'),
-  },
+  pages: safeRequire('./pages'),
+
+  // CLI tools
+  cli: safeRequire('./cli'),
+
+  // Dashboard
+  dashboard: safeRequire('./dashboard'),
 
   // Test templates (as strings to avoid Playwright config issues)
   tests: {
@@ -95,12 +106,19 @@ test.describe('Salesforce API Tests', () => {
   // Direct exports for common usage
   authManager: safeRequire('./utils/salesforce/auth-manager'),
   SalesforceApiUtils: safeRequire('./utils/salesforce/core/salesforceApiUtils'),
+  SalesforceLoginHelper: safeRequire('./utils/salesforce/login-helper'),
   SoqlBuilder: safeRequire('./utils/salesforce/core/soqlBuilder'),
   TestRailAPI: safeRequire('./utils/testrail/core/testrail-api-simple'),
   DataGenerator: safeRequire('./utils/data/dataGenerator'),
+  logger: safeRequire('./utils/common/core/logger'),
   Logger: safeRequire('./utils/common/core/logger'),
   ApiUtils: safeRequire('./utils/api/core/apiUtils'),
   WebInteractions: safeRequire('./utils/web/core/webInteractions'),
+  AccessibilityUtils: safeRequire('./utils/accessibility/accessibilityUtils'),
+  VisualComparisonUtils: safeRequire('./utils/visual/visualComparisonUtils'),
+  PerformanceUtils: safeRequire('./utils/performance/performanceUtils'),
+  WebScrapingUtils: safeRequire('./utils/web/specialized/webScrapingUtils'),
+  BasePage: safeRequire('./pages/BasePage'),
 
   // Framework assets access
   FrameworkAssets: require('./framework-assets'),
