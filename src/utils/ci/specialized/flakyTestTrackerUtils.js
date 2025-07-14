@@ -5,7 +5,7 @@
 
 const fs = require('fs').promises;
 const path = require('path');
-const logger = require('../common/logger');
+const logger = require('../../common/core/logger');
 
 /**
  * Utility class for tracking flaky tests

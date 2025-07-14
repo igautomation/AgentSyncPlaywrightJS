@@ -4,7 +4,7 @@ const { createCanvas } = require('canvas');
 const Chart = require('chart.js/auto');
 const { ChartJSNodeCanvas } = require('chartjs-node-canvas');
 const { PlaywrightService } = require('../common');
-const logger = require('../common/logger');
+const logger = require('../../common/core/logger');
 
 /**
  * Chart Generator for creating chart images and reports

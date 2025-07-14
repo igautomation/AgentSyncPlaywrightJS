@@ -6,7 +6,7 @@
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob').glob;
-const logger = require('../../utils/common/logger');
+const logger = require('../../utils/common/core/logger');
 
 /**
  * Lint test files
@@ -174,7 +174,7 @@ function lintTestFile(filePath, options = {}) {
       if (options.fix) {
         // First check if logger is imported
         if (!content.includes('logger')) {
-          fixedContent = `const logger = require('../../utils/common/logger');\n\n${fixedContent}`;
+          fixedContent = `const logger = require('../../utils/common/core/logger');\n\n${fixedContent}`;
         }
         fixedContent = fixedContent.replace(/console\.log\s*\(/g, 'logger.debug(');
         result.fixableCount++;

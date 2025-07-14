@@ -7,7 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob').glob;
-const logger = require('../../utils/common/logger');
+const logger = require('../../utils/common/core/logger');
 const parser = require('@babel/parser');
 const traverse = require('@babel/traverse').default;
 

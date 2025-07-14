@@ -1,4 +1,4 @@
-const logger = require('../common/logger');
+const logger = require('../../common/core/logger');
 
 /**
  * Data Analyzer for processing scraped data

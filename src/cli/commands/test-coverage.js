@@ -6,7 +6,7 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
-const logger = require('../../utils/common/logger');
+const logger = require('../../utils/common/core/logger');
 
 /**
  * Generate and analyze test coverage

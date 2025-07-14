@@ -4,7 +4,7 @@
  * Direct integration with Jira REST API
  */
 const axios = require('axios');
-const logger = require('../common/logger');
+const logger = require('../common/core/logger');
 
 class JiraClient {
   /**

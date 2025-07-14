@@ -5,7 +5,7 @@
  */
 const fs = require('fs');
 const path = require('path');
-const logger = require('../common/logger');
+const logger = require('../../common/core/logger');
 
 class TestQualityDashboard {
   /**

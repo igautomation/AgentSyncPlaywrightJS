@@ -5,7 +5,7 @@
  */
 const { test: setup } = require('@playwright/test');
 const { SalesforceSessionManager } = require('../salesforce/sessionManager');
-const logger = require('../common/logger');
+const logger = require('../common/core/logger');
 
 /**
  * Setup for Salesforce tests

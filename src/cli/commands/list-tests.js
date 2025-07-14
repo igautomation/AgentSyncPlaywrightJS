@@ -4,7 +4,7 @@
  * This command lists all available tests without running them
  */
 const { execSync } = require('child_process');
-const logger = require('../../utils/common/logger');
+const logger = require('../../utils/common/core/logger');
 
 /**
  * List tests with the specified options

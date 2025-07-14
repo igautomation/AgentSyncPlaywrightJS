@@ -5,7 +5,7 @@
  */
 const fs = require('fs');
 const path = require('path');
-const logger = require('../../utils/common/logger');
+const logger = require('../../utils/common/core/logger');
 const TestQualityDashboard = require('../../utils/ci/testQualityDashboard');
 
 /**

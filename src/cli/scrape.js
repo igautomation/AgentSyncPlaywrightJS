@@ -5,7 +5,7 @@ const { chromium } = require('@playwright/test');
 const { WebScrapingUtils, DataProvider } = require('../utils/web');
 const path = require('path');
 const fs = require('fs');
-const logger = require('../utils/common/logger');
+const logger = require('../utils/common/core/logger');
 
 // Configure CLI
 program

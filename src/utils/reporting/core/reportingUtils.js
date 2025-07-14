@@ -8,7 +8,7 @@ const path = require('path');
 const ejs = require('ejs');
 const { execSync } = require('child_process');
 const { v4: uuidv4 } = require('uuid');
-const logger = require('../common/logger');
+const logger = require('../../common/core/logger');
 
 /**
  * Generate HTML report from test results

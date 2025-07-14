@@ -5,7 +5,7 @@
  */
 const { execSync } = require('child_process');
 const path = require('path');
-const logger = require('../../utils/common/logger');
+const logger = require('../../utils/common/core/logger');
 
 /**
  * Run tests with the specified options

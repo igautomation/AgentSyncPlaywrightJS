@@ -3,7 +3,7 @@
 const { program } = require('commander');
 const { startServer } = require('../dashboard/server');
 const { ReportScheduler } = require('../utils/scheduler');
-const logger = require('../utils/common/logger');
+const logger = require('../utils/common/core/logger');
 
 // Configure CLI
 program

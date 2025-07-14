@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const { PlaywrightService } = require('../common');
-const logger = require('../common/logger');
+const logger = require('../common/core/logger');
 const TestDataFactory = require('../common/testDataFactory');
 
 /**

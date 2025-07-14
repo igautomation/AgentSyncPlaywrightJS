@@ -4,7 +4,7 @@ const { program } = require('commander');
 const fs = require('fs');
 const path = require('path');
 const { ReportHistory } = require('../utils/scheduler');
-const logger = require('../utils/common/logger');
+const logger = require('../utils/common/core/logger');
 
 // Initialize report history
 const history = new ReportHistory();

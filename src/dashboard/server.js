@@ -7,7 +7,7 @@ const multer = require('multer');
 const { DataProvider } = require('../utils/web');
 const { ChartGenerator, DataAnalyzer } = require('../utils/visualization');
 const { ReportScheduler, ReportHistory, ReportTemplate } = require('../utils/scheduler');
-const logger = require('../utils/common/logger');
+const logger = require('../utils/common/core/logger');
 
 // Create Express app
 const app = express();

@@ -6,7 +6,7 @@ const { ChartGenerator, DataAnalyzer } = require('../visualization');
 const { DataProvider } = require('../web');
 const { PlaywrightService } = require('../common');
 const ReportHistory = require('./reportHistory');
-const logger = require('../common/logger');
+const logger = require('../common/core/logger');
 
 /**
  * Report Scheduler for automating report generation

@@ -128,5 +128,5 @@ test.describe('Salesforce API Tests', () => {
   /**
    * Create Salesforce project files
    */
-  createSalesforceProject: require('../scripts/setup/setup-salesforce-project').createProjectFiles,
+  createSalesforceProject: safeRequire('../scripts-backup/setup/setup-salesforce-project').createProjectFiles || (() => { console.warn('Salesforce project creation not available'); }),
 };

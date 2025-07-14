@@ -6,7 +6,7 @@
 const { execSync } = require('child_process');
 const path = require('path');
 const fs = require('fs');
-const logger = require('../../utils/common/logger');
+const logger = require('../../utils/common/core/logger');
 
 /**
  * Run a self-test to verify the framework is working correctly

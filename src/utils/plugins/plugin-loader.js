@@ -5,7 +5,7 @@
 
 const path = require('path');
 const fs = require('fs');
-const logger = require('../common/logger');
+const logger = require('../../common/core/logger');
 
 class PluginLoader {
   constructor() {

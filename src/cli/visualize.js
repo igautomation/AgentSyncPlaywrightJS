@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const { ChartGenerator, DataAnalyzer } = require('../utils/visualization');
 const { DataProvider } = require('../utils/web');
-const logger = require('../utils/common/logger');
+const logger = require('../utils/common/core/logger');
 
 // Configure CLI
 program

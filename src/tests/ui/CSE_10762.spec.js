@@ -1,13 +1,11 @@
-const { test } = require('@playwright/test');
-const { DataGenerator } = require('../../utils/data');
-const logger = require('../../utils/common/core/logger');
-const { TestRailAPI } = require('../../utils/testrail');
-const SalesforceLoginHelper = require('../../utils/salesforce/login-helper');
-require('dotenv').config({ path: '.env.salesforce' });
+const { test, expect } = require('@playwright/test');
+const { DataGenerator } = require('@agentsync/playwright-framework/utils/data');
+const logger = require('@agentsync/playwright-framework/utils/common/core/logger');
+const { TestRailAPI } = require('@agentsync/playwright-framework/utils/testrail');
+const SalesforceLoginHelper = require('@agentsync/playwright-framework/utils/salesforce/login-helper');
+
 const TEST_CASE_ID = 'C24169';
 let testRail, testRunId;
-
-let sessionIsFresh = false;
 
 test.beforeAll(async () => {
   if (process.env.TESTRAIL_URL) {
@@ -32,10 +30,6 @@ test(`${TEST_CASE_ID} - Verify Onboarding Status bar component on Contact record
   try {
     const dataGenerator = new DataGenerator();
     const contact = dataGenerator.generateSalesforceContact();
-    
-    // Login helper has already verified successful login
-    // Now verify we can navigate to test-specific pages
-    const { expect } = require('@playwright/test');
     
     // Assert login was successful (login helper already verified this)
     expect(page.url()).not.toContain('login');
@@ -73,20 +67,8 @@ test(`${TEST_CASE_ID} - Verify Onboarding Status bar component on Contact record
   }
 });
 
-test.afterEach(async ({ context, page }) => {
-  if (page && !page.isClosed()) {
-    await page.close();
-  }
-  if (context) {
-    await context.close();
-  }
-});
-
-test.afterAll(async ({ browser }) => {
+test.afterAll(async () => {
   if (testRail && testRunId) {
     await testRail.closeRun(testRunId);
-  }
-  if (browser) {
-    await browser.close();
   }
 });

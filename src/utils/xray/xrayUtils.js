@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 const config = require('../../config');
-const logger = require('../common/logger');
+const logger = require('../common/core/logger');
 
 /**
  * Xray Integration Utilities
