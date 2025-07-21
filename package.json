@@ -83,7 +83,7 @@
     "ajv-formats": "^2.1.1",
     "chalk": "^4.1.2",
     "dotenv": "^16.6.1",
-    "form-data": "^4.0.3",
+    "form-data": "^4.0.4",
     "js-yaml": "^4.1.0",
     "jsforce": "^3.9.1",
     "jsonwebtoken": "^9.0.2",
