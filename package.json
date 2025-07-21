@@ -101,7 +101,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-playwright": "^0.18.0",
     "husky": "^8.0.3",
-    "lint-staged": "^15.5.0",
+    "lint-staged": "^16.1.2",
     "prettier": "^3.6.0",
     "terser-webpack-plugin": "^5.3.10",
     "webpack": "^5.100.0",
